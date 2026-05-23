@@ -1,0 +1,37 @@
+---
+import { affiliate, stay22Enabled } from "../data/affiliate";
+
+interface Props {
+  query: string;        // z.B. "Heidelberg Altstadt"
+  checkin?: string;     // YYYY-MM-DD
+  checkout?: string;
+  height?: number;
+}
+const { query, checkin = "", checkout = "", height = 480 } = Astro.props;
+const params = new URLSearchParams({
+  aid: affiliate.stay22.lmaId || "",
+  query,
+  checkin,
+  checkout,
+});
+const src = `https://www.stay22.com/embed/gm?${params.toString()}`;
+---
+{stay22Enabled ? (
+  <iframe
+    title={`Hotels in ${query}`}
+    src={src}
+    loading="lazy"
+    style={`width:100%;height:${height}px;border:0;border-radius:var(--radius-card);`}
+    referrerpolicy="strict-origin-when-cross-origin"
+  ></iframe>
+) : (
+  <div
+    class="flex items-center justify-center text-sm text-center px-6"
+    style={`height:${height}px; background: var(--color-porcelain-mist); border-radius: var(--radius-card); color: var(--color-slate-steel);`}
+  >
+    Hotel-Karte (Stay22) — wird aktiviert, sobald die Partner-ID konfiguriert ist.
+  </div>
+)}
+<p class="mt-2 text-[11px] text-right" style="color: var(--color-slate-steel);">
+  Karten-Anzeige & Buchungen über Partner Stay22 / Booking.com (Affiliate-Link).
+</p>

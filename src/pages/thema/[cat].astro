@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import Top10Card from "../../components/Top10Card.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import HueGradient from "../../components/HueGradient.astro";
+import ImageCreditsList from "../../components/ImageCreditsList.astro";
+import { categories, getCategory } from "../../data/categories";
+import { top10sByCategory } from "../../data/top10s";
+
+export const getStaticPaths = () =>
+  categories.map((c) => ({ params: { cat: c.slug } }));
+
+const { cat } = Astro.params;
+const category = getCategory(cat!);
+if (!category) {
+  return Astro.redirect("/404/");
+}
+const lists = top10sByCategory(category.slug);
+const description = `${category.short} — ${lists.length} kuratierte Top-10-Listen für Heidelberg.`;
+---
+<BaseLayout title={`Top 10 ${category.name} in Heidelberg`} description={description}>
+  <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
+    <HueGradient hue={category.hue} class="absolute inset-0 opacity-30 pointer-events-none" />
+    <div class="container-page relative pt-8 pb-14 sm:pt-12 sm:pb-20">
+      <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: category.name }]} />
+      <div class="mt-4">
+        <span class="pill-accent">{category.icon} {category.name}</span>
+      </div>
+      <h1
+        class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight max-w-3xl"
+        style="font-family: var(--font-display); color: var(--color-inkwell-purple);"
+      >
+        Top 10 {category.name} in Heidelberg
+      </h1>
+      <p class="mt-4 text-lg max-w-2xl" style="color: var(--color-shadow-graphite);">
+        {category.short}
+      </p>
+    </div>
+  </section>
+
+  <Section eyebrow={`${lists.length} Listen`} title="Übersicht">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {lists.map((l) => (
+        <Top10Card
+          href={`/${l.slug}/`} slug={l.slug}
+          title={l.title}
+          subtitle={l.subtitle}
+          hue={l.hue}
+          emoji={l.emoji}
+          weak={l.weak}
+        />
+      ))}
+    </div>
+  </Section>
+
+  <ImageCreditsList slugs={lists.map((l) => l.slug)} />
+</BaseLayout>

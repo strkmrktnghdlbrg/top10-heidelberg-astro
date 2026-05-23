@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="Werben auf top10-heidelberg.de" description="Sichere dir einen Platz in unseren Top-10-Listen oder bewirb dich für ein Premium-Listing.">
+  <section class="container-page section max-w-3xl">
+    <div class="eyebrow mb-3">Werbung</div>
+    <h1 class="text-3xl sm:text-5xl font-bold mb-5" style="font-family: var(--font-display);">Werben auf Top 10 Heidelberg</h1>
+    <p class="text-lg" style="color: var(--color-shadow-graphite);">
+      top10-heidelberg.de ist das Listicle-Portal für die Region — kompakte Top-10-Übersichten zu Tourismus, Stadtteilen, Alltag und Dienstleistungen.
+      Für lokale Anbieter gibt es drei Wege, sichtbarer zu werden.
+    </p>
+
+    <div class="mt-10 grid sm:grid-cols-3 gap-6">
+      <div class="card p-6">
+        <div class="text-xs uppercase tracking-widest mb-2" style="color: var(--color-accent);">Free</div>
+        <div class="text-2xl font-bold mb-1" style="font-family: var(--font-display);">0 €</div>
+        <p class="text-sm" style="color: var(--color-shadow-graphite);">Eintrag in der Top-10-Liste, sofern es deine Branche redaktionell rechtfertigt.</p>
+      </div>
+      <div class="card p-6" style="border-color: var(--color-accent);">
+        <div class="text-xs uppercase tracking-widest mb-2" style="color: var(--color-accent);">Premium</div>
+        <div class="text-2xl font-bold mb-1" style="font-family: var(--font-display);">49 € / Monat</div>
+        <p class="text-sm" style="color: var(--color-shadow-graphite);">Premium-Card oben in der Liste, eigene Detailseite, Foto und CTA.</p>
+      </div>
+      <div class="card p-6">
+        <div class="text-xs uppercase tracking-widest mb-2" style="color: var(--color-accent);">Featured</div>
+        <div class="text-2xl font-bold mb-1" style="font-family: var(--font-display);">149 € / Monat</div>
+        <p class="text-sm" style="color: var(--color-shadow-graphite);">Pinned auf Platz 1, Header-Banner und Erwähnung im monatlichen Newsletter.</p>
+      </div>
+    </div>
+
+    <div class="mt-10">
+      <a href="/kontakt/" class="btn-primary">Anfrage stellen</a>
+    </div>
+  </section>
+</BaseLayout>

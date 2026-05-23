@@ -1,0 +1,50 @@
+---
+import { city } from "../data/city";
+import { categories } from "../data/categories";
+import { features } from "../data/features";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-auto border-t border-[var(--color-lavender-ash)] bg-[var(--color-porcelain-mist)]">
+  <div class="container-page py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div>
+      <div class="font-bold text-lg" style="color: var(--color-accent); font-family: var(--font-display);">{city.brandName}</div>
+      <p class="mt-2 text-sm" style="color: var(--color-shadow-graphite);">
+        {city.description.short}
+      </p>
+    </div>
+    <div>
+      <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-slate-steel);">Themen</div>
+      <ul class="space-y-1 text-sm">
+        {categories.map((c) => (
+          <li><a href={`/thema/${c.slug}/`} class="link-accent">{c.name}</a></li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-slate-steel);">Beliebt</div>
+      <ul class="space-y-1 text-sm">
+        <li><a href="/sehenswuerdigkeiten/" class="link-accent">Top 10 Sehenswürdigkeiten</a></li>
+        <li><a href="/hotels/" class="link-accent">Top 10 Hotels</a></li>
+        <li><a href="/restaurants/" class="link-accent">Top 10 Restaurants</a></li>
+        <li><a href="/cafes/" class="link-accent">Top 10 Cafés</a></li>
+        <li><a href="/altstadt-hotels/" class="link-accent">Hotels Altstadt</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-slate-steel);">Rechtliches</div>
+      <ul class="space-y-1 text-sm">
+        <li><a href="/impressum/" class="link-accent">Impressum</a></li>
+        <li><a href="/datenschutz/" class="link-accent">Datenschutz</a></li>
+        {features.werben.enabled && <li><a href="/werben/" class="link-accent">Werben</a></li>}
+        <li><a href="/kontakt/" class="link-accent">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-[var(--color-lavender-ash)]">
+    <div class="container-page py-4 text-xs" style="color: var(--color-slate-steel);">
+      © {year} {city.brandName}. Alle Angaben ohne Gewähr.
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { city } from "../data/city";
+---
+<BaseLayout title="Kontakt" description="Schreib uns — Vorschläge für neue Top-10-Listen, Korrekturen und Werbeanfragen." noindex>
+  <section class="container-page section max-w-2xl">
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4" style="font-family: var(--font-display);">Kontakt</h1>
+    <p class="mb-8" style="color: var(--color-shadow-graphite);">
+      Du hast einen Vorschlag für eine neue Top-10-Liste, eine Korrektur oder möchtest auf {city.brandName} werben? Schreib uns kurz.
+    </p>
+
+    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-5">
+      <input type="hidden" name="access_key" value="b65f4e95-6ac7-4003-a46a-fe4e08b120e2" />
+      <input type="hidden" name="subject" value="Neue Anfrage über top10-heidelberg.de" />
+      <input type="hidden" name="from_name" value="Top 10 Heidelberg" />
+      <input type="hidden" name="redirect" value="https://top10-heidelberg.de/kontakt/?ok=1" />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" />
+
+      <label class="block">
+        <span class="text-sm font-semibold">Name</span>
+        <input name="name" required class="mt-1 w-full px-3 py-2 rounded-lg border" style="border-color: var(--color-lavender-ash);" />
+      </label>
+      <label class="block">
+        <span class="text-sm font-semibold">E-Mail</span>
+        <input type="email" name="email" required class="mt-1 w-full px-3 py-2 rounded-lg border" style="border-color: var(--color-lavender-ash);" />
+      </label>
+      <label class="block">
+        <span class="text-sm font-semibold">Nachricht</span>
+        <textarea name="message" required rows="5" class="mt-1 w-full px-3 py-2 rounded-lg border" style="border-color: var(--color-lavender-ash);"></textarea>
+      </label>
+      <button type="submit" class="btn-primary">Nachricht senden</button>
+    </form>
+
+    <div id="ok-msg" class="mt-6 hidden p-4 rounded-lg" style="background: var(--color-accent-tint); color: var(--color-accent);">
+      Danke! Wir haben deine Nachricht erhalten.
+    </div>
+    <script is:inline>
+      if (location.search.includes("ok=1")) {
+        const el = document.getElementById("ok-msg");
+        if (el) el.classList.remove("hidden");
+      }
+    </script>
+  </section>
+</BaseLayout>

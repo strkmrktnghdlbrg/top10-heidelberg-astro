@@ -1,0 +1,197 @@
+---
+import { Image } from "astro:assets";
+import { city } from "../data/city";
+import { features } from "../data/features";
+import { categories } from "../data/categories";
+import logo from "../assets/branding/logo.svg";
+
+const navItems = categories
+  .filter((c) => {
+    if (c.slug === "blog") return features.blog.enabled;
+    if (c.slug === "stadtteile") return features.stadtteilHotels.enabled;
+    if (c.slug === "tourismus") return features.tourismus.enabled;
+    if (c.slug === "leben" || c.slug === "leistungen" || c.slug === "firmen") return features.branchen.enabled;
+    return true;
+  })
+  .map((c) => ({ href: `/thema/${c.slug}/`, label: c.name, icon: c.icon, short: c.short }));
+
+const quickLinks = [
+  { href: "/sehenswuerdigkeiten/", label: "Sehenswürdigkeiten" },
+  { href: "/hotels/",              label: "Hotels" },
+  { href: "/restaurants/",         label: "Restaurants" },
+  { href: "/cafes/",               label: "Cafés" },
+  { href: "/altstadt-hotels/",     label: "Hotels Altstadt" },
+];
+---
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[var(--color-lavender-ash)]">
+  <div class="container-page">
+    <div class="flex items-center justify-between h-16 gap-4">
+      <a
+        href="/"
+        class="flex items-center shrink-0"
+        style="color: var(--color-accent);"
+        aria-label={`${city.brandName} Startseite`}
+      >
+        <Image
+          src={logo}
+          alt={city.brandName}
+          width={320}
+          height={64}
+          class="h-10 w-auto"
+        />
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Hauptnavigation">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class="px-3 py-2 text-sm font-semibold rounded-full transition-colors hover:bg-[var(--color-porcelain-mist)]"
+            style="color: var(--color-shadow-graphite);"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center gap-2 shrink-0">
+        {features.werben.enabled && (
+          <a href="/werben/" class="btn-outline hidden sm:inline-flex">
+            Werben
+          </a>
+        )}
+
+        <!-- Burger button (mobile + tablet) -->
+        <button
+          type="button"
+          id="nav-toggle"
+          class="lg:hidden relative inline-flex items-center justify-center w-11 h-11 rounded-full border transition-colors"
+          style="color: var(--color-shadow-graphite); border-color: var(--color-lavender-ash);"
+          aria-expanded="false"
+          aria-controls="nav-panel"
+          aria-label="Menü öffnen"
+        >
+          <span class="sr-only">Menü</span>
+          <svg class="nav-icon-open w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="7"  x2="20" y2="7"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="17" x2="20" y2="17"/>
+          </svg>
+          <svg class="nav-icon-close hidden w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile/tablet nav panel -->
+  <div
+    id="nav-panel"
+    class="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 pointer-events-none opacity-0 -translate-y-2 transition-all duration-200 ease-out"
+    aria-hidden="true"
+  >
+    <div class="absolute inset-0 bg-black/40 nav-backdrop" aria-hidden="true"></div>
+    <nav
+      class="relative bg-white shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-[var(--color-lavender-ash)]"
+      aria-label="Hauptnavigation mobil"
+    >
+      <div class="container-page py-6">
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-slate-steel);">Themen</div>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="flex items-start gap-3 p-3 rounded-2xl border border-transparent transition-colors hover:bg-[var(--color-porcelain-mist)] hover:border-[var(--color-lavender-ash)]"
+              >
+                <span class="text-2xl shrink-0" aria-hidden="true">{item.icon}</span>
+                <span class="min-w-0">
+                  <span class="block text-base font-semibold" style="color: var(--color-inkwell-purple); font-family: var(--font-display);">{item.label}</span>
+                  <span class="block text-xs mt-0.5 line-clamp-2" style="color: var(--color-slate-steel);">{item.short}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div class="text-xs font-bold uppercase tracking-widest mt-6 mb-3" style="color: var(--color-slate-steel);">Beliebte Listen</div>
+        <ul class="flex flex-wrap gap-2">
+          {quickLinks.map((q) => (
+            <li>
+              <a href={q.href} class="pill hover:border-[var(--color-accent)]">{q.label}</a>
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          {features.werben.enabled && <a href="/werben/" class="btn-primary justify-center">Werben</a>}
+          <a href="/kontakt/" class="btn-outline justify-center">Kontakt</a>
+        </div>
+
+        <div class="mt-6 text-xs flex flex-wrap gap-4" style="color: var(--color-slate-steel);">
+          <a href="/impressum/" class="hover:underline">Impressum</a>
+          <a href="/datenschutz/" class="hover:underline">Datenschutz</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  #nav-panel.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  body.nav-locked {
+    overflow: hidden;
+  }
+</style>
+
+<script is:inline>
+  (function () {
+    const btn = document.getElementById("nav-toggle");
+    const panel = document.getElementById("nav-panel");
+    if (!btn || !panel) return;
+
+    const iconOpen = btn.querySelector(".nav-icon-open");
+    const iconClose = btn.querySelector(".nav-icon-close");
+    const backdrop = panel.querySelector(".nav-backdrop");
+
+    function setOpen(open) {
+      btn.setAttribute("aria-expanded", String(open));
+      btn.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+      panel.setAttribute("aria-hidden", String(!open));
+      panel.classList.toggle("is-open", open);
+      iconOpen?.classList.toggle("hidden", open);
+      iconClose?.classList.toggle("hidden", !open);
+      document.body.classList.toggle("nav-locked", open);
+    }
+
+    btn.addEventListener("click", () => {
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      setOpen(!isOpen);
+    });
+
+    // Backdrop click closes
+    backdrop?.addEventListener("click", () => setOpen(false));
+
+    // Escape closes
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") setOpen(false);
+    });
+
+    // Nav-link click closes (since they navigate away anyway,
+    // this also handles same-page anchor clicks cleanly)
+    panel.querySelectorAll("a[href]").forEach((a) => {
+      a.addEventListener("click", () => setOpen(false));
+    });
+
+    // Close when crossing into desktop breakpoint
+    const mq = window.matchMedia("(min-width: 1024px)");
+    mq.addEventListener("change", (e) => { if (e.matches) setOpen(false); });
+  })();
+</script>

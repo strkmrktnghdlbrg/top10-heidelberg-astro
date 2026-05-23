@@ -1,0 +1,49 @@
+---
+import HueGradient from "./HueGradient.astro";
+import { getImage, getImageCredit } from "../data/images";
+
+interface Props {
+  slug: string;                // top10-list slug → public/images/{lists|districts}/{slug}.jpg
+  alt: string;
+  hue: 1 | 2 | 3 | 4 | 5;
+  emoji?: string;
+  loading?: "eager" | "lazy";
+  class?: string;
+  showCredit?: boolean;         // overlay credit on the image
+  variant?: "default" | "card"; // card = kleinere Caption
+}
+const { slug, alt, hue, emoji, loading = "lazy", class: cls = "", showCredit = false, variant = "default" } = Astro.props;
+const src = getImage(slug);
+const credit = src ? getImageCredit(slug) : null;
+---
+{src ? (
+  <div class={`overflow-hidden ${cls}`}>
+    <img
+      src={src}
+      alt={alt}
+      loading={loading}
+      decoding="async"
+      class="w-full h-full object-cover block"
+    />
+    {showCredit && credit && (
+      <div
+        class={`pointer-events-auto absolute bottom-0 right-0 px-2 py-1 text-white/90 bg-black/45 backdrop-blur-sm rounded-tl-md ${variant === "card" ? "text-[9px] leading-tight" : "text-[10px] leading-tight"}`}
+      >
+        Foto:&nbsp;
+        <a href={credit.commonsUrl} class="underline" rel="nofollow noopener" target="_blank">{credit.author}</a>
+        {credit.license && (
+          <>
+            ,&nbsp;
+            {credit.licenseUrl ? (
+              <a href={credit.licenseUrl} class="underline" rel="nofollow noopener" target="_blank">{credit.license}</a>
+            ) : (
+              <span>{credit.license}</span>
+            )}
+          </>
+        )}
+      </div>
+    )}
+  </div>
+) : (
+  <HueGradient hue={hue} emoji={emoji} class={cls} />
+)}

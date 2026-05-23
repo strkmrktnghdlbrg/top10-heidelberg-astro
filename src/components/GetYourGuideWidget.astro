@@ -1,0 +1,33 @@
+---
+import { affiliate, gygEnabled } from "../data/affiliate";
+
+interface Props {
+  query?: string;
+  locationId?: string;   // Heidelberg = 49069 in GYG
+  numberOfItems?: number;
+}
+const { query = "Heidelberg", locationId = "49069", numberOfItems = 6 } = Astro.props;
+---
+{gygEnabled ? (
+  <div class="gyg-widget-host">
+    <div
+      data-gyg-href="https://widget.getyourguide.com/default/activities.frame"
+      data-gyg-locale-code="de-DE"
+      data-gyg-widget="activities"
+      data-gyg-number-of-items={numberOfItems}
+      data-gyg-partner-id={affiliate.getYourGuide.partnerId}
+      data-gyg-q={query}
+      data-gyg-location-id={locationId}
+    ></div>
+    <p class="mt-2 text-[11px]" style="color: var(--color-slate-steel);">
+      Tickets, Touren & Erlebnisse über Partner GetYourGuide (Affiliate-Link).
+    </p>
+  </div>
+) : (
+  <div
+    class="flex items-center justify-center text-sm text-center px-6 py-12 rounded-2xl"
+    style="background: var(--color-porcelain-mist); color: var(--color-slate-steel);"
+  >
+    Touren & Tickets-Widget (GetYourGuide) — aktiv, sobald die Partner-ID gesetzt ist.
+  </div>
+)}

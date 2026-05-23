@@ -1,0 +1,226 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Section from "./Section.astro";
+import HueGradient from "./HueGradient.astro";
+import RankBadge from "./RankBadge.astro";
+import Breadcrumbs from "./Breadcrumbs.astro";
+import Top10Card from "./Top10Card.astro";
+import AdSlot from "./AdSlot.astro";
+import Stay22Map from "./Stay22Map.astro";
+import GetYourGuideWidget from "./GetYourGuideWidget.astro";
+import ContentImage from "./ContentImage.astro";
+import ImageCreditsList from "./ImageCreditsList.astro";
+import type { Top10List } from "../data/top10s";
+import { top10sByCategory, top10Lists } from "../data/top10s";
+import { categories, getCategory } from "../data/categories";
+import { getImage, getImageCredit } from "../data/images";
+
+interface Props {
+  list: Top10List;
+}
+const { list } = Astro.props;
+const cat = getCategory(list.category)!;
+const sibling = top10sByCategory(list.category).filter((l) => l.slug !== list.slug).slice(0, 6);
+const otherCats = categories.filter((c) => c.slug !== list.category && c.slug !== "blog");
+
+const description =
+  list.metaDescription ||
+  list.subtitle ||
+  list.intro.slice(0, 160);
+
+const breadcrumbs = [
+  { label: "Start", href: "/" },
+  { label: cat.name, href: `/thema/${cat.slug}/` },
+  { label: list.title },
+];
+
+const showStay22 = !!list.affiliate?.stay22;
+const showGyg = !!list.affiliate?.getYourGuide;
+const heroImage = getImage(list.slug);
+const heroCredit = heroImage ? getImageCredit(list.slug) : null;
+const siblingSlugs = sibling.map((s) => s.slug);
+
+// JSON-LD ItemList
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: list.title,
+  description,
+  numberOfItems: list.items.length,
+  itemListElement: list.items.map((it) => ({
+    "@type": "ListItem",
+    position: it.rank,
+    name: it.name,
+    description: it.description,
+  })),
+};
+---
+
+<BaseLayout title={list.title} description={description}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
+    {heroImage ? (
+      <>
+        <img
+          src={heroImage}
+          alt={list.title}
+          loading="eager"
+          decoding="async"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/45 to-black/15"></div>
+      </>
+    ) : (
+      <HueGradient hue={list.hue} class="absolute inset-0 opacity-30 pointer-events-none" />
+    )}
+    <div class={`container-page relative pt-8 pb-14 sm:pt-16 sm:pb-24 ${heroImage ? "text-white" : ""}`}>
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <span class="pill-accent">{cat.icon} {cat.name}</span>
+        {list.district && <span class="pill">{list.district}</span>}
+        {list.weak && <span class="pill" style="color:#92400e;background:#fef3c7;border-color:#fde68a;">Entwurfs-Liste</span>}
+      </div>
+      <h1
+        class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight text-balance max-w-4xl"
+        style={`font-family: var(--font-display); color: ${heroImage ? "#fff" : "var(--color-inkwell-purple)"};`}
+      >
+        {list.title}
+      </h1>
+      {list.subtitle && (
+        <p class="mt-4 text-lg sm:text-xl max-w-2xl" style={`color: ${heroImage ? "rgba(255,255,255,0.92)" : "var(--color-shadow-graphite)"};`}>
+          {list.subtitle}
+        </p>
+      )}
+      {heroImage && heroCredit && (
+        <p class="absolute bottom-2 right-3 text-[10px] text-white/85">
+          Foto:&nbsp;
+          <a href={heroCredit.commonsUrl} class="underline" rel="nofollow noopener" target="_blank">{heroCredit.author}</a>
+          {heroCredit.license && (
+            <>
+              ,&nbsp;
+              {heroCredit.licenseUrl ? (
+                <a href={heroCredit.licenseUrl} class="underline" rel="nofollow noopener" target="_blank">{heroCredit.license}</a>
+              ) : (
+                <span>{heroCredit.license}</span>
+              )}
+            </>
+          )}
+        </p>
+      )}
+    </div>
+  </section>
+
+  <!-- Intro + Liste -->
+  <section class="section">
+    <div class="container-page grid lg:grid-cols-[1fr_320px] gap-10">
+      <div class="min-w-0">
+        {list.intro && (
+          <p class="text-base sm:text-lg leading-relaxed mb-10" style="color: var(--color-inkwell-purple);">
+            {list.intro}
+          </p>
+        )}
+
+        {showGyg && (
+          <div class="mb-10">
+            <GetYourGuideWidget query={`Heidelberg ${list.title.replace(/^Top 10\s*/, "")}`} />
+          </div>
+        )}
+
+        {list.items.length === 0 ? (
+          <div class="card p-8 text-center" style="border-style: dashed;">
+            <div class="text-4xl mb-3">🛠️</div>
+            <h3 class="text-lg font-bold mb-1" style="font-family: var(--font-display);">Liste in Bearbeitung</h3>
+            <p class="text-sm" style="color: var(--color-shadow-graphite);">
+              Diese Top 10 wird gerade redaktionell überarbeitet. Die alten Inhalte enthielten zu wenig konkrete Anbieter.
+            </p>
+          </div>
+        ) : (
+          <ol class="space-y-6">
+            {list.items.map((it, idx) => (
+              <li class="card p-5 sm:p-6 flex gap-4 sm:gap-6">
+                <RankBadge rank={it.rank} />
+                <div class="min-w-0 flex-1">
+                  <h2
+                    class="text-xl sm:text-2xl font-bold tracking-tight leading-snug"
+                    style="font-family: var(--font-display); color: var(--color-inkwell-purple);"
+                  >
+                    {it.name}
+                  </h2>
+                  {it.description && (
+                    <p class="mt-2 text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+                      {it.description}
+                    </p>
+                  )}
+                  {(it.address || it.websiteUrl) && (
+                    <div class="mt-3 flex flex-wrap gap-3 text-sm">
+                      {it.address && <span style="color: var(--color-slate-steel);">📍 {it.address}</span>}
+                      {it.websiteUrl && (
+                        <a href={it.websiteUrl} class="link-accent" rel="nofollow noopener" target="_blank">
+                          Webseite ↗
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        )}
+
+        {/* In-Content-Ad nach Top 5 (sofern Liste lang genug) */}
+        {list.items.length >= 5 && <AdSlot slot="inContent" />}
+
+        {showStay22 && (
+          <div class="mt-10">
+            <h3 class="text-xl sm:text-2xl font-bold mb-4" style="font-family: var(--font-display);">
+              Verfügbarkeit & Preise vergleichen
+            </h3>
+            <Stay22Map query={`Heidelberg ${list.district ?? ""}`.trim()} />
+          </div>
+        )}
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-6 min-w-0">
+        <AdSlot slot="sidebar" minHeight={300} />
+
+        <div class="card p-5">
+          <div class="eyebrow mb-3">Mehr aus {cat.name}</div>
+          <ul class="space-y-2 text-sm">
+            {sibling.map((s) => (
+              <li>
+                <a href={`/${s.slug}/`} class="link-accent font-medium">{s.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="card p-5">
+          <div class="eyebrow mb-3">Andere Themen</div>
+          <ul class="space-y-1 text-sm">
+            {otherCats.map((c) => (
+              <li>
+                <a href={`/thema/${c.slug}/`} class="link-accent">{c.icon} {c.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Weitere Listen aus Kategorie -->
+  {sibling.length > 0 && (
+    <Section eyebrow={cat.name} title={`Weitere Top-10-Listen aus ${cat.name}`}>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sibling.map((s) => (
+          <Top10Card href={`/${s.slug}/`} slug={s.slug} title={s.title} subtitle={s.subtitle} hue={s.hue} emoji={s.emoji} weak={s.weak} />
+        ))}
+      </div>
+    </Section>
+  )}
+
+  <ImageCreditsList slugs={[list.slug, ...siblingSlugs]} />
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(itemListJsonLd)} />
+</BaseLayout>

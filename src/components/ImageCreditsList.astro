@@ -1,0 +1,47 @@
+---
+/**
+ * Sammelt für eine Liste von Slugs die zugehörigen Bildnachweise
+ * und rendert einen kompakten "Bildnachweis"-Block (CC-Pflicht).
+ */
+import { getImage, getImageCredit } from "../data/images";
+
+interface Props {
+  slugs: string[];
+  heading?: string;
+}
+const { slugs, heading = "Bildnachweise" } = Astro.props;
+const entries = slugs
+  .filter((s) => getImage(s))
+  .map((s) => ({ slug: s, credit: getImageCredit(s) }))
+  .filter((e) => e.credit !== null);
+---
+{entries.length > 0 && (
+  <section class="container-page pb-10 pt-2">
+    <details class="text-xs" style="color: var(--color-slate-steel);">
+      <summary class="cursor-pointer font-semibold inline-flex items-center gap-1.5 hover:text-[var(--color-accent)]">
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        {heading} ({entries.length})
+      </summary>
+      <ul class="mt-3 grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
+        {entries.map(({ slug, credit }) => credit && (
+          <li class="leading-snug">
+            <span class="font-medium">{slug.replace(/-/g, " ")}:</span>
+            &nbsp;Foto&nbsp;
+            <a href={credit.commonsUrl} class="link-accent" rel="nofollow noopener" target="_blank">{credit.author}</a>
+            {credit.license && (
+              <>
+                ,&nbsp;
+                {credit.licenseUrl ? (
+                  <a href={credit.licenseUrl} class="link-accent" rel="nofollow noopener" target="_blank">{credit.license}</a>
+                ) : (
+                  <span>{credit.license}</span>
+                )}
+              </>
+            )}
+            ,&nbsp;via&nbsp;Wikimedia&nbsp;Commons
+          </li>
+        ))}
+      </ul>
+    </details>
+  </section>
+)}

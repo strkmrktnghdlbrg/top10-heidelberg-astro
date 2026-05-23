@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Section from "../../components/Section.astro";
+import { categories } from "../../data/categories";
+import { top10sByCategory } from "../../data/top10s";
+---
+<BaseLayout title="Alle Themen" description="Themenübersicht aller Top-10-Listen auf top10-heidelberg.de.">
+  <Section eyebrow="Themen" title="Alle Themen auf einen Blick">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {categories.map((c) => {
+        const lists = top10sByCategory(c.slug);
+        return (
+          <a href={`/thema/${c.slug}/`} class="card p-6 flex flex-col gap-3 hover:-translate-y-0.5 transition-transform">
+            <div class="text-3xl">{c.icon}</div>
+            <div class="text-xl font-bold" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">{c.name}</div>
+            <p class="text-sm" style="color: var(--color-shadow-graphite);">{c.short}</p>
+            <div class="mt-auto text-xs font-semibold" style="color: var(--color-accent);">{lists.length} {lists.length === 1 ? "Liste" : "Listen"} →</div>
+          </a>
+        );
+      })}
+    </div>
+  </Section>
+</BaseLayout>

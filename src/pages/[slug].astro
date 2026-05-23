@@ -1,0 +1,14 @@
+---
+import Top10ListPage from "../components/Top10ListPage.astro";
+import { top10Lists, getTop10 } from "../data/top10s";
+
+export const getStaticPaths = () =>
+  top10Lists.map((l) => ({ params: { slug: l.slug } }));
+
+const { slug } = Astro.params;
+const list = getTop10(slug!);
+if (!list) {
+  return Astro.redirect("/404/");
+}
+---
+<Top10ListPage list={list} />
