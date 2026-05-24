@@ -27,29 +27,13 @@ const quickLinks = [
 <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[var(--color-lavender-ash)]">
   <div class="container-page">
     <div class="flex items-center justify-between h-16 gap-4">
-      <a
-        href="/"
-        class="flex items-center shrink-0"
-        style="color: var(--color-accent);"
-        aria-label={`${city.brandName} Startseite`}
-      >
-        <Image
-          src={logo}
-          alt={city.brandName}
-          width={320}
-          height={64}
-          class="h-10 w-auto"
-        />
+      <a href="/" class="flex items-center shrink-0" style="color: var(--color-accent);" aria-label={`${city.brandName} Startseite`}>
+        <Image src={logo} alt={city.brandName} width={320} height={64} class="h-10 w-auto" />
       </a>
 
-      <!-- Desktop nav -->
       <nav class="hidden lg:flex items-center gap-1" aria-label="Hauptnavigation">
         {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="px-3 py-2 text-sm font-semibold rounded-full transition-colors hover:bg-[var(--color-porcelain-mist)]"
-            style="color: var(--color-shadow-graphite);"
-          >
+          <a href={item.href} class="px-3 py-2 text-sm font-semibold rounded-full transition-colors hover:bg-[var(--color-porcelain-mist)]" style="color: var(--color-shadow-graphite);">
             {item.label}
           </a>
         ))}
@@ -57,141 +41,169 @@ const quickLinks = [
 
       <div class="flex items-center gap-2 shrink-0">
         {features.werben.enabled && (
-          <a href="/werben/" class="btn-outline hidden sm:inline-flex">
-            Werben
-          </a>
+          <a href="/werben/" class="btn-outline hidden lg:inline-flex">Werben</a>
         )}
-
-        <!-- Burger button (mobile + tablet) -->
         <button
           type="button"
-          id="nav-toggle"
-          class="lg:hidden relative inline-flex items-center justify-center w-11 h-11 rounded-full border transition-colors"
-          style="color: var(--color-shadow-graphite); border-color: var(--color-lavender-ash);"
+          id="mobile-menu-toggle"
           aria-expanded="false"
-          aria-controls="nav-panel"
+          aria-controls="mobile-menu"
           aria-label="Menü öffnen"
+          class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-[var(--color-lavender-ash)] hover:bg-[var(--color-porcelain-mist)] transition-colors"
+          style="color: var(--color-shadow-graphite);"
         >
-          <span class="sr-only">Menü</span>
-          <svg class="nav-icon-open w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <line x1="4" y1="7"  x2="20" y2="7"/>
-            <line x1="4" y1="12" x2="20" y2="12"/>
-            <line x1="4" y1="17" x2="20" y2="17"/>
-          </svg>
-          <svg class="nav-icon-close hidden w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <line x1="6" y1="6" x2="18" y2="18"/>
-            <line x1="18" y1="6" x2="6" y2="18"/>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/>
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Mobile/tablet nav panel -->
-  <div
-    id="nav-panel"
-    class="lg:hidden fixed inset-x-0 top-16 bottom-0 z-30 pointer-events-none opacity-0 -translate-y-2 transition-all duration-200 ease-out"
+  <div id="mobile-menu-backdrop" class="lg:hidden mobile-menu-backdrop" aria-hidden="true"></div>
+
+  <aside
+    id="mobile-menu"
+    class="lg:hidden mobile-menu-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile Navigation"
     aria-hidden="true"
   >
-    <div class="absolute inset-0 bg-black/40 nav-backdrop" aria-hidden="true"></div>
-    <nav
-      class="relative bg-white shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-[var(--color-lavender-ash)]"
-      aria-label="Hauptnavigation mobil"
-    >
-      <div class="container-page py-6">
-        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: var(--color-slate-steel);">Themen</div>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {navItems.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class="flex items-start gap-3 p-3 rounded-2xl border border-transparent transition-colors hover:bg-[var(--color-porcelain-mist)] hover:border-[var(--color-lavender-ash)]"
-              >
-                <span class="text-2xl shrink-0" aria-hidden="true">{item.icon}</span>
-                <span class="min-w-0">
-                  <span class="block text-base font-semibold" style="color: var(--color-inkwell-purple); font-family: var(--font-display);">{item.label}</span>
-                  <span class="block text-xs mt-0.5 line-clamp-2" style="color: var(--color-slate-steel);">{item.short}</span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ul>
+    <div class="flex items-center justify-between px-5 py-4 border-b border-[var(--color-lavender-ash)] shrink-0">
+      <a href="/" class="flex items-center shrink-0" aria-label={`${city.brandName} Startseite`}>
+        <Image src={logo} alt={city.brandName} width={280} height={64} class="h-8 w-auto" />
+      </a>
+      <button
+        type="button"
+        id="mobile-menu-close"
+        aria-label="Menü schließen"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[var(--color-porcelain-mist)] transition-colors"
+        style="color: var(--color-shadow-graphite);"
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>
+        </svg>
+      </button>
+    </div>
 
-        <div class="text-xs font-bold uppercase tracking-widest mt-6 mb-3" style="color: var(--color-slate-steel);">Beliebte Listen</div>
-        <ul class="flex flex-wrap gap-2">
+    <nav class="flex-1 overflow-y-auto px-3 py-4" aria-label="Hauptnavigation mobil">
+      <p class="px-4 mb-2 text-xs uppercase tracking-widest font-bold" style="color: var(--color-slate-steel);">Themen</p>
+      <ul class="space-y-1">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-semibold transition-colors hover:bg-[var(--color-porcelain-mist)]"
+              style="color: var(--color-inkwell-purple);"
+            >
+              <span class="text-xl shrink-0" aria-hidden="true">{item.icon}</span>
+              <span class="flex-1">{item.label}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--color-slate-steel);">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="mt-6 pt-6 border-t border-[var(--color-lavender-ash)]">
+        <p class="px-4 mb-3 text-xs uppercase tracking-widest font-bold" style="color: var(--color-slate-steel);">Beliebte Seiten</p>
+        <div class="flex flex-wrap gap-2 px-2">
           {quickLinks.map((q) => (
-            <li>
-              <a href={q.href} class="pill hover:border-[var(--color-accent)]">{q.label}</a>
-            </li>
+            <a href={q.href} class="pill hover:border-[var(--color-accent)]">{q.label}</a>
           ))}
-        </ul>
-
-        <div class="mt-6 grid grid-cols-2 gap-3">
-          {features.werben.enabled && <a href="/werben/" class="btn-primary justify-center">Werben</a>}
-          <a href="/kontakt/" class="btn-outline justify-center">Kontakt</a>
-        </div>
-
-        <div class="mt-6 text-xs flex flex-wrap gap-4" style="color: var(--color-slate-steel);">
-          <a href="/impressum/" class="hover:underline">Impressum</a>
-          <a href="/datenschutz/" class="hover:underline">Datenschutz</a>
         </div>
       </div>
+
+      <div class="mt-6 pt-6 border-t border-[var(--color-lavender-ash)]">
+        <p class="px-4 mb-2 text-xs uppercase tracking-widest font-bold" style="color: var(--color-slate-steel);">Service</p>
+        <ul class="space-y-1">
+          <li><a href="/impressum/" class="block px-4 py-2.5 rounded-xl text-sm transition-colors hover:bg-[var(--color-porcelain-mist)]" style="color: var(--color-slate-steel);">Impressum</a></li>
+          <li><a href="/datenschutz/" class="block px-4 py-2.5 rounded-xl text-sm transition-colors hover:bg-[var(--color-porcelain-mist)]" style="color: var(--color-slate-steel);">Datenschutz</a></li>
+        </ul>
+      </div>
     </nav>
-  </div>
+
+    {features.werben.enabled && (
+      <div class="px-5 py-4 border-t border-[var(--color-lavender-ash)] shrink-0" style="background: var(--color-porcelain-mist);">
+        <a href="/werben/" class="btn-primary w-full justify-center">Werben auf {city.brandName}</a>
+      </div>
+    )}
+  </aside>
 </header>
 
 <style>
-  #nav-panel.is-open {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+  .mobile-menu-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 60;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 220ms ease, visibility 0s linear 220ms;
   }
-  body.nav-locked {
+  .mobile-menu-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 220ms ease, visibility 0s linear 0s;
+  }
+  .mobile-menu-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: min(88vw, 380px);
+    background: #ffffff;
+    border-left: 1px solid var(--color-lavender-ash);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+    z-index: 70;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 260ms;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+  }
+  .mobile-menu-panel.is-open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0s;
   }
 </style>
 
 <script is:inline>
   (function () {
-    const btn = document.getElementById("nav-toggle");
-    const panel = document.getElementById("nav-panel");
-    if (!btn || !panel) return;
-
-    const iconOpen = btn.querySelector(".nav-icon-open");
-    const iconClose = btn.querySelector(".nav-icon-close");
-    const backdrop = panel.querySelector(".nav-backdrop");
-
+    var toggle = document.getElementById('mobile-menu-toggle');
+    var closeBtn = document.getElementById('mobile-menu-close');
+    var menu = document.getElementById('mobile-menu');
+    var backdrop = document.getElementById('mobile-menu-backdrop');
+    if (!toggle || !menu || !backdrop || !closeBtn) return;
+    var openState = false;
     function setOpen(open) {
-      btn.setAttribute("aria-expanded", String(open));
-      btn.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
-      panel.setAttribute("aria-hidden", String(!open));
-      panel.classList.toggle("is-open", open);
-      iconOpen?.classList.toggle("hidden", open);
-      iconClose?.classList.toggle("hidden", !open);
-      document.body.classList.toggle("nav-locked", open);
+      openState = open;
+      menu.classList.toggle('is-open', open);
+      backdrop.classList.toggle('is-open', open);
+      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      document.body.style.overflow = open ? 'hidden' : '';
     }
-
-    btn.addEventListener("click", () => {
-      const isOpen = btn.getAttribute("aria-expanded") === "true";
-      setOpen(!isOpen);
+    toggle.addEventListener('click', function () { setOpen(!openState); });
+    closeBtn.addEventListener('click', function () { setOpen(false); toggle.focus(); });
+    backdrop.addEventListener('click', function () { setOpen(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && openState) { setOpen(false); toggle.focus(); }
     });
-
-    // Backdrop click closes
-    backdrop?.addEventListener("click", () => setOpen(false));
-
-    // Escape closes
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && btn.getAttribute("aria-expanded") === "true") setOpen(false);
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
     });
-
-    // Nav-link click closes (since they navigate away anyway,
-    // this also handles same-page anchor clicks cleanly)
-    panel.querySelectorAll("a[href]").forEach((a) => {
-      a.addEventListener("click", () => setOpen(false));
-    });
-
-    // Close when crossing into desktop breakpoint
-    const mq = window.matchMedia("(min-width: 1024px)");
-    mq.addEventListener("change", (e) => { if (e.matches) setOpen(false); });
+    var mq = window.matchMedia('(min-width: 1024px)');
+    function handleResize(e) { if (e.matches && openState) setOpen(false); }
+    if (mq.addEventListener) mq.addEventListener('change', handleResize);
+    else mq.addListener(handleResize);
   })();
 </script>
