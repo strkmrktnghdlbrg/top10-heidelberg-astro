@@ -10,10 +10,13 @@ import Stay22Map from "./Stay22Map.astro";
 import GetYourGuideWidget from "./GetYourGuideWidget.astro";
 import ContentImage from "./ContentImage.astro";
 import ImageCreditsList from "./ImageCreditsList.astro";
+import Stay22TopHotels from "./Stay22TopHotels.astro";
 import type { Top10List } from "../data/top10s";
 import { top10sByCategory, top10Lists } from "../data/top10s";
 import { categories, getCategory } from "../data/categories";
 import { getImage, getImageCredit } from "../data/images";
+import { getDistrictGeo } from "../data/districts";
+import { city } from "../data/city";
 
 interface Props {
   list: Top10List;
@@ -39,6 +42,12 @@ const showGyg = !!list.affiliate?.getYourGuide;
 const heroImage = getImage(list.slug);
 const heroCredit = heroImage ? getImageCredit(list.slug) : null;
 const siblingSlugs = sibling.map((s) => s.slug);
+
+// Stay22 — Stadtteil-Map-Center + Live-Hotel-Block
+const districtGeo = list.district ? getDistrictGeo(list.district) : undefined;
+const mapLat = districtGeo?.coordinates[0] ?? city.coordinates[0];
+const mapLng = districtGeo?.coordinates[1] ?? city.coordinates[1];
+const mapZoom = districtGeo ? 15 : 13;
 
 // JSON-LD ItemList
 const itemListJsonLd = {
@@ -171,12 +180,28 @@ const itemListJsonLd = {
         {list.items.length >= 5 && <AdSlot slot="inContent" />}
 
         {showStay22 && (
-          <div class="mt-10">
-            <h3 class="text-xl sm:text-2xl font-bold mb-4" style="font-family: var(--font-display);">
-              Verfügbarkeit & Preise vergleichen
-            </h3>
-            <Stay22Map query={`Heidelberg ${list.district ?? ""}`.trim()} />
-          </div>
+          <>
+            <Stay22TopHotels
+              lat={districtGeo ? mapLat : undefined}
+              lng={districtGeo ? mapLng : undefined}
+              radius={districtGeo ? 2500 : undefined}
+              address={districtGeo ? undefined : `${city.name}, Germany`}
+              title={districtGeo
+                ? `Live-Hotels in ${list.district}`
+                : `Aktuell bestbewertete Hotels in ${city.name}`}
+              lead="Live-Preise und Verfügbarkeit über Stay22. Aktualisiert beim letzten Build."
+              limit={8}
+            />
+            <Stay22Map
+              lat={mapLat}
+              lng={mapLng}
+              zoom={mapZoom}
+              title="Verfügbarkeit & Preise vergleichen"
+              lead={districtGeo
+                ? `Alle Hotels in und um ${list.district} mit Live-Preisen. Klick auf einen Marker zeigt Details.`
+                : "Hotel-Karte mit Live-Preisen und Verfügbarkeit. Klick auf einen Marker zeigt Details."}
+            />
+          </>
         )}
       </div>
 

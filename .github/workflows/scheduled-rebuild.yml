@@ -1,0 +1,40 @@
+name: Scheduled rebuild (Stay22 fresh data)
+
+# Cron: alle 6 Stunden (Stay22 ToS erlaubt 60min Cache; 6h-Rebuild ist
+# konservativ und sorgt für frische Preise/Bewertungen auf Hotel-Seiten).
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Build with Stay22 live data
+        env:
+          STAY22_API_KEY: ${{ secrets.STAY22_API_KEY }}
+        run: npm run build
+
+      # Deploy-Step pro Hosting-Anbieter ergänzen.
+      # Cloudflare Pages: connect repo, auto-rebuild on push — dann
+      # reicht ein leerer Commit, oder die Pages-Integration nutzt
+      # den eingebauten Cron-Trigger.
+      #
+      # Hostinger via FTP:
+      # - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      #   with:
+      #     server: ${{ secrets.FTP_SERVER }}
+      #     username: ${{ secrets.FTP_USERNAME }}
+      #     password: ${{ secrets.FTP_PASSWORD }}
+      #     local-dir: ./dist/
+      #     server-dir: /public_html/
