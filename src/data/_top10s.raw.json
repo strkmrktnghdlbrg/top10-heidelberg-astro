@@ -219,51 +219,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Punkte",
-        "description": ""
-      },
-      {
-        "rank": 2,
         "name": "Reifen, Felgen, Tuning – Alles Für Ihr Auto!",
         "description": "Wir haben eine riesige Auswahl an Reifen und Felgen für jedes Fahrzeugmodell. Ob Sommer-, Winter- oder Ganzjahresreifen, bei uns finden Sie die passende Bereifung. Und wenn Sie Ihrem Auto eine persönliche Note verleihen möchten, sind wir auch Ihr Ansprechpartner für Tuning."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Umfangreiche Werkstattleistungen",
         "description": "Von der einfachen Inspektion bis zur komplexen Motorreparatur – unsere Werkstatt bietet ein breites Spektrum an Leistungen. Wir verwenden modernste Technik und hochwertige Ersatzteile, um sicherzustellen, dass Ihr Fahrzeug in Top-Zustand ist. Hier eine kleine Übersicht:"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Notfallservice Rund Um Die Uhr",
         "description": "Ein Unfall oder eine Panne kann jederzeit passieren. Deshalb bieten wir einen 24-Stunden-Notfallservice an. Wir sind immer für Sie da, egal wann und wo Sie uns brauchen. Wir verstehen, dass Ihr Auto wichtig für Sie ist. Deshalb legen wir großen Wert auf Qualität, Zuverlässigkeit und faire Preise. Bei uns sind Sie in guten Händen."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Inspektionen Und Wartungen",
         "description": "Regelmäßige Inspektionen sind das A und O, um die Lebensdauer Ihres Autos zu verlängern. Wir führen Inspektionen nach Herstellervorgaben durch und verwenden ausschließlich hochwertige Materialien. So können Sie sicher sein, dass Ihr Fahrzeug in Top-Zustand bleibt."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Reparaturen Aller Art",
         "description": "Ob es sich um einen kleinen Kratzer oder einen größeren Unfallschaden handelt, wir sind für Sie da. Unser Team behebt alle Arten von Schäden, schnell und zuverlässig. Wir kümmern uns um Karosseriearbeiten, Lackierungen und vieles mehr."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Diagnose Und Fehlerbehebung",
         "description": "Ihr Auto macht komische Geräusche oder leuchtet eine Warnlampe? Keine Sorge, wir finden die Ursache. Mit modernster Diagnosetechnik spüren wir jeden Fehler auf und beheben ihn fachgerecht. Wir legen Wert auf Transparenz. Bevor wir mit einer Reparatur beginnen, erklären wir Ihnen genau, was gemacht werden muss und welche Kosten entstehen. So haben Sie immer die volle Kontrolle."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Persönliche Beratung Vor Ort",
         "description": "Bei uns sind Sie keine Nummer. Wir nehmen uns Zeit für Ihre Fragen und Anliegen. Egal, ob es um die Wahl der richtigen Reifen, eine komplizierte Reparatur oder einfach nur um eine allgemeine Beratung geht – wir sind für Sie da. Wir hören zu, analysieren Ihr Problem und finden gemeinsam die beste Lösung. Und das alles in einer entspannten Atmosphäre, ohne Fachchinesisch und unnötigen Stress."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Transparente Preisgestaltung",
         "description": "Keine versteckten Kosten, keine bösen Überraschungen. Bei uns wissen Sie von Anfang an, was auf Sie zukommt. Wir erstellen Ihnen einen detaillierten Kostenvoranschlag, erklären Ihnen genau, welche Arbeiten notwendig sind und warum. Sollten im Laufe der Reparatur unerwartete Probleme auftreten, informieren wir Sie umgehend und besprechen das weitere Vorgehen mit Ihnen. Ehrlichkeit und Transparenz sind uns wichtig."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Kundenbewertungen Und Erfahrungen",
         "description": "Was unsere Kunden über uns denken, ist uns sehr wichtig. Wir freuen uns über jedes Feedback, ob positiv oder negativ. Denn nur so können wir uns stetig verbessern und unseren Service noch besser auf Ihre Bedürfnisse zuschneiden. Viele unserer Kunden schätzen besonders unsere Zuverlässigkeit, unsere Kompetenz und unseren freundlichen Umgang. Wir sind stolz darauf, dass viele unserer Kunden uns weiterempfehlen. Das ist für uns die größte Bestätigung unserer Arbeit und Ansporn, auch in Zukunft unser Bestes zu geben."
       }
@@ -419,51 +414,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Schlüssel Erkenntnisse",
-        "description": ""
-      },
-      {
-        "rank": 2,
         "name": "Das Qube Hotel Heidelberg: Ein Vorreiter für Ökologisches Bauen",
         "description": "Das Qube Hotel Heidelberg ist ein echtes Highlight, wenn es um umweltfreundliches Bauen geht. Schon bei der Planung wurde viel Wert auf Ressourceneffizienz und Müllvermeidung gelegt. Aber das wirklich Beeindruckende ist die Passivhaus-Bauweise. Das bedeutet, dass das Gebäude extrem gut isoliert ist und dadurch beim Heizen und Kühlen richtig viel Energie spart. Das Qube Hotel gehört damit zu den wenigen Hotels in Deutschland, die hier eine maximale CO2-Einsparung erzielen."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Moderne Architektur trifft auf Umweltbewusstsein",
         "description": "Man sieht dem Qube Hotel seine grüne Seele nicht sofort an, und das ist gut so. Es fügt sich nahtlos in die moderne Architektur der Bahnstadt ein, die Wohnungen, Geschäfte und Büros vereint. Die Außenterrasse des Hotels ist sogar an einen parkähnlichen Innenhof angebunden. Das passt perfekt zum Gedanken der Bahnstadt, einen Ort der Begegnung zu schaffen. Hier treffen sich im Sommer Anwohner und Hotelgäste – das gibt dem Ganzen einen tollen urbanen Charakter und fördert ein harmonisches Miteinander."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Zertifizierte Nachhaltigkeit im Hotelbetrieb",
         "description": "Das Qube Hotel setzt nicht nur beim Bau auf Nachhaltigkeit, sondern auch im täglichen Betrieb. Schon das erste Qube Hotel in Bergheim wurde für sein ökologisches Wirtschaften ausgezeichnet und war das erste Hotel in der Region mit dem Siegel „Certified Green Hotel“. Dieses Engagement für Umweltfreundlichkeit, Wasser- und Ressourceneffizienz sowie Müllvermeidung zieht sich durch alle Bereiche. Es ist schön zu sehen, dass ein Hotel nicht nur stilvoll, sondern auch verantwortungsbewusst sein kann."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Nachhaltiges Interieur mit Edlen Materialien",
         "description": "Schon beim Betreten der Zimmer fällt auf, dass hier auf Qualität und Langlebigkeit geachtet wurde. Dunkle Wände, massive Holztüren und Parkett aus Eiche schaffen eine warme, aber gleichzeitig moderne Atmosphäre. Dazu kommen großflächige Kunstwerke und Möbel aus Leder und Nussbaumholz. Selbst die Bäder, ausgestattet mit Naturstein, strahlen eine gewisse Wertigkeit aus. Es ist ein Design, das zeigt, dass ökologisch nicht gleichbedeutend mit Verzicht sein muss. Alles wirkt durchdacht und auf eine lange Nutzungsdauer ausgelegt, was ja auch ein wichtiger Teil der Nachhaltigkeit ist."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "CO2-Einsparung durch Passivhaus-Bauweise",
         "description": "Ein ganz zentraler Punkt beim Qube Hotel ist die Bauweise. Es wurde nach den neuesten Passivhaus-Standards errichtet. Das ist nicht nur gut für die Umwelt, sondern auch für die Gäste, denn es sorgt für ein angenehmes Raumklima, egal ob Sommer oder Winter. Die Technik dahinter ist ziemlich clever und sorgt dafür, dass der Energieverbrauch extrem niedrig gehalten wird. Das ist ein großer Unterschied zu vielen älteren Gebäuden und zeigt, wie man in der modernen Architektur ganz neue Wege gehen kann, um Ressourcen zu schonen."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Urbanes Flair und Gemeinschaft im Außenbereich",
         "description": "Was das Qube Hotel besonders macht, ist die Verbindung nach außen. Die Außenterrasse ist an einen parkähnlichen Innenhof angebunden. Das ist nicht nur schön anzusehen, sondern schafft auch einen Ort der Begegnung. Hier treffen Hotelgäste auf Anwohner, was dem Ganzen einen echten urbanen Charakter verleiht. Es ist ein bisschen so, als würde das Hotel Teil des Viertels werden und nicht nur ein abgeschottener Ort für Reisende. Das fördert ein Gefühl von Gemeinschaft und passt gut zum Geist der Bahnstadt, die ja als ein Ort der Begegnung gedacht ist."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Kulinarische Vielfalt im Restaurant und Bar",
         "description": "Im Herzen des Hotels befindet sich eine lebendige Bar und ein Restaurant, das zum Verweilen einlädt. Die Küche setzt auf frische Zutaten und bietet eine interessante Mischung aus Klassikern und sogenannten „Qubes“ – kleinen, internationalen Gerichten, die an Tapas erinnern. Die Bar ist ein echter Treffpunkt, wo nicht nur Hotelgäste, sondern auch Einheimische zusammenkommen. Hier kann man sich bei einem Drink entspannen und die urbane Atmosphäre genießen. Der Barmanager zaubert eine beeindruckende Auswahl an Cocktails, die keine Wünsche offenlassen."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Entspannung auf der Dachterrasse mit Ausblick",
         "description": "Ein besonderes Highlight ist die großzügige Dachterrasse des Hotels. Von hier aus hat man einen tollen Blick über den sich entwickelnden Stadtteil Bahnstadt und die Umgebung von Heidelberg. Es ist der perfekte Ort, um nach einem langen Tag abzuschalten, sei es bei einem Kaffee am Nachmittag oder einem Glas Wein am Abend. Die Terrasse ist so gestaltet, dass sie eine Oase der Ruhe mitten in der Stadt bietet."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Treffpunkt für Einheimische und Reisende",
         "description": "Das Qube Hotel versteht sich nicht nur als Unterkunft für Reisende, sondern auch als ein Ort der Begegnung für die lokale Gemeinschaft. Die Gestaltung des Außenbereichs, der an einen parkähnlichen Innenhof grenzt, fördert das Zusammentreffen von Hotelgästen und Anwohnern. Diese Mischung aus urbanem Flair und Gemeinschaftsgefühl schafft eine einzigartige und lebendige Atmosphäre, die das Hotel von anderen unterscheidet. Es ist ein Ort, an dem man das echte Heidelberg erleben kann."
       }
@@ -629,53 +619,53 @@
     "items": [
       {
         "rank": 1,
-        "name": "Bio CompanyDie Bio Company ist einer der bekanntesten Bio-Läden in Heidelberg. Sie bieten eine große Auswahl an frischen Lebensmitteln wie Obst, Gemüse, Fleisch und Käse. Darüber hinaus haben sie auch eine große Auswahl an veganen und glutenfreien Produkten. Die Bio Company befindet sich in der Hauptstraße 45 und ist telefonisch unter 06221-123456 erreichbar.",
-        "description": ""
+        "name": "Bio Company",
+        "description": "Die Bio Company ist einer der bekanntesten Bio-Läden in Heidelberg. Sie bieten eine große Auswahl an frischen Lebensmitteln wie Obst, Gemüse, Fleisch und Käse. Darüber hinaus haben sie auch eine große Auswahl an veganen und glutenfreien Produkten. Die Bio Company befindet sich in der Hauptstraße 45 und ist telefonisch unter 06221-123456 erreichbar."
       },
       {
         "rank": 2,
-        "name": "AlnaturaAlnatura ist ein weiterer beliebter Bio-Laden in Heidelberg. Sie bieten eine große Auswahl an biologischen Lebensmitteln, darunter auch viele Produkte aus eigener Herstellung. Alnatura hat auch einen Online-Shop, über den du bequem von zu Hause aus einkaufen kannst. Der Laden befindet sich in der Bergheimer Straße 1 und ist telefonisch unter 06221-654321 erreichbar.",
-        "description": ""
+        "name": "Alnatura",
+        "description": "Alnatura ist ein weiterer beliebter Bio-Laden in Heidelberg. Sie bieten eine große Auswahl an biologischen Lebensmitteln, darunter auch viele Produkte aus eigener Herstellung. Alnatura hat auch einen Online-Shop, über den du bequem von zu Hause aus einkaufen kannst. Der Laden befindet sich in der Bergheimer Straße 1 und ist telefonisch unter 06221-654321 erreichbar."
       },
       {
         "rank": 3,
-        "name": "Denn’s BiomarktDenn’s Biomarkt ist ein großer Bio-Laden mit einer breiten Palette an biologischen Lebensmitteln. Sie haben auch eine große Auswahl an veganen und vegetarischen Produkten. Der Laden befindet sich in der Kurfürsten-Anlage 1 und ist telefonisch unter 06221-987654 erreichbar.",
-        "description": ""
+        "name": "Denn’s Biomarkt",
+        "description": "Denn’s Biomarkt ist ein großer Bio-Laden mit einer breiten Palette an biologischen Lebensmitteln. Sie haben auch eine große Auswahl an veganen und vegetarischen Produkten. Der Laden befindet sich in der Kurfürsten-Anlage 1 und ist telefonisch unter 06221-987654 erreichbar."
       },
       {
         "rank": 4,
-        "name": "Basic BioBasic Bio ist ein Bio-Laden, der sich auf regionale und saisonale Produkte spezialisiert hat. Sie bieten eine große Auswahl an frischem Obst und Gemüse sowie Fleisch und Käse aus der Region. Basic Bio befindet sich in der Rohrbacher Straße 12 und ist telefonisch unter 06221-567890 erreichbar.",
-        "description": ""
+        "name": "Basic Bio",
+        "description": "Basic Bio ist ein Bio-Laden, der sich auf regionale und saisonale Produkte spezialisiert hat. Sie bieten eine große Auswahl an frischem Obst und Gemüse sowie Fleisch und Käse aus der Region. Basic Bio befindet sich in der Rohrbacher Straße 12 und ist telefonisch unter 06221-567890 erreichbar."
       },
       {
         "rank": 5,
-        "name": "BioMarktDer BioMarkt ist ein kleiner Bio-Laden mit einem gemütlichen Ambiente. Sie bieten eine große Auswahl an biologischen Lebensmitteln, darunter auch viele glutenfreie Produkte. Der Laden befindet sich in der Plöck 5 und ist telefonisch unter 06221-345678 erreichbar.",
-        "description": ""
+        "name": "BioMarkt",
+        "description": "Der BioMarkt ist ein kleiner Bio-Laden mit einem gemütlichen Ambiente. Sie bieten eine große Auswahl an biologischen Lebensmitteln, darunter auch viele glutenfreie Produkte. Der Laden befindet sich in der Plöck 5 und ist telefonisch unter 06221-345678 erreichbar."
       },
       {
         "rank": 6,
-        "name": "Reformhaus EngelhardtDas Reformhaus Engelhardt ist ein Bio-Laden, der sich auf natürliche und biologische Produkte spezialisiert hat. Sie bieten eine große Auswahl an Nahrungsergänzungsmitteln, Naturkosmetik und ökologischen Reinigungsmitteln. Das Reformhaus Engelhardt befindet sich in der Hauptstraße 10 und ist telefonisch unter 06221-234567 erreichbar.",
-        "description": ""
+        "name": "Reformhaus Engelhardt",
+        "description": "Das Reformhaus Engelhardt ist ein Bio-Laden, der sich auf natürliche und biologische Produkte spezialisiert hat. Sie bieten eine große Auswahl an Nahrungsergänzungsmitteln, Naturkosmetik und ökologischen Reinigungsmitteln. Das Reformhaus Engelhardt befindet sich in der Hauptstraße 10 und ist telefonisch unter 06221-234567 erreichbar."
       },
       {
         "rank": 7,
-        "name": "Naturkostladen SonnenblumeDer Naturkostladen Sonnenblume ist ein kleiner Bio-Laden mit einer großen Auswahl an biologischen Lebensmitteln. Sie haben auch eine große Auswahl an veganen und vegetarischen Produkten. Der Laden befindet sich in der Unteren Straße 15 und ist telefonisch unter 06221-876543 erreichbar.",
-        "description": ""
+        "name": "Naturkostladen Sonnenblume",
+        "description": "Der Naturkostladen Sonnenblume ist ein kleiner Bio-Laden mit einer großen Auswahl an biologischen Lebensmitteln. Sie haben auch eine große Auswahl an veganen und vegetarischen Produkten. Der Laden befindet sich in der Unteren Straße 15 und ist telefonisch unter 06221-876543 erreichbar."
       },
       {
         "rank": 8,
-        "name": "Biomarkt HeidelbergDer Biomarkt Heidelberg ist ein großer Bio-Laden mit einer breiten Palette an biologischen Lebensmitteln. Sie haben auch eine große Auswahl an veganen und vegetarischen Produkten. Der Laden befindet sich in der Bergheimer Straße 10 und ist telefonisch unter 06221-543210 erreichbar.",
-        "description": ""
+        "name": "Biomarkt Heidelberg",
+        "description": "Der Biomarkt Heidelberg ist ein großer Bio-Laden mit einer breiten Palette an biologischen Lebensmitteln. Sie haben auch eine große Auswahl an veganen und vegetarischen Produkten. Der Laden befindet sich in der Bergheimer Straße 10 und ist telefonisch unter 06221-543210 erreichbar."
       },
       {
         "rank": 9,
-        "name": "BiohofladenDer Biohofladen ist ein kleiner Bio-Laden, der frische Produkte direkt vom Bauernhof anbietet. Sie haben eine große Auswahl an Obst, Gemüse, Eiern und Fleisch aus eigener Herstellung. Der Laden befindet sich in der Wieblinger Landstraße 20 und ist telefonisch unter 06221-135790 erreichbar.",
-        "description": ""
+        "name": "Biohofladen",
+        "description": "Der Biohofladen ist ein kleiner Bio-Laden, der frische Produkte direkt vom Bauernhof anbietet. Sie haben eine große Auswahl an Obst, Gemüse, Eiern und Fleisch aus eigener Herstellung. Der Laden befindet sich in der Wieblinger Landstraße 20 und ist telefonisch unter 06221-135790 erreichbar."
       },
       {
         "rank": 10,
-        "name": "Bio-BäckereiDie Bio-Bäckerei ist ein Bio-Laden, der sich auf biologisches Brot und Backwaren spezialisiert hat. Sie bieten eine große Auswahl an frischem Brot, Brötchen und Kuchen aus eigener Herstellung. Die Bio-Bäckerei befindet sich in der Hauptstraße 50 und ist telefonisch unter 06221-987654 erreichbar.",
-        "description": ""
+        "name": "Bio-Bäckerei",
+        "description": "Die Bio-Bäckerei ist ein Bio-Laden, der sich auf biologisches Brot und Backwaren spezialisiert hat. Sie bieten eine große Auswahl an frischem Brot, Brötchen und Kuchen aus eigener Herstellung. Die Bio-Bäckerei befindet sich in der Hauptstraße 50 und ist telefonisch unter 06221-987654 erreichbar."
       }
     ],
     "h2_themes": [
@@ -1116,51 +1106,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Punkte",
-        "description": "In Emmertsgrund finden Sie eine Auswahl an Hotels und Apartments. Der Stadtteil liegt grün und ruhig, ist aber gut erreichbar. Die Unterkünfte eignen sich für Urlaub, Familie und Geschäftsreisen. Viele Apartments und Ferienwohnungen bieten Komfort wie Terrassen und Klimaanlage. Kostenfreie Parkplätze und gute Anbindung an die Metropolregion sind vorhanden."
-      },
-      {
-        "rank": 2,
         "name": "Hotels in Emmertsgrund Heidelberg",
         "description": "Die Hotels in Emmertsgrund sind oft eine gute Wahl, wenn Sie Wert auf Service und Komfort legen. Viele dieser Unterkünfte sind in die grüne Umgebung eingebettet und bieten eine angenehme Atmosphäre, die zum Entspannen einlädt. Sie sind oft kleiner und familiärer geführt als die großen Hotels in der Innenstadt, was ihnen einen besonderen Charme verleiht. Hier finden Sie eine gute Mischung aus modernem Komfort und lokaler Gastfreundschaft."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Apartments in Emmertsgrund Heidelberg",
         "description": "Für alle, die sich wie zu Hause fühlen möchten, sind Apartments eine hervorragende Option. Sie bieten mehr Platz und oft auch eine eigene Küche, was besonders für längere Aufenthalte oder Familien praktisch ist. Die Apartments in Emmertsgrund sind meist modern ausgestattet und liegen in ruhigen Wohngegenden, sodass Sie den Trubel der Stadt hinter sich lassen können. Sie sind eine tolle Alternative, wenn Sie Flexibilität schätzen."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Ferienwohnungen in Emmertsgrund Heidelberg",
         "description": "Ferienwohnungen in Emmertsgrund sind perfekt für Urlauber, die ein authentisches Erlebnis suchen. Oft sind diese Wohnungen mit viel Liebe zum Detail eingerichtet und bieten eine gemütliche, ländliche Atmosphäre. Viele bieten zusätzliche Annehmlichkeiten wie Terrassen oder Balkone, von denen aus Sie die grüne Umgebung genießen können. Wenn Sie eine Unterkunft mit ländlichem Flair suchen, sind Sie hier genau richtig. Heidelberg bietet eine vielfältige Auswahl an Unterkünften, und Emmertsgrund ist da keine Ausnahme. Schauen Sie sich die verschiedenen Optionen an, um die perfekte Basis für Ihren Aufenthalt zu finden."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Ausstattung der Hotels",
         "description": "Die Hotels hier haben meistens alles, was man so braucht. Denken Sie an kostenloses WLAN, damit Sie auch im Urlaub erreichbar sind. Viele bieten auch Frühstück an, oft als Buffet, wo man sich morgens gut stärken kann. Die Zimmer sind meistens sauber und zweckmäßig eingerichtet. Manchmal gibt es sogar kleine Extras wie eine Minibar oder einen Wasserkocher für den Tee am Abend."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Lage der Hotels im Grünen",
         "description": "Das ist wirklich das Besondere hier. Die Hotels sind oft so gelegen, dass man direkt vor der Tür loswandern kann. Man ist schnell im Wald oder auf Feldern, perfekt für Leute, die gerne spazieren gehen oder einfach mal durchatmen wollen. Trotzdem ist man nicht komplett abgeschnitten, die Anbindung an die Stadt ist meistens trotzdem gut."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Serviceleistungen für Gäste",
         "description": "Der Service in den Hotels ist meistens freundlich und hilfsbereit. Man bekommt oft Tipps für Unternehmungen oder kann nach dem Weg fragen. Manche Hotels bieten auch einen Wäscheservice an, falls man mal etwas frisch machen muss. Und das Wichtigste: Man fühlt sich meistens willkommen und gut aufgehoben. Es ist nicht so anonym wie in großen Kettenhotels, man hat eher das Gefühl, dass sich hier noch jemand persönlich kümmert."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Moderne Apartments in Heidelberg",
         "description": "Wenn Sie nach einer flexibleren Alternative zu einem Hotel suchen, sind die Apartments in Emmertsgrund eine tolle Wahl. Diese Unterkünfte bieten oft mehr Platz und eine Küche, was besonders praktisch ist, wenn Sie länger bleiben oder einfach mal selbst kochen möchten. Stellen Sie sich vor, Sie wachen auf, machen sich in Ruhe einen Kaffee und frühstücken gemütlich, ohne an die Zeiten des Hotelrestaurants gebunden zu sein. Das ist Freiheit, die man im Urlaub oder auf einer Geschäftsreise zu schätzen weiß."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Wohnkomfort im Stadtteil Emmertsgrund",
         "description": "Die Apartments hier im Emmertsgrund sind darauf ausgelegt, Ihnen ein echtes Zuhause auf Zeit zu bieten. Viele sind modern eingerichtet und verfügen über alles, was Sie für einen angenehmen Aufenthalt benötigen. Denken Sie an bequeme Möbel, eine gut ausgestattete Küchenzeile und oft sogar einen kleinen Balkon oder eine Terrasse, wo Sie den Abend ausklingen lassen können. Es ist dieser Mix aus Komfort und Unabhängigkeit, der Apartments so beliebt macht."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Ideal für Familien und Geschäftsreisende",
         "description": "Egal, ob Sie mit der ganzen Familie anreisen oder beruflich unterwegs sind, Apartments passen sich Ihren Bedürfnissen an. Familien schätzen den zusätzlichen Platz und die Möglichkeit, Mahlzeiten selbst zuzubereiten, was gerade mit Kindern oft eine Erleichterung ist. Geschäftsreisende finden hier oft eine ruhigere und privatere Atmosphäre als im Hotel, perfekt, um nach einem langen Arbeitstag abzuschalten oder noch etwas zu erledigen. Die Flexibilität macht den Unterschied."
       }
@@ -1396,51 +1381,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Erkenntnisse",
-        "description": ""
-      },
-      {
-        "rank": 2,
         "name": "Standortwahl",
         "description": "Der Standort ist wirklich wichtig. Man sollte sich gut überlegen, wo der Teich am besten hinpasst. Wenn Sie ihn oft sehen wollen, zum Beispiel von der Terrasse aus, dann ist die Nähe zum Haus super. Aber wenn Sie eher einen naturnahen Teich für Tiere möchten, dann ist ein ruhiger, etwas abgelegenerer Platz besser. Auch die Sonneneinstrahlung spielt eine Rolle. Zu viel Sonne kann Algenwachstum fördern, zu wenig ist auch nicht ideal für alle Pflanzen. Eine gute Balance ist hier der Schlüssel. Und wenn Ihr Garten uneben ist, kann die tiefste Stelle oft eine gute Wahl sein, weil das den Aushub erleichtert."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Größe und Form",
         "description": "Bei der Größe gilt oft: Je größer, desto stabiler das ökologische Gleichgewicht. Ein großer Teich ist weniger anfällig für Schwankungen und braucht oft weniger Pflege als ein kleiner. Die Form sollte zum Rest des Gartens passen. Wenn Ihr Garten eher geschwungene Wege hat, dann passt ein Teich mit weichen Linien besser. Bei einem sehr geradlinigen Garten kann auch ein eckiger Teich gut aussehen. Aber Achtung: Bei sehr großen Teichen, also ab einer bestimmten Größe und Tiefe, brauchen Sie eventuell eine Genehmigung. Informieren Sie sich da unbedingt bei Ihrer Gemeinde, bevor Sie loslegen. Das erspart Ärger und Kosten."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Technik und Aufbau",
         "description": "Ein Gartenteich braucht oft ein bisschen Technik, damit das Wasser klar bleibt und die Pflanzen und Tiere sich wohlfühlen. Dazu gehören zum Beispiel Pumpen und Filtersysteme. Es ist schlauer, das gleich von Anfang an mit einzuplanen, als später nachzurüsten. Eine Teichpumpe hilft, das Wasser zu zirkulieren und Schwebstoffe zu entfernen. UV-C-Klärer können bei Algenproblemen helfen. Der Aufbau eines Teiches erfolgt meist in verschiedenen Zonen mit unterschiedlichen Wassertiefen. Das schafft Lebensräume für verschiedene Pflanzen und Tiere. Es gibt eine Sumpfzone am Rand, eine Flachwasserzone und eine Tiefwasserzone. Die genauen Tiefen können variieren, aber diese Zonen sind wichtig für ein funktionierendes Ökosystem. Es ist erstaunlich, wie ein gut geplanter Gartenteich das gesamte Erscheinungsbild eines Gartens verändern kann. Er wird zu einem lebendigen Mittelpunkt, der nicht nur optisch ansprechend ist, sondern auch eine wichtige Rolle für die lokale Tierwelt spielt. Man schafft sich damit ein kleines Biotop direkt vor der Haustür, das immer wieder neue Überraschungen bereithält und zum Entspannen einlädt."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "2.1. Das richtige Substrat für Heidelbeeren",
         "description": "Heidelbeeren, besonders die Kulturheidelbeeren, kommen ursprünglich aus Moorgebieten. Das bedeutet, sie mögen es sauer. Ein pH-Wert zwischen 4 und 5 ist ideal. Normale Gartenerde ist oft zu kalkhaltig. Wenn man Heidelbeeren pflanzt, sollte man das Substrat entsprechend anpassen. Man kann sie entweder direkt ins Beet setzen oder in große Kübel. Für Kübel ist Rhododendronerde eine gute Wahl, weil die schon den richtigen pH-Wert hat. Im Beet muss man den Boden vorbereiten, zum Beispiel mit speziellem Moorbeet-Substrat oder durch Zugabe von Nadelkompost. Es gibt zwar ein paar Sorten, die etwas toleranter sind, aber die meisten brauchen diesen sauren Boden unbedingt."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "2.2. Der richtige Dünger für Heidelbeeren",
         "description": "Beim Düngen von Heidelbeeren muss man auch aufpassen. Sie vertragen nicht jeden Dünger. Kompost oder Stallmist, die sonst im Garten oft Wunder wirken, sind für Heidelbeeren tabu. Das liegt daran, dass diese Dünger den pH-Wert des Bodens erhöhen können, was den Heidelbeeren schadet. Stattdessen sollte man auf spezielle Dünger zurückgreifen, die für Moorbeetpflanzen geeignet sind. Hier sind ein paar gute Optionen: Es ist wichtig, die Feinwurzeln der Heidelbeeren beim Düngen nicht zu verletzen, da sie sehr empfindlich sind. Nach dem Düngen sollte man immer gut gießen, besonders bei mineralischen Düngern, um Wurzelverbrennungen zu vermeiden. Bei Flüssigdüngern für Kübelpflanzen ist es ratsam, die Anweisungen auf der Verpackung genau zu befolgen, da die Häufigkeit der Anwendung variieren kann."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "2.3. Heidelbeeren düngen – so wird’s gemacht",
         "description": "Das Düngen der Heidelbeeren sollte man nicht übertreiben, aber regelmäßig machen. Eine erste Düngergabe kann schon beim Pflanzen erfolgen. Eine Handvoll Hornspäne in die obere Erdschicht gemischt, gibt den jungen Pflanzen einen guten Start. Danach brauchen Heidelbeeren nicht mehr so viel Dünger, aber eine regelmäßige, maßvolle Nährstoffzufuhr ist wichtig für eine reiche Ernte. Am besten düngt man zweimal im Jahr: Für Heidelbeeren im Kübel ist ein Flüssigdünger oft praktischer. Diesen kann man vor und während der Blütezeit zweimal wöchentlich geben und später, wenn die Früchte reifen, einmal pro Woche. Achten Sie darauf, dass der Dünger speziell für Heidelbeeren oder Moorbeetpflanzen geeignet ist. Und vergessen Sie nicht: Wenn die Beeren reif sind, freuen sich auch Vögel darüber. Ein Netz über den Sträuchern kann da helfen, die Ernte zu sichern."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Anwendungstipps",
         "description": "Die Anwendung ist eigentlich ganz einfach. Man kann die Hornspäne entweder vor dem Pflanzen in den Boden einarbeiten oder später oberflächlich ausstreuen und leicht einharken. Wichtig ist, dass sie nicht einfach nur auf der Oberfläche liegen bleiben, sonst dauert es noch länger, bis die Nährstoffe wirken. Eine Faustregel ist, etwa 50 bis 100 Gramm pro Quadratmeter zu verwenden, je nachdem, wie hungrig die Pflanzen sind. Bei Neupflanzungen kann man auch eine Handvoll direkt ins Pflanzloch geben. Das ist besonders praktisch für Sträucher oder Bäume, die einen guten Start brauchen."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Anwendung von Hornmehl",
         "description": "Die Anwendung von Hornmehl ist ziemlich einfach, aber ein paar Dinge sollte man beachten, damit es auch wirklich gut wirkt. Hier sind die Schritte, die ich normalerweise befolge:"
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Hornmehl vs. Hornspäne",
         "description": "Oft kommt die Frage auf, was denn nun besser ist: Hornmehl oder Hornspäne? Beide sind organische Stickstoffdünger, aber sie unterscheiden sich in ihrer Wirkung und Anwendung. Es kommt wirklich darauf an, was man gerade im Garten braucht. Hier ist ein kleiner Vergleich, der die Unterschiede verdeutlicht: Wie man sieht, hat jedes seine Berechtigung. Hornmehl ist super, wenn man einen schnellen Effekt erzielen möchte, zum Beispiel bei jungen Pflanzen, die einen Wachstumsschub brauchen. Es ist auch gut für Topfpflanzen, weil es sich schnell auflöst und die Nährstoffe schnell zu den Wurzeln gelangen. Hornspäne sind eher für die langfristige Versorgung gedacht, wenn man den Boden über einen längeren Zeitraum mit Stickstoff anreichern möchte. Viele Gärtner nutzen auch eine Kombination aus beidem, um sowohl eine schnelle Startwirkung als auch eine nachhaltige Versorgung zu gewährleisten. Es ist wie bei vielen Dingen im Garten: Es gibt nicht die eine richtige Lösung, sondern es kommt auf die individuellen Bedürfnisse an."
       }
@@ -2099,51 +2079,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Schlüssel Erkenntnisse",
-        "description": "Hotels in Kirchheim Heidelberg bieten spezielle Familienzimmer und Pakete. Die HeidelbergCARD ist ein Muss und beinhaltet ÖPNV, Schlosszugang und mehr. Zusätzliche Aktivitäten wie ein Zoo-Besuch oder ein Bonbon-Workshop werten den Aufenthalt auf. Die Hotels überzeugen durch Komfort, guten Service und inklusivem Frühstück. Eine einfache Anfrage über ein Formular erleichtert die Buchung Ihres Familienurlaubs."
-      },
-      {
-        "rank": 2,
         "name": "Übernachtungsmöglichkeiten für Familien",
         "description": "Wenn Sie mit der Familie nach Heidelberg reisen, ist die Wahl der richtigen Unterkunft Gold wert. In Kirchheim gibt es einige Hotels, die sich besonders gut für Familien eignen. Hier finden Sie nicht nur ein Dach über dem Kopf, sondern auch Annehmlichkeiten, die den Aufenthalt für Groß und Klein angenehmer machen. Die Suche nach einem passenden Familienzimmer ist oft der erste Schritt für eine entspannte Reise. Es geht darum, dass alle genug Platz haben und sich wohlfühlen, vom kleinsten Kind bis zu den Eltern."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Hotels mit Familienzimmern",
         "description": "Viele Hotels in Kirchheim haben sich darauf eingestellt, dass Familien oft mehr Platz benötigen. Sie bieten spezielle Familienzimmer an, die oft aus zwei verbundenen Zimmern bestehen oder einfach größer sind. Manchmal gibt es sogar Zustellbetten oder Schlafsofas. Das ist praktisch, damit jeder seinen eigenen Bereich hat, aber trotzdem nah beieinander ist. So kann man nach einem langen Tag voller Entdeckungen gut schlafen."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Angebote für Groß und Klein",
         "description": "Die Hotels in Kirchheim denken mit, wenn es um Familien geht. Oft gibt es spezielle Pakete, die mehr beinhalten als nur das Zimmer mit Frühstück. Denken Sie an vergünstigte Eintritte in Attraktionen wie den Heidelberger Zoo oder die Nutzung der HeidelbergCARD. Diese Karte ist super praktisch, denn sie beinhaltet oft Fahrten mit öffentlichen Verkehrsmitteln und Ermäßigungen für viele Sehenswürdigkeiten. So wird der Urlaub nicht nur einfacher, sondern auch günstiger und spannender für die ganze Familie."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Pauschalreisen mit Zoo-Besuch",
         "description": "Stellt euch vor: Ihr kommt an, checkt in eurem Familienzimmer ein, und das Beste ist, das Frühstück ist schon dabei. Aber das ist noch nicht alles! Wir haben ein Paket geschnürt, das einen Besuch im Heidelberger Zoo beinhaltet. So können sich die Kleinen (und Großen!) mal so richtig austoben und spannende Tiere entdecken. Das ist doch mal eine tolle Abwechslung, oder? Die HeidelbergFamily Card ist natürlich auch mit dabei, damit ihr bequem mit Bus und Bahn unterwegs seid."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Kombipakete mit HeidelbergCARD",
         "description": "Die HeidelbergCARD ist ja sowieso ein Muss, wenn man hier ist. Aber wir haben sie jetzt mit ein paar Extras kombiniert, die gerade für Familien super sind. Mit der Karte könnt ihr nicht nur kostenlos die öffentlichen Verkehrsmittel nutzen, sondern bekommt auch Tickets für das Schloss und die Bergbahn. Stellt euch vor, ihr fahrt hoch zum Schloss und habt diesen Wahnsinnsblick über die Stadt – das ist doch ein Erlebnis, das man nicht so schnell vergisst. Außerdem gibt’s Rabatte in vielen Museen und Restaurants. So wird euer Ausflug richtig rund."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Bonbonmanufaktur-Workshop",
         "description": "Wenn ihr mal etwas ganz anderes machen wollt, haben wir noch eine zuckersüße Idee: Bucht doch einfach einen Workshop in der Bonbonmanufaktur dazu! Hier könnt ihr unter Anleitung eure eigenen Lollis herstellen. Das macht nicht nur Spaß, sondern am Ende hat jeder auch noch eine süße Erinnerung zum Naschen. Das ist mal was anderes als nur Sightseeing und kommt bei Kindern meistens super an. Ein bisschen Kreativität und ganz viel Zucker – was will man mehr?"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Kostenlose ÖPNV-Nutzung",
         "description": "Stellen Sie sich vor, Sie können mit den Kindern einfach in den nächsten Bus oder die nächste Bahn steigen, ohne sich Gedanken über Tickets machen zu müssen. Mit der HeidelbergCARD ist das möglich! Sie gilt für alle Busse, Straßenbahnen und sogar bestimmte Züge im gesamten Stadtgebiet. Das ist super praktisch, um zum Beispiel schnell zum Zoo oder ins Stadtzentrum zu kommen, ohne ständig Parkplätze suchen zu müssen. Gerade mit Kindern ist das eine enorme Erleichterung."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Schlossticket und Bergbahnfahrt",
         "description": "Ein absolutes Muss in Heidelberg ist natürlich das Schloss. Mit der HeidelbergCARD ist der Eintritt zum Schlossgelände, zum Fasskeller und zum Deutschen Apotheken-Museum schon drin. Aber das Beste: Sie fahren auch kostenlos mit der Bergbahn hoch zum Schloss und können von dort aus sogar noch weiter bis zur Station Molkenkur fahren. Die Aussicht von dort oben ist einfach fantastisch und ein tolles Erlebnis für die ganze Familie. Die Rückfahrt ist natürlich auch inklusive."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Ermäßigungen für Museen und Gastronomie",
         "description": "Aber die Karte kann noch mehr! Sie bekommen damit auch Rabatte in vielen Museen, bei Stadtführungen und in Restaurants. Das ist eine tolle Gelegenheit, mehr von Heidelberg zu entdecken, ohne das Budget zu sprengen. Ob Sie ein weiteres Museum besuchen oder abends gemütlich essen gehen – mit der HeidelbergCARD sparen Sie bei vielen Dingen. Es lohnt sich also wirklich, die Karte genau anzuschauen, wo überall Vergünstigungen winken."
       }
@@ -2311,53 +2286,53 @@
     "items": [
       {
         "rank": 1,
-        "name": "Schülerhilfe HeidelbergDie Schülerhilfe Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre langjährige Erfahrung und qualifizierte Lehrkräfte aus. Die Schülerhilfe ist bekannt für ihre individuelle Betreuung und flexiblen Termine.",
-        "description": ""
+        "name": "Schülerhilfe Heidelberg",
+        "description": "Die Schülerhilfe Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre langjährige Erfahrung und qualifizierte Lehrkräfte aus. Die Schülerhilfe ist bekannt für ihre individuelle Betreuung und flexiblen Termine."
       },
       {
         "rank": 2,
-        "name": "Studienkreis HeidelbergDer Studienkreis Heidelberg ist eine renommierte Nachhilfeschule, die sich auf die Fächer Mathematik, Deutsch und Englisch spezialisiert hat. Sie bietet sowohl Einzelunterricht als auch Gruppenkurse an und legt großen Wert auf eine angenehme Lernatmosphäre.",
-        "description": ""
+        "name": "Studienkreis Heidelberg",
+        "description": "Der Studienkreis Heidelberg ist eine renommierte Nachhilfeschule, die sich auf die Fächer Mathematik, Deutsch und Englisch spezialisiert hat. Sie bietet sowohl Einzelunterricht als auch Gruppenkurse an und legt großen Wert auf eine angenehme Lernatmosphäre."
       },
       {
         "rank": 3,
-        "name": "Lernstudio BarbarossaDas Lernstudio Barbarossa ist eine beliebte Nachhilfeschule in Heidelberg, die sich auf die Fächer Mathematik, Deutsch und Englisch konzentriert. Sie bietet sowohl Einzelunterricht als auch Gruppenkurse an und legt großen Wert auf eine individuelle Betreuung.",
-        "description": ""
+        "name": "Lernstudio Barbarossa",
+        "description": "Das Lernstudio Barbarossa ist eine beliebte Nachhilfeschule in Heidelberg, die sich auf die Fächer Mathematik, Deutsch und Englisch konzentriert. Sie bietet sowohl Einzelunterricht als auch Gruppenkurse an und legt großen Wert auf eine individuelle Betreuung."
       },
       {
         "rank": 4,
-        "name": "ABACUS NachhilfeABACUS Nachhilfe bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre flexible Terminplanung aus. ABACUS Nachhilfe ist bekannt für ihre hohe Erfolgsquote und ihre individuelle Betreuung.",
-        "description": ""
+        "name": "ABACUS Nachhilfe",
+        "description": "ABACUS Nachhilfe bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre flexible Terminplanung aus. ABACUS Nachhilfe ist bekannt für ihre hohe Erfolgsquote und ihre individuelle Betreuung."
       },
       {
         "rank": 5,
-        "name": "Schülercoach HeidelbergDer Schülercoach Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Der Schülercoach Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine.",
-        "description": ""
+        "name": "Schülercoach Heidelberg",
+        "description": "Der Schülercoach Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Der Schülercoach Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine."
       },
       {
         "rank": 6,
-        "name": "Nachhilfe Team HeidelbergDas Nachhilfe Team Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Das Nachhilfe Team Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine.",
-        "description": ""
+        "name": "Nachhilfe Team Heidelberg",
+        "description": "Das Nachhilfe Team Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Das Nachhilfe Team Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine."
       },
       {
         "rank": 7,
-        "name": "Schüler-Institut HeidelbergDas Schüler-Institut Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Das Schüler-Institut Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine.",
-        "description": ""
+        "name": "Schüler-Institut Heidelberg",
+        "description": "Das Schüler-Institut Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Das Schüler-Institut Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine."
       },
       {
         "rank": 8,
-        "name": "Lernwerkstatt HeidelbergDie Lernwerkstatt Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Die Lernwerkstatt Heidelberg ist bekannt für ihre hohe Erfolgsquote und ihre flexiblen Termine.",
-        "description": ""
+        "name": "Lernwerkstatt Heidelberg",
+        "description": "Die Lernwerkstatt Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Die Lernwerkstatt Heidelberg ist bekannt für ihre hohe Erfolgsquote und ihre flexiblen Termine."
       },
       {
         "rank": 9,
-        "name": "Schülerförderung HeidelbergDie Schülerförderung Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Die Schülerförderung Heidelberg ist bekannt für ihre hohe Erfolgsquote und ihre flexiblen Termine.",
-        "description": ""
+        "name": "Schülerförderung Heidelberg",
+        "description": "Die Schülerförderung Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Die Schülerförderung Heidelberg ist bekannt für ihre hohe Erfolgsquote und ihre flexiblen Termine."
       },
       {
         "rank": 10,
-        "name": "Nachhilfezentrum HeidelbergDas Nachhilfezentrum Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Das Nachhilfezentrum Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine.",
-        "description": ""
+        "name": "Nachhilfezentrum Heidelberg",
+        "description": "Das Nachhilfezentrum Heidelberg bietet professionelle Nachhilfe in allen Fächern und für alle Klassenstufen an. Sie zeichnet sich durch ihre qualifizierten Lehrkräfte und ihre individuelle Betreuung aus. Das Nachhilfezentrum Heidelberg ist bekannt für seine hohe Erfolgsquote und seine flexiblen Termine."
       }
     ],
     "h2_themes": [
@@ -2536,51 +2511,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Punkte",
-        "description": "In Pfaffengrund gibt es verschiedene günstige Unterkünfte wie Pensionen und Ferienwohnungen. Viele Unterkünfte sind gut an den öffentlichen Nahverkehr angebunden. Einige Unterkünfte liegen ruhig im Grünen und bieten Parkplätze. Direktbuchungen können oft zu besseren Preisen führen. Es gibt auch Optionen in den umliegenden Stadtteilen und Städten wie Mannheim oder Speyer."
-      },
-      {
-        "rank": 2,
         "name": "Pensionen und Privatzimmer in Pfaffengrund",
         "description": "In Pfaffengrund gibt es einige kleinere Pensionen und private Zimmervermietungen, die oft eine sehr persönliche Atmosphäre bieten. Diese sind ideal, wenn man nicht viel Schnickschnack braucht und einfach einen sauberen, ruhigen Ort zum Übernachten sucht. Manchmal sind diese Zimmer auch mit einer kleinen Küchenzeile ausgestattet, was das Frühstück oder kleine Mahlzeiten erleichtert. Die Preise sind hier meist am niedrigsten, was sie zu einer attraktiven Option macht."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Ferienwohnungen in Pfaffengrund",
         "description": "Für längere Aufenthalte oder für Familien, die etwas mehr Platz und Unabhängigkeit wünschen, sind Ferienwohnungen eine gute Wahl. In Pfaffengrund findet man einige davon, die oft eine gute Ausstattung mitbringen, wie eine eigene Küche und Wohnbereich. Das spart nicht nur Geld beim Essen, sondern gibt einem auch das Gefühl, ein bisschen wie zu Hause zu sein. Die Preise für Ferienwohnungen variieren je nach Größe und Ausstattung, sind aber oft günstiger als mehrere Hotelzimmer."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Hotels Garni in Pfaffengrund",
         "description": "Hotels Garni, also Hotels, die nur Frühstück anbieten, sind eine weitere preiswerte Möglichkeit. Sie kombinieren den Komfort eines Hotels mit der Möglichkeit, den Tag mit einem guten Frühstück zu beginnen, ohne dass man sich selbst darum kümmern muss. In Pfaffengrund gibt es zwar nicht viele klassische Hotels Garni, aber einige Pensionen bieten ähnliche Leistungen an. Das ist praktisch, wenn man den Rest des Tages unterwegs ist und nur eine solide Basis zum Schlafen und Frühstücken braucht."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Zentrale Lage und gute Verkehrsanbindung",
         "description": "Wenn Sie eine Unterkunft in Pfaffengrund suchen, ist die Lage oft entscheidend. Viele Unterkünfte hier sind zentrumsnah gelegen, was bedeutet, dass Sie Geschäfte, Restaurants und öffentliche Verkehrsmittel schnell erreichen können. Die Anbindung an den öffentlichen Nahverkehr ist meistens gut, sodass Sie auch ohne Auto flexibel unterwegs sind. Auch die Autobahn ist oft nicht weit, was für Reisende mit dem eigenen PKW praktisch ist. Die Nähe zu wichtigen Verkehrsadern macht Pfaffengrund zu einem guten Ausgangspunkt für Erkundungen."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Unterkünfte im Grünen mit Parkmöglichkeiten",
         "description": "Wer es lieber ruhiger mag, findet in Pfaffengrund auch Unterkünfte, die etwas grüner liegen. Manche bieten sogar einen Garten oder eine Liegewiese, perfekt zum Entspannen nach einem langen Tag. Und keine Sorge wegen des Autos: Viele dieser Unterkünfte haben eigene Parkmöglichkeiten. Das ist doch super, oder? Man muss sich keine Gedanken machen, wo man den Wagen abstellt."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Ausstattung mit WLAN und TV",
         "description": "Heutzutage will man natürlich auch im Urlaub oder auf Geschäftsreise nicht auf Komfort verzichten. Daher ist es gut zu wissen, dass die meisten Unterkünfte in Pfaffengrund mit WLAN ausgestattet sind. So können Sie problemlos E-Mails checken oder Ihre Erlebnisse teilen. Auch ein Fernseher gehört fast immer zur Standardausstattung. Manche bieten sogar zusätzliche Annehmlichkeiten wie einen Balkon oder eine Terrasse, wo man den Abend ausklingen lassen kann. Wenn Sie nach einer Unterkunft in Heidelberg suchen, gibt es eine breite Auswahl an Optionen, die Ihren Bedürfnissen entsprechen könnten Unterkünfte in Heidelberg. Hier ist eine kleine Übersicht, was Sie erwarten können: Ausstattung Häufigkeit WLAN Sehr häufig TV Häufig Parkmöglichkeiten Oft Balkon/Terrasse Manchmal Garten/Liegewiese Seltener Bei der Auswahl Ihrer Unterkunft sollten Sie überlegen, welche Ausstattungsmerkmale für Sie am wichtigsten sind. Manchmal sind es die kleinen Dinge, die den Unterschied machen."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Spezielle Angebote für Direktbucher",
         "description": "Viele Unterkünfte belohnen Gäste, die direkt bei ihnen buchen. Das ist oft eine gute Möglichkeit, ein paar Euro zu sparen, manchmal bis zu 20% im Vergleich zu Buchungen über große Portale. Es lohnt sich also immer, auf der Webseite der Unterkunft nachzusehen, ob es spezielle Rabatte oder Pakete für Direktbucher gibt. Manchmal sind das dann auch Angebote, die nur für bestimmte Zeiträume gelten, wie zum Beispiel für Ferienwochen. Einfach den gewünschten Zeitraum eingeben und schauen, was angezeigt wird."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Unterkünfte für Familien und Gruppen",
         "description": "Wenn Sie mit der Familie oder einer größeren Gruppe unterwegs sind, suchen Sie vielleicht nach etwas Speziellem. Einige Pensionen und Ferienwohnungen sind besonders auf Familien eingestellt. Das kann bedeuten, dass es mehr Platz gibt, vielleicht sogar einen Garten oder eine Spielecke. Für Gruppen gibt es manchmal die Möglichkeit, mehrere Zimmer nebeneinander zu buchen oder sogar ein ganzes Haus oder eine große Ferienwohnung zu mieten. Fragen Sie am besten direkt nach, was die Unterkünfte für Ihre Gruppengröße anbieten können."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Haustierfreundliche Hotels",
         "description": "Sie möchten Ihren vierbeinigen Freund nicht zu Hause lassen? Das ist verständlich! Zwar sind nicht alle Unterkünfte in Pfaffengrund haustierfreundlich, aber es gibt durchaus Optionen. Bei manchen Pensionen oder Ferienwohnungen sind Hunde oder Katzen nach Absprache willkommen. Es ist aber wichtig, das vorher genau zu klären und eventuell nachzufragen, ob zusätzliche Kosten anfallen. So vermeiden Sie unangenehme Überraschungen bei der Ankunft."
       }
@@ -2857,51 +2827,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Punkte",
-        "description": "Entdecken Sie charmante Hotels in Schlierbach mit direktem Schlossblick, die eine romantische Atmosphäre schaffen. Erleben Sie die Verbindung von historischem Flair und modernem Komfort in diesen besonderen Unterkünften. Genießen Sie kulinarische Höhepunkte mit regionalen Spezialitäten und romantischen Abendessen vor der Kulisse des Schlosses. Nutzen Sie die Nähe zu Heidelberg für Ausflüge und erkunden Sie die malerische Umgebung von Schlierbach. Diese Hotels Schlierbach Heidelberg sind perfekt für Paare, die einen unvergesslichen, romantischen Aufenthalt suchen."
-      },
-      {
-        "rank": 2,
         "name": "Die Magie des Schlosses",
         "description": "Schlierbach ist ein Ort, der einen sofort in seinen Bann zieht, besonders wenn man das Schloss im Blick hat. Es ist nicht nur ein Gebäude, es ist ein Stück Geschichte, das über dem Neckar thront. Die Art und Weise, wie das Licht am Abend auf die alten Mauern fällt, hat etwas ganz Besonderes. Man kann sich gut vorstellen, wie hier früher gelebt und gefeiert wurde. Die Atmosphäre ist einfach magisch und lädt zum Träumen ein. Es ist dieser Anblick, der Schlierbach zu einem so romantischen Fleckchen Erde macht."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Einzigartige Zimmer mit Schlossblick",
         "description": "Viele Hotels hier haben sich darauf spezialisiert, ihren Gästen diesen besonderen Ausblick zu bieten. Stell dir vor, du wachst auf und das Erste, was du siehst, ist die Silhouette des Schlosses. Das ist kein alltäglicher Anblick, oder? Die Zimmer sind oft so gestaltet, dass man diesen Blick von fast überall im Zimmer genießen kann, sei es vom Bett aus oder beim Kaffeetrinken am Morgen. Manche Zimmer haben sogar kleine Balkone, perfekt, um den Abend bei einem Glas Wein ausklingen zu lassen, während das Schloss in der Dunkelheit beleuchtet wird. Es ist diese persönliche Note, die den Aufenthalt unvergesslich macht."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Besondere Anlässe Feiern",
         "description": "Wenn du einen besonderen Anlass hast, sei es ein Jahrestag, ein Geburtstag oder sogar ein Heiratsantrag, dann ist ein Hotel mit Schlossblick in Schlierbach eine ausgezeichnete Wahl. Die Kulisse ist einfach perfekt für romantische Momente. Viele Hotels bieten spezielle Pakete an, die genau auf solche Anlässe zugeschnitten sind. Denk an ein Candle-Light-Dinner mit Blick auf das beleuchtete Schloss oder ein Frühstück auf dem Zimmer mit dieser traumhaften Aussicht. Es sind diese kleinen Details, die einen besonderen Tag noch magischer machen. Hier wird dein besonderer Moment zu etwas wirklich Einzigartigem. Die Kombination aus historischem Ambiente und der natürlichen Schönheit der Umgebung schafft eine unvergleichliche Romantik, die man so schnell nicht wieder vergisst. Es ist ein Ort, der die Seele berührt und Erinnerungen schafft, die ein Leben lang halten."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Charmante Unterkünfte",
         "description": "Viele der Hotels in Schlierbach sind in historischen Gebäuden untergebracht. Manchmal sind es alte Bauernhöfe, manchmal ehemalige Klostertrakte, die liebevoll restauriert wurden. Sie finden hier keine gesichtslosen Kettenhotels, sondern individuelle Häuser mit Charakter. Die Zimmer sind oft mit antiken Möbeln ausgestattet, aber natürlich mit allem Komfort, den man heute erwartet. Es fühlt sich an, als würde man in eine andere Zeit eintauchen, aber eben auf eine sehr angenehme Art und Weise."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Tradition trifft Moderne",
         "description": "Das Tolle ist, dass die Tradition nicht im Weg steht. Die historischen Mauern beherbergen oft topmoderne Annehmlichkeiten. Denken Sie an schnelles WLAN, stilvolle Bäder und manchmal sogar kleine Spa-Bereiche. Die Betreiber legen Wert darauf, den Charme des Alten zu bewahren, ohne auf die Bequemlichkeiten von heute zu verzichten. Das ist eine Kunst, die hier in Schlierbach viele Hotels beherrschen."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Lokale Gastfreundschaft Erleben",
         "description": "Was man in diesen Hotels oft spürt, ist eine ganz besondere Art von Gastfreundschaft. Es ist oft familiär geführt, und man merkt, dass die Inhaber mit Herzblut dabei sind. Sie kennen die Gegend, geben gerne Tipps für Ausflüge und sorgen dafür, dass man sich wirklich willkommen fühlt. Das ist mehr als nur ein Job für sie, es ist eine Leidenschaft. Man bekommt oft das Gefühl, eher als Freund denn als Gast behandelt zu werden. Das macht den Unterschied aus, finden Sie nicht auch?"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Regionale Spezialitäten",
         "description": "Die Hotels hier legen viel Wert auf das, was die Region zu bieten hat. Das bedeutet frische Zutaten, oft direkt von Bauernhöfen aus der Umgebung. Man findet auf den Speisekarten klassische Gerichte, die mit einem modernen Touch zubereitet werden. Es ist eine tolle Möglichkeit, die lokale Küche kennenzulernen. Manchmal gibt es sogar spezielle Menüs, die sich nur auf saisonale Produkte konzentrieren. Das ist doch mal was anderes, oder?"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Romantische Abendessen",
         "description": "Stell dir vor: Kerzenlicht, leises Klirren von Gläsern und im Hintergrund das Schloss, das im Dunkeln glänzt. Viele Hotels bieten spezielle Arrangements für romantische Abendessen an. Das kann ein mehrgängiges Menü sein, das extra für Paare zusammengestellt wurde. Oft wird das Essen dann auf der Terrasse serviert, wenn das Wetter mitspielt. Das ist schon ziemlich romantisch, muss ich sagen. Man kann sich Zeit lassen, reden und einfach den Moment genießen. Perfekt für besondere Anlässe oder einfach, um sich mal wieder richtig verwöhnen zu lassen."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Weinproben mit Aussicht",
         "description": "Was passt besser zu gutem Essen als ein guter Wein? Die Hotels hier haben oft eine gut sortierte Weinkarte, mit vielen Tropfen aus der Region. Manche bieten sogar kleine Weinproben an. Das ist eine super Gelegenheit, um neue Weine zu entdecken. Und wenn man das Ganze dann noch mit der Schlosskulisse verbindet, wird es zu einem richtigen Erlebnis. Man lernt etwas über die Weine und genießt gleichzeitig die schöne Aussicht. Was will man mehr?"
       }
@@ -3138,51 +3103,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Punkte",
-        "description": "Die Hotels Südstadt Heidelberg liegen zentral in der Altstadt. Sehenswürdigkeiten wie das Schloss und die Alte Brücke sind leicht zu Fuß erreichbar. Die Zimmer sind individuell gestaltet und spiegeln den studentischen Geist wider. Regionale Gerichte werden im hoteleigenen Wirtshaus angeboten. E-Bikes können ausgeliehen werden, um die Umgebung zu erkunden."
-      },
-      {
-        "rank": 2,
         "name": "Historische Stadthotels mit Charme",
         "description": "Viele Hotels in der Südstadt sind in historischen Gebäuden untergebracht, die oft schon seit Jahrhunderten existieren. Diese Häuser haben ihren ganz eigenen Charakter bewahrt. Stellen Sie sich vor, Sie schlafen in einem Gebäude, das vielleicht schon im 18. Jahrhundert stand und Geschichten von Studenten und Gelehrten erzählen könnte. Diese Hotels verbinden oft alte Bausubstanz mit modernem Komfort. Man spürt die Geschichte, aber man muss auf nichts verzichten. Die Architektur erzählt von vergangenen Zeiten, und oft sind es gerade die kleinen Details, die den Unterschied machen."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Gemütliche Pensionen für Ihren Aufenthalt",
         "description": "Neben den größeren Hotels gibt es auch zahlreiche kleinere Pensionen. Diese sind oft familiär geführt und bieten eine besonders herzliche Atmosphäre. Hier fühlt man sich schnell wie zu Hause. Die Zimmer sind vielleicht nicht immer riesig, aber dafür oft mit viel Liebe zum Detail eingerichtet. Es ist diese persönliche Note, die einen Aufenthalt in einer Pension so besonders macht. Man kommt leicht mit den Gastgebern ins Gespräch und bekommt vielleicht den einen oder anderen Geheimtipp für die Stadt."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Individuelle Zimmer mit Liebe zum Detail",
         "description": "Was die Unterkünfte in der Südstadt wirklich auszeichnet, ist die Individualität. Kaum ein Zimmer gleicht dem anderen. Das liegt oft an der historischen Bausubstanz, aber auch am Gestaltungswillen der Betreiber. Sie finden hier keine sterilen Standardzimmer, sondern Räume mit Persönlichkeit. Ob es nun die alten Holzbalken sind, die freigelegt wurden, oder die sorgfältig ausgewählten Möbel – überall spürt man, dass hier jemand mitgedacht hat. Manche Zimmer spielen sogar augenzwinkernd auf den studentischen Geist Heidelbergs an. Das macht den Aufenthalt zu etwas Besonderem. Die Südstadt ist ein Ort, an dem man das Gefühl hat, ein Stück lebendige Geschichte zu erleben. Die Hotels und Pensionen hier sind keine anonymen Unterkünfte, sondern Orte, die ihren eigenen Charakter haben und diesen gerne mit ihren Gästen teilen."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Direkt im Herzen der Altstadt",
         "description": "Die Hotels und Pensionen in der Südstadt von Heidelberg sind wirklich fantastisch gelegen. Man ist quasi mitten im Geschehen, aber trotzdem ist es oft erstaunlich ruhig. Stell dir vor, du wachst auf und bist nur ein paar Schritte von der berühmten Alten Brücke entfernt. Das ist schon was Besonderes. Die meisten Unterkünfte hier sind in historischen Gebäuden untergebracht, oft mit einem ganz eigenen Charme, der die lange Geschichte der Stadt widerspiegelt. Man fühlt sich sofort ein bisschen wie in einer anderen Zeit, aber mit allem Komfort von heute. Die Nähe zu den wichtigsten Orten macht den Aufenthalt hier so unkompliziert."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Nur wenige Schritte von Sehenswürdigkeiten entfernt",
         "description": "Das Tolle an der Südstadt ist, dass du fast alles zu Fuß erreichen kannst. Das Heidelberger Schloss, die Karl-Theodor-Brücke, der Marktplatz – alles ist in greifbarer Nähe. Selbst der Aufstieg zum Philosophenweg auf der anderen Neckarseite ist von hier aus gut machbar. Wenn du also Lust hast, die Stadt zu erkunden, ohne ständig öffentliche Verkehrsmittel suchen zu müssen, bist du hier goldrichtig. Man kann einfach losspazieren und entdeckt dabei immer wieder neue, versteckte Gassen und Plätze. Das ist wirklich praktisch, wenn man nur ein paar Tage Zeit hat und möglichst viel sehen möchte."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Perfekter Ausgangspunkt für Erkundungen",
         "description": "Aber die Südstadt ist nicht nur ideal, um die Altstadt zu erkunden. Von hier aus kann man auch super Ausflüge in die Umgebung machen. Viele Hotels bieten sogar an, Fahrräder auszuleihen, zum Beispiel E-Bikes. Damit ist man dann schnell im Grünen oder erkundet die Weinberge rund um Heidelberg. Man ist also nicht nur auf die Stadt beschränkt, sondern hat auch die Möglichkeit, die schöne Natur drumherum zu genießen. Es ist wirklich ein guter Mix aus Stadtleben und Naturerlebnis, der diese Gegend so attraktiv macht."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Regionale Spezialitäten im Wirtshaus",
         "description": "In der Südstadt gibt es einige tolle Orte, um die lokale Küche zu probieren. Viele Hotels und Pensionen haben eigene Restaurants oder Wirtshäuser, die oft traditionelle Gerichte mit einem modernen Touch servieren. Man legt Wert auf frische Zutaten aus der Region, was man wirklich schmeckt. Es ist eine schöne Art, den Tag ausklingen zu lassen, besonders wenn man nach einem langen Spaziergang durch die Stadt Hunger bekommt."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Frühstücksbuffet mit Landhausflair",
         "description": "Ein gutes Frühstück ist doch die halbe Miete, oder? Viele Unterkünfte in der Südstadt bieten ein Frühstücksbuffet an, das oft im Landhausstil gehalten ist. Das bedeutet meist eine gute Auswahl an Brot, Brötchen, Aufschnitt, Käse, Marmeladen und natürlich auch etwas Süßes. Manchmal gibt es sogar warme Speisen. Es ist die perfekte Grundlage für einen Tag voller Entdeckungen in Heidelberg."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Romantischer Innenhof für Mahlzeiten",
         "description": "Wenn das Wetter mitspielt, ist es besonders schön, wenn man draußen essen kann. Einige Hotels und Pensionen haben einen gemütlichen Innenhof, der sich perfekt für ein Frühstück oder ein Abendessen eignet. Stell dir vor, du sitzt dort mit einem Glas Wein, umgeben von alten Mauern – das hat schon was. Es ist eine ruhige Oase mitten in der Stadt, wo man sich wirklich entspannen kann. Das ist ein echtes Highlight für viele Gäste."
       }
@@ -3277,53 +3237,53 @@
     "items": [
       {
         "rank": 1,
-        "name": "Tierarztpraxis Dr. Müller– Dr. Müller ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere.– Die Praxis bietet eine Vielzahl von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten.– Dr. Müller ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren.",
-        "description": ""
+        "name": "Tierarztpraxis Dr. Müller",
+        "description": "Dr. Müller ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere. Die Praxis bietet eine Vielzahl von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten. Dr. Müller ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren."
       },
       {
         "rank": 2,
-        "name": "Tierklinik Heidelberg– Die Tierklinik Heidelberg ist eine renommierte Klinik, die eine breite Palette von Dienstleistungen für Haustiere anbietet.– Das Team besteht aus hochqualifizierten Tierärzten und Fachleuten, die sich um die Gesundheit und das Wohlbefinden der Tiere kümmern.– Die Klinik verfügt über modernste medizinische Geräte und Einrichtungen.",
-        "description": ""
+        "name": "Tierklinik Heidelberg",
+        "description": "Die Tierklinik Heidelberg ist eine renommierte Klinik, die eine breite Palette von Dienstleistungen für Haustiere anbietet. Das Team besteht aus hochqualifizierten Tierärzten und Fachleuten, die sich um die Gesundheit und das Wohlbefinden der Tiere kümmern. Die Klinik verfügt über modernste medizinische Geräte und Einrichtungen."
       },
       {
         "rank": 3,
-        "name": "Tierarztpraxis Dr. Schmidt– Dr. Schmidt ist ein erfahrener Tierarzt mit Schwerpunkt auf Großtiere.– Die Praxis bietet Dienstleistungen wie Impfungen, Kastrationen und Behandlungen von Krankheiten an.– Dr. Schmidt ist bekannt für seine professionelle und kompetente Betreuung der Tiere.",
-        "description": ""
+        "name": "Tierarztpraxis Dr. Schmidt",
+        "description": "Dr. Schmidt ist ein erfahrener Tierarzt mit Schwerpunkt auf Großtiere. Die Praxis bietet Dienstleistungen wie Impfungen, Kastrationen und Behandlungen von Krankheiten an. Dr. Schmidt ist bekannt für seine professionelle und kompetente Betreuung der Tiere."
       },
       {
         "rank": 4,
-        "name": "Tierarztpraxis Dr. Wagner– Dr. Wagner ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere.– Die Praxis bietet eine breite Palette von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten.– Dr. Wagner ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren.",
-        "description": ""
+        "name": "Tierarztpraxis Dr. Wagner",
+        "description": "Dr. Wagner ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere. Die Praxis bietet eine breite Palette von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten. Dr. Wagner ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren."
       },
       {
         "rank": 5,
-        "name": "Tierarztpraxis Dr. Müller– Dr. Müller ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere.– Die Praxis bietet eine Vielzahl von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten.– Dr. Müller ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren.",
-        "description": ""
+        "name": "Tierarztpraxis Dr. Müller",
+        "description": "Dr. Müller ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere. Die Praxis bietet eine Vielzahl von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten. Dr. Müller ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren."
       },
       {
         "rank": 6,
-        "name": "Tierklinik Heidelberg– Die Tierklinik Heidelberg ist eine renommierte Klinik, die eine breite Palette von Dienstleistungen für Haustiere anbietet.– Das Team besteht aus hochqualifizierten Tierärzten und Fachleuten, die sich um die Gesundheit und das Wohlbefinden der Tiere kümmern.– Die Klinik verfügt über modernste medizinische Geräte und Einrichtungen.",
-        "description": ""
+        "name": "Tierklinik Heidelberg",
+        "description": "Die Tierklinik Heidelberg ist eine renommierte Klinik, die eine breite Palette von Dienstleistungen für Haustiere anbietet. Das Team besteht aus hochqualifizierten Tierärzten und Fachleuten, die sich um die Gesundheit und das Wohlbefinden der Tiere kümmern. Die Klinik verfügt über modernste medizinische Geräte und Einrichtungen."
       },
       {
         "rank": 7,
-        "name": "Tierarztpraxis Dr. Schmidt– Dr. Schmidt ist ein erfahrener Tierarzt mit Schwerpunkt auf Großtiere.– Die Praxis bietet Dienstleistungen wie Impfungen, Kastrationen und Behandlungen von Krankheiten an.– Dr. Schmidt ist bekannt für seine professionelle und kompetente Betreuung der Tiere.",
-        "description": ""
+        "name": "Tierarztpraxis Dr. Schmidt",
+        "description": "Dr. Schmidt ist ein erfahrener Tierarzt mit Schwerpunkt auf Großtiere. Die Praxis bietet Dienstleistungen wie Impfungen, Kastrationen und Behandlungen von Krankheiten an. Dr. Schmidt ist bekannt für seine professionelle und kompetente Betreuung der Tiere."
       },
       {
         "rank": 8,
-        "name": "Tierarztpraxis Dr. Wagner– Dr. Wagner ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere.– Die Praxis bietet eine breite Palette von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten.– Dr. Wagner ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren.",
-        "description": ""
+        "name": "Tierarztpraxis Dr. Wagner",
+        "description": "Dr. Wagner ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere. Die Praxis bietet eine breite Palette von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten. Dr. Wagner ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren."
       },
       {
         "rank": 9,
-        "name": "Tierarztpraxis Dr. Müller– Dr. Müller ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere.– Die Praxis bietet eine Vielzahl von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten.– Dr. Müller ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren.",
-        "description": ""
+        "name": "Tierarztpraxis Dr. Müller",
+        "description": "Dr. Müller ist ein erfahrener Tierarzt mit Schwerpunkt auf Kleintiere. Die Praxis bietet eine Vielzahl von Dienstleistungen an, darunter Impfungen, Vorsorgeuntersuchungen und Behandlungen von Krankheiten. Dr. Müller ist bekannt für seine freundliche und einfühlsame Art im Umgang mit Tieren."
       },
       {
         "rank": 10,
-        "name": "Tierklinik Heidelberg– Die Tierklinik Heidelberg ist eine renommierte Klinik, die eine breite Palette von Dienstleistungen für Haustiere anbietet.– Das Team besteht aus hochqualifizierten Tierärzten und Fachleuten, die sich um die Gesundheit und das Wohlbefinden der Tiere kümmern.– Die Klinik verfügt über modernste medizinische Geräte und Einrichtungen.",
-        "description": ""
+        "name": "Tierklinik Heidelberg",
+        "description": "Die Tierklinik Heidelberg ist eine renommierte Klinik, die eine breite Palette von Dienstleistungen für Haustiere anbietet. Das Team besteht aus hochqualifizierten Tierärzten und Fachleuten, die sich um die Gesundheit und das Wohlbefinden der Tiere kümmern. Die Klinik verfügt über modernste medizinische Geräte und Einrichtungen."
       }
     ],
     "h2_themes": [
@@ -3893,51 +3853,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Punkte",
-        "description": "Wieblingen in Heidelberg bietet eine Auswahl an Hotels, die für verschiedene Budgets und Bedürfnisse geeignet sind. Die Zimmer in den Hotels überzeugen oft durch ihre Ausstattung und den Blick in die Umgebung. Die Lage der Hotels in Wieblingen sorgt für eine gute Anbindung an Sehenswürdigkeiten und Verkehrsmittel. Kulinarisch können Sie sich auf gute Frühstücksangebote und lokale Restaurants freuen. Viele Hotels in Wieblingen Heidelberg bieten Möglichkeiten zur Entspannung, sei es durch Spa-Bereiche oder Fitnessstudios."
-      },
-      {
-        "rank": 2,
         "name": "Luxuriöse Unterkünfte in Wieblingen",
         "description": "Für diejenigen, die bei ihrem Aufenthalt auf nichts verzichten möchten, gibt es in Wieblingen einige wirklich feine Adressen. Diese Hotels bieten oft mehr als nur ein bequemes Bett. Man kann sich auf erstklassigen Service freuen, der keine Wünsche offenlässt. Die Zimmer sind meist großzügig geschnitten und mit allem ausgestattet, was man sich wünschen kann – von hochwertigen Pflegeprodukten bis hin zu schnellem WLAN. Ein Aufenthalt hier fühlt sich oft wie ein kleines Verwöhnprogramm an. Hochwertige Ausstattung und Design Exzellenter Zimmerservice Oft mit zusätzlichen Annehmlichkeiten wie Spa oder Gourmet-Restaurant"
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Günstige Hotels in Wieblingen Heidelberg",
         "description": "Aber keine Sorge, wenn das Budget eine größere Rolle spielt. Wieblingen hat auch preiswertere Optionen zu bieten, die trotzdem einen angenehmen Aufenthalt ermöglichen. Hier muss man vielleicht auf den letzten Luxus verzichten, aber Sauberkeit und Freundlichkeit stehen hier meist im Vordergrund. Man findet oft gut angebundene Hotels, die eine solide Basis für Erkundungstouren darstellen, ohne das Konto zu sprengen. Das ist doch super, oder?"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Familienfreundliche Hotels in Wieblingen",
         "description": "Reisen mit der Familie kann eine Herausforderung sein, aber einige Hotels in Wieblingen sind darauf bestens vorbereitet. Sie bieten oft Familienzimmer, die etwas mehr Platz bieten, oder haben sogar kleine Extras wie Spielbereiche oder spezielle Menüs für Kinder. Die Nähe zu Parks oder Freizeitmöglichkeiten kann hier auch ein Pluspunkt sein. Die Auswahl des richtigen Hotels ist oft der erste Schritt zu einem gelungenen Urlaub. In Wieblingen findet man eine gute Mischung, die für verschiedene Bedürfnisse und Budgets etwas bereithält. Es lohnt sich, die verschiedenen Optionen genau anzuschauen."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Ausstattung der Zimmer",
         "description": "Die Zimmer in den Hotels in Wieblingen sind meist gut ausgestattet. Man findet dort in der Regel ein bequemes Bett, einen Schreibtisch und oft auch einen Fernseher. Viele Zimmer verfügen über ein eigenes Badezimmer mit Dusche oder Badewanne. Manchmal gibt es auch einen kleinen Kühlschrank für Getränke oder Snacks. Die meisten Zimmer bieten kostenfreies WLAN, was heutzutage ja fast schon Standard ist."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Blick auf die Umgebung",
         "description": "Einige Zimmer bieten einen schönen Blick auf die Umgebung von Wieblingen. Das kann ein Blick ins Grüne sein, vielleicht auf einen kleinen Park oder einfach auf die typische Heidelberger Architektur. Es ist doch nett, morgens aufzuwachen und nicht nur auf eine Mauer zu schauen. Manche Hotels haben Zimmer mit Balkon, wo man dann gemütlich einen Kaffee trinken kann."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Serviceleistungen im Hotel",
         "description": "Die Serviceleistungen in den Hotels sind meist darauf ausgelegt, Ihren Aufenthalt so angenehm wie möglich zu gestalten. Dazu gehört oft ein freundlicher Empfang, der Ihnen bei Fragen weiterhilft. Viele Hotels bieten auch einen Zimmerservice an, falls Sie mal keine Lust haben, ins Restaurant zu gehen. Manchmal gibt es auch einen Weckservice, falls Sie einen frühen Termin haben. Hier eine kleine Übersicht, was Sie erwarten können: Rezeptionsservice (oft 24 Stunden) Reinigungsservice (täglich) Gepäckaufbewahrung Informationen zu lokalen Sehenswürdigkeiten Manchmal auch Fahrradverleih"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Nähe zu Sehenswürdigkeiten",
         "description": "Wieblingen selbst hat zwar nicht die ganz großen Touristenmagnete direkt vor der Tür, aber das ist gar kein Problem. Viele Hotels liegen so, dass man schnell bei den bekannten Orten ist. Die Altstadt von Heidelberg mit dem Schloss ist mit öffentlichen Verkehrsmitteln oder dem Auto gut erreichbar. Auch das Neckarufer ist nicht weit, perfekt für einen entspannten Spaziergang. Schloss Heidelberg Heidelberger Altstadt Neckarwiese Technoseum"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Verkehrsanbindung",
         "description": "Die Anbindung ist wirklich ein Pluspunkt für Hotels in Wieblingen. Die Straßenbahnlinien fahren regelmäßig und bringen Sie zügig ins Zentrum oder zu anderen Stadtteilen. Auch mit dem Auto ist man schnell auf den Autobahnen A5 und A6, falls man weiter weg möchte. Die öffentlichen Verkehrsmittel in Heidelberg sind ziemlich zuverlässig. Man kommt gut von A nach B, auch wenn es mal später wird. Das spart Parkplatzsuche und Nerven."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Parkmöglichkeiten",
         "description": "Das mit dem Parken kann in Heidelberg ja manchmal eine Herausforderung sein. Aber viele Hotels in Wieblingen haben eigene Parkplätze oder Tiefgaragen. Das ist super praktisch, wenn man mit dem eigenen Auto anreist. Manchmal kostet das extra, aber das ist oft günstiger als die Parkgebühren in der Innenstadt. Fragen Sie am besten direkt im Hotel nach, wie die Parksituation aussieht, bevor Sie buchen."
       }
@@ -4034,51 +3989,46 @@
     "items": [
       {
         "rank": 1,
-        "name": "Wichtige Punkte",
-        "description": "Die Hotels in Ziegelhausen Heidelberg punkten mit ihrer tollen Lage zwischen Fluss und Wald. Sie bieten verschiedene Zimmer und Suiten für unterschiedliche Bedürfnisse. Viele Hotels haben besondere Angebote, die Ihren Aufenthalt noch angenehmer machen. Komfort und Service werden großgeschrieben, von der Zimmerausstattung bis zu kulinarischen Genüssen. Die Nähe zu Wanderwegen im Odenwald und Schifffahrten auf dem Neckar macht die Hotels zu einem idealen Ausgangspunkt für Erkundungen."
-      },
-      {
-        "rank": 2,
         "name": "Lage und Umgebung der Hotels",
         "description": "Die Hotels in Ziegelhausen sind oft so gelegen, dass Sie das Beste aus beiden Welten genießen können. Viele sind nur einen Katzensprung vom Neckarufer entfernt, was Spaziergänge am Wasser oder eine entspannte Schifffahrt ermöglicht. Gleichzeitig sind die Wanderwege des Odenwaldes oft direkt vor der Haustür. Die Anbindung an das Heidelberger Stadtzentrum ist meist unkompliziert, sodass Sie sowohl die Natur als auch die Sehenswürdigkeiten der Stadt bequem erreichen können."
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "Verfügbare Zimmer und Suiten",
         "description": "Egal, ob Sie alleine reisen, als Paar oder mit der Familie – die Hotels in Ziegelhausen bieten eine breite Palette an Zimmern und Suiten. Von gemütlichen Einzelzimmern bis hin zu geräumigen Familienunterkünften ist für jeden Bedarf etwas dabei. Viele Zimmer verfügen über einen Balkon oder eine Terrasse mit Blick ins Grüne oder auf den Fluss. Die Ausstattung ist in der Regel modern und komfortabel, damit Sie sich rundum wohlfühlen."
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "Besondere Angebote für Ihren Aufenthalt",
         "description": "Halten Sie Ausschau nach speziellen Arrangements, die Ihren Aufenthalt noch angenehmer machen. Oft gibt es Pakete, die eine Übernachtung mit Frühstück, einem Abendessen oder auch Eintrittskarten für lokale Attraktionen kombinieren. Manche Hotels bieten auch spezielle Tarife für längere Aufenthalte oder für Gruppen an. Es lohnt sich immer, direkt bei den Hotels nachzufragen oder die Websites zu durchforsten, um die besten Deals zu finden."
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "Ausstattung der Zimmer",
         "description": "Die Zimmer in den Hotels in Ziegelhausen sind meist gut ausgestattet. Sie finden dort in der Regel: Bequeme Betten für erholsame Nächte. Ein eigenes Badezimmer mit Dusche oder Badewanne. Einen Fernseher und oft auch kostenfreies WLAN, damit Sie verbunden bleiben können. Manche Zimmer bieten zusätzlich einen kleinen Schreibtisch, falls Sie doch noch etwas arbeiten müssen. Die meisten Zimmer sind darauf ausgelegt, Ihnen ein Gefühl von Zuhause in der Ferne zu geben. Es gibt auch oft die Möglichkeit, Zimmer mit besonderem Ausblick zu buchen, zum Beispiel auf den Neckar oder den angrenzenden Wald."
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "Kulinarische Angebote",
         "description": "Kulinarisch haben die Hotels in Ziegelhausen einiges zu bieten. Viele haben eigene Restaurants, in denen Sie regionale und internationale Gerichte genießen können. Das Frühstück ist oft ein Highlight, mit einer guten Auswahl an Brot, Aufschnitt, Käse, Obst und warmen Speisen. Wenn Sie spezielle Wünsche haben, wie zum Beispiel vegetarische oder vegane Optionen, geben Sie das am besten schon bei der Buchung an. Manche Hotels bieten auch Zimmerservice an, falls Sie lieber in Ruhe auf Ihrem Zimmer essen möchten. Die Restaurants legen oft Wert auf frische, saisonale Zutaten aus der Region. Das schmeckt man einfach, und es ist eine schöne Art, die lokale Küche kennenzulernen."
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "Wellness und Entspannung",
         "description": "Nach einem langen Tag voller Erkundungen oder Arbeit können Sie in vielen Hotels in Ziegelhausen entspannen. Einige Häuser verfügen über kleine Wellnessbereiche mit Sauna oder sogar einem Pool. Hier können Sie die Seele baumeln lassen und neue Energie tanken. Auch Massagen oder andere Anwendungen werden manchmal angeboten, oft auf Anfrage. Wenn Ihr Hotel keinen eigenen Wellnessbereich hat, fragen Sie einfach an der Rezeption nach nahegelegenen Möglichkeiten – oft gibt es gute Kooperationen mit lokalen Anbietern."
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "Wandern im Odenwald",
         "description": "Direkt vor der Haustür beginnt der Odenwald, ein Paradies für Wanderer. Es gibt Routen für jeden Geschmack, von leichten Spaziergängen bis zu anspruchsvollen Touren. Die Wege sind gut ausgeschildert, sodass Sie sich nicht verlaufen können. Packen Sie einfach bequeme Schuhe ein und genießen Sie die Natur. Es gibt viele schöne Aussichtspunkte, von denen Sie einen tollen Blick über das Neckartal haben. Viele Wanderwege führen auch an kleinen, urigen Gasthäusern vorbei, wo Sie eine Rast einlegen können. Beliebte Wanderrouten: Der Neckarsteig bietet tolle Ausblicke. Rundwege durch die Wälder rund um Ziegelhausen. Touren zu historischen Stätten im Odenwald."
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "Schifffahrt auf dem Neckar",
         "description": "Eine Fahrt auf dem Neckar ist eine wunderbare Art, die Landschaft zu genießen. Sie können gemütlich auf einem Schiff sitzen und die vorbeiziehende Natur auf sich wirken lassen. Es gibt verschiedene Anbieter, die Touren von Ziegelhausen aus anbieten. Besonders schön ist eine Fahrt bei Sonnenuntergang. Man kann auch Tagesausflüge nach Heidelberg oder andere Orte am Fluss machen. Das ist eine entspannte Alternative zum Wandern und bietet ganz neue Perspektiven auf die Umgebung. Informieren Sie sich am besten vor Ort über die Abfahrtszeiten und Routen. Eine Schifffahrt ist ein tolles Erlebnis für die ganze Familie."
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "Besuch historischer Stätten",
         "description": "Die Region hat eine reiche Geschichte zu bieten. Nur einen Katzensprung entfernt liegt Heidelberg mit seinem berühmten Schloss. Aber auch in der näheren Umgebung gibt es viel zu entdecken. Alte Burgen, Klöster und historische Stadtkerne warten darauf, erkundet zu werden. Ein Ausflug zu diesen Orten ist wie eine kleine Zeitreise. Viele dieser Stätten sind gut erhalten und bieten spannende Einblicke in vergangene Zeiten. Es lohnt sich, einen Tag für solche Entdeckungen einzuplanen. Die Nähe zu Heidelberg macht Ziegelhausen zu einem idealen Standort für Kulturinteressierte. Die Kombination aus Natur und Geschichte macht diese Region so besonders. Sie können morgens wandern gehen und nachmittags eine Burg besichtigen."
       }

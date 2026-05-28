@@ -22,7 +22,15 @@ RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]+$
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.*)$ /$1/ [L,R=301]
 
-# Legacy WP-Routen — Themen lagen unter /thema/<slug>/, das ist identisch ✓
+# Legacy WP-Routen — eine WP-Themen-URL hat einen anderen Slug:
+#   /thema/leben-in-heidelberg/ → /thema/leben/
+RewriteRule ^thema/leben-in-heidelberg/?$ /thema/leben/ [L,R=301]
+
+# Author-Pages (Yoast hatte author-sitemap aktiviert) → 410, da redaktionell unwichtig
+RewriteRule ^author/ - [G]
+RewriteRule ^autor/ - [G]
+
+# WP-Tags und Category-Archives anderer Art → 410 (wir mappen nur die echten thema/-Slugs)
 # Feed/Comments/XMLRPC → 410 (gone)
 RewriteRule ^feed/?$ - [G]
 RewriteRule ^comments/feed/?$ - [G]
