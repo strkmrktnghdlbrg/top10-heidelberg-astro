@@ -1,23 +1,22 @@
 /**
  * Legal-Daten für Impressum & Datenschutz.
- * Placeholder-Werte — vom Site-Owner vor Go-Live ausfüllen.
  */
 export const legal = {
   operator: {
-    name: "PLACEHOLDER — Betreiber-Name",
-    street: "PLACEHOLDER — Straße + Nr.",
-    zip: "PLACEHOLDER — PLZ",
-    city: "Heidelberg",
-    country: "Deutschland",
-    email: "PLACEHOLDER@top10-heidelberg.de",
-    phone: "PLACEHOLDER",
-    vatId: "PLACEHOLDER — USt-IdNr.",
+    name: "Webmagics Ltd.",
+    street: "Gladstonos 12-14",
+    zip: "8046",
+    city: "Paphos",
+    country: "Zypern",
+    email: "j.stark@stark.marketing",
+    phone: "",
+    vatId: "",
   },
-  responsibleForContent: "PLACEHOLDER — Verantwortlich i.S.v. § 18 MStV",
+  responsibleForContent: "Webmagics Ltd., Gladstonos 12-14, 8046 Paphos, Zypern",
   trackingEnabled: {
     gtm: false,
-    adsense: false,
-    stay22: false,
+    adsense: true,
+    stay22: true,
     getYourGuide: false,
   },
 };

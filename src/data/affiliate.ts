@@ -17,8 +17,8 @@
 export const affiliate = {
   stay22: {
     /** Affiliate-ID aus dem Stay22-Dashboard. Vor Go-Live setzen. */
-    lmaId: "",
-    enabled: false,
+    lmaId: "6a18cda7a63bc123f3b6d2f0",
+    enabled: true,
     /**
      * Optionale, im Stay22-Dashboard vorgebaute Widget-ID für die
      * Hotel-Karte. Wenn gesetzt, nutzt <Stay22Map> das vorkonfigurierte

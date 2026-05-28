@@ -1,5 +1,5 @@
 export const adsense = {
-  publisherId: "",
+  publisherId: "ca-pub-7432388986384363",
   slots: {
     sidebar: "",
     inContent: "",
