@@ -41,7 +41,7 @@ Wer die Anbieter-Texte direkt editieren möchte: dort. Wer Title/Subtitle/Katego
 
 - [ ] Item-Namen mit Genitiv-Resten ("Heidelberger Schlosses" → "Heidelberger Schloss")
       in `_top10s.raw.json` glätten (ca. 10-15 Stellen, siehe pattern: `h2-items`)
-- [ ] Liste `online-werbeagenturen` redaktionell befüllen (10 echte Heidelberger Agenturen)
+- [x] Liste `online-werbeagenturen` redaktionell befüllt (10 Agenturen via `top10s-overrides.ts`, stark.marketing #2)
 - [ ] Doppel-Einträge in `baeckereien` & `cafes` (z.B. "Bäckerei Müller" 2x, "Café Gundel" 2x) korrigieren
 - [ ] Item #1 in einigen Stadtteil-Hotel-Listen ist "Schlüsselerkenntnisse" — durch echtes Hotel ersetzen
 - [ ] OG-Image 1200×630 nach `public/og-default.png` legen
