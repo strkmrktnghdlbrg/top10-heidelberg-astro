@@ -60,6 +60,16 @@ type RawRecord = {
 const rawList = raw as RawRecord[];
 
 /**
+ * Slugs, die als Bestandsschutz-Guest-Posts eigene Astro-Pages haben
+ * (siehe src/pages/<slug>.astro) und damit NICHT vom Top10-Template
+ * gerendert werden dürfen. Erscheinen auch nicht in Kategorie-Hubs
+ * oder Sidebar-"Mehr aus X"-Listen.
+ */
+const STATIC_PAGE_SLUGS = new Set([
+  "reise-tuerkei-historischer-charakter-heidelberg",
+]);
+
+/**
  * Kuratierter Meta-Layer pro Slug.
  * Jeder Slug bekommt: Kategorie, Display-Titel (Display-H1) und Subtitle.
  *
@@ -167,7 +177,9 @@ const curated: Record<string, Curate> = {
 // Default-Fallback (nie greifen, aber TS-sicher)
 const FALLBACK_CURATE: Curate = { category: "leben", hue: 1 };
 
-export const top10Lists: Top10List[] = rawList.map<Top10List>((r) => {
+export const top10Lists: Top10List[] = rawList
+  .filter((r) => !STATIC_PAGE_SLUGS.has(r.slug))
+  .map<Top10List>((r) => {
   const c = curated[r.slug] ?? FALLBACK_CURATE;
   const ov = top10Overrides[r.slug];
   // Wenn ein Override existiert: ersetzt Items komplett, optional auch das Intro.
