@@ -15,12 +15,15 @@ const navItems = categories
   })
   .map((c) => ({ href: `/thema/${c.slug}/`, label: c.name, icon: c.icon, short: c.short }));
 
+// Events-Hub als Extra-Item ans Ende der Hauptnav anhängen.
+navItems.push({ href: "/events/", label: "Events", icon: "📅", short: "Termine + Hotels für Schlossbeleuchtung, Festspiele, Weihnachtsmarkt & Co." });
+
 const quickLinks = [
   { href: "/sehenswuerdigkeiten/", label: "Sehenswürdigkeiten" },
   { href: "/hotels/",              label: "Hotels" },
   { href: "/restaurants/",         label: "Restaurants" },
   { href: "/cafes/",               label: "Cafés" },
-  { href: "/altstadt-hotels/",     label: "Hotels Altstadt" },
+  { href: "/events/",              label: "Events" },
 ];
 ---
 

@@ -21,9 +21,27 @@ interface Props {
   radius?: number;
   /** Anzahl Hotels (max 6 sinnvoll). */
   limit?: number;
+  /** Optionales Checkin-Datum ISO YYYY-MM-DD. */
+  checkin?: string;
+  /** Optionales Checkout-Datum ISO YYYY-MM-DD. */
+  checkout?: string;
+  /** Optional eigene Headline statt "Hotels in der Nähe von {near}". */
+  customHeadline?: string;
+  /** Optional eigener Lead-Text statt Default. */
+  customLead?: string;
 }
 
-const { lat, lng, near, radius = 1500, limit = 4 } = Astro.props;
+const {
+  lat,
+  lng,
+  near,
+  radius = 1500,
+  limit = 4,
+  checkin,
+  checkout,
+  customHeadline,
+  customLead,
+} = Astro.props;
 const lmaId = affiliate.stay22.lmaId;
 
 let hotels: Stay22Accommodation[] | null = null;
@@ -40,6 +58,8 @@ try {
     lang: "de",
     aid: lmaId,
     campaign: lmaId,
+    checkin,
+    checkout,
   });
 } catch (err) {
   console.error(`[Stay22NearbyHotels] Fetch-Fehler für ${near}:`, err);
@@ -53,10 +73,10 @@ const visible = hotels && hotels.length > 0 ? hotels.slice(0, limit) : [];
     <div class="mb-5">
       <p class="eyebrow mb-2">Live von Stay22</p>
       <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
-        Hotels in der Nähe von {near}
+        {customHeadline ?? `Hotels in der Nähe von ${near}`}
       </h2>
       <p class="text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
-        Aktuelle Preise und Verfügbarkeit. Alle Hotels im Umkreis von {Math.round(radius / 100) * 100} m.
+        {customLead ?? `Aktuelle Preise und Verfügbarkeit. Alle Hotels im Umkreis von ${Math.round(radius / 100) * 100} m.`}
       </p>
     </div>
 

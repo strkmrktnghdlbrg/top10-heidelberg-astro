@@ -1,0 +1,13 @@
+---
+import EventPage from "../../components/EventPage.astro";
+import { events, getEvent } from "../../data/events";
+
+export const getStaticPaths = () => events.map((e) => ({ params: { slug: e.slug } }));
+
+const { slug } = Astro.params;
+const event = getEvent(slug!);
+if (!event) {
+  return Astro.redirect("/404/");
+}
+---
+<EventPage event={event} />

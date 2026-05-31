@@ -1,0 +1,197 @@
+---
+/**
+ * Event-/Messe-Detail-Page.
+ * Rendert eine EventPage aus src/data/events.ts mit Stay22-Live-Hotels
+ * EXAKT für die Event-Termine.
+ *
+ * Pro Termin wird ein eigener Stay22NearbyHotels-Block mit checkin/
+ * checkout passend zur Veranstaltung gerendert. Bei mehreren Terminen
+ * (z.B. Schlossbeleuchtung mit 3 Tagen) gibt es einen Block pro Datum.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "./Breadcrumbs.astro";
+import Stay22NearbyHotels from "./Stay22NearbyHotels.astro";
+import Stay22Map from "./Stay22Map.astro";
+import type { EventPage as EventPageData } from "../data/events";
+
+interface Props {
+  event: EventPageData;
+}
+
+const { event } = Astro.props;
+
+const breadcrumbs = [
+  { label: "Start", href: "/" },
+  { label: "Events & Messen", href: "/events/" },
+  { label: event.editionLabel },
+];
+
+const dateFormatter = new Intl.DateTimeFormat("de-DE", {
+  weekday: "long",
+  day: "2-digit",
+  month: "long",
+  year: "numeric",
+});
+
+const formatDate = (iso: string) => dateFormatter.format(new Date(iso));
+
+// JSON-LD Event
+const eventJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...event.dates.map((d, i) => ({
+      "@type": "Event",
+      "@id": `https://top10-heidelberg.de/events/${event.slug}/#event-${i}`,
+      name: `${event.title}${d.label ? ` — ${d.label}` : ""}`,
+      startDate: d.start,
+      endDate: d.end,
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      location: {
+        "@type": "Place",
+        name: event.location.name,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: event.location.street,
+          addressLocality: event.location.city,
+          addressCountry: "DE",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: event.location.lat,
+          longitude: event.location.lng,
+        },
+      },
+      description: event.metaDescription,
+      organizer: { "@type": "Organization", name: "Top 10 Heidelberg" },
+    })),
+    {
+      "@type": "FAQPage",
+      mainEntity: event.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+---
+<BaseLayout title={event.title} description={event.metaDescription} ogImage={event.heroImage}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
+    <div class={`flex items-center justify-center absolute inset-0 opacity-30 pointer-events-none`} style={`background: var(--hue-${event.hue});`}>
+    </div>
+    <div class="container-page relative pt-8 pb-14 sm:pt-16 sm:pb-24">
+      <Breadcrumbs items={breadcrumbs} />
+      <div class="mt-4 flex flex-wrap items-center gap-2">
+        <span class="pill-accent">{event.emoji} {event.editionLabel}</span>
+      </div>
+      <h1 class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight text-balance max-w-4xl" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+        {event.title}
+      </h1>
+      <p class="mt-4 text-lg sm:text-xl max-w-3xl" style="color: var(--color-shadow-graphite);">
+        {event.subtitle}
+      </p>
+
+      <!-- Termin-Pillen direkt im Hero -->
+      <div class="mt-6 flex flex-wrap gap-3">
+        {event.dates.map((d) => (
+          <div class="card px-4 py-3 flex flex-col gap-0.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest" style="color: var(--color-accent);">
+              {d.label ?? "Termin"}
+            </span>
+            <span class="text-sm font-semibold" style="color: var(--color-inkwell-purple);">
+              {formatDate(d.start)}
+              {d.start !== d.end && <span> — {formatDate(d.end)}</span>}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro + Sektionen -->
+  <section class="section">
+    <div class="container-page max-w-4xl">
+      {event.intro.split("\n\n").map((para) => (
+        <p class="text-base sm:text-lg leading-relaxed mb-5" style="color: var(--color-inkwell-purple);">
+          {para}
+        </p>
+      ))}
+    </div>
+  </section>
+
+  {event.sections.map((sec) => (
+    <section class="section pt-0">
+      <div class="container-page max-w-4xl">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-5" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+          {sec.heading}
+        </h2>
+        {sec.body.split("\n\n").map((para) => (
+          <p class="text-base leading-relaxed mb-4" style="color: var(--color-shadow-graphite);">
+            {para}
+          </p>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  <!-- Hotel-Blocks: pro Termin ein Stay22-Block -->
+  {event.dates.map((d) => {
+    const hotelGeo = event.hotelLocation ?? event.location;
+    return (
+      <section class="section pt-0">
+        <div class="container-page">
+          <Stay22NearbyHotels
+            lat={hotelGeo.lat}
+            lng={hotelGeo.lng}
+            near={hotelGeo.name}
+            radius={event.hotelRadius}
+            limit={8}
+            checkin={d.hotelCheckIn ?? d.start}
+            checkout={d.hotelCheckOut ?? d.end}
+            customHeadline={`Hotels${d.label ? ` für ${d.label}` : ""} — ${formatDate(d.start)}${d.start !== d.end ? ` bis ${formatDate(d.end)}` : ""}`}
+            customLead={`Live-Verfügbarkeit und aktuelle Preise via Stay22 für genau diesen Termin. Im Umkreis von ${Math.round(event.hotelRadius / 100) * 100} m um ${hotelGeo.name}.`}
+          />
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Karte -->
+  <section class="section pt-0">
+    <div class="container-page">
+      <Stay22Map
+        lat={(event.hotelLocation ?? event.location).lat}
+        lng={(event.hotelLocation ?? event.location).lng}
+        zoom={15}
+        title="Hotels auf der Karte"
+        lead={`Alle Hotels in und um ${(event.hotelLocation ?? event.location).name} mit Live-Preisen.`}
+      />
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section pt-0">
+    <div class="container-page max-w-4xl">
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+        Häufige Fragen
+      </h2>
+      <div class="space-y-4">
+        {event.faqs.map((f) => (
+          <details class="card p-5 group">
+            <summary class="cursor-pointer font-bold text-base sm:text-lg list-none flex justify-between items-start gap-4" style="color: var(--color-inkwell-purple);">
+              <span>{f.q}</span>
+              <span class="text-xl transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+            </summary>
+            <p class="mt-3 text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+              {f.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(eventJsonLd)} />
+</BaseLayout>

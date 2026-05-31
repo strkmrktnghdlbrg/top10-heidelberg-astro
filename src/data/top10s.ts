@@ -94,19 +94,19 @@ type Curate = Partial<Pick<Top10List, "title" | "subtitle" | "category" | "distr
 
 const curated: Record<string, Curate> = {
   // ── Tourismus ──────────────────────────────────────────────────────
-  "sehenswuerdigkeiten":         { title: "Top 10 Sehenswürdigkeiten in Heidelberg", subtitle: "Schloss, Alte Brücke, Philosophenweg & weitere Must-sees am Neckar.", category: "tourismus", hue: 2, emoji: "🏰", affiliate: { getYourGuide: true } },
+  "sehenswuerdigkeiten":         { title: "Top 10 Sehenswürdigkeiten in Heidelberg", subtitle: "Schloss, Alte Brücke, Philosophenweg & weitere Must-sees am Neckar.", category: "tourismus", hue: 2, emoji: "🏰", affiliate: { getYourGuide: true, stay22: true } },
   "hotels":                      { title: "Die 10 besten Hotels in Heidelberg",       subtitle: "Vom 5-Sterne-Klassiker bis zur Boutique-Suite mit Schlossblick.",   category: "tourismus", hue: 2, emoji: "🛎️", affiliate: { stay22: true } },
-  "restaurants":                 { title: "Top 10 Restaurants in Heidelberg",         subtitle: "Sterneküche, Brauhäuser, vegane Adressen & internationale Klassiker.", category: "tourismus", hue: 3, emoji: "🍽️" },
+  "restaurants":                 { title: "Top 10 Restaurants in Heidelberg",         subtitle: "Sterneküche, Brauhäuser, vegane Adressen & internationale Klassiker.", category: "tourismus", hue: 3, emoji: "🍽️", affiliate: { stay22: true } },
   "cafes":                       { title: "Top 10 Cafés in Heidelberg",               subtitle: "Spezialitätenkaffee, Frühstücks-Klassiker & gemütliche Lese-Cafés.", category: "tourismus", hue: 1, emoji: "☕" },
   "bars-und-kneipen":            { title: "Top 10 Bars & Kneipen in Heidelberg",      subtitle: "Studentenkneipen, Cocktail-Bars und urige Weinstuben.",            category: "tourismus", hue: 3, emoji: "🍺" },
-  "wellness-spa":                { title: "Top 10 Wellness- & Spa-Adressen",          subtitle: "Hotel-Spas, Day-Spas & Thermen im Umkreis Heidelberg.",            category: "tourismus", hue: 4, emoji: "🧖" },
-  "outdoor-aktivitaeten":        { title: "Top 10 Outdoor-Aktivitäten in Heidelberg", subtitle: "Wandern, Rad, Kanu & Klettern in der Region.",                     category: "tourismus", hue: 4, emoji: "🥾", affiliate: { getYourGuide: true } },
-  "historische-staetten":        { title: "Top 10 historische Stätten in Heidelberg", subtitle: "Schloss, Universität, Brücken & Kirchen mit jahrhundertelanger Geschichte.", category: "tourismus", hue: 2, emoji: "📜" },
-  "architekturwunder":           { title: "Top 10 Architekturwunder in Heidelberg",   subtitle: "Vom Schloss bis zum modernen Print Media Academy-Glaskubus.",      category: "tourismus", hue: 5, emoji: "🏛️" },
-  "versteckte-juwelen":          { title: "Top 10 versteckte Juwelen in Heidelberg",  subtitle: "Geheimtipps abseits der Touristenpfade — Märchenparadies, Kurpfalzpark & mehr.", category: "tourismus", hue: 4, emoji: "💎" },
+  "wellness-spa":                { title: "Top 10 Wellness- & Spa-Adressen",          subtitle: "Hotel-Spas, Day-Spas & Thermen im Umkreis Heidelberg.",            category: "tourismus", hue: 4, emoji: "🧖", affiliate: { stay22: true } },
+  "outdoor-aktivitaeten":        { title: "Top 10 Outdoor-Aktivitäten in Heidelberg", subtitle: "Wandern, Rad, Kanu & Klettern in der Region.",                     category: "tourismus", hue: 4, emoji: "🥾", affiliate: { getYourGuide: true, stay22: true } },
+  "historische-staetten":        { title: "Top 10 historische Stätten in Heidelberg", subtitle: "Schloss, Universität, Brücken & Kirchen mit jahrhundertelanger Geschichte.", category: "tourismus", hue: 2, emoji: "📜", affiliate: { stay22: true } },
+  "architekturwunder":           { title: "Top 10 Architekturwunder in Heidelberg",   subtitle: "Vom Schloss bis zum modernen Print Media Academy-Glaskubus.",      category: "tourismus", hue: 5, emoji: "🏛️", affiliate: { stay22: true } },
+  "versteckte-juwelen":          { title: "Top 10 versteckte Juwelen in Heidelberg",  subtitle: "Geheimtipps abseits der Touristenpfade — Märchenparadies, Kurpfalzpark & mehr.", category: "tourismus", hue: 4, emoji: "💎", affiliate: { stay22: true } },
   "einkaufsmoeglichkeiten":      { title: "Top 10 Einkaufsmöglichkeiten in Heidelberg", subtitle: "Hauptstraße, Bismarckplatz, Wochenmärkte & Lieblings-Lädchen.", category: "tourismus", hue: 1, emoji: "🛍️" },
-  "veranstaltungen-festivals":   { title: "Top 10 Veranstaltungen & Festivals",       subtitle: "Schlossbeleuchtung, Herbst, Frühling, Weihnachtsmarkt & Festivals.", category: "tourismus", hue: 3, emoji: "🎉" },
-  "kinderfreundliche-orte":      { title: "Top 10 kinderfreundliche Orte in Heidelberg", subtitle: "Zoo, Märchenparadies, Spielplätze & Familien-Cafés.",          category: "tourismus", hue: 4, emoji: "👨‍👩‍👧" },
+  "veranstaltungen-festivals":   { title: "Top 10 Veranstaltungen & Festivals",       subtitle: "Schlossbeleuchtung, Herbst, Frühling, Weihnachtsmarkt & Festivals.", category: "tourismus", hue: 3, emoji: "🎉", affiliate: { stay22: true } },
+  "kinderfreundliche-orte":      { title: "Top 10 kinderfreundliche Orte in Heidelberg", subtitle: "Zoo, Märchenparadies, Spielplätze & Familien-Cafés.",          category: "tourismus", hue: 4, emoji: "👨‍👩‍👧", affiliate: { stay22: true } },
 
   // ── Stadtteile / Hotels nach Stadtteil ─────────────────────────────
   "altstadt-hotels":      { title: "Top 10 Hotels in der Altstadt",      subtitle: "Boutique, Luxus, Budget — direkt am Schloss und an der Hauptstraße.",      category: "stadtteile", district: "Altstadt",      hue: 2, emoji: "🛎️", affiliate: { stay22: true } },
