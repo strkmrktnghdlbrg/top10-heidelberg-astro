@@ -78,6 +78,17 @@ export type EventPage = {
   heroImage?: string;
   /** Eingehende Affiliate-Hotline (Stay22) immer an. */
   showStay22?: boolean;
+  /**
+   * Optionaler GetYourGuide-Block. Wird direkt vor der FAQ-Section
+   * gerendert, wenn gesetzt.
+   */
+  gyg?: {
+    variant: "search-query" | "auto-city";
+    query?: string;
+    headline: string;
+    lead: string;
+    numberOfItems?: number;
+  };
 };
 
 export const events: EventPage[] = [
@@ -169,6 +180,13 @@ export const events: EventPage[] = [
     hotelRadius: 2000,
     hue: 3,
     emoji: "🏰",
+    gyg: {
+      variant: "search-query",
+      query: "Heidelberg Schlossbeleuchtung Boat",
+      numberOfItems: 6,
+      headline: "Schlossbeleuchtung 2026 vom Wasser erleben",
+      lead: "Die drei Beleuchtungsnächte sind schnell ausgebucht — Bootsfahrten und geführte Schloss-Touren rund um das Spektakel lassen sich vorab sichern.",
+    },
   },
 
   // ── Schlossfestspiele — Theater + Musik im Schlosshof ────────────

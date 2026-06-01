@@ -12,6 +12,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Breadcrumbs from "./Breadcrumbs.astro";
 import Stay22NearbyHotels from "./Stay22NearbyHotels.astro";
 import Stay22Map from "./Stay22Map.astro";
+import GetYourGuideWidget from "./GetYourGuideWidget.astro";
 import type { EventPage as EventPageData } from "../data/events";
 
 interface Props {
@@ -170,6 +171,21 @@ const eventJsonLd = {
       />
     </div>
   </section>
+
+  <!-- GYG vor FAQ -->
+  {event.gyg && (
+    <section class="section pt-0">
+      <div class="container-page">
+        <GetYourGuideWidget
+          variant={event.gyg.variant}
+          query={event.gyg.query}
+          numberOfItems={event.gyg.numberOfItems}
+          headline={event.gyg.headline}
+          lead={event.gyg.lead}
+        />
+      </div>
+    </section>
+  )}
 
   <!-- FAQ -->
   <section class="section pt-0">

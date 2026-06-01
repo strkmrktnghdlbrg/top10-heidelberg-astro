@@ -129,7 +129,9 @@ const itemListJsonLd = {
           </p>
         )}
 
-        {showGyg && (
+        {/* GYG-Legacy-Block: nur wenn affiliate.getYourGuide=true UND KEIN list.gyg-Override gesetzt ist.
+            Sonst rendert der Widget unten an der konfigurierten placement-Position. */}
+        {showGyg && !list.gyg && (
           <div class="mb-10">
             <GetYourGuideWidget query={`Heidelberg ${list.title.replace(/^Top 10\s*/, "")}`} />
           </div>
@@ -179,6 +181,17 @@ const itemListJsonLd = {
         {/* In-Content-Ad nach Top 5 (sofern Liste lang genug) */}
         {list.items.length >= 5 && <AdSlot slot="inContent" />}
 
+        {/* GYG-Widget bei placement=after-top10-list (auch Fallback für before-faq, da Top10 keine FAQ hat) */}
+        {showGyg && list.gyg && (list.gyg.placement === "after-top10-list" || list.gyg.placement === "before-faq") && (
+          <GetYourGuideWidget
+            variant={list.gyg.variant}
+            query={list.gyg.query}
+            numberOfItems={list.gyg.numberOfItems}
+            headline={list.gyg.headline}
+            lead={list.gyg.lead}
+          />
+        )}
+
         {showStay22 && (
           <>
             <Stay22TopHotels
@@ -202,6 +215,17 @@ const itemListJsonLd = {
                 : "Hotel-Karte mit Live-Preisen und Verfügbarkeit. Klick auf einen Marker zeigt Details."}
             />
           </>
+        )}
+
+        {/* GYG-Widget bei placement=after-hotels — direkt nach dem Stay22-Block */}
+        {showGyg && list.gyg && list.gyg.placement === "after-hotels" && (
+          <GetYourGuideWidget
+            variant={list.gyg.variant}
+            query={list.gyg.query}
+            numberOfItems={list.gyg.numberOfItems}
+            headline={list.gyg.headline}
+            lead={list.gyg.lead}
+          />
         )}
       </div>
 

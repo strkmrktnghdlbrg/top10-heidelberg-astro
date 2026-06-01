@@ -30,9 +30,9 @@ export const affiliate = {
   },
   getYourGuide: {
     /** Partner-ID aus dem GYG-Partner-Dashboard. */
-    partnerId: "",
+    partnerId: "1UPZQQB",
     locale: "de-DE",
-    enabled: false,
+    enabled: true,
     /**
      * Default-Query für das Städte-Widget. GYG löst "Heidelberg" via
      * eigener Geo-Suche zur Heidelberg-City-ID auf.
