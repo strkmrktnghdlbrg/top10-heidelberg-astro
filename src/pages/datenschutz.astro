@@ -4,42 +4,163 @@ import { legal } from "../data/legal";
 const op = legal.operator;
 const t = legal.trackingEnabled;
 ---
-<BaseLayout title="Datenschutz" description="Datenschutzerklärung von top10-heidelberg.de." noindex>
-  <article class="container-page section max-w-3xl">
+<BaseLayout title="Datenschutz" description="Datenschutzerklärung von top10-heidelberg.de — welche Daten wann verarbeitet werden, welche Drittanbieter eingebunden sind und wie du deine Einwilligung steuern kannst." noindex>
+  <article class="container-page section max-w-3xl" style="color: var(--color-inkwell-purple);">
     <h1 class="text-3xl sm:text-4xl font-bold mb-6" style="font-family: var(--font-display);">Datenschutz­erklärung</h1>
+    <p class="text-base leading-relaxed mb-2" style="color: var(--color-shadow-graphite);">
+      Stand: Juni 2026. Diese Erklärung informiert dich darüber, welche personenbezogenen Daten wir beim Besuch
+      dieser Webseite verarbeiten, welche Drittanbieter eingebunden sind und welche Wahlmöglichkeiten du hast.
+    </p>
 
-    <h2 class="text-xl font-bold mt-8 mb-3">1. Verantwortliche Stelle</h2>
-    <p>{op.name}<br />{op.street}, {op.zip} {op.city}<br />E-Mail: {op.email}</p>
+    <h2 class="text-xl font-bold mt-10 mb-3">1. Verantwortliche Stelle</h2>
+    <p>{op.name}<br />{op.street}<br />{op.zip} {op.city}, {op.country}<br />E-Mail: {op.email}</p>
 
-    <h2 class="text-xl font-bold mt-8 mb-3">2. Erhebung & Speicherung von Daten</h2>
-    <p>Beim Aufruf dieser Webseite werden technisch notwendige Daten (IP-Adresse, Browser, Zeitpunkt) durch unseren Hosting-Provider in Server-Logs verarbeitet (Art. 6 Abs. 1 lit. f DSGVO).</p>
+    <h2 class="text-xl font-bold mt-10 mb-3">2. Hosting & Server-Logs</h2>
+    <p>
+      Beim Aufruf dieser Webseite werden technisch notwendige Daten (IP-Adresse, Browser-Typ, Betriebssystem,
+      Referrer-URL, Uhrzeit) durch unseren Hosting-Provider in temporären Server-Logs verarbeitet.
+      Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an stabilem Seitenbetrieb).
+      Die Logs werden in der Regel nach 14 Tagen automatisch gelöscht.
+    </p>
+
+    <h2 class="text-xl font-bold mt-10 mb-3">3. Cookies & vergleichbare Technologien</h2>
+    <p class="mb-3">
+      Wir nutzen technisch <strong>nicht</strong> notwendige Drittanbieter-Skripte (Stay22, GetYourGuide
+      {t.adsense && ", Google AdSense"}{t.gtm && ", Google Tag Manager"}) nur dann, wenn du im Cookie-Banner
+      „Alle akzeptieren" gewählt hast. Bis dahin werden die Skripte ausschließlich als <code>type="text/plain"</code>
+      gerendert und vom Browser nicht ausgeführt.
+    </p>
+    <p class="mb-3">
+      Deine Wahl speichern wir in deinem Browser unter dem <code>localStorage</code>-Schlüssel
+      <code>top10hd-consent</code> (Wert <code>"all"</code> oder <code>"essential"</code>).
+      Diese Speicherung ist technisch notwendig zur Erfüllung deines Wunsches (Art. 6 Abs. 1 lit. a DSGVO i.V.m.
+      § 25 Abs. 2 TTDSG).
+    </p>
+    <p>
+      Über den Link <em>Cookie-Einstellungen</em> im Footer kannst du deine Wahl jederzeit ändern.
+    </p>
+
+    {t.stay22 && (
+      <>
+        <h2 class="text-xl font-bold mt-10 mb-3">4. Stay22 (Hotel-Karten & Live-Preise)</h2>
+        <p class="mb-3">
+          Auf Hotel- und Stadtteil-Hotel-Seiten binden wir eine interaktive Karte und Live-Hotel-Listen des Anbieters
+          <strong> Stay22 Inc.</strong> (3 Place Ville Marie, Montréal, Québec H3B 0E7, Kanada) ein. Die Karte zeigt
+          aktuelle Verfügbarkeit und Preise aus dem Booking.com-Netzwerk. Buchungen über die Karte/Links generieren
+          eine Affiliate-Vergütung für uns; die Buchung selbst läuft direkt bei Booking.com.
+        </p>
+        <p class="mb-3">
+          Verarbeitete Daten: IP-Adresse, Geräte- und Browser-Daten, Klick-/Buchungs-Ereignisse. Eine Datenübertragung
+          erfolgt in die <strong>USA</strong> und <strong>Kanada</strong> (Drittland). Stay22 setzt eigene Cookies
+          beim Klick auf einen Hotel-Link.
+        </p>
+        <p>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung im Cookie-Banner). Weitere Infos:
+          <a href="https://stay22.com/privacy" rel="nofollow noopener" target="_blank" style="color: var(--color-accent); text-decoration: underline;">stay22.com/privacy</a>.
+        </p>
+      </>
+    )}
+
+    {t.getYourGuide && (
+      <>
+        <h2 class="text-xl font-bold mt-10 mb-3">5. GetYourGuide (Touren & Tickets)</h2>
+        <p class="mb-3">
+          Auf touristisch relevanten Seiten betten wir Touren- und Ticket-Widgets der <strong>GetYourGuide AG</strong>
+          (Sonnenburger Str. 73, 10437 Berlin, Deutschland) ein. Die Widgets laden Inhalte direkt vom
+          GetYourGuide-Server; bei Klick auf eine Tour findet die Buchung dort statt. Wir erhalten dafür eine
+          Affiliate-Vergütung.
+        </p>
+        <p class="mb-3">
+          Verarbeitete Daten: IP-Adresse, Geräte- und Browser-Daten, Klick-Ereignisse. Server stehen in der EU,
+          einzelne Komponenten können in die USA übertragen werden.
+        </p>
+        <p>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO. Weitere Infos:
+          <a href="https://www.getyourguide.de/legal/privacy/" rel="nofollow noopener" target="_blank" style="color: var(--color-accent); text-decoration: underline;">getyourguide.de/legal/privacy</a>.
+        </p>
+      </>
+    )}
+
+    {t.adsense && (
+      <>
+        <h2 class="text-xl font-bold mt-10 mb-3">6. Google AdSense (Werbeanzeigen)</h2>
+        <p class="mb-3">
+          Wir blenden Werbeanzeigen über <strong>Google AdSense</strong> ein, einen Dienst der Google Ireland Ltd.
+          (Gordon House, Barrow Street, Dublin 4, Irland) und ihrer US-Muttergesellschaft Google LLC. Google nutzt
+          Cookies und Geräte-Identifier, um Anzeigen auf Basis vorheriger Besuche dieser oder anderer Webseiten
+          auszuspielen.
+        </p>
+        <p class="mb-3">
+          Verarbeitete Daten: IP-Adresse, Cookie-Identifier, Geräte-Daten, besuchte Seiten, Klick-/View-Ereignisse.
+          Datenübertragung in die <strong>USA</strong> (Drittland) auf Basis der EU-Standardvertragsklauseln und
+          des EU-US Data Privacy Framework.
+        </p>
+        <p>
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO. Du kannst der personalisierten Werbung jederzeit
+          widersprechen unter
+          <a href="https://www.google.com/settings/ads" rel="nofollow noopener" target="_blank" style="color: var(--color-accent); text-decoration: underline;">google.com/settings/ads</a>.
+          Datenschutzerklärung:
+          <a href="https://policies.google.com/privacy" rel="nofollow noopener" target="_blank" style="color: var(--color-accent); text-decoration: underline;">policies.google.com/privacy</a>.
+        </p>
+      </>
+    )}
 
     {t.gtm && (
       <>
-        <h2 class="text-xl font-bold mt-8 mb-3">3. Google Tag Manager / Analytics</h2>
-        <p>Wir setzen den Google Tag Manager ein, um Tracking-Tags ausspielen zu können. Erfasst werden anonymisierte Nutzungs- und Geräte-Daten. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).</p>
-      </>
-    )}
-    {t.adsense && (
-      <>
-        <h2 class="text-xl font-bold mt-8 mb-3">4. Google AdSense</h2>
-        <p>Auf einigen Seiten werden Werbeanzeigen über Google AdSense ausgespielt. Hierfür werden Cookies und Geräte-IDs verarbeitet.</p>
-      </>
-    )}
-    {t.stay22 && (
-      <>
-        <h2 class="text-xl font-bold mt-8 mb-3">5. Stay22</h2>
-        <p>Auf Hotelseiten wird eine interaktive Karte des Anbieters Stay22 eingebunden. Bei Buchung über die Karte erhalten wir eine Affiliate-Vergütung. Es findet ein Datenaustausch mit Stay22 und Booking.com statt.</p>
-      </>
-    )}
-    {t.getYourGuide && (
-      <>
-        <h2 class="text-xl font-bold mt-8 mb-3">6. GetYourGuide</h2>
-        <p>Auf Touristen-Listen wird ein Aktivitäten-Widget von GetYourGuide eingebunden. Bei Buchung erhalten wir eine Affiliate-Vergütung.</p>
+        <h2 class="text-xl font-bold mt-10 mb-3">7. Google Tag Manager</h2>
+        <p>
+          Wir nutzen den Google Tag Manager zur Verwaltung von Tracking-Tags. Der Tag-Manager selbst setzt keine
+          Cookies, lädt aber bei Auslösung andere Skripte. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).
+        </p>
       </>
     )}
 
-    <h2 class="text-xl font-bold mt-8 mb-3">Ihre Rechte</h2>
-    <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch. Wenden Sie sich an: {op.email}</p>
+    <h2 class="text-xl font-bold mt-10 mb-3">8. Kontaktformular</h2>
+    <p>
+      Wenn du das Kontaktformular auf <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">/kontakt/</a>
+      nutzt, übermittelt unser Form-Service Web3Forms (Codetik Pte. Ltd., Singapur) deine Eingaben verschlüsselt an
+      unsere E-Mail-Adresse. Die Daten werden ausschließlich zur Bearbeitung deiner Anfrage verarbeitet
+      (Art. 6 Abs. 1 lit. b/f DSGVO) und nicht zu Werbezwecken genutzt.
+    </p>
+
+    <h2 class="text-xl font-bold mt-10 mb-3">9. Eingebettete Bilder & externe Inhalte</h2>
+    <p>
+      Hero-Bilder stammen überwiegend von Wikimedia Commons (Wikimedia Foundation Inc., USA). Beim Aufruf werden
+      die Bilder direkt vom Wikimedia-Server ausgeliefert; dabei wird deine IP-Adresse übertragen.
+      Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an bildhafter Darstellung).
+    </p>
+
+    <h2 class="text-xl font-bold mt-10 mb-3">10. Deine Rechte</h2>
+    <p class="mb-3">
+      Du hast jederzeit das Recht auf:
+    </p>
+    <ul class="list-disc pl-6 space-y-1 mb-3" style="color: var(--color-shadow-graphite);">
+      <li>Auskunft über die zu deiner Person gespeicherten Daten (Art. 15 DSGVO)</li>
+      <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+      <li>Löschung („Recht auf Vergessen") (Art. 17 DSGVO)</li>
+      <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+      <li>Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+    </ul>
+    <p>
+      Bitte richte entsprechende Anfragen an <a href={`mailto:${op.email}`} style="color: var(--color-accent); text-decoration: underline;">{op.email}</a>.
+    </p>
+
+    <h2 class="text-xl font-bold mt-10 mb-3">11. Beschwerderecht</h2>
+    <p>
+      Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn du der Auffassung bist,
+      dass die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO verstößt — z.B. beim
+      Landesbeauftragten für den Datenschutz Baden-Württemberg
+      (<a href="https://www.baden-wuerttemberg.datenschutz.de/" rel="nofollow noopener" target="_blank" style="color: var(--color-accent); text-decoration: underline;">baden-wuerttemberg.datenschutz.de</a>)
+      oder bei der für unseren Sitz zuständigen zypriotischen Datenschutzbehörde
+      (<a href="https://www.dataprotection.gov.cy/" rel="nofollow noopener" target="_blank" style="color: var(--color-accent); text-decoration: underline;">dataprotection.gov.cy</a>).
+    </p>
+
+    <h2 class="text-xl font-bold mt-10 mb-3">12. Änderungen dieser Erklärung</h2>
+    <p>
+      Wir passen diese Erklärung an, wenn sich die Datenverarbeitung auf der Seite ändert. Bei wesentlichen
+      Änderungen weisen wir dich gesondert hin.
+    </p>
   </article>
 </BaseLayout>

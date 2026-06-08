@@ -17,6 +17,6 @@ export const legal = {
     gtm: false,
     adsense: true,
     stay22: true,
-    getYourGuide: false,
+    getYourGuide: true,
   },
 };
