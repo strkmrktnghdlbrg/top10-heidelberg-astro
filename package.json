@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev --port 4329",
-    "build": "astro build",
+    "build": "astro build && pagefind --site dist --output-path dist/pagefind",
     "preview": "astro preview --port 4329",
     "astro": "astro"
   },
@@ -14,5 +14,8 @@
     "astro": "^5.1.0",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
   }
 }

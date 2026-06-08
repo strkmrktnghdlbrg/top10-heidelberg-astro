@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+const breadcrumbs = [
+  { label: "Start", href: "/" },
+  { label: "Suche" },
+];
+---
+<BaseLayout
+  title="Suche"
+  description="Durchsuche alle Top-10-Listen, Events und Artikel auf top10-heidelberg.de."
+  noindex
+>
+  <section class="section">
+    <div class="container-page max-w-3xl">
+      <Breadcrumbs items={breadcrumbs} />
+      <h1 class="mt-4 text-3xl sm:text-4xl font-bold tracking-tight mb-3" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+        Suche
+      </h1>
+      <p class="text-base sm:text-lg leading-relaxed mb-8" style="color: var(--color-shadow-graphite);">
+        Durchsuche alle 79 Seiten — Sehenswürdigkeiten, Hotels, Stadtteile, Branchen, Events.
+      </p>
+
+      <div id="search" class="pagefind-search"></div>
+    </div>
+  </section>
+
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  <script is:inline>
+    window.addEventListener("DOMContentLoaded", function () {
+      if (typeof window.PagefindUI === "undefined") return;
+      new window.PagefindUI({
+        element: "#search",
+        showSubResults: true,
+        showImages: false,
+        translations: {
+          placeholder: "Was suchst du in Heidelberg?",
+          clear_search: "Löschen",
+          load_more: "Mehr Ergebnisse laden",
+          search_label: "Suche durchführen",
+          filters_label: "Filter",
+          zero_results: "Keine Treffer für [SEARCH_TERM]",
+          many_results: "[COUNT] Treffer für [SEARCH_TERM]",
+          one_result: "Ein Treffer für [SEARCH_TERM]",
+          alt_search: "Keine Treffer für [SEARCH_TERM]. Stattdessen Ergebnisse für [DIFFERENT_TERM]:",
+          search_suggestion: "Keine Treffer für [SEARCH_TERM]. Versuche:",
+          searching: "Suche nach [SEARCH_TERM]…",
+        },
+      });
+    });
+  </script>
+
+  <style is:global>
+    .pagefind-ui {
+      --pagefind-ui-primary: var(--color-accent);
+      --pagefind-ui-text: var(--color-inkwell-purple);
+      --pagefind-ui-background: #fff;
+      --pagefind-ui-border: var(--color-lavender-ash);
+      --pagefind-ui-border-radius: 14px;
+      --pagefind-ui-border-width: 1px;
+      --pagefind-ui-font: var(--font-sans, ui-sans-serif, system-ui);
+    }
+  </style>
+</BaseLayout>

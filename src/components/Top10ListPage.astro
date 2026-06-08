@@ -49,19 +49,82 @@ const mapLat = districtGeo?.coordinates[0] ?? city.coordinates[0];
 const mapLng = districtGeo?.coordinates[1] ?? city.coordinates[1];
 const mapZoom = districtGeo ? 15 : 13;
 
-// JSON-LD ItemList
+// JSON-LD ItemList — mit kategoriespezifischem item-Schema-Type.
+// Google nutzt die spezifischeren Typen (TouristAttraction, Hotel,
+// Restaurant, LocalBusiness) für Rich Results in Search.
+function schemaTypeForList(slug: string, category: string): string {
+  if (slug.endsWith("-hotels") || slug === "hotels") return "Hotel";
+  if (slug === "restaurants") return "Restaurant";
+  if (slug === "cafes") return "CafeOrCoffeeShop";
+  if (slug === "bars-und-kneipen") return "BarOrPub";
+  if (slug === "baeckereien") return "Bakery";
+  if (slug === "apotheken") return "Pharmacy";
+  if (["tierarzt", "tieraerzte"].includes(slug)) return "VeterinaryCare";
+  if (slug === "wellness-spa") return "DaySpa";
+  if (slug === "fitnessstudios") return "ExerciseGym";
+  if (slug === "yogastudios-entspannung-betaetigung") return "ExerciseGym";
+  if (slug === "kunstgalerien") return "ArtGallery";
+  if (slug === "musikschulen") return "MusicSchool";
+  if (slug === "buchlaeden") return "BookStore";
+  if (slug === "blumenladen") return "Florist";
+  if (slug === "weinladen") return "WineStore";
+  if (slug === "bio-laden") return "GroceryStore";
+  if (slug === "fahrradladen") return "BikeStore";
+  if (["rechtsanwalte", "steuerberater", "immobilienmakler", "it-dienstleister-computerreparatur", "hochzeitsplaner"].includes(slug)) return "ProfessionalService";
+  if (["handwerker", "umzugsunternehmen", "gartengestaltung-heidelberg", "auto-service-wieblingen", "autowerkstaetten"].includes(slug)) return "LocalBusiness";
+  if (["online-werbeagenturen", "coworking-spaces"].includes(slug)) return "Organization";
+  if (category === "tourismus") return "TouristAttraction";
+  return "LocalBusiness";
+}
+
+const itemSchemaType = schemaTypeForList(list.slug, list.category);
+const cityName = city.name;
+const countryCode = "DE";
+
 const itemListJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: list.title,
   description,
   numberOfItems: list.items.length,
-  itemListElement: list.items.map((it) => ({
-    "@type": "ListItem",
-    position: it.rank,
-    name: it.name,
-    description: it.description,
-  })),
+  itemListElement: list.items.map((it) => {
+    const item: any = {
+      "@type": itemSchemaType,
+      name: it.name,
+      description: it.description,
+    };
+    if (it.address) {
+      item.address = {
+        "@type": "PostalAddress",
+        streetAddress: it.address,
+        addressLocality: list.district ?? cityName,
+        addressCountry: countryCode,
+      };
+    } else {
+      item.address = {
+        "@type": "PostalAddress",
+        addressLocality: list.district ?? cityName,
+        addressCountry: countryCode,
+      };
+    }
+    if (it.websiteUrl) item.url = it.websiteUrl;
+    return {
+      "@type": "ListItem",
+      position: it.rank,
+      item,
+    };
+  }),
+};
+
+// Zusätzliches BreadcrumbList-Schema
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Start", item: city.domain + "/" },
+    { "@type": "ListItem", position: 2, name: cat.name, item: `${city.domain}/thema/${cat.slug}/` },
+    { "@type": "ListItem", position: 3, name: list.title },
+  ],
 };
 ---
 
@@ -272,4 +335,5 @@ const itemListJsonLd = {
   <ImageCreditsList slugs={[list.slug, ...siblingSlugs]} />
 
   <script type="application/ld+json" is:inline set:html={JSON.stringify(itemListJsonLd)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbJsonLd)} />
 </BaseLayout>

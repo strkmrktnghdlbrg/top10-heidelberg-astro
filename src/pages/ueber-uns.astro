@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { city } from "../data/city";
+import { legal } from "../data/legal";
+
+const breadcrumbs = [
+  { label: "Start", href: "/" },
+  { label: "Über uns" },
+];
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: `Über uns — ${city.brandName}`,
+  url: `${city.domain}/ueber-uns/`,
+  publisher: {
+    "@type": "Organization",
+    name: legal.operator.name,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: legal.operator.street,
+      postalCode: legal.operator.zip,
+      addressLocality: legal.operator.city,
+      addressCountry: legal.operator.country,
+    },
+    email: legal.operator.email,
+    url: city.domain,
+  },
+  inLanguage: "de",
+};
+---
+<BaseLayout
+  title="Über uns"
+  description="Wer hinter Top 10 Heidelberg steht — redaktioneller Ansatz, Methodik der Top-10-Listen, Quellen und Affiliate-Transparenz."
+>
+  <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
+    <div class="container-page pt-8 pb-12 sm:pt-16 sm:pb-20">
+      <Breadcrumbs items={breadcrumbs} />
+      <span class="pill-accent mt-4 inline-flex">📖 Editorial</span>
+      <h1 class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight max-w-4xl" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+        Was {city.brandName} ist — und was nicht
+      </h1>
+      <p class="mt-4 text-lg sm:text-xl max-w-3xl" style="color: var(--color-shadow-graphite);">
+        Ein redaktionelles Stadtportal mit kuratierten Top-10-Listen für Heidelberg. Kein Anzeigen-Verzeichnis, kein
+        Buchungsportal, kein generischer Reiseführer.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-page max-w-3xl space-y-8" style="color: var(--color-inkwell-purple);">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3" style="font-family: var(--font-display);">Unser Ansatz</h2>
+        <p class="text-base leading-relaxed mb-3" style="color: var(--color-shadow-graphite);">
+          Wir sortieren Heidelberg in handliche Zehner-Listen — pro Branche, Stadtteil und Anlass.
+          Statt 200 Treffer ohne Reihenfolge zeigen wir zehn Empfehlungen, die wir für eine erste,
+          schnelle Orientierung für sinnvoll halten. Die Auswahl basiert auf öffentlich verfügbaren
+          Bewertungen (Google, Tripadvisor, Branchen-Verzeichnisse), regionalen Medien und eigener
+          Recherche vor Ort.
+        </p>
+        <p class="text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+          Die Listen sind ausdrücklich <strong>redaktionelle Empfehlungen</strong> — keine objektive
+          Rangfolge und kein bezahltes Ranking. Wo wir uns unsicher sind, sagen wir es.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3" style="font-family: var(--font-display);">So entstehen die Top-10-Listen</h2>
+        <ol class="space-y-3 list-decimal pl-5 text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+          <li>
+            <strong>Long-List:</strong> Recherche der bekanntesten und am besten bewerteten Adressen
+            pro Thema aus Google Maps, das örtliche, werkenntdenbesten, gelbe Seiten und regionalen
+            Medienberichten (RNZ, Mannheimer Morgen, heidelberg.de).
+          </li>
+          <li>
+            <strong>Auswahl-Kriterien:</strong> Kombination aus Bewertungsdurchschnitt,
+            Bewertungsmenge, regionaler Bekanntheit, geografischer Verteilung im Stadtgebiet und —
+            wo sinnvoll — Spezialisierung oder Alleinstellungsmerkmal.
+          </li>
+          <li>
+            <strong>Beschreibung:</strong> Pro Eintrag ein neutraler Kurztext mit den
+            unterscheidenden Merkmalen, ohne Superlative ohne Beleg.
+          </li>
+          <li>
+            <strong>Aktualisierung:</strong> Listen werden mindestens jährlich überprüft und
+            angepasst.
+          </li>
+        </ol>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3" style="font-family: var(--font-display);">Affiliate-Transparenz</h2>
+        <p class="text-base leading-relaxed mb-3" style="color: var(--color-shadow-graphite);">
+          Wir finanzieren das Portal über Affiliate-Partnerschaften mit Stay22 (Hotelbuchungen über
+          Booking.com), GetYourGuide (Touren & Erlebnisse) und Google AdSense (Anzeigen).
+          Affiliate-Links sind als <code>* Sponsored</code> oder via Cookie-Banner kenntlich gemacht.
+        </p>
+        <p class="text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+          <strong>Wichtig:</strong> Die Top-10-Auswahl ist <em>nicht</em> abhängig von
+          Affiliate-Verfügbarkeit. Wir empfehlen Adressen, die nicht über unsere Partner buchbar
+          sind, wenn sie redaktionell die bessere Wahl sind.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3" style="font-family: var(--font-display);">Bilder & Quellen</h2>
+        <p class="text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+          Hero-Bilder stammen überwiegend von Wikimedia Commons unter Creative-Commons-Lizenzen
+          (CC BY, CC BY-SA, CC0). Fotograf und Lizenz sind direkt am Bild ausgewiesen.
+          Vereinzelt nutzen wir lizenzierte Stock-Fotografie und eigene Aufnahmen.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3" style="font-family: var(--font-display);">Betreiber</h2>
+        <p class="text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+          {city.brandName} wird betrieben von <strong>{legal.operator.name}</strong>,
+          {" "}{legal.operator.street}, {legal.operator.zip} {legal.operator.city},
+          {" "}{legal.operator.country}.
+          Kontakt: <a href={`mailto:${legal.operator.email}`} style="color: var(--color-accent); text-decoration: underline;">{legal.operator.email}</a>.
+        </p>
+        <p class="text-base leading-relaxed mt-3" style="color: var(--color-shadow-graphite);">
+          Vollständige Anbieter-Kennzeichnung siehe <a href="/impressum/" style="color: var(--color-accent); text-decoration: underline;">Impressum</a>.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-3" style="font-family: var(--font-display);">Hinweise & Korrekturen</h2>
+        <p class="text-base leading-relaxed" style="color: var(--color-shadow-graphite);">
+          Du betreibst eine Heidelberger Adresse, die in einer unserer Listen fehlt oder falsch
+          dargestellt ist? Schreib uns über die <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">Kontaktseite</a> — wir prüfen jeden Hinweis und
+          aktualisieren entsprechend.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(aboutJsonLd)} />
+</BaseLayout>

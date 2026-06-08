@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 import { city } from "../data/city";
 import { affiliate, stay22Enabled, gygEnabled } from "../data/affiliate";
 import { adsense, adsenseEnabled } from "../data/adsense";
@@ -46,8 +47,13 @@ const fullTitle = title === city.brandName ? `${city.brandName} — Die besten A
     <meta property="og:locale" content="de_DE" />
     {ogImage && <meta property="og:image" content={ogImage} />}
 
+    {/* Marketing-Scripts werden als type="text/plain" gerendert und erst nach Cookie-Consent
+        von CookieBanner.astro aktiviert. Bis dahin führt der Browser sie nicht aus —
+        DSGVO/TTDSG-konform für Stay22, GYG, AdSense und GTM. */}
     {stay22Enabled && (
       <script
+        type="text/plain"
+        data-consent-marketing
         async
         src={`https://snippet.stay22.com/allez/script?lmaid=${affiliate.stay22.lmaId}`}
       ></script>
@@ -55,6 +61,8 @@ const fullTitle = title === city.brandName ? `${city.brandName} — Die besten A
 
     {gygEnabled && (
       <script
+        type="text/plain"
+        data-consent-marketing
         async
         defer
         src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
@@ -64,6 +72,8 @@ const fullTitle = title === city.brandName ? `${city.brandName} — Die besten A
 
     {adsenseEnabled && !noindex && (
       <script
+        type="text/plain"
+        data-consent-marketing
         async
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.publisherId}`}
         crossorigin="anonymous"
@@ -71,7 +81,7 @@ const fullTitle = title === city.brandName ? `${city.brandName} — Die besten A
     )}
 
     {gtmEnabled && (
-      <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${analytics.gtmId}');`} />
+      <script type="text/plain" data-consent-marketing is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${analytics.gtmId}');`} />
     )}
   </head>
   <body class="min-h-screen flex flex-col">
@@ -86,9 +96,10 @@ const fullTitle = title === city.brandName ? `${city.brandName} — Die besten A
       </noscript>
     )}
     <Header />
-    <main class="flex-1">
+    <main class="flex-1" data-pagefind-body>
       <slot />
     </main>
     <Footer />
+    <CookieBanner />
   </body>
 </html>
