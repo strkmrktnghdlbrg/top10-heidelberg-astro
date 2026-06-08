@@ -14,6 +14,8 @@ interface Props {
   noindex?: boolean;
   canonical?: string;
   ogImage?: string;
+  locale?: "de" | "en";
+  hreflangs?: { de?: string; en?: string };
 }
 
 const {
@@ -22,20 +24,28 @@ const {
   noindex = false,
   canonical,
   ogImage,
+  locale = "de",
+  hreflangs,
 } = Astro.props;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, city.domain).toString();
 const fullTitle = title === city.brandName ? `${city.brandName} — Die besten Adressen am Neckar` : `${title} · ${city.brandName}`;
+const ogLocale = locale === "en" ? "en_US" : "de_DE";
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    {/* hreflang — pro Locale ein <link>, plus x-default auf DE */}
+    {hreflangs?.de && <link rel="alternate" hreflang="de" href={hreflangs.de} />}
+    {hreflangs?.en && <link rel="alternate" hreflang="en" href={hreflangs.en} />}
+    {hreflangs?.de && <link rel="alternate" hreflang="x-default" href={hreflangs.de} />}
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
@@ -44,7 +54,9 @@ const fullTitle = title === city.brandName ? `${city.brandName} — Die besten A
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale" content={ogLocale} />
+    {locale === "en" && <meta property="og:locale:alternate" content="de_DE" />}
+    {locale === "de" && hreflangs?.en && <meta property="og:locale:alternate" content="en_US" />}
     {ogImage && <meta property="og:image" content={ogImage} />}
 
     {/* Marketing-Scripts werden als type="text/plain" gerendert und erst nach Cookie-Consent

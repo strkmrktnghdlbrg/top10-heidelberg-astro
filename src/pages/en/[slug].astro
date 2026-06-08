@@ -1,0 +1,32 @@
+---
+/**
+ * EN-Version der Top10-Listen.
+ * Slug bleibt identisch zur DE-Version (sehenswuerdigkeiten, hotels, ...);
+ * EN-Texte kommen aus src/data/i18n.ts. Items selbst bleiben unverändert
+ * (proper nouns, German addresses), nur Hero-Texte, Meta und JSON-LD-Name
+ * wechseln auf EN.
+ */
+import Top10ListPage from "../../components/Top10ListPage.astro";
+import { translatedSlugs, getTranslation } from "../../data/i18n";
+import { getTop10 } from "../../data/top10s";
+
+export const getStaticPaths = () =>
+  translatedSlugs.map((slug) => ({ params: { slug } }));
+
+const { slug } = Astro.params;
+const list = getTop10(slug!);
+const tr = getTranslation(slug!, "en");
+if (!list || !tr) {
+  return Astro.redirect("/404/");
+}
+
+// Erzeuge eine EN-Variante der Liste durch Override der Frame-Texte.
+const enList = {
+  ...list,
+  title: tr.title,
+  subtitle: tr.subtitle,
+  intro: tr.intro,
+  metaDescription: tr.metaDescription,
+};
+---
+<Top10ListPage list={enList} locale="en" />

@@ -118,126 +118,6 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "filename": "Heidelberg_Tiergarten_Haupteingang.JPG",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_Tiergarten_Haupteingang.JPG"
   },
-  "altstadt-hotels": {
-    "author": "Die Autorenschaft wurde nicht in einer maschinell lesbaren Form angegeben. Es wird Hlohning als Autor angenommen (basier",
-    "license": "CC BY 2.5",
-    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
-    "description": "Author: Hans Lohninger Description: The Heiliggeistkirche of Heidelberg seen from the Castle. Source URL: http://www.photoglobe.info/hl_heidelberg/heidelberg_20",
-    "filename": "Heidelberg_20060420_021.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_20060420_021.jpg"
-  },
-  "bahnstadt-hotels": {
-    "author": "Brucebl",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "description": "Heidelberg Hauptbahnhof, Germany",
-    "filename": "Heidelberg_HBF_006c.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_HBF_006c.jpg"
-  },
-  "bergheim-hotels": {
-    "author": "Ribax",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Heidelberg, Stadtteil Bergheim",
-    "filename": "Heidelberg Stadtteil Bergheim BILD0962.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg%20Stadtteil%20Bergheim%20BILD0962.jpg"
-  },
-  "boxberg-hotels": {
-    "author": "Jörg Braukmann",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Blick vom Philosophenweg zum Königstuhl, die Heidelberger Altstadt und das Schloss. Am Neckarufer U-17 auf dem Weg ins Technikmuseum Sinsheim",
-    "filename": "Königstuhl,_Heidelberg,_U-17.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:K%C3%B6nigstuhl%2C_Heidelberg%2C_U-17.jpg"
-  },
-  "emmertsgrund-hotels": {
-    "author": "Jörg Braukmann",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Blick vom Philosophenweg zum Königstuhl, die Heidelberger Altstadt und das Schloss. Am Neckarufer U-17 auf dem Weg ins Technikmuseum Sinsheim",
-    "filename": "Königstuhl,_Heidelberg,_U-17.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:K%C3%B6nigstuhl%2C_Heidelberg%2C_U-17.jpg"
-  },
-  "handschuhsheim-hotels": {
-    "author": "Rudolf Stricker",
-    "license": "Attribution",
-    "licenseUrl": "",
-    "description": "Heidelberg, Stadtteil Handschuhsheim, Tiefburg",
-    "filename": "Heidelberg_Tiefburg_20110111.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_Tiefburg_20110111.jpg"
-  },
-  "kirchheim-hotels": {
-    "author": "Rudolf Stricker",
-    "license": "Attribution",
-    "licenseUrl": "",
-    "description": "Heidelberg-Kirchheim, Altes Rathaus",
-    "filename": "Heidelberg-Kirchheim Rathaus 20100623.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg-Kirchheim%20Rathaus%2020100623.jpg"
-  },
-  "neuenheim-hotels": {
-    "author": "Schlurcher",
-    "license": "CC BY 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-    "description": "Bild des Philosophenwegs und des Schlangenpfads (rechts) in Heidelberg",
-    "filename": "HeidelbergPhilosophenweg.JPG",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:HeidelbergPhilosophenweg.JPG"
-  },
-  "pfaffengrund-hotels": {
-    "author": "Luftschiffhafen",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Bahnhof Heidelberg-Pfaffengrund/Wieblingen",
-    "filename": "Bahnhof Pfaffengrund-Wieblingen 01.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Bahnhof%20Pfaffengrund-Wieblingen%2001.jpg"
-  },
-  "rohrbach-hotels": {
-    "author": "Jörg Braukmann",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Blick vom Philosophenweg zum Königstuhl, die Heidelberger Altstadt und das Schloss. Am Neckarufer U-17 auf dem Weg ins Technikmuseum Sinsheim",
-    "filename": "Königstuhl,_Heidelberg,_U-17.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:K%C3%B6nigstuhl%2C_Heidelberg%2C_U-17.jpg"
-  },
-  "schlierbach-hotels": {
-    "author": "Adiel lo",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "description": "The Neckar river, flowing through Heidelberg",
-    "filename": "Neckar_2.JPG",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Neckar_2.JPG"
-  },
-  "suedstadt-hotels": {
-    "author": "Motatcho",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Heidelberger Schloss. Der 6. September 1693 war ein Schicksalstag für das Schloss. Französische Truppen sprengten das Monument mit ca. 27.000 Pfund Schwarzpulve",
-    "filename": "Heidelberg-2726936.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg-2726936.jpg"
-  },
-  "weststadt-hotels": {
-    "author": "Brucebl",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "description": "Heidelberg Hauptbahnhof, Germany",
-    "filename": "Heidelberg_HBF_006c.jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_HBF_006c.jpg"
-  },
-  "wieblingen-hotels": {
-    "author": "Adiel lo",
-    "license": "CC BY-SA 3.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-    "description": "The Neckar river, flowing through Heidelberg",
-    "filename": "Neckar_2.JPG",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Neckar_2.JPG"
-  },
-  "ziegelhausen-hotels": {
-    "author": "Polibil",
-    "license": "CC BY-SA 4.0",
-    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-    "description": "Das denkmalgeschützte Stift Neuburg zwischen der Heidelberger Altstadt und dem Stadtteil Ziegelhausen von der Landstraße aus gesehen.",
-    "filename": "Stift_Neuburg_(DSC04580).jpg",
-    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Stift_Neuburg_%28DSC04580%29.jpg"
-  },
   "baeckereien": {
     "author": "Peggy Greb, USDA ARS",
     "license": "Public domain",
@@ -301,5 +181,125 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "description": "Heidelberger Schloss. Der 6. September 1693 war ein Schicksalstag für das Schloss. Französische Truppen sprengten das Monument mit ca. 27.000 Pfund Schwarzpulve",
     "filename": "Heidelberg-2726936.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg-2726936.jpg"
-  }
+  },
+  "altstadt-hotels": {
+    "author": "Eugene Alvin Villar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "Blick von der Alten Brücke auf Heidelberger Altstadt mit Heiliggeistkirche und Schloss im Hintergrund — die ikonischste Ansicht der Heidelberger Altstadt, Tageslicht, Landscape, 4608×3456 px.",
+    "filename": "View_of_Heidelberg_Castle_and_Altstadt_from_the_middle_of_Alte_Brücke.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:View_of_Heidelberg_Castle_and_Altstadt_from_the_middle_of_Alte_Br%C3%BCcke.jpg"
+  },
+  "bahnstadt-hotels": {
+    "author": "Luftschiffhafen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "description": "Der Lange Anger in der Heidelberger Bahnstadt - moderne Promenade im Passivhausviertel (Landscape, 3264x2448px)",
+    "filename": "Heidelberg_Bahnstadt_Langer_Anger_2.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_Bahnstadt_Langer_Anger_2.JPG"
+  },
+  "bergheim-hotels": {
+    "author": "Rolf Kickuth",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "Luftaufnahme des Bismarckplatzes in Heidelberg-Bergheim mit dem Hochhaus Menglerbau, aufgenommen aus rund 1000 m Hoehe von einem Gyrocopter aus (2017).",
+    "filename": "HeidelbergBismarckplatz2017-03-04-14-25-43.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:HeidelbergBismarckplatz2017-03-04-14-25-43.jpg"
+  },
+  "boxberg-hotels": {
+    "author": "R. J. Mathar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "Blick auf den Heidelberger Stadtteil Boxberg vom Rohrbacher Tal aus – Wohnviertel am Hang des Königstuhls.",
+    "filename": "Blick_auf_Boxberg_(Heidelberg)_2.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Blick_auf_Boxberg_(Heidelberg)_2.jpg"
+  },
+  "emmertsgrund-hotels": {
+    "author": "R. J. Mathar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "description": "Blick auf die Heidelberger Stadtteile Boxberg und Emmertsgrund am Hang oberhalb der Rheinebene – charakteristische Wohnhochhaeuser auf dem Bergruecken",
+    "filename": "Heidelberg-Boxberg_and_Heidelberg-Emmertsgrund.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg-Boxberg_and_Heidelberg-Emmertsgrund.jpg"
+  },
+  "handschuhsheim-hotels": {
+    "author": "GFreihalter",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "description": "Tiefburg in Heidelberg-Handschuhsheim — mittelalterliche Wasserburg-Ruine im Ortskern, das markante Wahrzeichen des Stadtteils (Aufnahme April 2025, Fujifilm X-T5, 7728x5152).",
+    "filename": "Handschuhsheim (Heidelberg) Tiefburg 311.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Handschuhsheim_(Heidelberg)_Tiefburg_311.jpg"
+  },
+  "kirchheim-hotels": {
+    "author": "3268zauber",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "description": "Altes Rathaus in Heidelberg-Kirchheim, Ansicht von Osten - charakteristisches historisches Wahrzeichen (Grundstein 1822) im Heidelberger Stadtteil Kirchheim.",
+    "filename": "Altes_Rathaus_Kirchheim_von_Osten.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Altes_Rathaus_Kirchheim_von_Osten.JPG"
+  },
+  "neuenheim-hotels": {
+    "author": "Stephan van Helden (User:Plozessor)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "description": "Blick vom Aussichtspunkt am Schlangenweg (Neuenheim) auf die Heidelberger Altstadt mit Alter Brücke und Schloss — typische Panoramaperspektive vom Nordufer/Philosophenweg-Bereich, Tageslicht, Landscape, 6000x4000 px.",
+    "filename": "Blick_vom_Aussichtspsunkt_am_Schlangenweg_auf_die_Altstadt_Heidelberg.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Blick_vom_Aussichtspsunkt_am_Schlangenweg_auf_die_Altstadt_Heidelberg.jpg"
+  },
+  "pfaffengrund-hotels": {
+    "author": "Luftschiffhafen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "description": "Am Markt — Marktplatz im Heidelberger Stadtteil Pfaffengrund, charakteristisches Wohnviertel-Zentrum (Landscape, 4896x3672).",
+    "filename": "Heidelberg_Am_Markt.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_Am_Markt.jpg"
+  },
+  "rohrbach-hotels": {
+    "author": "4028mdk09",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "description": "Altes Rathaus im Heidelberger Stadtteil Rohrbach, heute Sitz des Buergerbueros",
+    "filename": "Rathaus_Rohrbach.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Rathaus_Rohrbach.JPG"
+  },
+  "schlierbach-hotels": {
+    "author": "Immanuel Giel",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.de",
+    "description": "Heidelberg-Schlierbach am Neckar, Blick auf den Stadtteil mit Neckarufer (Juni 2008).",
+    "filename": "Schlierbach_und_Neckar.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Schlierbach_und_Neckar.JPG"
+  },
+  "suedstadt-hotels": {
+    "author": "4028mdk09",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.de",
+    "description": "Blick von der Panoramastraße auf den Heidelberger Stadtteil Südstadt mit den drei Türmen St. Peter (Kirchheim), St. Michael (Südstadt) und der Campbell Barracks.",
+    "filename": "Drei Türme Heidelberg.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Drei_T%C3%BCrme_Heidelberg.JPG"
+  },
+  "weststadt-hotels": {
+    "author": "Rolf Kickuth (Laniakea-rubikon)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
+    "description": "Luftbild der Heidelberger Weststadt: Kreuzung Wilhelmstraße/Zähringerstraße zwischen St. Josefskrankenhaus und Christuskirche — typische gründerzeitliche Blockstruktur mit Jugendstil-Architektur.",
+    "filename": "HeidelbergWeststadtZähringerstraße2021-04-04-11-39-55.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:HeidelbergWeststadtZ%C3%A4hringerstra%C3%9Fe2021-04-04-11-39-55.jpg"
+  },
+  "wieblingen-hotels": {
+    "author": "4028mdk09",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/deed.de",
+    "description": "Naturschutzgebiet Altneckar Heidelberg-Wieblingen – Neckarinsel-Auenlandschaft, Tageslicht, Landscape 3648x2736",
+    "filename": "Naturschutzgebiet Altneckar Heidelberg-Wieblingen.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Naturschutzgebiet_Altneckar_Heidelberg-Wieblingen.JPG"
+  },
+  "ziegelhausen-hotels": {
+    "author": "Immanuel Giel",
+    "license": "Public Domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "description": "Blick auf Heidelberg-Ziegelhausen im östlichen Neckartal — typische Lage des Stadtteils zwischen Neckar und bewaldetem Odenwald-Hang.",
+    "filename": "Blick auf Ziegelhausen.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Blick_auf_Ziegelhausen.JPG"
+  },
 };

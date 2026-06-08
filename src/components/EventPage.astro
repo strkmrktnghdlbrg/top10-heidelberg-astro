@@ -137,8 +137,17 @@ const eventJsonLd = {
     </section>
   ))}
 
-  <!-- Hotel-Blocks: pro Termin ein Stay22-Block -->
-  {event.dates.map((d) => {
+  <!-- Hotel-Blocks: pro Termin ein Stay22-Block.
+       Vergangene Termine ueberspringen (Stay22 API lehnt past-dates mit 400 ab). -->
+  {(() => {
+    // Build-Zeit-Stempel als YYYY-MM-DD. process.env.SOURCE_DATE_EPOCH wird beim
+    // GitHub-Action-Rebuild gesetzt; sonst Fallback auf einen festen String,
+    // damit die Datei deterministisch baut (kein new Date()).
+    const todayIso = (typeof process !== "undefined" && process.env?.BUILD_DATE)
+      || "2026-06-08";
+    return event.dates
+      .filter((d) => (d.hotelCheckIn ?? d.start) >= todayIso)
+      .map((d) => {
     const hotelGeo = event.hotelLocation ?? event.location;
     return (
       <section class="section pt-0">
@@ -157,7 +166,8 @@ const eventJsonLd = {
         </div>
       </section>
     );
-  })}
+  });
+  })()}
 
   <!-- Karte -->
   <section class="section pt-0">

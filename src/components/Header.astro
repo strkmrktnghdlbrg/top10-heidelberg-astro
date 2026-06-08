@@ -3,7 +3,26 @@ import { Image } from "astro:assets";
 import { city } from "../data/city";
 import { features } from "../data/features";
 import { categories } from "../data/categories";
+import { translatedSlugs } from "../data/i18n";
 import logo from "../assets/branding/logo.svg";
+
+// Locale-Detection aus dem aktuellen Pfad
+const path = Astro.url.pathname;
+const isEn = path.startsWith("/en/") || path === "/en";
+const currentSlug = isEn
+  ? path.replace(/^\/en\//, "").replace(/\/$/, "")
+  : path.replace(/^\//, "").replace(/\/$/, "");
+
+// Language-Switcher: Zeige Link zur jeweils anderen Sprache, wenn Übersetzung existiert.
+let switchHref: string | null = null;
+let switchLabel = "";
+if (isEn) {
+  switchHref = `/${currentSlug}/`;
+  switchLabel = "DE";
+} else if (translatedSlugs.includes(currentSlug)) {
+  switchHref = `/en/${currentSlug}/`;
+  switchLabel = "EN";
+}
 
 const navItems = categories
   .filter((c) => {
@@ -53,6 +72,17 @@ const quickLinks = [
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
           </svg>
         </a>
+        {switchHref && (
+          <a
+            href={switchHref}
+            class="hidden sm:inline-flex items-center justify-center h-11 px-3 rounded-xl border border-[var(--color-lavender-ash)] hover:bg-[var(--color-porcelain-mist)] transition-colors text-sm font-bold tracking-wider"
+            style="color: var(--color-shadow-graphite);"
+            hreflang={switchLabel === "EN" ? "en" : "de"}
+            aria-label={switchLabel === "EN" ? "Switch to English version" : "Auf Deutsch wechseln"}
+          >
+            {switchLabel}
+          </a>
+        )}
         {features.werben.enabled && (
           <a href="/werben/" class="btn-outline hidden lg:inline-flex">Werben</a>
         )}

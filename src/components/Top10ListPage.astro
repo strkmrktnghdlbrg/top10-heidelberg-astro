@@ -18,10 +18,13 @@ import { getImage, getImageCredit } from "../data/images";
 import { getDistrictGeo } from "../data/districts";
 import { city } from "../data/city";
 
+import { hasTranslation } from "../data/i18n";
+
 interface Props {
   list: Top10List;
+  locale?: "de" | "en";
 }
-const { list } = Astro.props;
+const { list, locale = "de" } = Astro.props;
 const cat = getCategory(list.category)!;
 const sibling = top10sByCategory(list.category).filter((l) => l.slug !== list.slug).slice(0, 6);
 const otherCats = categories.filter((c) => c.slug !== list.category && c.slug !== "blog");
@@ -31,11 +34,30 @@ const description =
   list.subtitle ||
   list.intro.slice(0, 160);
 
-const breadcrumbs = [
-  { label: "Start", href: "/" },
-  { label: cat.name, href: `/thema/${cat.slug}/` },
-  { label: list.title },
-];
+const isEn = locale === "en";
+const pathPrefix = isEn ? "/en" : "";
+const startLabel = isEn ? "Home" : "Start";
+const catLabel = isEn ? cat.short.split(",")[0] || cat.name : cat.name;
+
+const breadcrumbs = isEn
+  ? [
+      { label: "Home", href: "/en/" },
+      { label: list.title },
+    ]
+  : [
+      { label: "Start", href: "/" },
+      { label: cat.name, href: `/thema/${cat.slug}/` },
+      { label: list.title },
+    ];
+
+// hreflang: wenn EN-Übersetzung existiert, hreflang-Paar setzen
+const hasEn = hasTranslation(list.slug, "en");
+const hreflangs = hasEn
+  ? {
+      de: `${city.domain}/${list.slug}/`,
+      en: `${city.domain}/en/${list.slug}/`,
+    }
+  : undefined;
 
 const showStay22 = !!list.affiliate?.stay22;
 const showGyg = !!list.affiliate?.getYourGuide;
@@ -128,7 +150,7 @@ const breadcrumbJsonLd = {
 };
 ---
 
-<BaseLayout title={list.title} description={description}>
+<BaseLayout title={list.title} description={description} locale={locale} hreflangs={hreflangs}>
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
     {heroImage ? (
