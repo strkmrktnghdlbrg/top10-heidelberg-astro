@@ -7,9 +7,9 @@
 
 RewriteEngine On
 
-# www → non-www
-RewriteCond %{HTTP_HOST} ^www\.top10-heidelberg\.de$ [NC]
-RewriteRule ^(.*)$ https://top10-heidelberg.de/$1 [L,R=301]
+# non-www → www
+RewriteCond %{HTTP_HOST} !^www\.top10-heidelberg\.de$ [NC]
+RewriteRule ^(.*)$ https://www.top10-heidelberg.de/$1 [L,R=301]
 
 # Trailing-Slash für Verzeichnisse (Astro liefert /slug/ mit index.html)
 RewriteCond %{REQUEST_FILENAME} !-f
