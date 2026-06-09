@@ -48,6 +48,7 @@ jobs:
 
           git add -f dist/
           git diff --staged --quiet || git commit -m "build: $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          git pull origin main --rebase
           git push origin main
 
       - name: Deploy via SSH
