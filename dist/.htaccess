@@ -7,11 +7,6 @@
 
 RewriteEngine On
 
-# HTTPS erzwingen
-RewriteCond %{HTTPS} !=on
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
 # www → non-www
 RewriteCond %{HTTP_HOST} ^www\.top10-heidelberg\.de$ [NC]
 RewriteRule ^(.*)$ https://top10-heidelberg.de/$1 [L,R=301]
