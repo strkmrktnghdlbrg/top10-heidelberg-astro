@@ -22,6 +22,10 @@ export type Top10Item = {
   description: string;
   address?: string;
   websiteUrl?: string;
+  /** Überschreibt den Default-Linktext "Webseite ↗" (z.B. Marken-Anchor). */
+  anchorText?: string;
+  /** true = dofollow-Backlink (sonst rel="nofollow noopener"). Für bezahlte/Partner-Verlinkungen. */
+  dofollow?: boolean;
 };
 
 export type Top10ListPattern = "rank-list" | "named-sections" | "h2-items" | "partial" | "weak";

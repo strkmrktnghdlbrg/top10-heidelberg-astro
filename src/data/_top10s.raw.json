@@ -1516,53 +1516,56 @@
     "items": [
       {
         "rank": 1,
+        "name": "Malermeister Fischer",
+        "description": "Meisterbetrieb für Maler- und Lackierarbeiten, tätig in Heidelberg und der Rhein-Neckar-Region. Leistungen: Innen- und Fassadenanstriche, Tapezier-, Spachtel- und Lackierarbeiten (Türen, Zargen, Heizkörper, Treppen), Bodenbelagsverlegung sowie Schimmelsanierung nach DIN. Mitglied der Maler-Innung Mannheim.",
+        "websiteUrl": "https://maler-fischer-heidelberg.de/",
+        "anchorText": "Maler Fischer Heidelberg",
+        "dofollow": true
+      },
+      {
+        "rank": 2,
         "name": "Max Müller",
         "description": "Max ist ein erfahrener Allrounder, der sich auf Reparaturen und Renovierungen im Innen- und Außenbereich spezialisiert hat. Er ist bekannt für seine schnelle und zuverlässige Arbeit."
       },
       {
-        "rank": 2,
+        "rank": 3,
         "name": "Anna Schmidt",
         "description": "Anna ist eine Expertin für Elektroinstallationen und -reparaturen. Sie hat jahrelange Erfahrung in der Branche und ist bekannt für ihre präzise und effiziente Arbeit."
       },
       {
-        "rank": 3,
+        "rank": 4,
         "name": "Markus Wagner",
         "description": "Markus ist ein Experte für Sanitärinstallationen und -reparaturen. Er hat einen ausgezeichneten Ruf für seine professionelle Arbeit und sein umfangreiches Fachwissen."
       },
       {
-        "rank": 4,
+        "rank": 5,
         "name": "Julia Becker",
         "description": "Julia ist eine erfahrene Fliesenlegerin, die sich auf die Verlegung von Fliesen in Badezimmern, Küchen und anderen Räumen spezialisiert hat. Sie ist bekannt für ihre präzise Arbeit und ihr Auge für Details."
       },
       {
-        "rank": 5,
+        "rank": 6,
         "name": "Michaela Müller",
         "description": "Michaela ist eine erfahrene Malerin, die sich auf Innen- und Außenanstriche spezialisiert hat. Sie ist bekannt für ihre saubere Arbeit und ihr Talent, Farben harmonisch zu kombinieren."
       },
       {
-        "rank": 6,
+        "rank": 7,
         "name": "Stefan Schneider",
         "description": "Stefan ist ein erfahrener Schreiner, der sich auf maßgefertigte Möbel und Holzarbeiten spezialisiert hat. Er ist bekannt für seine hochwertige Arbeit und sein Auge für Design."
       },
       {
-        "rank": 7,
+        "rank": 8,
         "name": "Thomas Fischer",
         "description": "Thomas ist ein erfahrener Installateur, der sich auf Heizungs- und Klimaanlagen spezialisiert hat. Er ist bekannt für seine schnelle und effiziente Arbeit."
       },
       {
-        "rank": 8,
+        "rank": 9,
         "name": "Sarah Weber",
         "description": "Sarah ist eine erfahrene Gärtnerin, die sich auf Landschaftsgestaltung und Gartenpflege spezialisiert hat. Sie ist bekannt für ihre kreativen Ideen und ihre Liebe zum Detail."
       },
       {
-        "rank": 9,
+        "rank": 10,
         "name": "Andreas Müller",
         "description": "Andreas ist ein erfahrener Dachdecker, der sich auf Reparaturen und Neueindeckungen von Dächern spezialisiert hat. Er ist bekannt für seine qualitativ hochwertige Arbeit und sein Fachwissen."
-      },
-      {
-        "rank": 10,
-        "name": "Lisa Schmitt",
-        "description": "Lisa ist eine erfahrene Raumausstatterin, die sich auf die Gestaltung von Innenräumen spezialisiert hat. Sie ist bekannt für ihre kreativen Ideen und ihr Gespür für Farben und Texturen."
       }
     ],
     "h2_themes": [

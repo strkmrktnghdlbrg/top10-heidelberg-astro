@@ -251,8 +251,13 @@ const breadcrumbJsonLd = {
                     <div class="mt-3 flex flex-wrap gap-3 text-sm">
                       {it.address && <span style="color: var(--color-slate-steel);">📍 {it.address}</span>}
                       {it.websiteUrl && (
-                        <a href={it.websiteUrl} class="link-accent" rel="nofollow noopener" target="_blank">
-                          Webseite ↗
+                        <a
+                          href={it.websiteUrl}
+                          class="link-accent"
+                          rel={it.dofollow ? "noopener" : "nofollow noopener"}
+                          target="_blank"
+                        >
+                          {it.anchorText ?? "Webseite ↗"}
                         </a>
                       )}
                     </div>
