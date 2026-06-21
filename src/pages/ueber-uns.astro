@@ -24,7 +24,6 @@ const aboutJsonLd = {
       addressLocality: legal.operator.city,
       addressCountry: legal.operator.country,
     },
-    email: legal.operator.email,
     url: city.domain,
   },
   inLanguage: "de",
@@ -118,7 +117,7 @@ const aboutJsonLd = {
           {city.brandName} wird betrieben von <strong>{legal.operator.name}</strong>,
           {" "}{legal.operator.street}, {legal.operator.zip} {legal.operator.city},
           {" "}{legal.operator.country}.
-          Kontakt: <a href={`mailto:${legal.operator.email}`} style="color: var(--color-accent); text-decoration: underline;">{legal.operator.email}</a>.
+          Kontakt über unser <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">Kontaktformular</a>.
         </p>
         <p class="text-base leading-relaxed mt-3" style="color: var(--color-shadow-graphite);">
           Vollständige Anbieter-Kennzeichnung siehe <a href="/impressum/" style="color: var(--color-accent); text-decoration: underline;">Impressum</a>.

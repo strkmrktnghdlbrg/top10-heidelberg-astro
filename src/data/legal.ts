@@ -8,7 +8,7 @@ export const legal = {
     zip: "8046",
     city: "Paphos",
     country: "Zypern",
-    email: "j.stark@stark.marketing",
+    email: "",
     phone: "",
     vatId: "",
   },
