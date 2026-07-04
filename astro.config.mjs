@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://top10-heidelberg.de",
+  site: "https://www.top10-heidelberg.de",
   output: "static",
   trailingSlash: "always",
   build: { format: "directory" },

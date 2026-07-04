@@ -42,7 +42,7 @@ const eventJsonLd = {
   "@graph": [
     ...event.dates.map((d, i) => ({
       "@type": "Event",
-      "@id": `https://top10-heidelberg.de/events/${event.slug}/#event-${i}`,
+      "@id": `https://www.top10-heidelberg.de/events/${event.slug}/#event-${i}`,
       name: `${event.title}${d.label ? ` — ${d.label}` : ""}`,
       startDate: d.start,
       endDate: d.end,

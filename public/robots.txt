@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://top10-heidelberg.de/sitemap-index.xml
+Sitemap: https://www.top10-heidelberg.de/sitemap-index.xml
