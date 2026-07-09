@@ -1,5 +1,5 @@
 export const analytics = {
-  gtmId: "",
+  gtmId: "GTM-TSNCS2DJ",
 };
 
 export const gtmEnabled = Boolean(analytics.gtmId);
