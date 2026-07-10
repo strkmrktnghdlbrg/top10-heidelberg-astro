@@ -105,7 +105,7 @@ const stats = {
   </Section>
 
   <!-- Touristen-Top10 -->
-  <Section eyebrow="Tourismus" title="Was Besucher gesehen haben sollten" subtitle="Heidelbergs Klassiker — Schloss, Hotels, Restaurants und mehr.">
+  <Section eyebrow="Tourismus" title="Was Besucher gesehen haben sollten" subtitle="Heidelbergs Klassiker - Schloss, Hotels, Restaurants und mehr.">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {tourismus.slice(0, 6).map((l) => (
         <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />
@@ -128,7 +128,7 @@ const stats = {
   </Section>
 
   <!-- Leben in HD -->
-  <Section eyebrow="Leben in Heidelberg" title="Alltag, Familie, Genuss" subtitle="Bäcker, Apotheken, Friseure, Yoga — die zehn besten Adressen für den Heidelberger Alltag." bg="soft">
+  <Section eyebrow="Leben in Heidelberg" title="Alltag, Familie, Genuss" subtitle="Bäcker, Apotheken, Friseure, Yoga - die zehn besten Adressen für den Heidelberger Alltag." bg="soft">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {leben.slice(0, 9).map((l) => (
         <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />
@@ -140,7 +140,7 @@ const stats = {
   </Section>
 
   <!-- Leistungen -->
-  <Section eyebrow="Dienstleister" title="Profis in Heidelberg" subtitle="Anwälte, Steuerberater, Handwerk, IT — wer hilft, wenn's drauf ankommt.">
+  <Section eyebrow="Dienstleister" title="Profis in Heidelberg" subtitle="Anwälte, Steuerberater, Handwerk, IT - wer hilft, wenn's drauf ankommt.">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {leistungen.slice(0, 9).map((l) => (
         <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />

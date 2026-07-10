@@ -17,7 +17,7 @@ if (!category) {
   return Astro.redirect("/404/");
 }
 const lists = top10sByCategory(category.slug);
-const description = `${category.short} — ${lists.length} kuratierte Top-10-Listen für Heidelberg.`;
+const description = `${category.short} - ${lists.length} kuratierte Top-10-Listen für Heidelberg.`;
 ---
 <BaseLayout title={`Top 10 ${category.name} in Heidelberg`} description={description}>
   <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">

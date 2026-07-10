@@ -43,7 +43,7 @@ const eventJsonLd = {
     ...event.dates.map((d, i) => ({
       "@type": "Event",
       "@id": `https://www.top10-heidelberg.de/events/${event.slug}/#event-${i}`,
-      name: `${event.title}${d.label ? ` — ${d.label}` : ""}`,
+      name: `${event.title}${d.label ? ` - ${d.label}` : ""}`,
       startDate: d.start,
       endDate: d.end,
       eventStatus: "https://schema.org/EventScheduled",
@@ -103,7 +103,7 @@ const eventJsonLd = {
             </span>
             <span class="text-sm font-semibold" style="color: var(--color-inkwell-purple);">
               {formatDate(d.start)}
-              {d.start !== d.end && <span> — {formatDate(d.end)}</span>}
+              {d.start !== d.end && <span> - {formatDate(d.end)}</span>}
             </span>
           </div>
         ))}
@@ -160,7 +160,7 @@ const eventJsonLd = {
             limit={8}
             checkin={d.hotelCheckIn ?? d.start}
             checkout={d.hotelCheckOut ?? d.end}
-            customHeadline={`Hotels${d.label ? ` für ${d.label}` : ""} — ${formatDate(d.start)}${d.start !== d.end ? ` bis ${formatDate(d.end)}` : ""}`}
+            customHeadline={`Hotels${d.label ? ` für ${d.label}` : ""} - ${formatDate(d.start)}${d.start !== d.end ? ` bis ${formatDate(d.end)}` : ""}`}
             customLead={`Live-Verfügbarkeit und aktuelle Preise via Stay22 für genau diesen Termin. Im Umkreis von ${Math.round(event.hotelRadius / 100) * 100} m um ${hotelGeo.name}.`}
           />
         </div>

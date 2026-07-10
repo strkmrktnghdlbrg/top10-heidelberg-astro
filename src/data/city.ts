@@ -11,8 +11,8 @@ export const city = {
   domain: "https://www.top10-heidelberg.de",
   description: {
     short:
-      "Top 10 Heidelberg — die besten 10 Adressen pro Branche, kuratiert und auf den Punkt: Sehenswürdigkeiten, Hotels, Restaurants, Cafés und mehr.",
+      "Top 10 Heidelberg - die besten 10 Adressen pro Branche, kuratiert und auf den Punkt: Sehenswürdigkeiten, Hotels, Restaurants, Cafés und mehr.",
     long:
-      "Top 10 Heidelberg ist dein Listicle-Portal für die schönste Stadt am Neckar. Wir zeigen pro Kategorie nur die zehn besten Adressen — von Sehenswürdigkeiten und Hotels über Restaurants, Cafés und Bars bis zu den lokalen Dienstleistern. Knapp, klar, sortiert.",
+      "Top 10 Heidelberg ist dein Listicle-Portal für die schönste Stadt am Neckar. Wir zeigen pro Kategorie nur die zehn besten Adressen - von Sehenswürdigkeiten und Hotels über Restaurants, Cafés und Bars bis zu den lokalen Dienstleistern. Knapp, klar, sortiert.",
   },
 };

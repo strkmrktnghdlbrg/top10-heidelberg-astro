@@ -186,7 +186,7 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "author": "Eugene Alvin Villar",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "description": "Blick von der Alten Brücke auf Heidelberger Altstadt mit Heiliggeistkirche und Schloss im Hintergrund — die ikonischste Ansicht der Heidelberger Altstadt, Tageslicht, Landscape, 4608×3456 px.",
+    "description": "Blick von der Alten Brücke auf Heidelberger Altstadt mit Heiliggeistkirche und Schloss im Hintergrund - die ikonischste Ansicht der Heidelberger Altstadt, Tageslicht, Landscape, 4608×3456 px.",
     "filename": "View_of_Heidelberg_Castle_and_Altstadt_from_the_middle_of_Alte_Brücke.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:View_of_Heidelberg_Castle_and_Altstadt_from_the_middle_of_Alte_Br%C3%BCcke.jpg"
   },
@@ -226,7 +226,7 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "author": "GFreihalter",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
-    "description": "Tiefburg in Heidelberg-Handschuhsheim — mittelalterliche Wasserburg-Ruine im Ortskern, das markante Wahrzeichen des Stadtteils (Aufnahme April 2025, Fujifilm X-T5, 7728x5152).",
+    "description": "Tiefburg in Heidelberg-Handschuhsheim - mittelalterliche Wasserburg-Ruine im Ortskern, das markante Wahrzeichen des Stadtteils (Aufnahme April 2025, Fujifilm X-T5, 7728x5152).",
     "filename": "Handschuhsheim (Heidelberg) Tiefburg 311.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Handschuhsheim_(Heidelberg)_Tiefburg_311.jpg"
   },
@@ -242,7 +242,7 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "author": "Stephan van Helden (User:Plozessor)",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "description": "Blick vom Aussichtspunkt am Schlangenweg (Neuenheim) auf die Heidelberger Altstadt mit Alter Brücke und Schloss — typische Panoramaperspektive vom Nordufer/Philosophenweg-Bereich, Tageslicht, Landscape, 6000x4000 px.",
+    "description": "Blick vom Aussichtspunkt am Schlangenweg (Neuenheim) auf die Heidelberger Altstadt mit Alter Brücke und Schloss - typische Panoramaperspektive vom Nordufer/Philosophenweg-Bereich, Tageslicht, Landscape, 6000x4000 px.",
     "filename": "Blick_vom_Aussichtspsunkt_am_Schlangenweg_auf_die_Altstadt_Heidelberg.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Blick_vom_Aussichtspsunkt_am_Schlangenweg_auf_die_Altstadt_Heidelberg.jpg"
   },
@@ -250,7 +250,7 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "author": "Luftschiffhafen",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
-    "description": "Am Markt — Marktplatz im Heidelberger Stadtteil Pfaffengrund, charakteristisches Wohnviertel-Zentrum (Landscape, 4896x3672).",
+    "description": "Am Markt - Marktplatz im Heidelberger Stadtteil Pfaffengrund, charakteristisches Wohnviertel-Zentrum (Landscape, 4896x3672).",
     "filename": "Heidelberg_Am_Markt.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg_Am_Markt.jpg"
   },
@@ -282,7 +282,7 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "author": "Rolf Kickuth (Laniakea-rubikon)",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.de",
-    "description": "Luftbild der Heidelberger Weststadt: Kreuzung Wilhelmstraße/Zähringerstraße zwischen St. Josefskrankenhaus und Christuskirche — typische gründerzeitliche Blockstruktur mit Jugendstil-Architektur.",
+    "description": "Luftbild der Heidelberger Weststadt: Kreuzung Wilhelmstraße/Zähringerstraße zwischen St. Josefskrankenhaus und Christuskirche - typische gründerzeitliche Blockstruktur mit Jugendstil-Architektur.",
     "filename": "HeidelbergWeststadtZähringerstraße2021-04-04-11-39-55.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:HeidelbergWeststadtZ%C3%A4hringerstra%C3%9Fe2021-04-04-11-39-55.jpg"
   },
@@ -298,7 +298,7 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "author": "Immanuel Giel",
     "license": "Public Domain",
     "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "description": "Blick auf Heidelberg-Ziegelhausen im östlichen Neckartal — typische Lage des Stadtteils zwischen Neckar und bewaldetem Odenwald-Hang.",
+    "description": "Blick auf Heidelberg-Ziegelhausen im östlichen Neckartal - typische Lage des Stadtteils zwischen Neckar und bewaldetem Odenwald-Hang.",
     "filename": "Blick auf Ziegelhausen.JPG",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Blick_auf_Ziegelhausen.JPG"
   },

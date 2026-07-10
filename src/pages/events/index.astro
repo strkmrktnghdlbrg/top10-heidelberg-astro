@@ -22,7 +22,7 @@ const upcoming = sorted.filter((e) => e.dates[e.dates.length - 1].end >= today);
 const past = sorted.filter((e) => e.dates[e.dates.length - 1].end < today);
 ---
 <BaseLayout
-  title="Events & Messen in Heidelberg — Termine, Tipps & Hotels"
+  title="Events & Messen in Heidelberg - Termine, Tipps & Hotels"
   description="Aktuelle Heidelberger Events und Messen mit Hotel-Empfehlungen für jeden Termin: Schlossbeleuchtung, Schlossfestspiele, Heidelberger Herbst, Weihnachtsmarkt, Maimarkt Mannheim."
 >
   <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
@@ -30,10 +30,10 @@ const past = sorted.filter((e) => e.dates[e.dates.length - 1].end < today);
       <Breadcrumbs items={breadcrumbs} />
       <span class="pill-accent mt-4 inline-flex">📅 Events & Messen</span>
       <h1 class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight max-w-4xl" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
-        Heidelberger Events & Messen — mit Hotels für jeden Termin
+        Heidelberger Events & Messen - mit Hotels für jeden Termin
       </h1>
       <p class="mt-4 text-lg sm:text-xl max-w-3xl" style="color: var(--color-shadow-graphite);">
-        Schlossbeleuchtung, Schlossfestspiele, Heidelberger Herbst und der Weihnachtsmarkt — plus Mannheim-Maimarkt für Messe-Reisende. Live-Hotel-Preise für genau die Event-Wochenenden.
+        Schlossbeleuchtung, Schlossfestspiele, Heidelberger Herbst und der Weihnachtsmarkt - plus Mannheim-Maimarkt für Messe-Reisende. Live-Hotel-Preise für genau die Event-Wochenenden.
       </p>
     </div>
   </section>
@@ -75,7 +75,7 @@ const past = sorted.filter((e) => e.dates[e.dates.length - 1].end < today);
             Vergangene Veranstaltungen
           </h2>
           <p class="text-sm mb-6" style="color: var(--color-shadow-graphite);">
-            Diese Termine sind vorbei — die Pages bleiben als Referenz online. Saison-Updates für das nächste Jahr folgen.
+            Diese Termine sind vorbei - die Pages bleiben als Referenz online. Saison-Updates für das nächste Jahr folgen.
           </p>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {past.map((e) => (

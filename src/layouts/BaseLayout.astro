@@ -28,7 +28,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, city.domain).toString();
-const fullTitle = title === city.brandName ? `${city.brandName} — Die besten Adressen am Neckar` : `${title} · ${city.brandName}`;
+const fullTitle = title === city.brandName ? `${city.brandName} - Die besten Adressen am Neckar` : `${title} · ${city.brandName}`;
 const ogLocale = locale === "en" ? "en_US" : "de_DE";
 ---
 
