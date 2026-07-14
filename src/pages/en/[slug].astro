@@ -7,7 +7,7 @@
  * wechseln auf EN.
  */
 import Top10ListPage from "../../components/Top10ListPage.astro";
-import { translatedSlugs, getTranslation } from "../../data/i18n";
+import { translatedSlugs, getTranslation, translateItems } from "../../data/i18n";
 import { getTop10 } from "../../data/top10s";
 
 export const getStaticPaths = () =>
@@ -20,13 +20,23 @@ if (!list || !tr) {
   return Astro.redirect("/404/");
 }
 
-// Erzeuge eine EN-Variante der Liste durch Override der Frame-Texte.
+// Erzeuge eine EN-Variante der Liste: Frame-Texte + Item-Bodies (Name/
+// Beschreibung/Adresse) auf EN, sowie EN-Copy für den GYG-Block.
 const enList = {
   ...list,
   title: tr.title,
   subtitle: tr.subtitle,
   intro: tr.intro,
   metaDescription: tr.metaDescription,
+  items: translateItems(slug!, list.items, "en"),
+  gyg:
+    list.gyg && (tr.gygHeadline || tr.gygLead)
+      ? {
+          ...list.gyg,
+          headline: tr.gygHeadline ?? list.gyg.headline,
+          lead: tr.gygLead ?? list.gyg.lead,
+        }
+      : list.gyg,
 };
 ---
 <Top10ListPage list={enList} locale="en" />

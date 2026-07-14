@@ -37,7 +37,17 @@ const description =
 const isEn = locale === "en";
 const pathPrefix = isEn ? "/en" : "";
 const startLabel = isEn ? "Home" : "Start";
-const catLabel = isEn ? cat.short.split(",")[0] || cat.name : cat.name;
+// EN-Label für die Kategorie (nur Tourismus-Listen haben EN-Seiten, die
+// übrigen Keys sind Fallbacks fürs saubere Chrome).
+const CAT_LABEL_EN: Record<string, string> = {
+  tourismus: "Attractions & Tourism",
+  stadtteile: "Districts",
+  leben: "City Life",
+  leistungen: "Services",
+  firmen: "Business",
+  blog: "Blog",
+};
+const catLabel = isEn ? (CAT_LABEL_EN[cat.slug] ?? cat.name) : cat.name;
 
 const breadcrumbs = isEn
   ? [
@@ -58,6 +68,11 @@ const hreflangs = hasEn
       en: `${city.domain}/en/${list.slug}/`,
     }
   : undefined;
+
+// Sibling-Links: auf EN-Seiten zu /en/<slug>/ verlinken, sofern für den
+// Sibling eine EN-Übersetzung existiert; sonst auf die DE-Seite.
+const listHref = (s: { slug: string }) =>
+  isEn && hasTranslation(s.slug, "en") ? `/en/${s.slug}/` : `/${s.slug}/`;
 
 const showStay22 = !!list.affiliate?.stay22;
 const showGyg = !!list.affiliate?.getYourGuide;
@@ -170,9 +185,9 @@ const breadcrumbJsonLd = {
     <div class={`container-page relative pt-8 pb-14 sm:pt-16 sm:pb-24 ${heroImage ? "text-white" : ""}`}>
       <Breadcrumbs items={breadcrumbs} />
       <div class="mt-4 flex flex-wrap items-center gap-2">
-        <span class="pill-accent">{cat.icon} {cat.name}</span>
+        <span class="pill-accent">{cat.icon} {catLabel}</span>
         {list.district && <span class="pill">{list.district}</span>}
-        {list.weak && <span class="pill" style="color:#92400e;background:#fef3c7;border-color:#fde68a;">Entwurfs-Liste</span>}
+        {list.weak && <span class="pill" style="color:#92400e;background:#fef3c7;border-color:#fde68a;">{isEn ? "Draft list" : "Entwurfs-Liste"}</span>}
       </div>
       <h1
         class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight text-balance max-w-4xl"
@@ -187,7 +202,7 @@ const breadcrumbJsonLd = {
       )}
       {heroImage && heroCredit && (
         <p class="absolute bottom-2 right-3 text-[10px] text-white/85">
-          Foto:&nbsp;
+          {isEn ? "Photo:" : "Foto:"}&nbsp;
           <a href={heroCredit.commonsUrl} class="underline" rel="nofollow noopener" target="_blank">{heroCredit.author}</a>
           {heroCredit.license && (
             <>
@@ -218,16 +233,18 @@ const breadcrumbJsonLd = {
             Sonst rendert der Widget unten an der konfigurierten placement-Position. */}
         {showGyg && !list.gyg && (
           <div class="mb-10">
-            <GetYourGuideWidget query={`Heidelberg ${list.title.replace(/^Top 10\s*/, "")}`} />
+            <GetYourGuideWidget query={`Heidelberg ${list.title.replace(/^Top 10\s*/, "")}`} locale={locale} />
           </div>
         )}
 
         {list.items.length === 0 ? (
           <div class="card p-8 text-center" style="border-style: dashed;">
             <div class="text-4xl mb-3">🛠️</div>
-            <h3 class="text-lg font-bold mb-1" style="font-family: var(--font-display);">Liste in Bearbeitung</h3>
+            <h3 class="text-lg font-bold mb-1" style="font-family: var(--font-display);">{isEn ? "List in progress" : "Liste in Bearbeitung"}</h3>
             <p class="text-sm" style="color: var(--color-shadow-graphite);">
-              Diese Top 10 wird gerade redaktionell überarbeitet. Die alten Inhalte enthielten zu wenig konkrete Anbieter.
+              {isEn
+                ? "This Top 10 is currently being revised by our editors. The previous content listed too few concrete places."
+                : "Diese Top 10 wird gerade redaktionell überarbeitet. Die alten Inhalte enthielten zu wenig konkrete Anbieter."}
             </p>
           </div>
         ) : (
@@ -257,7 +274,7 @@ const breadcrumbJsonLd = {
                           rel={it.dofollow ? "noopener" : "nofollow noopener"}
                           target="_blank"
                         >
-                          {it.anchorText ?? "Webseite ↗"}
+                          {it.anchorText ?? (isEn ? "Website ↗" : "Webseite ↗")}
                         </a>
                       )}
                     </div>
@@ -279,30 +296,43 @@ const breadcrumbJsonLd = {
             numberOfItems={list.gyg.numberOfItems}
             headline={list.gyg.headline}
             lead={list.gyg.lead}
+            locale={locale}
           />
         )}
 
         {showStay22 && (
           <>
             <Stay22TopHotels
+              locale={locale}
               lat={districtGeo ? mapLat : undefined}
               lng={districtGeo ? mapLng : undefined}
               radius={districtGeo ? 2500 : undefined}
               address={districtGeo ? undefined : `${city.name}, Germany`}
-              title={districtGeo
-                ? `Live-Hotels in ${list.district}`
-                : `Aktuell bestbewertete Hotels in ${city.name}`}
-              lead="Live-Preise und Verfügbarkeit über Stay22. Aktualisiert beim letzten Build."
+              title={isEn
+                ? (districtGeo
+                    ? `Live hotels in ${list.district}`
+                    : `Top-rated hotels in ${city.name} right now`)
+                : (districtGeo
+                    ? `Live-Hotels in ${list.district}`
+                    : `Aktuell bestbewertete Hotels in ${city.name}`)}
+              lead={isEn
+                ? "Live prices and availability via Stay22. Updated at the last build."
+                : "Live-Preise und Verfügbarkeit über Stay22. Aktualisiert beim letzten Build."}
               limit={8}
             />
             <Stay22Map
+              locale={locale}
               lat={mapLat}
               lng={mapLng}
               zoom={mapZoom}
-              title="Verfügbarkeit & Preise vergleichen"
-              lead={districtGeo
-                ? `Alle Hotels in und um ${list.district} mit Live-Preisen. Klick auf einen Marker zeigt Details.`
-                : "Hotel-Karte mit Live-Preisen und Verfügbarkeit. Klick auf einen Marker zeigt Details."}
+              title={isEn ? "Compare availability & prices" : "Verfügbarkeit & Preise vergleichen"}
+              lead={isEn
+                ? (districtGeo
+                    ? `All hotels in and around ${list.district} with live prices. Click a marker for details.`
+                    : "Hotel map with live prices and availability. Click a marker for details.")
+                : (districtGeo
+                    ? `Alle Hotels in und um ${list.district} mit Live-Preisen. Klick auf einen Marker zeigt Details.`
+                    : "Hotel-Karte mit Live-Preisen und Verfügbarkeit. Klick auf einen Marker zeigt Details.")}
             />
           </>
         )}
@@ -315,6 +345,7 @@ const breadcrumbJsonLd = {
             numberOfItems={list.gyg.numberOfItems}
             headline={list.gyg.headline}
             lead={list.gyg.lead}
+            locale={locale}
           />
         )}
       </div>
@@ -324,18 +355,18 @@ const breadcrumbJsonLd = {
         <AdSlot slot="sidebar" minHeight={300} />
 
         <div class="card p-5">
-          <div class="eyebrow mb-3">Mehr aus {cat.name}</div>
+          <div class="eyebrow mb-3">{isEn ? `More from ${catLabel}` : `Mehr aus ${cat.name}`}</div>
           <ul class="space-y-2 text-sm">
             {sibling.map((s) => (
               <li>
-                <a href={`/${s.slug}/`} class="link-accent font-medium">{s.title}</a>
+                <a href={listHref(s)} class="link-accent font-medium">{s.title}</a>
               </li>
             ))}
           </ul>
         </div>
 
         <div class="card p-5">
-          <div class="eyebrow mb-3">Andere Themen</div>
+          <div class="eyebrow mb-3">{isEn ? "Other topics" : "Andere Themen"}</div>
           <ul class="space-y-1 text-sm">
             {otherCats.map((c) => (
               <li>
@@ -350,10 +381,10 @@ const breadcrumbJsonLd = {
 
   <!-- Weitere Listen aus Kategorie -->
   {sibling.length > 0 && (
-    <Section eyebrow={cat.name} title={`Weitere Top-10-Listen aus ${cat.name}`}>
+    <Section eyebrow={catLabel} title={isEn ? `More Top 10 lists from ${catLabel}` : `Weitere Top-10-Listen aus ${cat.name}`}>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {sibling.map((s) => (
-          <Top10Card href={`/${s.slug}/`} slug={s.slug} title={s.title} subtitle={s.subtitle} hue={s.hue} emoji={s.emoji} weak={s.weak} />
+          <Top10Card href={listHref(s)} slug={s.slug} title={s.title} subtitle={s.subtitle} hue={s.hue} emoji={s.emoji} weak={s.weak} />
         ))}
       </div>
     </Section>

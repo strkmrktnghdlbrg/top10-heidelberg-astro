@@ -31,6 +31,8 @@ interface Props {
   title?: string;
   /** Lead unter Headline. */
   lead?: string;
+  /** Sprache der UI-Labels (Eyebrow, Footnote, Preis-Suffix). Default "de". */
+  locale?: "de" | "en";
 }
 
 const {
@@ -39,9 +41,11 @@ const {
   lng,
   radius,
   limit = 8,
+  locale = "de",
   title = `Aktuell bestbewertete Hotels in ${city.name}`,
   lead = "Live von Booking.com via Stay22 - aktuelle Bewertungen und Preise. Aktualisiert beim letzten Build.",
 } = Astro.props;
+const isEn = locale === "en";
 
 let hotels: Stay22Accommodation[] | null = null;
 try {
@@ -70,7 +74,7 @@ try {
 }
 
 const visible = hotels && hotels.length > 0 ? hotels.slice(0, limit) : [];
-const buildTime = new Date().toLocaleDateString("de-DE", {
+const buildTime = new Date().toLocaleDateString(isEn ? "en-US" : "de-DE", {
   year: "numeric",
   month: "long",
   day: "numeric",
@@ -88,7 +92,7 @@ if (visible.length > 0) {
 {visible.length > 0 && (
   <section class="my-12">
     <div class="mb-6 max-w-3xl">
-      <p class="eyebrow mb-2">Live von Stay22</p>
+      <p class="eyebrow mb-2">{isEn ? "Live from Stay22" : "Live von Stay22"}</p>
       <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-2" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
         {title}
       </h2>
@@ -145,7 +149,7 @@ if (visible.length > 0) {
               <p class="text-sm font-semibold" style="color: var(--color-inkwell-purple);">
                 {h.price?.formattedPerNight ?? h.price?.formattedTotal}
                 <span class="text-xs font-normal" style="color: var(--color-slate-steel);">
-                  {h.price?.formattedPerNight ? " / Nacht" : ""}
+                  {h.price?.formattedPerNight ? (isEn ? " / night" : " / Nacht") : ""}
                 </span>
               </p>
             )}
@@ -155,8 +159,9 @@ if (visible.length > 0) {
     </div>
 
     <p class="text-[11px] mt-4 leading-relaxed" style="color: var(--color-slate-steel);">
-      * Sponsored - Buchung läuft über Booking.com via Stay22-Affiliate.
-      Stand: {buildTime}. Preise und Verfügbarkeit ändern sich täglich.
+      {isEn
+        ? `* Sponsored - booking is handled by Booking.com via the Stay22 affiliate. As of: ${buildTime}. Prices and availability change daily.`
+        : `* Sponsored - Buchung läuft über Booking.com via Stay22-Affiliate. Stand: ${buildTime}. Preise und Verfügbarkeit ändern sich täglich.`}
     </p>
   </section>
 )}
