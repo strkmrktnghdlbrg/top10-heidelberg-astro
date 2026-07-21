@@ -13,6 +13,7 @@ import Breadcrumbs from "./Breadcrumbs.astro";
 import Stay22NearbyHotels from "./Stay22NearbyHotels.astro";
 import Stay22Map from "./Stay22Map.astro";
 import GetYourGuideWidget from "./GetYourGuideWidget.astro";
+import { getBuildToday, clampStayWindow, addDays } from "../lib/stay22";
 import type { EventPage as EventPageData } from "../data/events";
 
 interface Props {
@@ -138,18 +139,42 @@ const eventJsonLd = {
   ))}
 
   <!-- Hotel-Blocks: pro Termin ein Stay22-Block.
-       Vergangene Termine ueberspringen (Stay22 API lehnt past-dates mit 400 ab). -->
+       Vollständig vergangene Termine (Event-Ende < heute) werden übersprungen.
+       Für noch laufende/kommende Termine wird das Hotel-Fenster geklemmt, damit
+       nie ein Vergangenheitsdatum an Stay22 geht (sonst HTTP 400). Ist das
+       ganze Event abgelaufen, fällt ein einzelner Block auf ein Default-Fenster
+       (heute+30 / +31) zurück. -->
   {(() => {
-    // Build-Zeit-Stempel als YYYY-MM-DD. process.env.SOURCE_DATE_EPOCH wird beim
-    // GitHub-Action-Rebuild gesetzt; sonst Fallback auf einen festen String,
-    // damit die Datei deterministisch baut (kein new Date()).
-    const todayIso = (typeof process !== "undefined" && process.env?.BUILD_DATE)
-      || "2026-06-08";
-    return event.dates
-      .filter((d) => (d.hotelCheckIn ?? d.start) >= todayIso)
-      .map((d) => {
+    // BUILD_DATE hat Vorrang (reproduzierbare CI-Builds), sonst echter Kalendertag.
+    const todayIso = getBuildToday();
     const hotelGeo = event.hotelLocation ?? event.location;
-    return (
+
+    // Termine, deren Event-Ende noch nicht vorbei ist (laufend oder künftig).
+    const upcoming = event.dates.filter((d) => d.end >= todayIso);
+
+    // Fully-expired Fallback: kein zukünftiger Termin -> generisches Fenster.
+    const blocks = upcoming.length > 0
+      ? upcoming.map((d) => {
+          const win = clampStayWindow(
+            d.hotelCheckIn ?? d.start,
+            d.hotelCheckOut ?? d.end,
+            todayIso,
+          );
+          return {
+            checkin: win.checkin,
+            checkout: win.checkout,
+            headline: `Hotels${d.label ? ` für ${d.label}` : ""} - ${formatDate(d.start)}${d.start !== d.end ? ` bis ${formatDate(d.end)}` : ""}`,
+            lead: `Live-Verfügbarkeit und aktuelle Preise via Stay22 für genau diesen Termin. Im Umkreis von ${Math.round(event.hotelRadius / 100) * 100} m um ${hotelGeo.name}.`,
+          };
+        })
+      : [{
+          checkin: addDays(todayIso, 30),
+          checkout: addDays(todayIso, 31),
+          headline: `Hotels in der Nähe von ${hotelGeo.name}`,
+          lead: `Live-Verfügbarkeit und aktuelle Preise via Stay22 im Umkreis von ${Math.round(event.hotelRadius / 100) * 100} m um ${hotelGeo.name}.`,
+        }];
+
+    return blocks.map((b) => (
       <section class="section pt-0">
         <div class="container-page">
           <Stay22NearbyHotels
@@ -158,15 +183,14 @@ const eventJsonLd = {
             near={hotelGeo.name}
             radius={event.hotelRadius}
             limit={8}
-            checkin={d.hotelCheckIn ?? d.start}
-            checkout={d.hotelCheckOut ?? d.end}
-            customHeadline={`Hotels${d.label ? ` für ${d.label}` : ""} - ${formatDate(d.start)}${d.start !== d.end ? ` bis ${formatDate(d.end)}` : ""}`}
-            customLead={`Live-Verfügbarkeit und aktuelle Preise via Stay22 für genau diesen Termin. Im Umkreis von ${Math.round(event.hotelRadius / 100) * 100} m um ${hotelGeo.name}.`}
+            checkin={b.checkin}
+            checkout={b.checkout}
+            customHeadline={b.headline}
+            customLead={b.lead}
           />
         </div>
       </section>
-    );
-  });
+    ));
   })()}
 
   <!-- Karte -->
