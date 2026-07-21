@@ -40,6 +40,13 @@ const year = new Date().getFullYear();
         <li><a href="/datenschutz/" class="link-accent">Datenschutz</a></li>
         {features.werben.enabled && <li><a href="/werben/" class="link-accent">Werben</a></li>}
         <li><a href="/kontakt/" class="link-accent">Kontakt</a></li>
+        <li>
+          <button
+            type="button"
+            class="link-accent text-left"
+            onclick="window.top10hdConsent && window.top10hdConsent.open()"
+          >Cookie-Einstellungen</button>
+        </li>
       </ul>
     </div>
   </div>

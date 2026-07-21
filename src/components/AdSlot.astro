@@ -7,8 +7,11 @@ interface Props {
   responsive?: boolean;
   minHeight?: number;
   label?: string;
+  locale?: "de" | "en";
 }
-const { slot, format = "auto", responsive = true, minHeight = 250, label = "Anzeige" } = Astro.props;
+const { slot, format = "auto", responsive = true, minHeight = 250, locale = "de", label } = Astro.props;
+// Platzhalter-Label locale-bewusst — auf /en/-Seiten "Advertisement".
+const placeholderLabel = label ?? (locale === "en" ? "Advertisement" : "Anzeige");
 const slotId = adsense.slots[slot];
 const show = adsenseEnabled && slotId.length > 0;
 ---
@@ -27,6 +30,6 @@ const show = adsenseEnabled && slotId.length > 0;
     />
     <script is:inline>{`(adsbygoogle = window.adsbygoogle || []).push({});`}</script>
   ) : (
-    <span>{label}</span>
+    <span>{placeholderLabel}</span>
   )}
 </div>

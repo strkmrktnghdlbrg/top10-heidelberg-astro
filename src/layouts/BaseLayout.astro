@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieConsent from "../components/CookieConsent.astro";
 import { city } from "../data/city";
 import { affiliate, stay22Enabled, gygEnabled } from "../data/affiliate";
 import { adsense, adsenseEnabled } from "../data/adsense";
@@ -30,6 +31,11 @@ const {
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, city.domain).toString();
 const fullTitle = title === city.brandName ? `${city.brandName} - Die besten Adressen am Neckar` : `${title} · ${city.brandName}`;
 const ogLocale = locale === "en" ? "en_US" : "de_DE";
+
+// Social-Preview-Bild: übergebenes ogImage (relativ oder absolut) auf eine
+// absolute URL auflösen; sonst site-weites Default-Hero. So hat JEDE Seite
+// ein og:image + twitter:image (vorher nur eine einzige Seite site-weit).
+const ogImageUrl = new URL(ogImage ?? "/images/heidelberg-hero.jpg", city.domain).toString();
 ---
 
 <!doctype html>
@@ -56,52 +62,60 @@ const ogLocale = locale === "en" ? "en_US" : "de_DE";
     <meta property="og:locale" content={ogLocale} />
     {locale === "en" && <meta property="og:locale:alternate" content="de_DE" />}
     {locale === "de" && hreflangs?.en && <meta property="og:locale:alternate" content="en_US" />}
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image" content={ogImageUrl} />
 
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+
+    {/* Nicht notwendige Drittanbieter-Skripte werden bewusst INERT gerendert
+        (type="text/plain") und erst nach Einwilligung im Cookie-Banner von
+        CookieConsent.astro aktiviert. So werden vor dem Opt-in keine
+        Drittanbieter-Cookies gesetzt und keine Daten übertragen (§ 25 TTDSG). */}
     {stay22Enabled && (
       <script
+        type="text/plain"
+        data-cc="all"
         async
-        src={`https://snippet.stay22.com/allez/script?lmaid=${affiliate.stay22.lmaId}`}
+        data-cc-src={`https://snippet.stay22.com/allez/script?lmaid=${affiliate.stay22.lmaId}`}
       ></script>
     )}
 
     {gygEnabled && (
       <script
+        type="text/plain"
+        data-cc="all"
         async
         defer
-        src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
+        data-cc-src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
         data-gyg-partner-id={affiliate.getYourGuide.partnerId}
       ></script>
     )}
 
     {adsenseEnabled && !noindex && (
       <script
+        type="text/plain"
+        data-cc="all"
         async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.publisherId}`}
         crossorigin="anonymous"
+        data-cc-src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.publisherId}`}
       ></script>
     )}
 
     {gtmEnabled && (
-      <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${analytics.gtmId}');`} />
+      <script type="text/plain" data-cc="all" set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${analytics.gtmId}');`} />
     )}
   </head>
   <body class="min-h-screen flex flex-col">
-    {gtmEnabled && (
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${analytics.gtmId}`}
-          height="0"
-          width="0"
-          style="display:none;visibility:hidden"
-        ></iframe>
-      </noscript>
-    )}
+    {/* Kein GTM-<noscript>-iframe: ohne JS kann keine Einwilligung eingeholt
+        werden, daher darf ohne Opt-in auch kein Tag Manager geladen werden. */}
     <Header />
     <main class="flex-1" data-pagefind-body>
       <slot />
     </main>
     <Footer />
+    <CookieConsent />
   </body>
 </html>
