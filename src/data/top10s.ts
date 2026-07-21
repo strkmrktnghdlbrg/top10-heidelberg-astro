@@ -42,6 +42,13 @@ export type Top10List = {
   pattern: Top10ListPattern;
   weak: boolean;           // true wenn Parser keine konkreten Anbieter fand
   items: Top10Item[];
+  /**
+   * Optionale Langform-Sektionen (Ratgeber-Fließtext) unterhalb der Liste.
+   * Gesetzt via top10Overrides für ausgebaute Money-Pages (z.B. Stadtteil-Hotels).
+   */
+  body?: { heading: string; paragraphs: string[] }[];
+  /** Optionaler FAQ-Block. Rendert Accordion + FAQPage-JSON-LD (wie EventPage). */
+  faq?: { q: string; a: string }[];
   hue: 1 | 2 | 3 | 4 | 5;
   emoji?: string;
   affiliate?: {
@@ -135,7 +142,7 @@ const curated: Record<string, Curate> = {
   "emmertsgrund-hotels":  { title: "Top 10 Hotels in Emmertsgrund",      subtitle: "Grüne Hanglage im Süden Heidelbergs mit Blick auf die Rheinebene.",        category: "stadtteile", district: "Emmertsgrund",  hue: 4, emoji: "🛎️", affiliate: { stay22: true } },
   "handschuhsheim-hotels":{ title: "Top 10 Hotels in Handschuhsheim",    subtitle: "Klassiker im Norden mit Wein, Bergstraße und kurzem Weg in die Altstadt.", category: "stadtteile", district: "Handschuhsheim", hue: 4, emoji: "🛎️", affiliate: { stay22: true } },
   "kirchheim-hotels":     { title: "Top 10 Hotels in Kirchheim",         subtitle: "Günstig & gut angebunden im Heidelberger Süden.",                          category: "stadtteile", district: "Kirchheim",     hue: 5, emoji: "🛎️", affiliate: { stay22: true } },
-  "neuenheim-hotels":     { title: "Top 10 Hotels in Neuenheim",         subtitle: "Universitätsviertel mit Philosophenweg-Blick und Neckar-Nähe.",            category: "stadtteile", district: "Neuenheim",     hue: 4, emoji: "🛎️", affiliate: { stay22: true, getYourGuide: true }, gyg: { variant: "search-query", query: "Heidelberg Philosophenweg", placement: "after-hotels", numberOfItems: 4, headline: "Neuenheim erleben: Philosophenweg & Altstadt-Blick", lead: "Direkt vor der Haustür der Neuenheimer Hotels liegt einer der schönsten Spazierwege Europas - geführte Touren über den Philosophenweg zeigen die Altstadt aus der besten Perspektive." } },
+  "neuenheim-hotels":     { title: "Hotels in Heidelberg-Neuenheim: Die besten Adressen 2026", subtitle: "Universitätsviertel mit Philosophenweg-Blick und Neckar-Nähe.",            category: "stadtteile", district: "Neuenheim",     hue: 4, emoji: "🛎️", affiliate: { stay22: true, getYourGuide: true }, gyg: { variant: "search-query", query: "Heidelberg Philosophenweg", placement: "after-hotels", numberOfItems: 4, headline: "Neuenheim erleben: Philosophenweg & Altstadt-Blick", lead: "Direkt vor der Haustür der Neuenheimer Hotels liegt einer der schönsten Spazierwege Europas - geführte Touren über den Philosophenweg zeigen die Altstadt aus der besten Perspektive." } },
   "pfaffengrund-hotels":  { title: "Top 10 Hotels im Pfaffengrund",      subtitle: "Familienfreundlich westlich der Stadt, gut für längere Aufenthalte.",      category: "stadtteile", district: "Pfaffengrund",  hue: 4, emoji: "🛎️", affiliate: { stay22: true } },
   "rohrbach-hotels":      { title: "Top 10 Hotels in Rohrbach",          subtitle: "Gemütliches Wohnen mit Blick auf den Königstuhl.",                         category: "stadtteile", district: "Rohrbach",      hue: 3, emoji: "🛎️", affiliate: { stay22: true } },
   "schlierbach-hotels":   { title: "Top 10 Hotels in Schlierbach",       subtitle: "Östlich am Neckar - naturnah und mit Blick auf das Schloss.",              category: "stadtteile", district: "Schlierbach",   hue: 4, emoji: "🛎️", affiliate: { stay22: true, getYourGuide: true }, gyg: { variant: "search-query", query: "Heidelberg Neckar River Boat", placement: "after-hotels", numberOfItems: 4, headline: "Vom Hotel direkt aufs Wasser", lead: "Schlierbach liegt malerisch am Neckar - eine Bootsfahrt mit Blick aufs Schloss ist von hier aus der naheliegendste Ausflug. Beliebte Touren ab Heidelberg im Überblick." } },
@@ -217,6 +224,8 @@ export const top10Lists: Top10List[] = rawList
     pattern: r.pattern,
     weak,
     items,
+    body: ov?.body,
+    faq: ov?.faq,
     hue: c.hue ?? 1,
     emoji: c.emoji,
     affiliate: c.affiliate,

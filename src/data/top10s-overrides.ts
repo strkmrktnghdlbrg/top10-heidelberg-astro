@@ -17,9 +17,113 @@ import type { Top10Item } from "./top10s";
 type Override = {
   intro?: string;
   items: Top10Item[];
+  /** Langform-Ratgeber-Sektionen unterhalb der Liste (Stadtteil-Guide etc.). */
+  body?: { heading: string; paragraphs: string[] }[];
+  /** FAQ-Block: rendert Accordion + FAQPage-JSON-LD. */
+  faq?: { q: string; a: string }[];
 };
 
 export const top10Overrides: Record<string, Override> = {
+  // ── Stadtteil-Hotel-Silo (Bet 1, Stay22-Money-Pages) ────────────────
+  "neuenheim-hotels": {
+    intro: "Wer ein Hotel in Heidelberg-Neuenheim sucht, wohnt ruhig und trotzdem stadtnah: Der Stadtteil liegt am nördlichen Neckarufer direkt gegenüber der Altstadt, mit dem Philosophenweg vor der Haustür und kurzem Weg über die Brücke ins Zentrum. Unten die aktuellen Neuenheimer Häuser mit einer ehrlichen Einordnung, für wen sie sich jeweils eignen - vom Luxus-Refugium am Wasser bis zur familiengeführten Pension nahe der Uniklinik.",
+    items: [
+      {
+        rank: 1,
+        name: "Boutique Hotel Heidelberg Suites (House of Hütter)",
+        description: "Luxus-Boutiquehotel in einem Villenensemble aus dem 19. Jahrhundert direkt am Neckarufer, zwischen Weinbergen und Philosophenweg mit Blick auf die Schlossruine. Mitglied der Small Luxury Hotels of the World, mit privatem Spa (Sauna, Dampfbad, Massage) und Suiten mit Kitchenette. Die erste Adresse in Neuenheim für gehobene Ansprüche.",
+        address: "Neuenheimer Landstraße 12",
+        websiteUrl: "https://www.heidelbergsuites.com/",
+      },
+      {
+        rank: 2,
+        name: "BS Boutique Hotel",
+        description: "4-Sterne-Boutiquehotel mit 28 klimatisierten, schallgeschützten Zimmern und Apartments, direkt gegenüber der Altstadt am Neuenheimer Neckarufer. Von hier sind es nur wenige Gehminuten über die Theodor-Heuss-Brücke zum Bismarckplatz und zum Beginn des Philosophenwegs. Die vielseitigste Vollhotel-Option im Stadtteil, auch für längere Aufenthalte.",
+        address: "Brückenstraße 14",
+        websiteUrl: "https://bs-hotels.de/",
+      },
+      {
+        rank: 3,
+        name: "Rafaela Hotel Heidelberg",
+        description: "Modernes Boutiquehotel, 2019 neu gebaut, in einer ruhigen Seitenstraße mitten in Neuenheim. Highspeed-WLAN, mobiler Check-in, Co-Working-Bereich und eine Frühstückslounge mit regionalen Produkten machen es besonders für Geschäftsreisende interessant. Zwei Minuten zum Neckar, fünf zum Philosophenweg, rund 500 Meter in die Altstadt und gut einen Kilometer bis ins Neuenheimer Feld.",
+        address: "Lutherstraße 17",
+        websiteUrl: "https://rafaela-hotel.com/",
+      },
+      {
+        rank: 4,
+        name: "Hotel Heidelberg Astoria",
+        description: "Kleines Garni-Designhotel in einer Stadtvilla von 1907, nur zwei Gehminuten vom Philosophenweg entfernt. Sechs individuell gestaltete Zimmer, eigener Hotelparkplatz und eine Bar sorgen für eine persönliche, ruhige Atmosphäre. Ideal für Paare und Gäste, die charmante Individualität einer großen Hotelanlage vorziehen.",
+        address: "Rahmengasse 30",
+        websiteUrl: "https://www.heidelberg-astoria.de/",
+      },
+      {
+        rank: 5,
+        name: "Hotel-Pension Berger",
+        description: "Seit über 50 Jahren familiengeführte Pension in Neuenheim, mit Garten und Außenpool sowie Zimmern vom Einzel- bis zum Familienzimmer und fünf Apartments. Die Lage nahe den Universitätskliniken und Forschungsinstituten im Neuenheimer Feld macht das Haus zur pragmatischen Wahl für Familien, längere Aufenthalte und Klinikbesuche.",
+        websiteUrl: "https://hotelberger.de/",
+      },
+      {
+        rank: 6,
+        name: "Hotel Café Frisch",
+        description: "Garni-Hotel mit angeschlossener Bäckerei, Konditorei und Café in der Jahnstraße, rund zwei Minuten zum Neckar und fünf Minuten zur Uniklinik. Zehn Zimmer plus ein Apartment, das Frühstück kommt mit hausgemachtem Gebäck aus der eigenen Backstube. Bodenständige, gut gelegene Adresse besonders für Klinik- und Uni-Besucher.",
+        address: "Jahnstraße 34",
+        websiteUrl: "https://www.cafe-frisch.de/unser-hotel/",
+      },
+    ],
+    body: [
+      {
+        heading: "Neuenheim: Lage und Charakter",
+        paragraphs: [
+          "Neuenheim liegt am nördlichen Ufer des Neckars, direkt gegenüber der Heidelberger Altstadt. Wer hier übernachtet, hat das vielleicht schönste Panorama der Stadt inklusive: Vom Neuenheimer Ufer und vom Philosophenweg aus blickt man über den Fluss auf Altstadt, Alte Brücke und Schlossruine. Genau dieser Blick, den Generationen von Dichtern und Professoren besungen haben, ist der Grund, warum der Philosophenweg zu den bekanntesten Spazierwegen Europas zählt - und er beginnt praktisch vor den Neuenheimer Hotels.",
+          "Der Stadtteil ist zweigeteilt: Das alte Neuenheim mit seinen gründerzeitlichen Villenstraßen, kleinen Läden entlang der Brückenstraße und Ladenburger Straße sowie ruhigen Wohnquartieren, und im Westen das Neuenheimer Feld - der große Campus der Universität Heidelberg mit dem Universitätsklinikum und zahlreichen Forschungsinstituten. Diese Mischung aus gehobenem Wohnviertel und Wissenschaftsstandort prägt auch die Hotellandschaft: Sie reicht vom Luxus-Refugium am Wasser über moderne Boutiquehäuser bis zu familiengeführten Pensionen, die vor allem Klinikgäste und Gastwissenschaftler beherbergen.",
+          "Im Vergleich zur Altstadt geht es in Neuenheim deutlich ruhiger zu. Statt Touristenströmen und Kneipenlärm erwartet Gäste ein Wohnviertel mit Bäckereien, Cafés, Wochenmarkt am Neuenheimer Marktplatz und viel Grün - und trotzdem ist die Altstadt zu Fuß erreichbar. Für viele Reisende ist das die ideale Balance: nah dran am Trubel, aber zum Schlafen auf der ruhigen Seite des Flusses.",
+        ],
+      },
+      {
+        heading: "Anreise und Verkehr",
+        paragraphs: [
+          "Der Heidelberger Hauptbahnhof liegt rund drei Kilometer entfernt auf der anderen Neckarseite und ist mit Bus oder Straßenbahn in etwa 15 Minuten erreichbar. Zentrale Umsteigepunkte sind der Bismarckplatz und die Haltestellen entlang der Berliner Straße im Neuenheimer Feld, das mit mehreren Buslinien und der Straßenbahn gut an das Netz der Rhein-Neckar-Verkehrsbetriebe angebunden ist.",
+          "Zwei Brücken verbinden Neuenheim mit der Altstadt: die Theodor-Heuss-Brücke am Bismarckplatz, über die auch der Autoverkehr und die Buslinien laufen, und die fußläufige Alte Brücke, über die man in rund zehn bis fünfzehn Minuten mitten in die Altstadt spaziert. Mit dem Auto erreicht man Neuenheim über die A5 (Anschlussstelle Heidelberg) und die A656 aus Richtung Mannheim.",
+          "Ein wichtiger Hinweis zum Parken: Neuenheim ist überwiegend Wohngebiet mit Bewohnerparkzonen, freie Stellplätze auf der Straße sind knapp. Wer mit dem Auto anreist, sollte gezielt ein Hotel mit eigenem Parkplatz wählen (etwa das Hotel Astoria) oder die Parkmöglichkeiten am Neuenheimer Feld einplanen. Für alle, die die Stadt ohnehin zu Fuß und mit dem Rad erkunden wollen, ist die zentrale Lage am Neckar ein klarer Vorteil - die Radwege am Ufer führen direkt in die Altstadt und flussaufwärts ins Grüne.",
+        ],
+      },
+      {
+        heading: "Für wen sich ein Hotel in Neuenheim eignet",
+        paragraphs: [
+          "Neuenheim ist die richtige Wahl für alle, die Heidelberg erleben, aber ruhig übernachten wollen. Wer den Trubel und die Preise mitten in der Altstadt scheut, findet hier die entspannte Alternative in Sichtweite - inklusive des berühmten Altstadt-Blicks vom eigenen Ufer. Für Paare und Design-Fans bieten sich die Boutique- und Villenhäuser wie die Heidelberg Suites, das Rafaela oder das Astoria an.",
+          "Ein zweiter großer Gästekreis reist wegen des Neuenheimer Felds an: Patientinnen und Patienten des Universitätsklinikums, Angehörige, Gastwissenschaftler und Kongressbesucher. Für sie zählen kurze Wege zur Klinik und faire Preise mehr als Schlossblick - Adressen wie das Hotel Café Frisch oder die familiengeführte Pension Berger liegen dafür günstig und bieten teils Apartments für längere Aufenthalte.",
+          "Familien profitieren von den größeren Zimmern und Apartments mit Kitchenette, wie sie mehrere Häuser im Stadtteil anbieten, sowie von der ruhigen, grünen Umgebung abseits des Verkehrs. Geschäftsreisende wiederum schätzen die moderne Ausstattung samt Co-Working und schnellem WLAN im Rafaela sowie die gute Anbindung an Bahnhof und Autobahn. Kurz: Neuenheim deckt vom Luxusaufenthalt bis zum praktischen Klinikbesuch nahezu jedes Reisemotiv ab.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Liegt Neuenheim zentral in Heidelberg?",
+        a: "Ja. Neuenheim liegt direkt am Neckar gegenüber der Altstadt. Über die fußläufige Alte Brücke ist man in rund zehn bis fünfzehn Minuten mitten im historischen Zentrum, der Bismarckplatz als zentraler Verkehrsknoten liegt gleich an der Theodor-Heuss-Brücke.",
+      },
+      {
+        q: "Wie weit ist es von Neuenheim in die Altstadt?",
+        a: "Zu Fuß etwa zehn bis fünfzehn Minuten über die Alte Brücke, je nach Standort im Stadtteil. Mit Bus oder Straßenbahn über die Theodor-Heuss-Brücke geht es noch schneller.",
+      },
+      {
+        q: "Welches Hotel in Neuenheim eignet sich für einen Besuch der Uniklinik im Neuenheimer Feld?",
+        a: "Günstig zur Klinik liegen das Hotel Café Frisch (rund fünf Minuten) und die Hotel-Pension Berger nahe den Universitätskliniken und Forschungsinstituten. Beide bieten auch Apartments für längere Aufenthalte, das Rafaela Hotel ist gut einen Kilometer entfernt.",
+      },
+      {
+        q: "Gibt es in Neuenheim Hotels mit eigenem Parkplatz?",
+        a: "Ja, einige Häuser wie das Hotel Astoria verfügen über eigene Stellplätze. Das ist auch ratsam, denn Neuenheim ist überwiegend Wohngebiet mit Bewohnerparkzonen, in denen freie Straßenstellplätze knapp sind.",
+      },
+      {
+        q: "Wo hat man in Neuenheim den besten Blick auf Schloss und Altstadt?",
+        a: "Am schönsten ist der Blick vom Neuenheimer Neckarufer und vom Philosophenweg, der oberhalb des Stadtteils verläuft. Hotels nahe der Neuenheimer Landstraße und dem Uferbereich liegen diesem Panorama am nächsten.",
+      },
+      {
+        q: "Ist Neuenheim ruhiger als die Heidelberger Altstadt?",
+        a: "Deutlich. Neuenheim ist ein grünes Wohnviertel mit Villenstraßen, Cafés und Wochenmarkt, ohne den nächtlichen Kneipen- und Touristentrubel der Altstadt - bei gleichzeitig kurzem Weg dorthin.",
+      },
+    ],
+  },
+
   "online-werbeagenturen": {
     intro: "Heidelberg ist eine der dichtesten Agentur-Szenen Süddeutschlands - getragen von Universität, Mittelstand und der Druck-/Medienindustrie. Die folgenden zehn Agenturen decken die Felder Performance-Marketing, SEO, klassische Werbung und B2B-Kommunikation ab.",
     items: [
