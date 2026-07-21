@@ -1,0 +1,202 @@
+---
+/**
+ * Cookie-Consent-Banner + Consent-Manager (DSGVO / § 25 TTDSG).
+ *
+ * Nicht notwendige Drittanbieter-Skripte (Stay22, GetYourGuide, Google
+ * AdSense, Google Tag Manager) werden in BaseLayout.astro bewusst als
+ * inerte `<script type="text/plain" data-cc="all" ...>` gerendert und
+ * erst nach ausdrücklicher Einwilligung ("Alle akzeptieren") aktiviert.
+ *
+ * Die Wahl wird im localStorage unter `top10hd-consent` gespeichert
+ * (Wert "all" oder "essential"). Der Footer-Link „Cookie-Einstellungen"
+ * ruft window.top10hdConsent.open() auf und lässt die Wahl jederzeit
+ * ändern. Diese Umsetzung entspricht 1:1 der Beschreibung in
+ * src/pages/datenschutz.astro.
+ */
+---
+
+<div
+  id="cc-banner"
+  class="cc-banner"
+  role="dialog"
+  aria-modal="false"
+  aria-label="Cookie-Einwilligung"
+  aria-hidden="true"
+  hidden
+>
+  <div class="cc-inner">
+    <div class="cc-text">
+      <p class="cc-title">Wir respektieren deine Privatsphäre</p>
+      <p class="cc-body">
+        Wir binden nur mit deiner Einwilligung externe Dienste ein (Stay22-Hotelpreise,
+        GetYourGuide-Touren, Google AdSense &amp; Google Tag Manager). Diese setzen Cookies und
+        übertragen Daten in Drittländer. Technisch notwendige Funktionen laufen immer.
+        Mehr dazu in der <a href="/datenschutz/">Datenschutzerklärung</a>.
+      </p>
+    </div>
+    <div class="cc-actions">
+      <button type="button" id="cc-essential" class="cc-btn cc-btn-ghost">Nur notwendige</button>
+      <button type="button" id="cc-accept" class="cc-btn cc-btn-primary">Alle akzeptieren</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cc-banner {
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%) translateY(1.5rem);
+    z-index: 90;
+    width: min(100% - 1.5rem, 62rem);
+    background: #ffffff;
+    border: 1px solid var(--color-lavender-ash);
+    border-radius: var(--radius-card, 1rem);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 220ms ease, transform 220ms ease, visibility 0s linear 220ms;
+  }
+  .cc-banner.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 220ms ease, transform 220ms ease, visibility 0s linear 0s;
+  }
+  .cc-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .cc-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+  }
+  .cc-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-inkwell-purple);
+    margin-bottom: 0.25rem;
+  }
+  .cc-body {
+    font-size: 0.8125rem;
+    line-height: 1.55;
+    color: var(--color-shadow-graphite);
+  }
+  .cc-body a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+  .cc-actions {
+    display: flex;
+    gap: 0.625rem;
+    flex-shrink: 0;
+  }
+  @media (max-width: 480px) {
+    .cc-actions { flex-direction: column; }
+  }
+  .cc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+    white-space: nowrap;
+  }
+  .cc-btn-primary {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  .cc-btn-primary:hover { filter: brightness(0.94); }
+  .cc-btn-ghost {
+    background: transparent;
+    color: var(--color-shadow-graphite);
+    border-color: var(--color-lavender-ash);
+  }
+  .cc-btn-ghost:hover { background: var(--color-porcelain-mist); }
+</style>
+
+<script is:inline>
+  (function () {
+    var KEY = "top10hd-consent";
+    var banner = document.getElementById("cc-banner");
+
+    function activateScripts() {
+      var inert = document.querySelectorAll('script[type="text/plain"][data-cc="all"]');
+      inert.forEach(function (old) {
+        if (old.dataset.ccActivated) return;
+        var s = document.createElement("script");
+        for (var i = 0; i < old.attributes.length; i++) {
+          var a = old.attributes[i];
+          if (a.name === "type" || a.name === "data-cc" || a.name === "data-cc-src") continue;
+          s.setAttribute(a.name, a.value);
+        }
+        var src = old.getAttribute("data-cc-src");
+        if (src) s.src = src;
+        else s.text = old.textContent || "";
+        old.dataset.ccActivated = "1";
+        old.parentNode.replaceChild(s, old);
+      });
+    }
+
+    function showBanner() {
+      if (!banner) return;
+      banner.hidden = false;
+      banner.setAttribute("aria-hidden", "false");
+      // Sichtbarkeit über einen kurzen Timeout (NICHT requestAnimationFrame,
+      // da RAF in Hintergrund-/Headless-Tabs pausiert und das Banner dann
+      // unsichtbar bliebe). Der 20-ms-Versatz lässt die Einblende-Transition
+      // greifen; das Setzen selbst ist garantiert.
+      window.setTimeout(function () { banner.classList.add("is-open"); }, 20);
+    }
+    function hideBanner() {
+      if (!banner) return;
+      banner.classList.remove("is-open");
+      banner.setAttribute("aria-hidden", "true");
+      window.setTimeout(function () { banner.hidden = true; }, 260);
+    }
+
+    function setConsent(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      if (value === "all") activateScripts();
+      hideBanner();
+    }
+
+    function currentConsent() {
+      try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+
+    // Öffentliche API für den Footer-Link „Cookie-Einstellungen".
+    window.top10hdConsent = {
+      open: showBanner,
+      accept: function () { setConsent("all"); },
+      reject: function () { setConsent("essential"); },
+      get: currentConsent,
+    };
+
+    var accept = document.getElementById("cc-accept");
+    var essential = document.getElementById("cc-essential");
+    if (accept) accept.addEventListener("click", function () { setConsent("all"); });
+    if (essential) essential.addEventListener("click", function () { setConsent("essential"); });
+
+    // Beim Laden: bereits erteilte „all"-Einwilligung sofort umsetzen,
+    // sonst Banner zeigen (nur wenn noch keine Wahl getroffen wurde).
+    var stored = currentConsent();
+    if (stored === "all") {
+      activateScripts();
+    } else if (stored !== "essential") {
+      showBanner();
+    }
+  })();
+</script>

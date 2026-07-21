@@ -10,11 +10,33 @@ const op = legal.operator;
     <h2 class="text-xl font-bold mt-8 mb-3">Angaben gemäß § 5 DDG</h2>
     <p>{op.name}<br />{op.street}<br />{op.zip} {op.city}<br />{op.country}</p>
 
+    {op.managingDirector && (
+      <>
+        <h2 class="text-xl font-bold mt-8 mb-3">Vertretungsberechtigt</h2>
+        <p>Director: {op.managingDirector}</p>
+      </>
+    )}
+
     <h2 class="text-xl font-bold mt-8 mb-3">Kontakt</h2>
-    <p>Kontaktaufnahme über unser <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">Kontaktformular</a>.</p>
+    <p>
+      {op.email && (
+        <>E-Mail: <a href={`mailto:${op.email}`} style="color: var(--color-accent); text-decoration: underline;">{op.email}</a><br /></>
+      )}
+      {op.phone && (
+        <>Telefon: <a href={`tel:${op.phone.replace(/\s+/g, "")}`} style="color: var(--color-accent); text-decoration: underline;">{op.phone}</a><br /></>
+      )}
+      Kontaktformular: <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">top10-heidelberg.de/kontakt</a>
+    </p>
+
+    {op.registrationNumber && (
+      <>
+        <h2 class="text-xl font-bold mt-8 mb-3">Handelsregister</h2>
+        <p>Eingetragen beim Registrar of Companies and Official Receiver der Republik Zypern (Handelsregister), Registernummer {op.registrationNumber}.</p>
+      </>
+    )}
 
     <h2 class="text-xl font-bold mt-8 mb-3">Umsatzsteuer-ID</h2>
-    <p>{op.vatId}</p>
+    <p>{op.vatId ? op.vatId : "Keine Umsatzsteuer-ID vorhanden."}</p>
 
     <h2 class="text-xl font-bold mt-8 mb-3">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>{legal.responsibleForContent}</p>

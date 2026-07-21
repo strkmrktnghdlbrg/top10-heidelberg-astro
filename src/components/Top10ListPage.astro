@@ -153,19 +153,30 @@ const itemListJsonLd = {
   }),
 };
 
-// Zusätzliches BreadcrumbList-Schema
-const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Start", item: city.domain + "/" },
-    { "@type": "ListItem", position: 2, name: cat.name, item: `${city.domain}/thema/${cat.slug}/` },
-    { "@type": "ListItem", position: 3, name: list.title },
-  ],
-};
+// Zusätzliches BreadcrumbList-Schema — locale-bewusst, damit auf /en/-Seiten
+// nicht die deutschen Labels/URLs im JSON-LD stehen (Inkonsistenz zu den
+// sichtbaren englischen Breadcrumbs).
+const breadcrumbJsonLd = isEn
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${city.domain}/en/` },
+        { "@type": "ListItem", position: 2, name: list.title },
+      ],
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Start", item: city.domain + "/" },
+        { "@type": "ListItem", position: 2, name: cat.name, item: `${city.domain}/thema/${cat.slug}/` },
+        { "@type": "ListItem", position: 3, name: list.title },
+      ],
+    };
 ---
 
-<BaseLayout title={list.title} description={description} locale={locale} hreflangs={hreflangs}>
+<BaseLayout title={list.title} description={description} ogImage={heroImage ?? undefined} locale={locale} hreflangs={hreflangs}>
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
     {heroImage ? (
@@ -286,7 +297,7 @@ const breadcrumbJsonLd = {
         )}
 
         {/* In-Content-Ad nach Top 5 (sofern Liste lang genug) */}
-        {list.items.length >= 5 && <AdSlot slot="inContent" />}
+        {list.items.length >= 5 && <AdSlot slot="inContent" locale={locale} />}
 
         {/* GYG-Widget bei placement=after-top10-list (auch Fallback für before-faq, da Top10 keine FAQ hat) */}
         {showGyg && list.gyg && (list.gyg.placement === "after-top10-list" || list.gyg.placement === "before-faq") && (
@@ -352,7 +363,7 @@ const breadcrumbJsonLd = {
 
       <!-- Sidebar -->
       <aside class="space-y-6 min-w-0">
-        <AdSlot slot="sidebar" minHeight={300} />
+        <AdSlot slot="sidebar" minHeight={300} locale={locale} />
 
         <div class="card p-5">
           <div class="eyebrow mb-3">{isEn ? `More from ${catLabel}` : `Mehr aus ${cat.name}`}</div>

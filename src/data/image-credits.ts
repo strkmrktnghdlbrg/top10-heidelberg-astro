@@ -302,4 +302,182 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "filename": "Blick auf Ziegelhausen.JPG",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Blick_auf_Ziegelhausen.JPG"
   },
+  // ── Auto-sourced Hero-Bilder (Wikimedia Commons, CC/PD) für zuvor
+  //    bildlose Listen-Slugs. Attribution wie oben Pflicht. ──
+  "auto-service-wieblingen": {
+    "author": "Kwamitsey",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "description": "Two mechanic working on a car",
+    "filename": "Two mechanic working on a car engine.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Two_mechanic_working_on_a_car_engine.jpg"
+  },
+  "autowerkstaetten": {
+    "author": "Shixart1985",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "description": "A car is on a lift in an auto shop. Mechanics are working on it while tools and equipment are scattered on the ground. The shop is filled with various",
+    "filename": "Car repair in an auto shop with tools and equipment present on the floor and a partially disassembled vehicle on a lift.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Car_repair_in_an_auto_shop_with_tools_and_equipment_present_on_the_floor_and_a_partially_disassembled_vehicle_on_a_lift.jpg"
+  },
+  "bio-laden": {
+    "author": "Rexness",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "description": "A small but vibrant market with some really good quality organic produce. This stall in particular carried a great range of very high quality organic ",
+    "filename": "InSeason Farmer's Market, North Melbourne Australia (4570521176).jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:InSeason_Farmer%27s_Market,_North_Melbourne_Australia_(4570521176).jpg"
+  },
+  "coworking-spaces": {
+    "author": "Workspace India",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "People working in a co-working space",
+    "filename": "Workspace India.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Workspace_India.jpg"
+  },
+  "fitnessstudios": {
+    "author": "Nenad Stojkovic",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "description": "Women exercising.",
+    "filename": "Sporty girl posing in gym on weigh rack.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Sporty_girl_posing_in_gym_on_weigh_rack.jpg"
+  },
+  "friseursalons": {
+    "author": "Mork",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "description": "Interior of an Amsterdam barbershop. This complete interior was sold on the Waterlooplein fleamarket in 1930.",
+    "filename": "Barbershop early 20th century (Amsterdam).jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Barbershop_early_20th_century_(Amsterdam).jpg"
+  },
+  "gartengestaltung-heidelberg": {
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Wildlife park in Dülmen, North Rhine-Westphalia, GermanyThe wildlife park was designed in 1864 by English landscape architect Edward Milner as the “Am",
+    "filename": "Dülmen, Wildpark -- 2018 -- 1458-62.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:D%C3%BClmen,_Wildpark_--_2018_--_1458-62.jpg"
+  },
+  "handwerker": {
+    "author": "David Adam Kess",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "John Pydynkowski, workbench 23k gold leaf expert artist woodcarver workbench.\nPfeil Wood Carving Tools and a Gloucester sign hand done by John Pydynko",
+    "filename": "Pfeil Wood Carving Tools and a Gloucester sign hand done by John Pydynkowski, (Gloucester) sign on workbench with tools 23k gold leaf expert artist woodcarver.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Pfeil_Wood_Carving_Tools_and_a_Gloucester_sign_hand_done_by_John_Pydynkowski,_(Gloucester)_sign_on_workbench_with_tools_23k_gold_leaf_expert_artist_woodcarver.jpg"
+  },
+  "hochzeitsplaner": {
+    "author": "Vis M",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Photo of Wedding Reception stage. Nucleus mall, Kochi",
+    "filename": "Wedding reception stage, decorations, Kochi.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Wedding_reception_stage,_decorations,_Kochi.jpg"
+  },
+  "immobilienmakler": {
+    "author": "Dguendel",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "description": "Leipzig, a row of houses on the Schreberstraße",
+    "filename": "Leipzig, Häuserzeile an der Schreberstraße.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Leipzig,_H%C3%A4userzeile_an_der_Schreberstra%C3%9Fe.jpg"
+  },
+  "inspiration-traumhafte-hochzeitsfotografie-fuer-jeden-stil": {
+    "author": "Krish Dulal",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "description": "A Nepali couple during marriage.",
+    "filename": "Bride Groom NP.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Bride_Groom_NP.JPG"
+  },
+  "it-dienstleister-computerreparatur": {
+    "author": "Disk Depot Ltd.",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "USB port solder points on laptop motherboard (closeup, indicated by screwdriver)",
+    "filename": "USB port solder points on laptop motherboard.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:USB_port_solder_points_on_laptop_motherboard.JPG"
+  },
+  "nachhilfe-und-sprachschulen": {
+    "author": "Amuzujoe",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "A school pupil writing in a school in Ghana.",
+    "filename": "Pupil writing.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Pupil_writing.jpg"
+  },
+  "online-werbeagenturen": {
+    "author": "Damian Patkowski damianpatkowski",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "description": "Damian Patkowski 2017",
+    "filename": "Workspace (Unsplash).jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Workspace_(Unsplash).jpg"
+  },
+  "sprachschulen": {
+    "author": "Anthony J. Bentley",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "description": "A classroom in the University of New Mexico’s Department of Physics and Astronomy.",
+    "filename": "Blackboards – UNM Astrophysics.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Blackboards_%E2%80%93_UNM_Astrophysics.JPG"
+  },
+  "tattoo-studios": {
+    "author": "Todd",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "description": "If you see Kev sometime in the next couple days, please resist the urge to give him a brotherly punch to the chest.  Kev and I have been exchanging Ch",
+    "filename": "Tattoo parlor mirror.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Tattoo_parlor_mirror.jpg"
+  },
+  "tieraerzte": {
+    "author": "Lt. Laura Price",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "description": "POHNPEI, Federated States of Micronesia (June 23, 2015) Capt. Margaret James conducts a basic examination on a local dog at the Pohnpei Small Animal C",
+    "filename": "Veterinarians make a difference at small animal clinic 150623-N-TW039-004.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Veterinarians_make_a_difference_at_small_animal_clinic_150623-N-TW039-004.jpg"
+  },
+  "tierarzt": {
+    "author": "Orrling",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "description": "Bootz has very shortly ago been anesthetized, he's now lying on the shiny table and is being castrated like a man. Dr Ehud Snapir is a monopoly of con",
+    "filename": "Surgery hall.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Surgery_hall.jpg"
+  },
+  "umzugsunternehmen": {
+    "author": "brownpau",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "description": "A moving company, removalist or van line is a company that helps people and businesses move their goods from one place to another. It offers all inclu",
+    "filename": "An Overview of Moving Companies and Their Use of Moving Boxes.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:An_Overview_of_Moving_Companies_and_Their_Use_of_Moving_Boxes.jpg"
+  },
+  "vintage-second-hand-laden": {
+    "author": "MAKY.OREL",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Interiér pražského second handu Textile house, Praha",
+    "filename": "Inside the second hand shop, clothing racks.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Inside_the_second_hand_shop,_clothing_racks.jpg"
+  },
+  "weinladen": {
+    "author": "Marcus Wong Wongm",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "description": "Bottles of w:Passion Pop in an Australian bottle shop. $4.99 for 'Lemon Lime', 'Mixed Berry' or 'Original' varieties, 750ml bottle, 9.5% alcohol. Othe",
+    "filename": "Passion Pop 2005.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Passion_Pop_2005.jpg"
+  },
+  "yogastudios-entspannung-betaetigung": {
+    "author": "Greatmats",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Platinum Yoga instructor David Younglove uses Greatmats Martial Arts Karate Mat Premium 1 inch mats in his yoga studio and associated Karate dojo in R",
+    "filename": "Platinum Yoga.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Platinum_Yoga.jpg"
+  },
 };

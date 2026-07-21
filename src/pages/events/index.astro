@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { buildDate } from "../../lib/buildDate";
 import { events } from "../../data/events";
 
 const breadcrumbs = [
@@ -15,8 +16,9 @@ const dateFormatter = new Intl.DateTimeFormat("de-DE", {
 });
 const formatDate = (iso: string) => dateFormatter.format(new Date(iso));
 
-// Sortiere chronologisch nach erstem Termin
-const today = "2026-05-31"; // build-time stamp; rolling cron deploy aktualisiert
+// Sortiere chronologisch nach erstem Termin. `today` = echtes Build-Datum
+// (BUILD_DATE-env oder new Date()), NICHT mehr ein hardcodeter String.
+const today = buildDate();
 const sorted = [...events].sort((a, b) => a.dates[0].start.localeCompare(b.dates[0].start));
 const upcoming = sorted.filter((e) => e.dates[e.dates.length - 1].end >= today);
 const past = sorted.filter((e) => e.dates[e.dates.length - 1].end < today);

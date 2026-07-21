@@ -201,8 +201,9 @@ export const top10Lists: Top10List[] = rawList
   .map<Top10List>((r) => {
   const c = curated[r.slug] ?? FALLBACK_CURATE;
   const ov = top10Overrides[r.slug];
-  // Wenn ein Override existiert: ersetzt Items komplett, optional auch das Intro.
-  const items = ov ? ov.items : r.items;
+  // Override kann Items komplett ersetzen UND/ODER nur das Intro
+  // überschreiben (z.B. wenn nur der Intro-Text korrigiert werden muss).
+  const items = ov?.items ?? r.items;
   const intro = ov?.intro ?? r.intro;
   const weak = ov ? false : r.weak;
   return {

@@ -13,7 +13,11 @@ const t = legal.trackingEnabled;
     </p>
 
     <h2 class="text-xl font-bold mt-10 mb-3">1. Verantwortliche Stelle</h2>
-    <p>{op.name}<br />{op.street}<br />{op.zip} {op.city}, {op.country}<br />Kontakt: über unser <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">Kontaktformular</a></p>
+    <p>{op.name}<br />{op.street}<br />{op.zip} {op.city}, {op.country}<br />
+      {op.email && (
+        <>E-Mail: <a href={`mailto:${op.email}`} style="color: var(--color-accent); text-decoration: underline;">{op.email}</a><br /></>
+      )}
+      Kontaktformular: <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">top10-heidelberg.de/kontakt</a></p>
 
     <h2 class="text-xl font-bold mt-10 mb-3">2. Hosting & Server-Logs</h2>
     <p>

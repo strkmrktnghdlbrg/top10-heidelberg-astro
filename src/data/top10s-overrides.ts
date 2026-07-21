@@ -16,10 +16,39 @@ import type { Top10Item } from "./top10s";
 
 type Override = {
   intro?: string;
-  items: Top10Item[];
+  /** Optional — fehlt items, bleiben die Original-Items aus _top10s.raw.json. */
+  items?: Top10Item[];
 };
 
 export const top10Overrides: Record<string, Override> = {
+  // ── Hotels (Tourismus) ─────────────────────────────────────────────
+  // WICHTIG: Die Original-Items in _top10s.raw.json waren durchgängig auf
+  // ENGLISCH (WP-Scrape) und liefen so ungewollt auf der DEUTSCHEN Seite.
+  // Dieser Override liefert die deutsche Fassung. Die englische Fassung für
+  // /en/hotels/ kommt aus itemTranslations["hotels"] in src/data/i18n.ts.
+  "hotels": {
+    intro: "Heidelberg ist eine der meistbesuchten Städte Deutschlands - und die passende Unterkunft entscheidet mit über einen gelungenen Aufenthalt. Von historischen Fünf-Sterne-Häusern mit Schlossblick über Boutique-Hotels in der Altstadt bis zu günstigen Adressen am Hauptbahnhof ist für jeden Reisestil etwas dabei. Die folgenden zehn Hotels stehen exemplarisch für diese Bandbreite - ausgewählt nach Lage, Charakter und durchgehend guten Gästebewertungen.",
+    items: [
+      { rank: 1,  name: "Hotel Europäischer Hof", description: "Historisches Fünf-Sterne-Grandhotel im Herzen Heidelbergs. Luxuriöse Zimmer mit elegantem Interieur, dazu Spa, Fitnessbereich und mehrere Restaurants." },
+      { rank: 2,  name: "Hotel Villa Marstall", description: "Boutique-Hotel direkt am Neckarufer mit Blick auf das Heidelberger Schloss. Individuell eingerichtete Zimmer mit modernem Komfort." },
+      { rank: 3,  name: "Hotel Zum Ritter St. Georg", description: "Charmantes Hotel in einem Renaissance-Bau mitten in der Altstadt. Stilvoll eingerichtete Zimmer und ein traditionsreiches Restaurant." },
+      { rank: 4,  name: "Hotel Chester Heidelberg", description: "Modernes Hotel nahe der Innenstadt mit zeitgemäß gestalteten, komfortablen Zimmern und einer Dachterrasse mit Panoramablick über Heidelberg." },
+      { rank: 5,  name: "Hotel Die Hirschgasse Heidelberg", description: "Historisches Haus in einem Gebäude aus dem 12. Jahrhundert mit luxuriösen, antik möblierten Zimmern, einem sternedekorierten Restaurant und schönem Garten." },
+      { rank: 6,  name: "Hotel Panorama", description: "Am Königstuhl gelegen, mit atemberaubendem Blick auf Heidelberg und das Neckartal. Großzügige Zimmer und ein Restaurant mit regionaler Küche." },
+      { rank: 7,  name: "Hotel Hackteufel", description: "Traditionshotel mitten in der Heidelberger Altstadt. Gemütliche Zimmer mit Holzmöbeln und ein rustikales Restaurant mit regionalen Gerichten." },
+      { rank: 8,  name: "Hotel Zum Seppl", description: "Familiengeführtes Hotel in ruhiger Lage nahe der Innenstadt. Komfortable Zimmer und eine Gartenterrasse." },
+      { rank: 9,  name: "Hotel Goldener Falke", description: "Günstiges Hotel in der Altstadt mit schlichten, aber komfortablen Zimmern und einem traditionellen deutschen Restaurant." },
+      { rank: 10, name: "Hotel Bayrischer Hof", description: "Zentral gelegenes Hotel mit modern und stilvoll gestalteten Zimmern sowie einer Dachterrasse mit Panoramablick über Heidelberg." },
+    ],
+  },
+
+  // ── Südstadt-Hotels (Stadtteile) ───────────────────────────────────
+  // Nur das Intro war englischer WP-Scrape-Rest; die Items sind bereits
+  // deutsch und bleiben unverändert (items weggelassen => Original-Items).
+  "suedstadt-hotels": {
+    intro: "Heidelbergs Südstadt ist ein charmanter Teil der Stadt - und die richtige Unterkunft macht die Reise oft erst rund. Ob gemütliche Pension oder kleines Hotel: Hier finden sich einige besondere Adressen mitten im Geschehen. Viele Häuser verbinden Geschichte mit einer entspannten Atmosphäre. Die Südstadt ist ein hervorragender Ausgangspunkt, um Heidelberg zu erkunden, mit vielen Sehenswürdigkeiten in unmittelbarer Nähe.",
+  },
+
   "online-werbeagenturen": {
     intro: "Heidelberg ist eine der dichtesten Agentur-Szenen Süddeutschlands - getragen von Universität, Mittelstand und der Druck-/Medienindustrie. Die folgenden zehn Agenturen decken die Felder Performance-Marketing, SEO, klassische Werbung und B2B-Kommunikation ab.",
     items: [
