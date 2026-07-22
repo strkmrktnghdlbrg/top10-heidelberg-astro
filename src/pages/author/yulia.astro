@@ -1,0 +1,127 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Heidelberg entdecken: Themen, Tipps und Empfehlungen";
+const description = "Redaktioneller Wegweiser durch Heidelberg: Sehenswürdigkeiten, Alltag, Dienstleister und Übernachten – gebündelt mit den passenden Top-10-Listen und Themenseiten.";
+
+const linkGroups = [
+  {
+    heading: "Tourismus & Sehenswürdigkeiten",
+    links: [
+      { href: "/sehenswuerdigkeiten/", label: "Sehenswürdigkeiten" },
+      { href: "/historische-staetten/", label: "Historische Stätten" },
+      { href: "/architekturwunder/", label: "Architekturwunder" },
+      { href: "/versteckte-juwelen/", label: "Versteckte Juwelen" },
+      { href: "/kunstgalerien/", label: "Kunstgalerien" },
+      { href: "/thema/tourismus/", label: "Alle Tourismus-Themen" },
+    ],
+  },
+  {
+    heading: "Essen, Trinken & Ausgehen",
+    links: [
+      { href: "/restaurants/", label: "Restaurants" },
+      { href: "/cafes/", label: "Cafés" },
+      { href: "/bars-und-kneipen/", label: "Bars & Kneipen" },
+      { href: "/baeckereien/", label: "Bäckereien" },
+      { href: "/weinladen/", label: "Weinläden" },
+    ],
+  },
+  {
+    heading: "Leben in Heidelberg",
+    links: [
+      { href: "/apotheken/", label: "Apotheken" },
+      { href: "/friseursalons/", label: "Friseursalons" },
+      { href: "/yogastudios-entspannung-betaetigung/", label: "Yogastudios" },
+      { href: "/fitnessstudios/", label: "Fitnessstudios" },
+      { href: "/buchlaeden/", label: "Buchläden" },
+      { href: "/kinderfreundliche-orte/", label: "Kinderfreundliche Orte" },
+      { href: "/thema/leben/", label: "Alle Leben-Themen" },
+    ],
+  },
+  {
+    heading: "Dienstleister & Firmen",
+    links: [
+      { href: "/rechtsanwalte/", label: "Rechtsanwälte" },
+      { href: "/steuerberater/", label: "Steuerberater" },
+      { href: "/immobilienmakler/", label: "Immobilienmakler" },
+      { href: "/it-dienstleister-computerreparatur/", label: "IT-Dienstleister" },
+      { href: "/online-werbeagenturen/", label: "Online-Werbeagenturen" },
+      { href: "/coworking-spaces/", label: "Coworking-Spaces" },
+      { href: "/thema/leistungen/", label: "Alle Dienstleister" },
+    ],
+  },
+  {
+    heading: "Übernachten in den Stadtteilen",
+    links: [
+      { href: "/altstadt-hotels/", label: "Hotels Altstadt" },
+      { href: "/neuenheim-hotels/", label: "Hotels Neuenheim" },
+      { href: "/bahnstadt-hotels/", label: "Hotels Bahnstadt" },
+      { href: "/handschuhsheim-hotels/", label: "Hotels Handschuhsheim" },
+      { href: "/thema/stadtteile/", label: "Alle Stadtteile" },
+    ],
+  },
+];
+---
+<BaseLayout title={title} description={description}>
+  <article class="container-page section max-w-3xl">
+    <nav aria-label="Breadcrumb" class="text-xs mb-6" style="color: var(--color-slate-steel);">
+      <ol class="flex flex-wrap items-center gap-1.5">
+        <li class="flex items-center gap-1.5">
+          <a href="/" class="hover:underline" style="color: var(--color-shadow-graphite);">Start</a>
+          <span aria-hidden="true">›</span>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <span aria-current="page">Heidelberg entdecken</span>
+        </li>
+      </ol>
+    </nav>
+
+    <span class="pill-accent">🧭 Themen-Hub</span>
+
+    <h1 class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight text-balance" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+      {title}
+    </h1>
+
+    <p class="mt-6 text-lg" style="color: var(--color-slate-steel);">
+      Heidelberg lässt sich aus vielen Blickwinkeln erkunden: als historische Stadt am Neckar, als lebendiger Ort für Alltag und Kultur und als Standort für Unternehmen und Dienstleister. Diese Seite bündelt die wichtigsten Themen und führt direkt zu den passenden Top-10-Listen und Übersichten.
+    </p>
+
+    <div class="prose-article" style="color: var(--color-inkwell-purple);">
+      <p>Ob Sie zum ersten Mal nach Heidelberg reisen, hier leben oder einen lokalen Anbieter suchen: Die folgenden Sammlungen helfen bei der Orientierung. Jede Liste stellt geprüfte Adressen und nützliche Hintergründe zu einem Thema vor. Wählen Sie einen Bereich aus und tauchen Sie tiefer ein.</p>
+    </div>
+
+    {linkGroups.map((group) => (
+      <section class="mt-10">
+        <h2 class="text-2xl font-bold mb-4" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">{group.heading}</h2>
+        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+          {group.links.map((l) => (
+            <li>
+              <a href={l.href} class="hover:underline" style="color: var(--color-accent); text-underline-offset: 3px;">{l.label}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <div class="prose-article mt-12" style="color: var(--color-inkwell-purple);">
+      <p>Sie finden nicht das passende Thema? Die vollständige Übersicht aller Kategorien und Listen bietet die Seite <a href="/thema/">Alle Themen</a>. Aktuelle Termine und Empfehlungen sammeln wir außerdem unter <a href="/events/">Veranstaltungen</a>, und Hintergründe rund um die Stadt gibt es im <a href="/thema/blog/">Blog</a>.</p>
+    </div>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  .prose-article p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    color: var(--color-shadow-graphite);
+  }
+  .prose-article a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prose-article a:hover {
+    text-decoration-thickness: 2px;
+  }
+</style>
