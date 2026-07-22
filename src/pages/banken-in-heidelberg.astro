@@ -1,0 +1,206 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Faktische Google-Standort-Aggregate (nach Bewertungsanzahl gewichteter
+// Durchschnitt) und öffentliche Filialadressen. Es werden ausschließlich
+// Kennzahlen und Adressen dargestellt, keine Rezensionstexte. Quelle je Bank:
+// die verlinkte bankscore.de-Seite.
+const stadt = "Heidelberg";
+const title = "Banken in Heidelberg: Die Top-Filialbanken mit Adresse & Bewertung";
+const description = "Unser Ranking der Filialbanken in Heidelberg: Sparkasse, Volksbank Kurpfalz, Deutsche Bank, Commerzbank, Postbank, Targobank, Santander und HypoVereinsbank mit zentraler Adresse, Google-Bewertung und Filialnetz. Ratgeber von Top10-Heidelberg.";
+const heroImage = "/images/lists/banken-in-heidelberg.jpg";
+const datePublished = "2026-07-22";
+const dateModified = "2026-07-22";
+
+const banken = [
+  { name: "Sparkasse Heidelberg", rating: 4.6, count: 1163, branchCount: 16, adresse: "Karlsruher Str. 63, 69126 Heidelberg", stadtteil: "Kirchheim / stadtweit", url: "https://bankscore.de/filialen/heidelberg/sparkasse/",
+    text: "Wenn es in Heidelberg um schiere Präsenz geht, führt an der Sparkasse Heidelberg kein Weg vorbei: Mit rund 16 Standorten spannt sie ein Netz von der Altstadt über Bergheim und Handschuhsheim bis nach Kirchheim und Rohrbach. Die mehr als tausend Bewertungen bei einem Schnitt von 4,6 Sternen sind für eine Filialbank ein starker Wert und spiegeln vor allem die kurzen Wege und die persönliche Beratung wider. Die Kehrseite: Für die klassische Kontoführung fällt je nach Modell eine monatliche Grundgebühr an." },
+  { name: "Volksbank Kurpfalz", rating: 4.2, count: 483, branchCount: 16, adresse: "Hauptstraße 46, 69117 Heidelberg-Altstadt", stadtteil: "Altstadt / stadtweit", url: "https://bankscore.de/filialen/heidelberg/volksbank-raiffeisenbank/",
+    text: "Die genossenschaftliche Volksbank Kurpfalz ist die zweite große Regionalbank am Ort und liegt mit ihrem Filialnetz auf Augenhöhe mit der Sparkasse. Die Hauptstelle mitten in der Hauptstraße ist für Altstadt-Bewohner und Berufspendler gleichermaßen gut erreichbar, dazu kommen Zweigstellen in den Wohnvierteln. Der Schnitt von 4,2 Sternen aus fast 500 Bewertungen ist solide, und als Mitglied wird man Miteigentümer und redet bei der Genossenschaft mit." },
+  { name: "Deutsche Bank", rating: 4.2, count: 215, branchCount: 1, adresse: "Adenauerpl. 1, 69115 Heidelberg", stadtteil: "Bergheim", url: "https://bankscore.de/filialen/heidelberg/deutsche-bank/",
+    text: "Die Deutsche Bank bündelt ihr Heidelberger Geschäft an einem einzigen, aber zentralen Standort am Adenauerplatz in Bergheim, gut erreichbar zwischen Hauptbahnhof und Bismarckplatz. Die 4,2 Sterne aus über 200 Bewertungen sind für eine reine Großbankfiliale ein ordentlicher Wert. Wer ein bundesweites Netz und die klassische Beratungskulisse sucht, ist hier richtig, sollte aber wissen, dass es bei nur einer Filiale keine Ausweichadresse im Stadtgebiet gibt." },
+  { name: "Commerzbank", rating: 4.2, count: 157, branchCount: 2, adresse: "Rohrbacher Str. 5 - 7, 69115 Heidelberg", stadtteil: "Weststadt / Bergheim", url: "https://bankscore.de/filialen/heidelberg/commerzbank/",
+    text: "Die Commerzbank ist in Heidelberg mit zwei Standorten rund um die Innenstadt vertreten, der Hauptanlaufpunkt liegt an der Rohrbacher Straße an der Grenze von Weststadt und Bergheim. Mit 4,2 Sternen liegt sie gleichauf mit der Deutschen Bank im oberen Feld. Für Kundschaft, die ein gebührenfreies Girokonto bei Gehaltseingang und trotzdem eine Filiale vor Ort möchte, ist das eine naheliegende Kombination." },
+  { name: "Postbank", rating: 3.7, count: 430, branchCount: 1, adresse: "Sofienstraße 8-10, 69115 Heidelberg", stadtteil: "Bergheim", url: "https://bankscore.de/filialen/heidelberg/postbank/",
+    text: "Die Postbank in der Sofienstraße ist ein Sonderfall im Ranking: Sie kombiniert Bank- und Postschalter, was zu hoher Frequenz, aber auch zu den bei Schalterandrang üblichen Wartezeiten führt. Das erklärt den vergleichsweise nüchternen Schnitt von 3,7 Sternen, hinter dem immerhin mehr als 400 Bewertungen stehen. Praktisch bleibt sie für alle, die Bankgeschäft und Paketservice in einem einzigen Gang erledigen wollen." },
+  { name: "Targobank", rating: 4.6, count: 221, branchCount: 1, adresse: "Bergheimer Str. 6, 69115 Heidelberg", stadtteil: "Bergheim", url: "https://bankscore.de/filialen/heidelberg/targobank/",
+    text: "Die Targobank an der Bergheimer Straße ist der heimliche Bewertungssieger unter den überregionalen Häusern: Mit 4,6 Sternen zieht sie mit der Sparkasse gleich, allerdings auf schmalerer Datenbasis. Ihr Schwerpunkt liegt traditionell auf Konsumentenkrediten und Ratenfinanzierung, dazu Giro- und Anlageberatung. Die Lage direkt an der Fußgängerachse Richtung Bismarckplatz macht sie für Laufkundschaft gut erreichbar." },
+  { name: "Santander", rating: 4.1, count: 152, branchCount: 1, adresse: "Kurfürsten-Anlage 19/1, 69115 Heidelberg", stadtteil: "Bergheim", url: "https://bankscore.de/filialen/heidelberg/santander/",
+    text: "Santander sitzt an der Kurfürsten-Anlage in Bahnhofsnähe und richtet sich mit Krediten, Kreditkarten und einem gebührenfreien Girokonto vor allem an preisbewusste Kundschaft. Der Schnitt von 4,1 Sternen aus rund 150 Bewertungen ordnet sie im guten Mittelfeld ein. Wie bei den meisten überregionalen Marken bleibt es bei einem zentralen Standort im Stadtgebiet." },
+  { name: "HypoVereinsbank", rating: 2.0, count: 6, branchCount: 1, adresse: "Langer Anger 60, 69115 Heidelberg", stadtteil: "Bahnstadt / Bergheim", url: "https://bankscore.de/filialen/heidelberg/hypovereinsbank/",
+    text: "Die HypoVereinsbank (UniCredit) bildet in unserem Überblick das Schlusslicht, allerdings mit einem großen Aber: Hinter der schwachen Note von 2,0 Sternen stehen gerade einmal sechs Bewertungen. Diese Datenbasis ist viel zu dünn, um daraus ein belastbares Urteil abzuleiten, ein einzelner unzufriedener Kunde fällt hier stark ins Gewicht. Wer die HVB gezielt sucht, findet am Langen Anger den zentralen Anlaufpunkt für die Beratung." },
+];
+
+const fmt = (n) => n.toLocaleString("de-DE");
+const komma = (n) => n.toFixed(1).replace(".", ",");
+const ratingSum = banken.reduce((s, b) => s + b.count, 0);
+
+const faqs = [
+  { q: "Welche Bank hat in Heidelberg die beste Bewertung?", a: "An der Spitze stehen die Sparkasse Heidelberg und die Targobank mit jeweils rund 4,6 von 5 Sternen, wobei die Sparkasse ihren Wert aus über tausend Bewertungen zieht und damit die belastbarste Grundlage hat. Direkt dahinter folgt die Volksbank Kurpfalz mit 4,2 Sternen. Alle Werte sind nach Bewertungsanzahl gewichtete Durchschnitte der öffentlich bei Google gelisteten Standorte." },
+  { q: "Welche Bank hat in Heidelberg die meisten Filialen?", a: "Das dichteste Netz teilen sich die beiden Regionalbanken: Sparkasse Heidelberg und Volksbank Kurpfalz kommen jeweils auf rund 16 Standorte quer durch die Stadtteile. Deutsche Bank, Commerzbank, Postbank, Targobank, Santander und HypoVereinsbank konzentrieren ihr Geschäft dagegen auf ein bis zwei zentrale Filialen rund um Bergheim und die Altstadt." },
+  { q: "Warum liegt die HypoVereinsbank so weit hinten?", a: "Die 2,0 Sterne der HypoVereinsbank beruhen auf nur sechs Bewertungen und sind deshalb wenig aussagekräftig. Bei einer so kleinen Zahl an Stimmen kann eine einzelne negative Erfahrung den Schnitt stark nach unten ziehen. Erst ab einigen Dutzend Bewertungen wird ein Google-Durchschnitt wirklich verlässlich, wie es etwa bei Sparkasse, Volksbank oder Postbank der Fall ist." },
+  { q: "Lohnt sich neben dem Filialkonto ein kostenloses Online-Konto?", a: "Für viele Heidelberger ja. Die klassischen Filialkonten von Sparkasse und Volksbank Kurpfalz kosten je nach Modell eine monatliche Grundgebühr. Wer die Filiale nur noch selten braucht, kann parallel ein gebührenfreies Online-Girokonto führen und die laufenden Kosten sparen, ohne die vertraute Hausbank vor Ort ganz aufzugeben." },
+];
+
+const itemListLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `Banken in ${stadt}`,
+  itemListElement: banken.map((b, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: b.name,
+    url: b.url,
+  })),
+};
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+};
+const articleLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description,
+  image: new URL(heroImage, "https://www.top10-heidelberg.de").toString(),
+  datePublished: datePublished,
+  dateModified: dateModified,
+  about: `Filialbanken in ${stadt}`,
+  author: { "@type": "Organization", name: "Redaktion Top10-Heidelberg" },
+  publisher: { "@type": "Organization", name: "Top 10 Heidelberg" },
+  mainEntityOfPage: "https://www.top10-heidelberg.de/banken-in-heidelberg/",
+  inLanguage: "de",
+};
+---
+<BaseLayout title={title} description={description} ogImage={heroImage}>
+  <article class="container-page section max-w-3xl">
+    <nav aria-label="Breadcrumb" class="text-xs mb-6" style="color: var(--color-slate-steel);">
+      <ol class="flex flex-wrap items-center gap-1.5">
+        <li class="flex items-center gap-1.5">
+          <a href="/" class="hover:underline" style="color: var(--color-shadow-graphite);">Start</a>
+          <span aria-hidden="true">›</span>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <a href="/thema/firmen/" class="hover:underline" style="color: var(--color-shadow-graphite);">Firmen</a>
+          <span aria-hidden="true">›</span>
+        </li>
+        <li class="flex items-center gap-1.5">
+          <span aria-current="page">Banken in Heidelberg</span>
+        </li>
+      </ol>
+    </nav>
+
+    <span class="pill-accent">🏦 Ratgeber</span>
+
+    <h1 class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight text-balance" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+      {title}
+    </h1>
+
+    <p class="mt-6 text-lg" style="color: var(--color-slate-steel);">
+      Welche Filialbank passt in Heidelberg zu dir? Wir haben die großen Häuser der Stadt mit zentraler Adresse, Google-Bewertung und Filialnetz gegenübergestellt, von der Sparkasse mit dem dichtesten Netz bis zur bestbewerteten Targobank, sortiert nach Bekanntheit und Bewertungsanzahl.
+    </p>
+
+    <div class="bnk-surface">
+      <p>Heidelberg ist Universitäts- und Pendlerstadt zugleich, und das schlägt sich im Bankangebot nieder: Zwischen Altstadt, Bergheim, Bahnstadt und den Wohnvierteln in Handschuhsheim, Kirchheim oder Rohrbach findet sich für nahezu jeden Bedarf eine Filiale. Die beiden regionalen Institute, Sparkasse Heidelberg und Volksbank Kurpfalz, teilen sich das dichteste Netz, während die überregionalen Häuser ihr Geschäft auf ein bis zwei zentrale Standorte konzentrieren, meist rund um den Hauptbahnhof und den Bismarckplatz. Unsere Übersicht beruht auf über {fmt(ratingSum)} öffentlichen Google-Bewertungen und den öffentlich gelisteten Filialadressen.</p>
+
+      <h2>Die Banken in Heidelberg auf einen Blick</h2>
+      <div class="bnk-tablewrap">
+        <table>
+          <thead>
+            <tr><th>Bank</th><th>Ø Google</th><th>Bewertungen</th><th>Zentrale Adresse</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            {banken.map((b) => (
+              <tr>
+                <td data-l="Bank"><strong>{b.name}</strong></td>
+                <td data-l="Ø Google"><span class="bnk-star">{komma(b.rating)}</span></td>
+                <td data-l="Bewertungen">{fmt(b.count)}</td>
+                <td data-l="Adresse">{b.adresse}</td>
+                <td data-l="Details"><a href={b.url} target="_blank" rel="noopener">Filialen &amp; Bewertungen &rarr;</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="bnk-note">Ø Google = nach Bewertungsanzahl gewichteter Durchschnitt der öffentlich gelisteten Standorte der Marke in Heidelberg. Stand der Erhebung: Juli 2026. Es werden nur Kennzahlen und Adressen dargestellt, keine Rezensionstexte.</p>
+
+      <h2>Die Banken im Einzelnen</h2>
+      {banken.map((b, i) => (
+        <div class="bnk-card">
+          <div class="bnk-cardhead">
+            <h3>{i + 1}. {b.name}</h3>
+            <span class="bnk-badge">{komma(b.rating)} &#9733; · {fmt(b.count)} Bew.</span>
+          </div>
+          <p class="bnk-addr">{b.adresse} · Stadtteil: {b.stadtteil}</p>
+          <p>{b.text}</p>
+          <p class="bnk-src">Quelle und vollständige Filialübersicht: <a href={b.url} target="_blank" rel="noopener">{b.name} in Heidelberg auf bankscore.de</a></p>
+        </div>
+      ))}
+
+      <h2>Filialbank oder kostenloses Online-Konto?</h2>
+      <p>Die klassischen Filialkonten von Sparkasse und Volksbank Kurpfalz punkten mit Beratung vor Ort und einem Automaten um die Ecke, kosten je nach Modell aber eine monatliche Grundgebühr. Wer ohnehin fast alles per App erledigt, kombiniert die Heidelberger Hausbank häufig mit einem gebührenfreien Online-Girokonto und spart so die laufenden Kosten. Einen neutralen Vergleich der Konditionen samt Bewertungsmethodik findest du im <a href="https://bankscore.de/girokonto/" target="_blank" rel="noopener">Girokonto-Vergleich auf bankscore.de</a>.</p>
+
+      <h2>Häufige Fragen zu Banken in Heidelberg</h2>
+      {faqs.map((f) => (
+        <div class="faq-item">
+          <h3>{f.q}</h3>
+          <p>{f.a}</p>
+        </div>
+      ))}
+    </div>
+
+    <script type="application/ld+json" set:html={JSON.stringify(articleLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(itemListLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+  </article>
+</BaseLayout>
+
+<style>
+  .bnk-surface {
+    margin-top: 2.2rem;
+    color: var(--color-shadow-graphite);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+  .bnk-surface h2 {
+    font-family: var(--font-display);
+    color: var(--color-inkwell-purple);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 2.5rem 0 1rem;
+  }
+  .bnk-surface h3 {
+    font-family: var(--font-display);
+    color: var(--color-inkwell-purple);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .bnk-surface p { margin: 0 0 1.25rem; }
+  .bnk-surface strong { color: var(--color-inkwell-purple); font-weight: 700; }
+  .bnk-surface a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+  .bnk-note { font-size: 13px; color: var(--color-slate-steel); margin: 0.6rem 0 0 !important; }
+  .bnk-tablewrap { overflow-x: auto; margin: 0 0 0.4rem; }
+  .bnk-surface table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  .bnk-surface th, .bnk-surface td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #e6e6ef; vertical-align: top; }
+  .bnk-surface th { color: var(--color-slate-steel); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .bnk-star { display: inline-block; background: #eef7ee; color: #237a37; font-weight: 800; border-radius: 6px; padding: 1px 8px; }
+  .bnk-card { border: 1px solid #e6e6ef; border-radius: 12px; padding: 18px 20px; margin: 1rem 0; }
+  .bnk-cardhead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 0.3rem; }
+  .bnk-badge { background: #f6f6fb; color: var(--color-inkwell-purple); font-weight: 700; font-size: 13px; border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+  .bnk-addr { font-size: 14px; color: var(--color-slate-steel); margin: 0 0 0.7rem !important; }
+  .bnk-src { font-size: 14px; color: var(--color-slate-steel); margin: 0.6rem 0 0 !important; }
+  .faq-item { border-top: 1px solid #e6e6ef; padding-top: 1.1rem; margin-top: 1.1rem; }
+  .faq-item h3 { font-size: 18px; }
+  @media (max-width: 640px) {
+    .bnk-surface table, .bnk-surface thead, .bnk-surface tbody, .bnk-surface tr, .bnk-surface th, .bnk-surface td { display: block; }
+    .bnk-surface thead { display: none; }
+    .bnk-surface tr { border: 1px solid #e6e6ef; border-radius: 10px; margin-bottom: 10px; padding: 6px 4px; }
+    .bnk-surface td { border: none; padding: 5px 12px; }
+    .bnk-surface td::before { content: attr(data-l) ": "; color: var(--color-slate-steel); font-size: 12px; font-weight: 700; }
+    .bnk-surface td[data-l="Bank"]::before { content: ""; }
+  }
+</style>

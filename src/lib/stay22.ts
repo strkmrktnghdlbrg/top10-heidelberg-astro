@@ -89,6 +89,61 @@ export interface Stay22SearchOptions {
 
 const API_BASE = "https://api.stay22.com/v1";
 
+/**
+ * Heutiger Kalendertag als YYYY-MM-DD.
+ *
+ * BUILD_DATE (vom GitHub-Action-Rebuild gesetzt) hat Vorrang, damit CI-Builds
+ * reproduzierbar bleiben. Fallback ist der ECHTE Kalendertag statt eines
+ * hartkodierten Strings — sonst läuft die Datums-Logik hinter der Realität her
+ * und die Stay22-API (die checkin/checkout gegen ihre Serverzeit prüft) lehnt
+ * scheinbar gültige Termine mit HTTP 400 ab.
+ */
+export function getBuildToday(): string {
+  const env = typeof process !== "undefined" ? process.env?.BUILD_DATE : undefined;
+  if (typeof env === "string" && /^\d{4}-\d{2}-\d{2}$/.test(env)) return env;
+  return new Date().toISOString().slice(0, 10);
+}
+
+function toUtc(iso: string): Date {
+  return new Date(`${iso}T00:00:00Z`);
+}
+
+/** Verschiebt ein ISO-Datum (YYYY-MM-DD) um n Tage. */
+export function addDays(iso: string, days: number): string {
+  const d = toUtc(iso);
+  d.setUTCDate(d.getUTCDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+/** Ganzzahlige Tages-Differenz b − a. */
+function diffDays(a: string, b: string): number {
+  return Math.round((toUtc(b).getTime() - toUtc(a).getTime()) / 86_400_000);
+}
+
+export interface StayWindow {
+  checkin: string;
+  checkout: string;
+}
+
+/**
+ * Klemmt ein Hotel-Datumsfenster, sodass checkin nie in der Vergangenheit
+ * liegt — Stay22 lehnt Vergangenheitsdaten mit HTTP 400 ab ("Must be today
+ * or in the future"). Ein Zukunfts-Fenster bleibt unverändert; ein
+ * Vergangenheits-checkin wird auf today+lead geschoben und die ursprüngliche
+ * Nächte-Anzahl (min. 1) beibehalten.
+ */
+export function clampStayWindow(
+  checkin: string,
+  checkout: string,
+  today: string,
+  lead = 1,
+): StayWindow {
+  const minCheckin = addDays(today, lead);
+  if (checkin >= minCheckin) return { checkin, checkout };
+  const nights = Math.max(1, diffDays(checkin, checkout));
+  return { checkin: minCheckin, checkout: addDays(minCheckin, nights) };
+}
+
 function getApiKey(): string | null {
   // @ts-expect-error — import.meta.env existiert in Astro/Vite
   const viteKey = typeof import.meta !== "undefined" ? import.meta.env?.STAY22_API_KEY : undefined;
@@ -187,6 +242,18 @@ export async function searchAccommodations(
   const safeOptions: Stay22SearchOptions = { ...options };
   delete safeOptions.minguestrating;
   delete safeOptions.minstarrating;
+
+  // Defensiv: checkin/checkout nie in der Vergangenheit senden, sonst HTTP 400
+  // ("Must be today or in the future"). Klemmt unabhängig vom Aufrufer.
+  if (safeOptions.checkin) {
+    const clamped = clampStayWindow(
+      safeOptions.checkin,
+      safeOptions.checkout ?? addDays(safeOptions.checkin, 1),
+      getBuildToday(),
+    );
+    safeOptions.checkin = clamped.checkin;
+    safeOptions.checkout = clamped.checkout;
+  }
   if (minGuest || minStar) {
     safeOptions.limit = Math.max(userLimit * 4, 40);
   }
