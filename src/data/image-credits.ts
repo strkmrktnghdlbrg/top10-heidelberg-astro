@@ -202,7 +202,7 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "author": "Rolf Kickuth",
     "license": "CC BY-SA 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "description": "Luftaufnahme des Bismarckplatzes in Heidelberg-Bergheim mit dem Hochhaus Menglerbau, aufgenommen aus rund 1000 m Hoehe von einem Gyrocopter aus (2017).",
+    "description": "Luftaufnahme des Bismarckplatzes in Heidelberg-Bergheim mit dem Hochhaus Menglerbau, aufgenommen aus rund 1000 m Höhe von einem Gyrocopter aus (2017).",
     "filename": "HeidelbergBismarckplatz2017-03-04-14-25-43.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:HeidelbergBismarckplatz2017-03-04-14-25-43.jpg"
   },
