@@ -330,6 +330,9 @@ export const itemTranslations: Partial<Record<string, Record<number, ItemTransla
     5: { name: "Castle Illumination (Schlossbeleuchtung)", description: "A spectacular fireworks display over Heidelberg Castle on several nights in summer, best watched from the banks of the Neckar." },
     6: { name: "Christmas markets", description: "In Advent, Heidelberg turns into a winter wonderland with markets across several squares, offering handcrafted gifts, treats and mulled wine." },
     7: { name: "Heidelberg Literature Days", description: "An autumn festival for book lovers, with readings, discussions and workshops featuring acclaimed authors from around the world." },
+    8: { name: "Heidelberg Castle Festival (Schlossfestspiele)", description: "An open-air summer festival in the castle courtyard (June to August) with drama, opera, musicals and concerts - southern Germany's most traditional festival of its kind." },
+    9: { name: "Metropolink Festival", description: "An urban- and street-art festival (since 2015, in summer): large-scale murals by international artists, guided tours and events across the city." },
+    10: { name: "Heidelberg Half Marathon", description: "A large spring running event with a half marathon, a 'tenth', relays and children's races on a course through the city and along the Neckar." },
   },
 
   "einkaufsmoeglichkeiten": {

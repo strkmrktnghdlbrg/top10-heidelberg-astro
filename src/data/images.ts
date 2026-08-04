@@ -14,6 +14,7 @@
 import { imageCredits, type ImageCreditRecord } from "./image-credits";
 
 const listMods = import.meta.glob<string>("/public/images/lists/*.jpg", { eager: true, query: "?url", import: "default" });
+const eventMods = import.meta.glob<string>("/public/images/events/*.jpg", { eager: true, query: "?url", import: "default" });
 
 const byBasename = (mods: Record<string, string>) => {
   const out: Record<string, string> = {};
@@ -25,9 +26,15 @@ const byBasename = (mods: Record<string, string>) => {
 };
 
 const lists = byBasename(listMods);
+const events = byBasename(eventMods);
 
 export function getImage(slug: string): string | null {
   return lists[slug] ?? null;
+}
+
+/** Hero-Bild einer Event-Page (public/images/events/<slug>.jpg). */
+export function getEventImage(slug: string): string | null {
+  return events[slug] ?? null;
 }
 
 export function getImageCredit(slug: string): ImageCreditRecord | null {

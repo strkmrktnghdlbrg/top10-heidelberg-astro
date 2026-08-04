@@ -20,7 +20,7 @@ const op = legal.operator;
     <h2 class="text-xl font-bold mt-8 mb-3">Kontakt</h2>
     <p>
       {op.email && (
-        <>E-Mail: <a href={`mailto:${op.email}`} style="color: var(--color-accent); text-decoration: underline;">{op.email}</a><br /></>
+        <>E-Mail: <span style="color: var(--color-accent);">{op.email.replace("@", "(at)")}</span><br /></>
       )}
       {op.phone && (
         <>Telefon: <a href={`tel:${op.phone.replace(/\s+/g, "")}`} style="color: var(--color-accent); text-decoration: underline;">{op.phone}</a><br /></>

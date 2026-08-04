@@ -2,13 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import Top10Card from "../components/Top10Card.astro";
-import HueGradient from "../components/HueGradient.astro";
-import AdSlot from "../components/AdSlot.astro";
-import ImageCreditsList from "../components/ImageCreditsList.astro";
 import { city } from "../data/city";
-import { categories } from "../data/categories";
+import { categories, getCategory } from "../data/categories";
 import { top10Lists, top10sByCategory } from "../data/top10s";
-import { getImageCredit } from "../data/images";
+import { getImage, getImageCredit } from "../data/images";
 
 const heroCredit = getImageCredit("__hero__");
 
@@ -19,12 +16,53 @@ const leistungen = top10sByCategory("leistungen");
 const firmen     = top10sByCategory("firmen");
 const blog       = top10sByCategory("blog");
 
+// Showcase: die 6 Tourismus-Karten fürs visuelle Highlight. WICHTIG:
+// mehrere Tourismus-Listen teilen sich dasselbe Quellbild (Schloss,
+// Fußgängerzone …). Wir deduplizieren über die Bildquelle (Credit-
+// Dateiname bzw. Bildpfad), damit keine zwei Karten dasselbe Foto zeigen.
+const prefer = [
+  "sehenswuerdigkeiten", "restaurants", "outdoor-aktivitaeten",
+  "veranstaltungen-festivals", "kinderfreundliche-orte", "bars-und-kneipen",
+  "hotels", "cafes", "historische-staetten", "wellness-spa",
+  "architekturwunder", "versteckte-juwelen", "einkaufsmoeglichkeiten",
+];
+const bySlug = Object.fromEntries(tourismus.map((l) => [l.slug, l]));
+const imgKey = (slug: string) => getImageCredit(slug)?.filename ?? getImage(slug) ?? slug;
+const seenImg = new Set<string>();
+const showcase: typeof tourismus = [];
+for (const slug of prefer) {
+  const l = bySlug[slug];
+  if (!l) continue;
+  const key = imgKey(slug);
+  if (seenImg.has(key)) continue;
+  seenImg.add(key);
+  showcase.push(l);
+  if (showcase.length === 6) break;
+}
+
 const stats = {
   listen: top10Lists.length,
   kategorien: categories.length - 1, // ohne Blog
   stadtteile: stadtteile.length,
   branchen: leben.length + leistungen.length + firmen.length,
 };
+
+// Kompakte Link-Beschriftung: "Top 10 …" / "Die 10 besten …" + " in Heidelberg" strippen.
+const short = (t: string) =>
+  t.replace(/^(Top\s*10|Die\s*10\s*besten)\s*/i, "").replace(/\s+in\s+Heidelberg$/i, "").trim();
+
+// „Browse by Theme": ein einziges, angereichertes Verzeichnis (Kategorie-
+// Beschreibung + Farb-Akzent + alle Listen als Links). Ersetzt den früheren
+// doppelten Aufbau (Themen-Kacheln + separate Link-Panels). Tourismus ist
+// oben als Showcase abgebildet; hier die restlichen Themen.
+// Bild-Quell-Slug je Thema (erste Liste mit Bild) — für Banner + Bildnachweis.
+const themeImgSlug = (lists: typeof stadtteile) => lists.find((l) => getImage(l.slug))?.slug ?? null;
+const themes = [
+  { cat: getCategory("stadtteile")!, name: "Stadtteile",    lists: stadtteile,           imgSlug: themeImgSlug(stadtteile), label: (l: any) => l.district ?? short(l.title) },
+  { cat: getCategory("leben")!,      name: "Leben in HD",   lists: leben,                imgSlug: themeImgSlug(leben),      label: (l: any) => short(l.title) },
+  { cat: getCategory("leistungen")!, name: "Dienstleister", lists: leistungen,           imgSlug: themeImgSlug(leistungen), label: (l: any) => short(l.title) },
+  { cat: getCategory("firmen")!,     name: "Firmen & Blog", lists: [...firmen, ...blog], imgSlug: themeImgSlug([...firmen, ...blog] as any), label: (l: any) => short(l.title) },
+];
 ---
 <BaseLayout title={city.brandName} description={city.description.long} ogImage="/images/heidelberg-hero.jpg">
   <!-- Hero -->
@@ -53,7 +91,7 @@ const stats = {
         )}
       </p>
     )}
-    <div class="container-page relative pt-16 pb-20 sm:pt-24 sm:pb-32 text-white">
+    <div class="container-page relative pt-16 pb-20 sm:pt-24 sm:pb-28 text-white">
       <div class="max-w-3xl">
         <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color: #fde68a;">Heidelbergs Bestenliste</div>
         <h1
@@ -87,78 +125,82 @@ const stats = {
     </div>
   </section>
 
-  <!-- Kategorien-Übersicht -->
-  <Section eyebrow="Themen" title="Was suchst du in Heidelberg?" subtitle="Sechs Themenbereiche, jeweils mit kuratierten Top-10-Listen.">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {categories.map((c) => {
-        const count = top10sByCategory(c.slug).length;
+  <!-- Visuelles Highlight: Bento aus 2 großen Feature-Karten + 4 Standard-Karten -->
+  <Section eyebrow="Beliebt bei Besuchern" title="Heidelbergs Klassiker" subtitle="Sehenswürdigkeiten, Restaurants, Outdoor, Nightlife & mehr - die meistgelesenen Listen mit einem Blick.">
+    <div class="grid gap-6 sm:grid-cols-2 mb-6">
+      {showcase.slice(0, 2).map((l) => {
+        const credit = getImageCredit(l.slug);
         return (
-          <a href={`/thema/${c.slug}/`} class="card p-6 flex flex-col gap-3 hover:-translate-y-0.5 transition-transform">
-            <div class="text-3xl">{c.icon}</div>
-            <div class="text-xl font-bold" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">{c.name}</div>
-            <p class="text-sm" style="color: var(--color-shadow-graphite);">{c.short}</p>
-            <div class="mt-auto text-xs font-semibold" style="color: var(--color-accent);">{count} {count === 1 ? "Liste" : "Listen"} →</div>
+          <a href={`/${l.slug}/`} class="group relative block rounded-2xl overflow-hidden aspect-[16/10]">
+            <img src={getImage(l.slug)} alt={l.title} loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6 text-white">
+              <span class="pill-accent mb-2 inline-flex">{l.emoji} Beliebt</span>
+              <h3 class="text-xl sm:text-2xl font-bold leading-snug" style="font-family: var(--font-display);">{l.title}</h3>
+              {l.subtitle && <p class="mt-1 text-sm text-white/85 max-w-md">{l.subtitle}</p>}
+            </div>
+            {credit && (
+              <span class="absolute top-2 right-3 text-[9px] text-white/75 leading-tight">Foto: {credit.author}{credit.license ? `, ${credit.license}` : ""}</span>
+            )}
           </a>
         );
       })}
     </div>
-  </Section>
-
-  <!-- Touristen-Top10 -->
-  <Section eyebrow="Tourismus" title="Was Besucher gesehen haben sollten" subtitle="Heidelbergs Klassiker - Schloss, Hotels, Restaurants und mehr.">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {tourismus.slice(0, 6).map((l) => (
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {showcase.slice(2, 6).map((l) => (
         <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />
       ))}
     </div>
     <div class="mt-8 text-center">
-      <a href="/thema/tourismus/" class="btn-outline">Alle Tourismus-Listen</a>
+      <a href="/thema/tourismus/" class="btn-outline">Alle {tourismus.length} Tourismus-Listen</a>
     </div>
   </Section>
 
-  <AdSlot slot="inContent" />
-
-  <!-- Stadtteile -->
-  <Section eyebrow="Stadtteile" title="Hotels nach Stadtteil" subtitle="In welchem Heidelberger Stadtteil willst du übernachten? Wir haben für jeden die zehn besten Adressen.">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {stadtteile.map((l) => (
-        <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.district ?? l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />
-      ))}
+  <!-- Browse by Theme: ein angereichertes Verzeichnis (ersetzt Themen-Hub + Directory) -->
+  <Section eyebrow="Alle Listen" title="Nach Thema stöbern" subtitle="Stadtteil-Hotels, Alltagsadressen und Dienstleister - jede Top-10-Liste direkt verlinkt." bg="soft">
+    <div class="grid gap-6 lg:grid-cols-2">
+      {themes.map(({ cat, name, lists, imgSlug, label }) => {
+        const img = imgSlug ? getImage(imgSlug) : null;
+        const credit = imgSlug ? getImageCredit(imgSlug) : null;
+        return (
+        <div class="card overflow-hidden flex flex-col">
+          <div class="relative h-28 sm:h-32">
+            {img ? (
+              <img src={img} alt={name} loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+            ) : (
+              <div class="absolute inset-0" style={`background: var(--hue-${cat.hue});`}></div>
+            )}
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10"></div>
+            {credit && (
+              <span class="absolute top-1.5 right-2 text-[8px] text-white/70 leading-none">Foto: {credit.author}</span>
+            )}
+            <div class="absolute inset-x-0 bottom-0 p-4 flex items-end justify-between gap-3 text-white">
+              <div class="flex items-center gap-2.5 min-w-0">
+                <span class="w-9 h-9 rounded-lg flex items-center justify-center text-lg shrink-0 bg-white/15 backdrop-blur-sm">{cat.icon}</span>
+                <div class="min-w-0">
+                  <div class="font-bold text-lg leading-tight" style="font-family: var(--font-display);">{name}</div>
+                  <div class="text-[11px] text-white/80">{lists.length} {lists.length === 1 ? "Liste" : "Listen"}</div>
+                </div>
+              </div>
+              <a href={`/thema/${cat.slug}/`} class="text-xs font-semibold shrink-0 text-white/90 hover:text-white underline underline-offset-2">Alle&nbsp;→</a>
+            </div>
+          </div>
+          <div class="p-6 sm:p-7 flex flex-col flex-1">
+            <p class="text-sm mb-4" style="color: var(--color-shadow-graphite);">{cat.short}</p>
+            <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm mt-auto">
+              {lists.map((l) => (
+                <li>
+                  <a href={`/${l.slug}/`} class="link-accent inline-flex items-start gap-1.5">
+                    <span class="mt-1.5 w-1 h-1 rounded-full shrink-0" style="background: var(--color-accent);"></span>
+                    <span>{label(l)}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        );
+      })}
     </div>
   </Section>
-
-  <!-- Leben in HD -->
-  <Section eyebrow="Leben in Heidelberg" title="Alltag, Familie, Genuss" subtitle="Bäcker, Apotheken, Friseure, Yoga - die zehn besten Adressen für den Heidelberger Alltag." bg="soft">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {leben.slice(0, 9).map((l) => (
-        <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />
-      ))}
-    </div>
-    <div class="mt-8 text-center">
-      <a href="/thema/leben/" class="btn-outline">Alle Leben-Listen</a>
-    </div>
-  </Section>
-
-  <!-- Leistungen -->
-  <Section eyebrow="Dienstleister" title="Profis in Heidelberg" subtitle="Anwälte, Steuerberater, Handwerk, IT - wer hilft, wenn's drauf ankommt.">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {leistungen.slice(0, 9).map((l) => (
-        <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />
-      ))}
-    </div>
-    <div class="mt-8 text-center">
-      <a href="/thema/leistungen/" class="btn-outline">Alle Leistungs-Listen</a>
-    </div>
-  </Section>
-
-  <!-- Firmen + Blog kompakt -->
-  <Section eyebrow="Mehr" title="Firmen & Blog" bg="soft">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {[...firmen, ...blog].map((l) => (
-        <Top10Card href={`/${l.slug}/`} slug={l.slug} title={l.title} subtitle={l.subtitle} hue={l.hue} emoji={l.emoji} weak={l.weak} />
-      ))}
-    </div>
-  </Section>
-
-  <ImageCreditsList slugs={["__hero__", ...top10Lists.map((l) => l.slug)]} />
 </BaseLayout>

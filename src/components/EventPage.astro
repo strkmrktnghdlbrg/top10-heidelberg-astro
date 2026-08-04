@@ -14,6 +14,7 @@ import Stay22NearbyHotels from "./Stay22NearbyHotels.astro";
 import Stay22Map from "./Stay22Map.astro";
 import GetYourGuideWidget from "./GetYourGuideWidget.astro";
 import { getBuildToday, clampStayWindow, addDays } from "../lib/stay22";
+import { getEventImage, getImageCredit } from "../data/images";
 import type { EventPage as EventPageData } from "../data/events";
 
 interface Props {
@@ -21,6 +22,10 @@ interface Props {
 }
 
 const { event } = Astro.props;
+
+// Hero-Bild aus public/images/events/<slug>.jpg (Fallback: HueGradient).
+const heroImage = getEventImage(event.slug) ?? event.heroImage ?? null;
+const heroCredit = heroImage ? getImageCredit(event.slug) : null;
 
 const breadcrumbs = [
   { label: "Start", href: "/" },
@@ -78,37 +83,50 @@ const eventJsonLd = {
   ],
 };
 ---
-<BaseLayout title={event.title} description={event.metaDescription} ogImage={event.heroImage}>
+<BaseLayout title={event.title} description={event.metaDescription} ogImage={heroImage ?? undefined}>
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
-    <div class={`flex items-center justify-center absolute inset-0 opacity-30 pointer-events-none`} style={`background: var(--hue-${event.hue});`}>
-    </div>
-    <div class="container-page relative pt-8 pb-14 sm:pt-16 sm:pb-24">
+    {heroImage ? (
+      <>
+        <img src={heroImage} alt={event.title} loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/25"></div>
+      </>
+    ) : (
+      <div class={`flex items-center justify-center absolute inset-0 opacity-30 pointer-events-none`} style={`background: var(--hue-${event.hue});`}></div>
+    )}
+    <div class={`container-page relative pt-8 pb-14 sm:pt-16 sm:pb-24 ${heroImage ? "text-white" : ""}`}>
       <Breadcrumbs items={breadcrumbs} />
       <div class="mt-4 flex flex-wrap items-center gap-2">
         <span class="pill-accent">{event.emoji} {event.editionLabel}</span>
       </div>
-      <h1 class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight text-balance max-w-4xl" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">
+      <h1 class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight text-balance max-w-4xl" style={`font-family: var(--font-display); color: ${heroImage ? "#fff" : "var(--color-inkwell-purple)"};`}>
         {event.title}
       </h1>
-      <p class="mt-4 text-lg sm:text-xl max-w-3xl" style="color: var(--color-shadow-graphite);">
+      <p class="mt-4 text-lg sm:text-xl max-w-3xl" style={`color: ${heroImage ? "rgba(255,255,255,0.92)" : "var(--color-shadow-graphite)"};`}>
         {event.subtitle}
       </p>
 
       <!-- Termin-Pillen direkt im Hero -->
       <div class="mt-6 flex flex-wrap gap-3">
         {event.dates.map((d) => (
-          <div class="card px-4 py-3 flex flex-col gap-0.5">
-            <span class="text-[11px] font-bold uppercase tracking-widest" style="color: var(--color-accent);">
+          <div class="px-4 py-3 flex flex-col gap-0.5 rounded-xl" style={heroImage ? "background: rgba(255,255,255,0.15); backdrop-filter: blur(4px);" : "background:#fff; border:1px solid var(--color-lavender-ash);"}>
+            <span class="text-[11px] font-bold uppercase tracking-widest" style={`color: ${heroImage ? "#fde68a" : "var(--color-accent)"};`}>
               {d.label ?? "Termin"}
             </span>
-            <span class="text-sm font-semibold" style="color: var(--color-inkwell-purple);">
+            <span class="text-sm font-semibold" style={`color: ${heroImage ? "#fff" : "var(--color-inkwell-purple)"};`}>
               {formatDate(d.start)}
               {d.start !== d.end && <span> - {formatDate(d.end)}</span>}
             </span>
           </div>
         ))}
       </div>
+      {heroImage && heroCredit && (
+        <p class="absolute bottom-2 right-3 text-[10px] text-white/85">
+          Foto:&nbsp;
+          <a href={heroCredit.commonsUrl} class="underline" rel="nofollow noopener" target="_blank">{heroCredit.author}</a>
+          {heroCredit.license && (<>,&nbsp;{heroCredit.licenseUrl ? (<a href={heroCredit.licenseUrl} class="underline" rel="nofollow noopener" target="_blank">{heroCredit.license}</a>) : (<span>{heroCredit.license}</span>)}</>)}
+        </p>
+      )}
     </div>
   </section>
 

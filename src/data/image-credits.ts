@@ -480,4 +480,44 @@ export const imageCredits: Record<string, ImageCreditRecord> = {
     "filename": "Platinum Yoga.jpg",
     "commonsUrl": "https://commons.wikimedia.org/wiki/File:Platinum_Yoga.jpg"
   },
+  // ── Event-Hero-Bilder (Wikimedia Commons / Reuse) ──
+  "schlossbeleuchtung-2026": {
+    "author": "Motatcho",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Heidelberger Schloss",
+    "filename": "Heidelberg-2726936.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Heidelberg-2726936.jpg"
+  },
+  "schlossfestspiele-heidelberg-2026": {
+    "author": "Verena Schweizer",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "filename": "Landappbw 81608 1818 Heidelberger Schloss, Schlosshof Heidelberg.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Landappbw_81608_1818_Heidelberger_Schloss,_Schlosshof_Heidelberg.jpg"
+  },
+  "heidelberger-herbst-2026": {
+    "author": "4028mdk09",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "description": "Herkulesbrunnen und Rathaus am Marktplatz in der Heidelberger Altstadt (Baden-Württemberg, Deutschland)",
+    "filename": "Altstadt Heidelberg Herkulesbrunnen und Rathaus 2012.JPG",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Altstadt_Heidelberg_Herkulesbrunnen_und_Rathaus_2012.JPG"
+  },
+  "weihnachtsmarkt-heidelberg-2026": {
+    "author": "Daderot",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "description": "Christmas market, 2015 - Heidelberg, Germany.",
+    "filename": "Christmas market, 2015 - Heidelberg, Germany - DSC01513.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Christmas_market,_2015_-_Heidelberg,_Germany_-_DSC01513.jpg"
+  },
+  "maimarkt-mannheim-2027": {
+    "author": "Leiflive",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "description": "Bahnhof Mannheim SAP Arena/Maimarkt",
+    "filename": "Bf MA Arena Maimarkt 2.jpg",
+    "commonsUrl": "https://commons.wikimedia.org/wiki/File:Bf_MA_Arena_Maimarkt_2.jpg"
+  },
 };

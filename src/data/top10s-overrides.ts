@@ -53,6 +53,25 @@ export const top10Overrides: Record<string, Override> = {
     intro: "Heidelbergs Südstadt ist ein charmanter Teil der Stadt - und die richtige Unterkunft macht die Reise oft erst rund. Ob gemütliche Pension oder kleines Hotel: Hier finden sich einige besondere Adressen mitten im Geschehen. Viele Häuser verbinden Geschichte mit einer entspannten Atmosphäre. Die Südstadt ist ein hervorragender Ausgangspunkt, um Heidelberg zu erkunden, mit vielen Sehenswürdigkeiten in unmittelbarer Nähe.",
   },
 
+  // ── Veranstaltungen & Festivals (Tourismus) ────────────────────────
+  // Zuvor nur 7 Einträge. Ergänzt auf 10 mit realen, wiederkehrenden
+  // Heidelberger Festivals. Neutrale Beschreibungen, keine Superlative.
+  "veranstaltungen-festivals": {
+    intro: "Heidelbergs Veranstaltungskalender lebt von wiederkehrenden Festivals, die die ganze Stadt füllen - von Klassik und Jazz über Theater und Literatur bis zum großen Altstadtfest und der weltbekannten Schlossbeleuchtung. Diese zehn Höhepunkte prägen das Jahr und sind gute Anlässe, eine Reise nach Heidelberg zu planen.",
+    items: [
+      { rank: 1,  name: "Heidelberger Frühling", description: "Internationales Musikfestival von Klassik bis Zeitgenössischem, jährlich im Frühjahr (März/April). Konzerte, Kammermusik, Meisterkurse und ein eigenes Lied-Zentrum an wechselnden Spielstätten." },
+      { rank: 2,  name: "Enjoy Jazz", description: "Renommiertes Jazz-Festival im Herbst (Oktober/November) mit Konzerten in Heidelberg, Mannheim und Ludwigshafen - von etablierten Namen bis zu experimentellen Newcomern." },
+      { rank: 3,  name: "Heidelberger Stückemarkt", description: "Theaterfestival für neue Dramatik im Frühjahr am Theater und Orchester Heidelberg - mit Uraufführungen, Gastspielen, Autorenpreis und Diskussionen." },
+      { rank: 4,  name: "Heidelberger Herbst", description: "Das große Altstadtfest am letzten September-Samstag: Flohmarkt entlang der Hauptstraße, Live-Bühnen, Bauern- und Kunsthandwerkermarkt, rund 300.000 Besucher." },
+      { rank: 5,  name: "Schlossbeleuchtung", description: "Bengalische Rot-Beleuchtung von Schlossruine und Alter Brücke mit anschließendem Großfeuerwerk über dem Neckar - an drei Samstagen im Juni, Juli und September." },
+      { rank: 6,  name: "Heidelberger Weihnachtsmarkt", description: "Adventsmarkt auf sechs Plätzen der Altstadt (Ende November bis 22. Dezember) mit Eislaufbahn am Karlsplatz vor Schloss-Kulisse." },
+      { rank: 7,  name: "Heidelberger Literaturtage", description: "Literaturfestival mit Lesungen, Gesprächen und Werkstätten - traditionell im Spiegelzelt auf dem Universitätsplatz." },
+      { rank: 8,  name: "Heidelberger Schlossfestspiele", description: "Open-Air-Sommerfestival im Schlosshof (Juni bis August) mit Schauspiel, Oper, Musical und Konzerten - Süddeutschlands traditionsreichstes Festival dieser Art." },
+      { rank: 9,  name: "Metropolink Festival", description: "Urban-Art- und Street-Art-Festival (seit 2015, im Sommer): großformatige Wandbilder internationaler Künstler:innen, Führungen und Aktionen im Stadtraum." },
+      { rank: 10, name: "Heidelberger Halbmarathon", description: "Großes Laufevent im Frühjahr mit Halbmarathon, Zehntel, Staffeln und Kinderläufen - die Strecke führt durch die Stadt und am Neckar entlang." },
+    ],
+  },
+
   // ── Stadtteil-Hotel-Silo (Bet 1, Stay22-Money-Pages) ────────────────
   "neuenheim-hotels": {
     intro: "Wer ein Hotel in Heidelberg-Neuenheim sucht, wohnt ruhig und trotzdem stadtnah: Der Stadtteil liegt am nördlichen Neckarufer direkt gegenüber der Altstadt, mit dem Philosophenweg vor der Haustür und kurzem Weg über die Brücke ins Zentrum. Unten die aktuellen Neuenheimer Häuser mit einer ehrlichen Einordnung, für wen sie sich jeweils eignen - vom Luxus-Refugium am Wasser bis zur familiengeführten Pension nahe der Uniklinik.",
@@ -150,6 +169,46 @@ export const top10Overrides: Record<string, Override> = {
         q: "Ist Neuenheim ruhiger als die Heidelberger Altstadt?",
         a: "Deutlich. Neuenheim ist ein grünes Wohnviertel mit Villenstraßen, Cafés und Wochenmarkt, ohne den nächtlichen Kneipen- und Touristentrubel der Altstadt - bei gleichzeitig kurzem Weg dorthin.",
       },
+    ],
+  },
+
+  // ── Autowerkstätten (Leistungen) ───────────────────────────────────
+  // Zuvor 8 generische Floskel-„Items" (Fachkundige Wartung, Sichere
+  // Hände …). Ersetzt durch reale Heidelberger Kfz-Werkstätten.
+  "autowerkstaetten": {
+    intro: "Heidelberg hat eine dichte Werkstattlandschaft - vom Kfz-Innungs-Meisterbetrieb über zertifizierte Bosch-Car-Service-Partner bis zu markenunabhängigen Ketten. Diese zehn Adressen decken Inspektion, Reparatur, Reifen und Diagnose für alle Fabrikate ab.",
+    items: [
+      { rank: 1,  name: "Kfz-Werkstatt Stier", description: "Kurpfalzring 102 A, 69123 Heidelberg-Pfaffengrund. Meisterbetrieb der Kfz-Innung, seit 1995. Inspektion und Reparatur aller Marken mit Originalteilen (Garantie-Erhalt).", websiteUrl: "https://www.autowerkstatt-stier.de/" },
+      { rank: 2,  name: "Penninger – Bosch Car Service", description: "Redtenbacher Str. 2-4, 69126 Heidelberg-Rohrbach. Zertifizierter Bosch-Car-Service-Betrieb - Wartung, Diagnose und Reparatur nach Herstellervorgabe.", websiteUrl: "https://www.boschcarservice.com/" }, // Werkstatt-Unterseite lief auf 404 - auf die gepruefte Startseite zurueckgestuft (2026-08-03)
+      { rank: 3,  name: "Car Service Kress – Bosch Car Service", description: "Pleikartsförsterstraße 118, Heidelberg-Kirchheim. Bosch-Car-Service mit Spezialisierung auf Komfortelektronik (Navigation, Standheizung) neben klassischer Wartung.", websiteUrl: "https://car-kress.de/" },
+      { rank: 4,  name: "Kfz-Meisterwerkstatt Khan", description: "Junges Team mit moderner Reparatur- und Diagnosetechnik - markenunabhängige Wartung und Instandsetzung in Heidelberg.", websiteUrl: "https://www.kfz-khan.de/" },
+      { rank: 5,  name: "Auto Sarwar", description: "Freie Kfz-Werkstatt in Heidelberg mit Meisterservice - eine Werkstatt für alle Marken, von der Inspektion bis zur Reparatur.", websiteUrl: "https://www.auto-sarwar.de/" },
+      { rank: 6,  name: "Auto Service Wieblingen (ASW)", description: "Kfz-Meisterwerkstatt in Heidelberg-Wieblingen - Reparaturen, Inspektionen, Reifenservice und Karosserie/Lack bis hin zur Oldtimer-Restaurierung.", websiteUrl: "https://www.auto-service-wieblingen.de/" },
+      { rank: 7,  name: "Große KFZ-Service", description: "Markenunabhängige Kfz-Werkstatt in Heidelberg - Wartung, Verschleißreparaturen und Diagnose zu transparenten Konditionen.", websiteUrl: "https://grosse-kfz-service.de/" },
+      { rank: 8,  name: "A.T.U Heidelberg", description: "Eppelheimer Straße 36, 69115 Heidelberg. Filiale der bundesweiten Kette - Inspektion, Reifen, Klimaservice und HU/AU-Vorbereitung." },
+      { rank: 9,  name: "pitstop Heidelberg", description: "Werkstattkette mit Standort in Heidelberg - schnelle Termine für Ölwechsel, Bremsen, Auspuff und Verschleißteile.", websiteUrl: "https://www.pitstop.de/werkstatt/heidelberg/" },
+      { rank: 10, name: "Driver Center Heidelberg-Wieblingen", description: "Reifen- und Autoservice in Heidelberg-Wieblingen - Reifenkauf und -wechsel, Einlagerung sowie Wartungsarbeiten.", websiteUrl: "https://www.drivercenter.eu/de-de/reifenhaendler/heidelberg-wieblingen" },
+    ],
+  },
+
+  // ── Gartengestaltung Heidelberg (Leistungen) ───────────────────────
+  // Der WP-Scrape hatte hier versehentlich einen Ratgeber übers
+  // HEIDELBEEREN-Anbauen erfasst (Substrat, Hornmehl …) - thematisch
+  // komplett falsch. Ersetzt durch reale Garten- und Landschaftsbau-
+  // Betriebe aus Heidelberg und dem Rhein-Neckar-Raum.
+  "gartengestaltung-heidelberg": {
+    intro: "Heidelberg und der Rhein-Neckar-Raum haben eine dichte Garten- und Landschaftsbau-Szene - vom klassischen GaLaBau-Meisterbetrieb über Teich- und Poolspezialisten bis zu Designgärtnern. Diese zehn Betriebe planen, bauen und pflegen Gärten in und um Heidelberg.",
+    items: [
+      { rank: 1,  name: "Fleck Galabau Heidelberg", description: "Familiengeführter Garten- und Landschaftsbau mit über 40 Jahren Erfahrung - Gartenplanung, Neuanlage, Pflasterarbeiten und regelmäßige Gartenpflege.", websiteUrl: "https://www.fleck-galabau.de/" },
+      { rank: 2,  name: "Galabau Schreck", description: "Gartenbaubetrieb aus Heidelberg mit Schwerpunkt Gartengestaltung, Pflaster- und Natursteinarbeiten, Begrünung und Gartenpflege.", websiteUrl: "https://galabau-schreck.de/gartenbau-heidelberg/" },
+      { rank: 3,  name: "Bischer Pool & Garten", description: "Garten- und Landschaftsbau für die Rhein-Neckar-Region - plant, baut und pflegt Gärten und Außenanlagen, mit eigenem Schwerpunkt Pool- und Teichbau.", websiteUrl: "https://www.galabau-bischer.de/gartenbau/" },
+      { rank: 4,  name: "Gartengestaltung Heidelberg (GGHD)", description: "Köhler Grund 4, 69126 Heidelberg. Baumpflege, Stein- und Natursteinarbeiten, Teich- und Rasenanlagen sowie laufende Gartenpflege.", websiteUrl: "http://www.gghd.de/" },
+      { rank: 5,  name: "ProNatur Garten", description: "Gutachweg 6, 69123 Heidelberg. Spezialist für Schwimm- und Zierteiche, naturnahe Gärten und Bewässerungstechnik.", websiteUrl: "https://pronatur-garten.de/" },
+      { rank: 6,  name: "Kolodziej Gartengestaltung", description: "Meisterbetrieb aus Heidelberg für Gartengestaltung, Beregnungstechnik, Baumpflege und Zaunbau.", websiteUrl: "https://k-gartengestaltung.de/" },
+      { rank: 7,  name: "Gartenmanufaktur Heidelberg", description: "Gartenbaubetrieb mit Fokus auf exklusive Designgärten - individuelle Planung und Umsetzung anspruchsvoller Gartenkonzepte.", websiteUrl: "https://www.gartenmanufaktur-heidelberg.de/" },
+      { rank: 8,  name: "BB Gartenarchitektur", description: "Garten- und Landschaftsbau mit gestalterischem Schwerpunkt - kreative Lösungen in Holz, Stein und Metall.", websiteUrl: "https://bb-gartenarchitektur.de/gartenbau/heidelberg/" },
+      { rank: 9,  name: "Winkler - Kreative Gärten", description: "Landschaftsgärtner im Raum Heidelberg - Landschafts- und Gartenbau, Teichbau und Garten-Umgestaltungen.", websiteUrl: "https://www.kreativegaerten.com/" },
+      { rank: 10, name: "Wolf Garten- und Landschaftsbau (Ladenburg)", description: "Fachbetrieb mit rund 30 Jahren Erfahrung, tätig in Heidelberg, Mannheim und dem Rhein-Neckar-Dreieck - Garten- und Landschaftsbau in allen Gewerken.", websiteUrl: "https://wolf-galabau.de/" },
     ],
   },
 

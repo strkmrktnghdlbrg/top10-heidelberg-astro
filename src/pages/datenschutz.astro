@@ -15,7 +15,7 @@ const t = legal.trackingEnabled;
     <h2 class="text-xl font-bold mt-10 mb-3">1. Verantwortliche Stelle</h2>
     <p>{op.name}<br />{op.street}<br />{op.zip} {op.city}, {op.country}<br />
       {op.email && (
-        <>E-Mail: <a href={`mailto:${op.email}`} style="color: var(--color-accent); text-decoration: underline;">{op.email}</a><br /></>
+        <>E-Mail: <span style="color: var(--color-accent);">{op.email.replace("@", "(at)")}</span><br /></>
       )}
       Kontaktformular: <a href="/kontakt/" style="color: var(--color-accent); text-decoration: underline;">top10-heidelberg.de/kontakt</a></p>
 
@@ -29,19 +29,24 @@ const t = legal.trackingEnabled;
 
     <h2 class="text-xl font-bold mt-10 mb-3">3. Cookies & vergleichbare Technologien</h2>
     <p class="mb-3">
-      Wir nutzen technisch <strong>nicht</strong> notwendige Drittanbieter-Skripte (Stay22, GetYourGuide
-      {t.adsense && ", Google AdSense"}{t.gtm && ", Google Tag Manager"}) nur dann, wenn du im Cookie-Banner
-      „Alle akzeptieren" gewählt hast. Bis dahin werden die Skripte ausschließlich als <code>type="text/plain"</code>
-      gerendert und vom Browser nicht ausgeführt.
+      Technisch nicht notwendige Dienste (Stay22, GetYourGuide{t.adsense && ", Google AdSense"}{t.gtm && ", Google Tag Manager"})
+      setzen deine Einwilligung voraus. Diese holen wir über die Consent-Management-Plattform von Google
+      („Privacy &amp; messaging" / Funding Choices) nach dem IAB&nbsp;Transparency &amp; Consent Framework (TCF&nbsp;v2.2) ein.
+      Sie ist die einzige Einwilligungs-Abfrage auf dieser Seite – einen zweiten, eigenen Cookie-Banner gibt es nicht.
     </p>
     <p class="mb-3">
-      Deine Wahl speichern wir in deinem Browser unter dem <code>localStorage</code>-Schlüssel
-      <code>top10hd-consent</code> (Wert <code>"all"</code> oder <code>"essential"</code>).
-      Diese Speicherung ist technisch notwendig zur Erfüllung deines Wunsches (Art. 6 Abs. 1 lit. a DSGVO i.V.m.
-      § 25 Abs. 2 TTDSG).
+      Konkret bedeutet das: Die Skripte von <strong>Stay22</strong> und <strong>GetYourGuide</strong> werden erst
+      nachgeladen, wenn du in der CMP dem Zweck&nbsp;1 („Speichern von oder Zugriff auf Informationen auf einem
+      Endgerät") zugestimmt hast. Für Google-Dienste{t.gtm && " (Tag Manager)"}{t.adsense && " und Google AdSense"} setzen wir
+      zusätzlich den <em>Consent&nbsp;Mode&nbsp;v2</em> ein: Bis zu deiner Zustimmung stehen alle Speicher-Kategorien
+      (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>, <code>analytics_storage</code>)
+      auf <code>denied</code>, sodass keine Werbe- oder Analyse-Cookies gesetzt werden. Die Einwilligungs-Entscheidung
+      selbst speichert die Google-CMP in deinem Browser; diese Speicherung ist zur Erfüllung deines Wunsches
+      erforderlich.
     </p>
     <p>
-      Über den Link <em>Cookie-Einstellungen</em> im Footer kannst du deine Wahl jederzeit ändern.
+      Deine Einwilligung kannst du jederzeit über den Link <em>Cookie-Einstellungen</em> im Footer ändern oder
+      widerrufen. Der Widerruf wirkt für die Zukunft (Art. 6 Abs. 1 lit. a DSGVO i.V.m. § 25 Abs. 1 TTDSG).
     </p>
 
     {t.stay22 && (
@@ -59,7 +64,7 @@ const t = legal.trackingEnabled;
           beim Klick auf einen Hotel-Link.
         </p>
         <p>
-          Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung im Cookie-Banner). Weitere Infos:
+          Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung in der Google-CMP). Weitere Infos:
           <a href="https://stay22.com/privacy" rel="nofollow noopener" target="_blank" style="color: var(--color-accent); text-decoration: underline;">stay22.com/privacy</a>.
         </p>
       </>

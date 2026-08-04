@@ -1,35 +1,202 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
----
-<BaseLayout title="Werben auf top10-heidelberg.de" description="Sichere dir einen Platz in unseren Top-10-Listen oder bewirb dich für ein Premium-Listing.">
-  <section class="container-page section max-w-3xl">
-    <div class="eyebrow mb-3">Werbung</div>
-    <h1 class="text-3xl sm:text-5xl font-bold mb-5" style="font-family: var(--font-display);">Werben auf Top 10 Heidelberg</h1>
-    <p class="text-lg" style="color: var(--color-shadow-graphite);">
-      top10-heidelberg.de ist das Listicle-Portal für die Region - kompakte Top-10-Übersichten zu Tourismus, Stadtteilen, Alltag und Dienstleistungen.
-      Für lokale Anbieter gibt es drei Wege, sichtbarer zu werden.
-    </p>
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { top10Lists } from "../data/top10s";
+import { categories } from "../data/categories";
+import "../styles/werben.css";
 
-    <div class="mt-10 grid sm:grid-cols-3 gap-6">
-      <div class="card p-6">
-        <div class="text-xs uppercase tracking-widest mb-2" style="color: var(--color-accent);">Free</div>
-        <div class="text-2xl font-bold mb-1" style="font-family: var(--font-display);">0 €</div>
-        <p class="text-sm" style="color: var(--color-shadow-graphite);">Eintrag in der Top-10-Liste, sofern es deine Branche redaktionell rechtfertigt.</p>
-      </div>
-      <div class="card p-6" style="border-color: var(--color-accent);">
-        <div class="text-xs uppercase tracking-widest mb-2" style="color: var(--color-accent);">Premium</div>
-        <div class="text-2xl font-bold mb-1" style="font-family: var(--font-display);">49 € / Monat</div>
-        <p class="text-sm" style="color: var(--color-shadow-graphite);">Premium-Card oben in der Liste, eigene Detailseite, Foto und CTA.</p>
-      </div>
-      <div class="card p-6">
-        <div class="text-xs uppercase tracking-widest mb-2" style="color: var(--color-accent);">Featured</div>
-        <div class="text-2xl font-bold mb-1" style="font-family: var(--font-display);">149 € / Monat</div>
-        <p class="text-sm" style="color: var(--color-shadow-graphite);">Pinned auf Platz 1, Header-Banner und Erwähnung im monatlichen Newsletter.</p>
+const stats = [
+  { value: top10Lists.length.toString(), label: "Top-10-Listen" },
+  { value: (categories.length - 1).toString(), label: "Branchen & Themen" },
+  { value: "Tsd.", label: "Besucher / Monat" },
+  { value: "100 %", label: "Heidelberg-Fokus" },
+];
+
+// HINWEIS: Preise sind Platzhalter – vor dem Live-Gang echte Konditionen eintragen.
+const products = [
+  {
+    eyebrow: "Listing",
+    title: "Premium-Platzierung",
+    price: "ab 49 € / Monat",
+    priceNote: "Beispielpreis – bitte anpassen",
+    desc: "Dein Betrieb ganz oben in der Top-10-Liste seiner Branche – hervorgehoben, mit Logo, CTA und Dofollow-Backlink.",
+    features: [
+      "Angepinnt auf Platz 1 der passenden Liste",
+      "Logo, Beschreibung & Kontakt-Button",
+      "Dofollow-Backlink auf deine Website",
+      "Eigene Detailseite mit Foto",
+    ],
+    href: "/kontakt/",
+    cta: "Premium-Platz sichern",
+    featured: true,
+  },
+  {
+    eyebrow: "Content",
+    title: "Gesponserter Artikel",
+    price: "Preis auf Anfrage",
+    desc: "Redaktionell aufbereiteter Beitrag mit klarer Kennzeichnung – für Eröffnungen, News und Stories rund um Heidelberg.",
+    features: [
+      "800–1.500 Wörter, lektoriert",
+      "Bis zu 3 Dofollow-Links",
+      "Eigenes Cover- & Inline-Bilder",
+      "Dauerhaft im Blog verlinkt",
+    ],
+    href: "/kontakt/",
+    cta: "Artikel anfragen",
+    featured: false,
+  },
+  {
+    eyebrow: "Reichweite",
+    title: "Banner & Newsletter",
+    price: "Preis auf Anfrage",
+    desc: "Sichtbarkeit über Header-Banner und den monatlichen Heidelberg-Newsletter – direkt bei einer regionalen Zielgruppe.",
+    features: [
+      "Header-Banner auf passenden Listen",
+      "Platzierung im Newsletter",
+      "Bild, Text & Link",
+      "Auf Wunsch wiederkehrend",
+    ],
+    href: "/kontakt/",
+    cta: "Platzierung anfragen",
+    featured: false,
+  },
+];
+
+const steps = [
+  { n: 1, title: "Anfragen", text: "Sag uns über das Kontaktformular, welche Werbeform und welche Liste dich interessiert." },
+  { n: 2, title: "Angebot & Freigabe", text: "Du bekommst Konditionen und – bei Bedarf – einen Entwurf zur Freigabe." },
+  { n: 3, title: "Live gehen", text: "Wir schalten deine Platzierung, deinen Artikel oder deine Anzeige und du wirst sichtbar." },
+];
+
+const faqs = [
+  { q: "Sind die Backlinks dofollow?", a: "Ja. Premium-Platzierungen und gesponserte Artikel erhalten dofollow-Links auf deine Website – gut für Sichtbarkeit und SEO. Werbebeiträge werden transparent gekennzeichnet." },
+  { q: "Für wen lohnt sich eine Premium-Platzierung?", a: `Für jeden Heidelberger Betrieb, der in seiner Branche gefunden werden will. Deine Karte steht oben in einer der ${top10Lists.length} kuratierten Top-10-Listen.` },
+  { q: "Mein Betrieb ist schon in einer Liste – was bringt Premium?", a: "Viele Betriebe sind bereits als redaktioneller Eintrag gelistet. Als Premium wird deine Karte hervorgehoben, um Logo, CTA und Backlink ergänzt und ganz oben angezeigt." },
+  { q: "Wie lange dauert die Schaltung?", a: "Eine Platzierung ist meist innerhalb weniger Tage online. Gesponserte Artikel je nach Umfang und Freigabe etwas länger." },
+];
+---
+<BaseLayout
+  title="Werben auf Top 10 Heidelberg – Premium-Platzierung, Artikel & Newsletter"
+  description={`Werben auf Top 10 Heidelberg: Premium-Platzierung in einer von ${top10Lists.length} kuratierten Top-10-Listen, gesponserte Artikel und Newsletter-Platzierungen. Lokal sichtbar werden.`}
+>
+  <section class="container-page py-10">
+    <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: "Werben" }]} />
+
+    <!-- Hero -->
+    <div class="werben-hero">
+      <div class="max-w-2xl">
+        <p class="eyebrow mb-3">Werben auf Top 10 Heidelberg</p>
+        <h1 class="werben-h1">Ganz oben in der Top-10-Liste deiner Branche.</h1>
+        <p class="werben-lead">
+          Erreiche Bewohner:innen, Studierende, Tourist:innen und Pendler aus der Region – über kuratierte
+          Top-10-Listen, redaktionelle Artikel und den Newsletter.
+        </p>
+        <div class="werben-hero-cta">
+          <a href="/kontakt/" class="btn-primary">Premium-Platz sichern</a>
+          <a href="/kontakt/" class="btn-outline">Unverbindlich anfragen</a>
+        </div>
       </div>
     </div>
 
-    <div class="mt-10">
-      <a href="/kontakt/" class="btn-primary">Anfrage stellen</a>
+    <!-- Stats -->
+    <div class="werben-stats">
+      {stats.map((s) => (
+        <div class="werben-stat">
+          <span class="werben-stat-value">{s.value}</span>
+          <span class="werben-stat-label">{s.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Produkte -->
+    <div class="mt-16 mb-4">
+      <h2 class="werben-h2">Werbeformen</h2>
+      <p class="werben-sub">Drei Wege, in Heidelberg gefunden zu werden – einzeln oder kombiniert.</p>
+    </div>
+    <div class="werben-grid">
+      {products.map((p) => (
+        <div class={`werben-card ${p.featured ? "werben-card--featured" : ""}`}>
+          {p.featured && <span class="werben-badge">Beliebt</span>}
+          <p class="eyebrow mb-2">{p.eyebrow}</p>
+          <h3 class="werben-card-title">{p.title}</h3>
+          <p class="werben-price">{p.price}</p>
+          <p class="werben-card-desc">{p.desc}</p>
+          <ul class="werben-features">
+            {p.features.map((f) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+          <a href={p.href} class={p.featured ? "btn-primary w-full justify-center" : "btn-outline w-full justify-center"}>{p.cta} →</a>
+        </div>
+      ))}
+    </div>
+
+    <!-- So funktioniert's -->
+    <div class="mt-20">
+      <h2 class="werben-h2">So funktioniert's</h2>
+      <div class="werben-steps">
+        {steps.map((s) => (
+          <div class="werben-step">
+            <span class="werben-step-n">{s.n}</span>
+            <h3 class="werben-step-title">{s.title}</h3>
+            <p class="werben-step-text">{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Premium-Vorschau (Mockup einer hervorgehobenen Top-10-Karte) -->
+    <div class="werben-preview">
+      <div class="max-w-md">
+        <p class="eyebrow mb-3">So sieht deine Platzierung aus</p>
+        <h2 class="werben-h2" style="margin-bottom:0.75rem;">Dein Premium-Eintrag</h2>
+        <p class="werben-sub" style="margin-bottom:1.25rem;">
+          Hervorgehoben, mit Logo, Beschreibung und direktem Kontakt-Button – angepinnt auf Platz 1 deiner Branche.
+        </p>
+        <a href="/kontakt/" class="btn-primary">Premium-Platz sichern →</a>
+      </div>
+      <div>
+        <div class="card p-5 sm:p-6 flex gap-4" style="border-color: var(--color-accent); box-shadow: 0 12px 34px -16px rgba(184,134,11,.35);">
+          <span class="inline-flex items-center justify-center w-11 h-11 rounded-full font-bold shrink-0" style="background: var(--color-accent); color: var(--color-accent-contrast); font-family: var(--font-display);">1</span>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="pill-accent">Anzeige · Premium</span>
+            </div>
+            <h3 class="text-lg font-bold" style="font-family: var(--font-display); color: var(--color-inkwell-purple);">Dein Betrieb</h3>
+            <p class="mt-1 text-sm" style="color: var(--color-shadow-graphite);">Kurze Beschreibung deines Angebots – was dich in Heidelberg auszeichnet.</p>
+            <div class="mt-3 flex flex-wrap gap-3 text-sm">
+              <span style="color: var(--color-slate-steel);">📍 Deine Adresse</span>
+              <span class="link-accent font-semibold">Webseite ↗</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-20 max-w-3xl">
+      <h2 class="werben-h2">Häufige Fragen</h2>
+      <div class="werben-faq">
+        {faqs.map((f) => (
+          <details class="werben-faq-item">
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="werben-final">
+      <h2 class="werben-final-title">Bereit, in Heidelberg sichtbar zu werden?</h2>
+      <p class="werben-final-text">Schreib uns – wir melden uns mit Konditionen und freien Plätzen.</p>
+      <div class="werben-hero-cta">
+        <a href="/kontakt/" class="btn-primary">Premium-Platz sichern</a>
+        <a href="/kontakt/" class="btn-outline">Kontakt aufnehmen</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

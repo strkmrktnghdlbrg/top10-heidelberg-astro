@@ -34,6 +34,14 @@ const navItems = categories
   })
   .map((c) => ({ href: `/thema/${c.slug}/`, label: c.name, icon: c.icon, short: c.short }));
 
+// „Hotels" als meistgesuchte Einzelseite direkt nach Tourismus in die
+// Hauptnav einfügen (war vorher nur über den Tourismus-Hub erreichbar).
+const tourismusIdx = navItems.findIndex((i) => i.href === "/thema/tourismus/");
+const insertAt = tourismusIdx >= 0 ? tourismusIdx + 1 : navItems.length;
+navItems.splice(insertAt, 0,
+  { href: "/hotels/", label: "Hotels", icon: "🛎️", short: "Die 10 besten Hotels in Heidelberg - mit Live-Preisen." },
+);
+
 // Events-Hub als Extra-Item ans Ende der Hauptnav anhängen.
 navItems.push({ href: "/events/", label: "Events", icon: "📅", short: "Termine + Hotels für Schlossbeleuchtung, Festspiele, Weihnachtsmarkt & Co." });
 
