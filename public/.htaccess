@@ -1,7 +1,21 @@
 ## ===================================================================
-## top10-heidelberg.de — Apache-Konfig für Hostinger / Shared Hosting
+## ⚠️ INAKTIV — DIESE DATEI WIRD LIVE NICHT GELESEN. NICHT HIER PFLEGEN.
 ## ===================================================================
-## Liefert: HTTPS-Force, www→non-www, GZIP, Cache-Header,
+## top10-heidelberg.de laeuft auf CLOUDFLARE PAGES (Deploy:
+## .github/workflows -> wrangler pages deploy dist). Cloudflare Pages ist
+## kein Apache und ignoriert .htaccess komplett.
+##
+## Bis 04.08.2026 standen die Legacy-301er und die 410er nur hier - alle
+## still wirkungslos, live nachgemessen (4 von 4 Stichproben final:404).
+##
+## Wirksam sind stattdessen:
+##   public/_redirects            -> die 301-Regeln
+##   functions/_middleware.js     -> Apex/www, 410-Set, Schraegstrich
+##
+## Die Datei bleibt nur als Historie liegen. Merksatz:
+## Apache/LiteSpeed liest NUR .htaccess, CF Pages/Netlify NUR _redirects.
+## ===================================================================
+## (historisch) Liefert: HTTPS-Force, www→non-www, GZIP, Cache-Header,
 ## WP→Astro Redirects (URLs identisch, daher wenig zu mappen).
 ## ===================================================================
 

@@ -1,0 +1,510 @@
+{
+  "property": "properties/544926179",
+  "window_days": 90,
+  "summary_90d": {
+    "sessions": "69",
+    "totalUsers": "63",
+    "newUsers": "61",
+    "engagedSessions": "19",
+    "averageSessionDuration": "129.96347208695653",
+    "screenPageViews": "89",
+    "keyEvents": "0",
+    "bounceRate": "0.72463768115942029"
+  },
+  "summary_30d": {
+    "sessions": "69",
+    "totalUsers": "63",
+    "newUsers": "61",
+    "engagedSessions": "19",
+    "averageSessionDuration": "129.96347208695653",
+    "screenPageViews": "89",
+    "keyEvents": "0",
+    "bounceRate": "0.72463768115942029"
+  },
+  "top_pages": [
+    {
+      "pagePath": "/",
+      "screenPageViews": "38",
+      "sessions": "28",
+      "totalUsers": "26"
+    },
+    {
+      "pagePath": "/weinladen/",
+      "screenPageViews": "5",
+      "sessions": "7",
+      "totalUsers": "4"
+    },
+    {
+      "pagePath": "/kunstgalerien/",
+      "screenPageViews": "4",
+      "sessions": "3",
+      "totalUsers": "3"
+    },
+    {
+      "pagePath": "/sehenswuerdigkeiten/",
+      "screenPageViews": "4",
+      "sessions": "4",
+      "totalUsers": "4"
+    },
+    {
+      "pagePath": "/einkaufsmoeglichkeiten/",
+      "screenPageViews": "3",
+      "sessions": "3",
+      "totalUsers": "3"
+    },
+    {
+      "pagePath": "/impressum/",
+      "screenPageViews": "3",
+      "sessions": "2",
+      "totalUsers": "2"
+    },
+    {
+      "pagePath": "/kontakt/",
+      "screenPageViews": "2",
+      "sessions": "2",
+      "totalUsers": "2"
+    },
+    {
+      "pagePath": "/nachhilfe-und-sprachschulen/",
+      "screenPageViews": "2",
+      "sessions": "2",
+      "totalUsers": "2"
+    },
+    {
+      "pagePath": "/thema/leistungen/",
+      "screenPageViews": "2",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/thema/stadtteile/",
+      "screenPageViews": "2",
+      "sessions": "2",
+      "totalUsers": "2"
+    },
+    {
+      "pagePath": "/werben/",
+      "screenPageViews": "2",
+      "sessions": "2",
+      "totalUsers": "2"
+    },
+    {
+      "pagePath": "/baeckereien/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/bars-und-kneipen/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/buchlaeden/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/en/einkaufsmoeglichkeiten/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/en/wellness-spa/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/events/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/events/heidelberger-herbst-2026/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/events/maimarkt-mannheim-2027/",
+      "screenPageViews": "1",
+      "sessions": "2",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/events/schlossbeleuchtung-2026/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/events/schlossfestspiele-heidelberg-2026/",
+      "screenPageViews": "1",
+      "sessions": "2",
+      "totalUsers": "2"
+    },
+    {
+      "pagePath": "/fitnessstudios/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/handwerker/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/historische-staetten/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/hotels/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/online-werbeagenturen-in-heidelberg/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/online-werbeagenturen/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/outdoor-aktivitaeten/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/restaurants/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/thema/blog/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/thema/leben/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/ueber-uns/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/weststadt-hotels/",
+      "screenPageViews": "1",
+      "sessions": "1",
+      "totalUsers": "1"
+    },
+    {
+      "pagePath": "/kinderfreundliche-orte/",
+      "screenPageViews": "0",
+      "sessions": "1",
+      "totalUsers": "1"
+    }
+  ],
+  "top_landing_pages": [
+    {
+      "landingPage": "/",
+      "sessions": "25",
+      "totalUsers": "25",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "",
+      "sessions": "6",
+      "totalUsers": "5",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/weinladen",
+      "sessions": "5",
+      "totalUsers": "4",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "(not set)",
+      "sessions": "3",
+      "totalUsers": "3",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/einkaufsmoeglichkeiten",
+      "sessions": "3",
+      "totalUsers": "3",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/kunstgalerien",
+      "sessions": "3",
+      "totalUsers": "3",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/impressum",
+      "sessions": "2",
+      "totalUsers": "2",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/kontakt",
+      "sessions": "2",
+      "totalUsers": "2",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/nachhilfe-und-sprachschulen",
+      "sessions": "2",
+      "totalUsers": "2",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/sehenswuerdigkeiten",
+      "sessions": "2",
+      "totalUsers": "2",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/baeckereien",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/bars-und-kneipen",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/buchlaeden",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/en/einkaufsmoeglichkeiten",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/en/wellness-spa",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/events/heidelberger-herbst-2026",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/events/maimarkt-mannheim-2027",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/events/schlossbeleuchtung-2026",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/events/schlossfestspiele-heidelberg-2026",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/fitnessstudios",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/historische-staetten",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/online-werbeagenturen",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/online-werbeagenturen-in-heidelberg",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/outdoor-aktivitaeten",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/thema/blog",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/thema/stadtteile",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/ueber-uns",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/werben",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    },
+    {
+      "landingPage": "/weststadt-hotels",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    }
+  ],
+  "channels": [
+    {
+      "sessionDefaultChannelGroup": "Direct",
+      "sessions": "39",
+      "totalUsers": "38",
+      "keyEvents": "0"
+    },
+    {
+      "sessionDefaultChannelGroup": "Organic Search",
+      "sessions": "26",
+      "totalUsers": "22",
+      "keyEvents": "0"
+    },
+    {
+      "sessionDefaultChannelGroup": "Unassigned",
+      "sessions": "5",
+      "totalUsers": "4",
+      "keyEvents": "0"
+    },
+    {
+      "sessionDefaultChannelGroup": "AI Assistant",
+      "sessions": "1",
+      "totalUsers": "1",
+      "keyEvents": "0"
+    }
+  ],
+  "countries": [
+    {
+      "country": "Germany",
+      "sessions": "39"
+    },
+    {
+      "country": "United States",
+      "sessions": "15"
+    },
+    {
+      "country": "Singapore",
+      "sessions": "5"
+    },
+    {
+      "country": "Philippines",
+      "sessions": "3"
+    },
+    {
+      "country": "Poland",
+      "sessions": "2"
+    },
+    {
+      "country": "China",
+      "sessions": "1"
+    },
+    {
+      "country": "Hong Kong",
+      "sessions": "1"
+    },
+    {
+      "country": "Kenya",
+      "sessions": "1"
+    },
+    {
+      "country": "Netherlands",
+      "sessions": "1"
+    },
+    {
+      "country": "South Africa",
+      "sessions": "1"
+    },
+    {
+      "country": "Vietnam",
+      "sessions": "1"
+    }
+  ],
+  "devices": [
+    {
+      "deviceCategory": "desktop",
+      "sessions": "49"
+    },
+    {
+      "deviceCategory": "mobile",
+      "sessions": "21"
+    }
+  ],
+  "events": [
+    {
+      "eventName": "page_view",
+      "eventCount": "89"
+    },
+    {
+      "eventName": "session_start",
+      "eventCount": "66"
+    },
+    {
+      "eventName": "first_visit",
+      "eventCount": "61"
+    },
+    {
+      "eventName": "user_engagement",
+      "eventCount": "59"
+    },
+    {
+      "eventName": "ad_impression",
+      "eventCount": "53"
+    }
+  ]
+}

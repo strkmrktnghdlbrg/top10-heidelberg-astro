@@ -1,0 +1,11 @@
+# top10-heidelberg.de - Legacy-301er fuer Cloudflare Pages.
+#
+# WICHTIG: Dieses Projekt laeuft auf Cloudflare Pages. Pages liest NUR diese
+# Datei, niemals public/.htaccess. Die Regeln standen bis 04.08.2026 in
+# public/.htaccess und waren damit still wirkungslos (live 404 nachgemessen).
+#
+# 410-Antworten und die Schraegstrich-Normalisierung kann _redirects nicht,
+# die liegen in functions/_middleware.js.
+
+# Legacy-WP-Thema mit abweichendem Slug
+/thema/leben-in-heidelberg/  /thema/leben/  301

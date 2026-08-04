@@ -1,0 +1,42 @@
+{
+ "top10-heidelberg.de": {
+  "rank": 58,
+  "backlinks": 74,
+  "referring_domains": 15,
+  "referring_domains_nofollow": 12,
+  "broken_backlinks": 2,
+  "referring_main_domains": 15
+ },
+ "heidelberg-marketing.de": {
+  "rank": 390,
+  "backlinks": 46100,
+  "referring_domains": 2321,
+  "referring_domains_nofollow": 345,
+  "broken_backlinks": 4891,
+  "referring_main_domains": 2154
+ },
+ "rhein-neckar-wiki.de": {
+  "rank": 290,
+  "backlinks": 4229,
+  "referring_domains": 643,
+  "referring_domains_nofollow": 288,
+  "broken_backlinks": 113,
+  "referring_main_domains": 525
+ },
+ "hotels-in-heidelberg.com": {
+  "rank": 132,
+  "backlinks": 182,
+  "referring_domains": 111,
+  "referring_domains_nofollow": 31,
+  "broken_backlinks": 5,
+  "referring_main_domains": 97
+ },
+ "heidelberg-aktuell.de": {
+  "rank": 214,
+  "backlinks": 907,
+  "referring_domains": 227,
+  "referring_domains_nofollow": 86,
+  "broken_backlinks": 832,
+  "referring_main_domains": 209
+ }
+}

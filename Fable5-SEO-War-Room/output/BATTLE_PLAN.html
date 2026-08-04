@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Battle Plan</title>
+<!--
+  FABLE 5 WAR ROOM — DASHBOARD TEMPLATE
+  =====================================
+  CLAUDE: populate ONLY the `DATA` object at the top of the <script> at the bottom
+  of this file, using BRIEF.md + BATTLE_PLAN.md + WEEKLY_CHECKLIST.md.
+  Do NOT redesign the page or edit the CSS/render code. Every section renders
+  itself from DATA. Save the populated copy to output/BATTLE_PLAN.html.
+-->
+<style>
+:root{
+  --bg:#0a0b0f; --bg2:#0f1118; --card:#141722; --card2:#191d2b; --line:#252a3a; --line2:#303750;
+  --text:#eceef4; --muted:#9aa2b5; --dim:#646d84;
+  --amber:#ff9a3c; --amber2:#ffb968; --amberdata:#d9760f; --bluedata:#3f8ed9;
+  --green:#4ade80; --red:#ff6b6b; --glow:rgba(255,154,60,.16); --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none;z-index:0}
+.orb1{width:520px;height:520px;background:radial-gradient(circle,rgba(255,154,60,.16),transparent 65%);top:-180px;right:-120px;animation:drift1 22s ease-in-out infinite alternate}
+.orb2{width:420px;height:420px;background:radial-gradient(circle,rgba(63,142,217,.10),transparent 65%);bottom:-160px;left:-140px;animation:drift2 28s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(-70px,90px) scale(1.15)}}
+@keyframes drift2{to{transform:translate(90px,-70px) scale(1.1)}}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px 110px;position:relative;z-index:1}
+header{padding:58px 0 30px}
+.brandline{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--amber2);background:linear-gradient(180deg,rgba(255,154,60,.15),rgba(255,154,60,.04));border:1px solid rgba(255,154,60,.32);padding:7px 15px;border-radius:999px}
+.badge .ast{display:inline-block;animation:pulse 3s ease-in-out infinite;filter:drop-shadow(0 0 8px var(--amber))}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.18);opacity:.85}}
+.confchip{font-size:12px;color:var(--dim);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.08;margin:20px 0 12px;font-weight:800;letter-spacing:-1px}
+h1 .accent{background:linear-gradient(90deg,var(--amber),var(--amber2) 60%,#ffd9a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);font-size:16.5px;max-width:660px;margin:0}
+nav{position:sticky;top:0;z-index:50;background:rgba(10,11,15,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);margin:26px -24px 0;padding:0 24px}
+.tabs{display:flex;gap:4px;max-width:1040px;margin:0 auto;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{appearance:none;background:none;border:none;color:var(--muted);font:inherit;font-size:14.5px;font-weight:600;padding:16px 18px 14px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s}
+.tab:hover{color:var(--text)}
+.tab.on{color:var(--amber2);border-bottom-color:var(--amber)}
+.tab .k{display:inline-block;background:var(--card2);border:1px solid var(--line2);color:var(--dim);font-size:10.5px;font-weight:700;border-radius:5px;padding:1px 6px;margin-right:8px}
+.tab.on .k{color:var(--amber2);border-color:rgba(255,154,60,.4)}
+section.panel{display:none;padding-top:38px;animation:fadein .35s ease}
+section.panel.on{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:var(--amber2);margin:44px 0 6px;font-weight:700}
+h2:first-child{margin-top:0}
+.h2sub{color:var(--dim);font-size:14px;margin:0 0 20px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 18px;position:relative;overflow:hidden}
+.stat:after{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
+.stat .v{font-size:34px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .l{font-size:12.5px;color:var(--muted);margin-top:4px}
+.stat .d{font-size:11.5px;margin-top:8px;font-weight:600}
+.stat .d.bad{color:var(--red)} .stat .d.good{color:var(--green)} .stat .d.mid{color:var(--amber2)}
+.funnel{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px}
+.frow{display:grid;grid-template-columns:170px 1fr 110px;align-items:center;gap:16px;padding:10px 0}
+.frow .fl{font-size:13.5px;color:var(--muted)}
+.fbar{height:30px;border-radius:8px;background:linear-gradient(90deg,var(--amberdata),var(--amber));box-shadow:0 0 18px rgba(217,118,15,.25);transition:width 1.2s cubic-bezier(.2,.7,.2,1);width:0}
+.fbar.ghost{background:repeating-linear-gradient(135deg,rgba(255,107,107,.25) 0 6px,rgba(255,107,107,.08) 6px 12px);border:1px dashed rgba(255,107,107,.5);box-shadow:none}
+.frow .fv{font-size:15px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.leak{font-size:12px;color:var(--dim);padding-left:186px;margin:-2px 0 2px}
+.leak b{color:var(--red);font-weight:700}
+.dist{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.dcell{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;transition:transform .2s,border-color .2s}
+.dcell:hover{transform:translateY(-3px);border-color:var(--line2)}
+.dcell .big{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums}
+.dcell .cap{font-size:12px;color:var(--muted)}
+.dcell .sub2{font-size:11px;color:var(--dim)}
+.dcell.hot .big{color:var(--red)} .dcell.warm .big{color:var(--amber2)} .dcell.ok .big{color:var(--green)}
+.diag{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:26px 30px;position:relative;overflow:hidden;margin-top:14px}
+.diag:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:linear-gradient(180deg,var(--amber),transparent)}
+.diag p{margin:0 0 12px;color:#d5d9e4;font-size:15.5px}.diag p:last-child{margin:0}
+.diag strong{color:var(--amber2)}
+.acc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin-bottom:12px;overflow:hidden;transition:border-color .25s}
+.acc.open{border-color:rgba(255,154,60,.35);box-shadow:0 0 30px rgba(255,154,60,.05)}
+.acc-h{display:grid;grid-template-columns:46px 1fr auto;gap:16px;align-items:center;padding:20px 22px;cursor:pointer;user-select:none}
+.acc-h:hover{background:rgba(255,255,255,.015)}
+.acc-n{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:var(--amber);border:1px solid rgba(255,154,60,.3);background:linear-gradient(180deg,rgba(255,154,60,.12),transparent)}
+.acc-t h3{margin:0;font-size:16.5px;font-weight:700;letter-spacing:-.2px}
+.acc-t .s{font-size:13px;color:var(--dim);margin-top:2px}
+.chev{color:var(--dim);transition:transform .3s;font-size:18px}
+.acc.open .chev{transform:rotate(90deg);color:var(--amber)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.2,.7,.2,1)}
+.acc-b-in{padding:2px 24px 24px;border-top:1px solid var(--line)}
+.acc-b-in p{color:var(--muted);font-size:14.5px}
+.evi{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--dim);text-transform:uppercase;margin:18px 0 8px}
+.srcs{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.src{font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:6px;background:rgba(63,142,217,.10);color:#7db7ec;border:1px solid rgba(63,142,217,.25)}
+.playgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.play{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.play h4{margin:0 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--amber2)}
+.play ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px}
+.play li{margin:4px 0}
+.play p{margin:0;color:var(--muted);font-size:13.5px}
+.kpis{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.kpi{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--muted)}
+.kpi b{display:block;color:var(--text);font-size:15px;font-weight:700}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.pill{font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:999px;border:1px solid transparent}
+.pill.hi{background:rgba(74,222,128,.10);color:var(--green);border-color:rgba(74,222,128,.28)}
+.pill.mid{background:rgba(255,185,104,.10);color:var(--amber2);border-color:rgba(255,185,104,.28)}
+.pill.lo{background:rgba(154,162,181,.10);color:var(--muted);border-color:rgba(154,162,181,.25)}
+.pill.eff{background:rgba(63,142,217,.10);color:#7db7ec;border-color:rgba(63,142,217,.25)}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px;margin-top:14px}
+.chart .ct{font-size:15px;font-weight:700;margin:0 0 2px}
+.chart .cs{font-size:12.5px;color:var(--dim);margin:0 0 18px}
+.hrow{display:grid;grid-template-columns:minmax(180px,260px) 1fr 86px;gap:12px;align-items:center;padding:5px 0}
+.hrow .hl{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.htrack{position:relative;height:16px}
+.hbar{position:absolute;inset:2px auto 2px 0;border-radius:6px;background:linear-gradient(90deg,var(--amberdata),#e8892a);min-width:3px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1);cursor:pointer}
+.hbar.blue{background:linear-gradient(90deg,#2f76bd,var(--bluedata))}
+.hbar:hover{filter:brightness(1.2)}
+.hrow .hv{font-size:12.5px;text-align:right;font-variant-numeric:tabular-nums;color:var(--text)}
+.pos{display:inline-block;min-width:38px;text-align:center;border-radius:6px;font-weight:700;font-size:11px;padding:2px 5px;margin-left:6px}
+.p1{background:rgba(74,222,128,.13);color:var(--green)}
+.p2{background:rgba(255,185,104,.13);color:var(--amber2)}
+.p3{background:rgba(255,107,107,.13);color:var(--red)}
+.legend{display:flex;gap:18px;margin:4px 0 14px;font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+.sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:7px;vertical-align:-1px}
+#tip{position:fixed;z-index:99;background:#1d2130;border:1px solid var(--line2);border-radius:10px;padding:10px 14px;font-size:12.5px;color:var(--text);pointer-events:none;opacity:0;transition:opacity .12s;max-width:280px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+#tip .tq{font-weight:700;margin-bottom:3px}
+#tip .tm{color:var(--muted)}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--card);margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
+th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--line)}
+th{color:var(--dim);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;position:sticky;top:0;background:var(--card)}
+tr:last-child td{border-bottom:none}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody tr:hover{background:rgba(255,255,255,.015)}
+.search{width:100%;max-width:320px;background:var(--bg2);border:1px solid var(--line2);border-radius:10px;color:var(--text);font:inherit;font-size:13.5px;padding:9px 14px;margin-top:14px;outline:none}
+.search:focus{border-color:rgba(255,154,60,.5)}
+.search::placeholder{color:var(--dim)}
+.serps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.serp{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.serp h4{margin:0 0 4px;font-size:13.5px}
+.serp .cap{font-size:11.5px;color:var(--dim);margin-bottom:12px}
+.sr{display:flex;gap:10px;font-size:12.5px;padding:4px 0;color:var(--muted);align-items:baseline}
+.sr .rk{color:var(--dim);font-variant-numeric:tabular-nums;width:18px;flex:none;text-align:right}
+.sr.you{color:var(--amber2);font-weight:700}
+.sr.gov{opacity:.55}
+.progressbar{background:var(--card);border:1px solid var(--line);border-radius:999px;height:12px;overflow:hidden;margin:14px 0 6px}
+.progressbar .fill{height:100%;background:linear-gradient(90deg,var(--amberdata),var(--amber));width:0%;transition:width .5s;box-shadow:0 0 14px rgba(255,154,60,.4)}
+.progresslabel{font-size:12.5px;color:var(--dim);margin-bottom:20px}
+.phase-h{display:flex;align-items:center;gap:12px;margin:30px 0 12px}
+.phase-h .dot{width:11px;height:11px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px var(--glow)}
+.phase-h h3{font-size:15.5px;color:var(--amber2);margin:0}
+.week{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+.week .wk{font-size:11.5px;font-weight:700;letter-spacing:.6px;color:var(--dim);text-transform:uppercase;margin-bottom:8px}
+.task{display:flex;gap:11px;align-items:flex-start;padding:6px 0;font-size:14px;color:#d5d9e4;cursor:pointer;border-radius:8px}
+.task:hover{background:rgba(255,255,255,.015)}
+.task .box{flex:0 0 17px;height:17px;border:1.5px solid var(--dim);border-radius:5px;margin-top:3px;display:flex;align-items:center;justify-content:center;font-size:11px;color:transparent;transition:all .2s}
+.task.done .box{background:var(--amber);border-color:var(--amber);color:#0a0b0f}
+.task.done span.txt{color:var(--dim);text-decoration:line-through}
+.t{font-size:10px;font-weight:700;padding:2px 7px;border-radius:5px;margin-right:7px;letter-spacing:.4px;white-space:nowrap;display:inline-block;transform:translateY(-1px)}
+.t.sonnet{background:rgba(63,142,217,.14);color:#7db7ec;border:1px solid rgba(63,142,217,.3)}
+.t.manual{background:rgba(255,185,104,.14);color:var(--amber2);border:1px solid rgba(255,185,104,.3)}
+.callout{background:linear-gradient(180deg,rgba(255,154,60,.09),transparent);border:1px solid rgba(255,154,60,.28);border-radius:var(--r);padding:20px 26px;margin-top:26px;font-size:14.5px;color:#e6e2da}
+.callout b{color:var(--amber2)}
+footer{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);color:var(--dim);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:820px){.stats{grid-template-columns:1fr 1fr}.dist{grid-template-columns:1fr 1fr}.serps{grid-template-columns:1fr}.playgrid{grid-template-columns:1fr}.frow{grid-template-columns:110px 1fr 84px}.leak{padding-left:126px}.hrow{grid-template-columns:minmax(120px,160px) 1fr 84px}}
+</style>
+</head>
+<body>
+<div class="orb orb1"></div><div class="orb orb2"></div>
+<div id="tip"></div>
+<div class="wrap">
+<header>
+  <div class="brandline">
+    <span class="badge"><span class="ast">✳</span> Claude Fable 5 · Strategy Session</span>
+    <span class="confchip" id="hd-conf"></span>
+  </div>
+  <h1>SEO <span class="accent">Battle Plan</span> — <span id="hd-name"></span></h1>
+  <p class="sub" id="hd-sub"></p>
+</header>
+<nav><div class="tabs">
+  <button class="tab on" data-p="p-over"><span class="k">1</span>Overview</button>
+  <button class="tab" data-p="p-find"><span class="k">2</span>Findings</button>
+  <button class="tab" data-p="p-bets"><span class="k">3</span>Battle Plan</button>
+  <button class="tab" data-p="p-data"><span class="k">4</span>The Data</button>
+  <button class="tab" data-p="p-plan"><span class="k">5</span>12-Week Plan</button>
+</div></nav>
+
+<section class="panel on" id="p-over">
+  <h2>The Year at a Glance</h2><p class="h2sub" id="ov-sub"></p>
+  <div class="stats" id="ov-stats"></div>
+  <h2>Where the Traffic Leaks</h2><p class="h2sub">The funnel from being seen to being counted.</p>
+  <div class="funnel" id="ov-funnel"></div>
+  <h2>Where the Rankings Sit</h2><p class="h2sub">Every tracked query bucketed by SERP page. Computed live from the embedded dataset.</p>
+  <div class="dist" id="dist"></div>
+  <h2>The Diagnosis</h2><div class="diag" id="ov-diag"></div>
+</section>
+
+<section class="panel" id="p-find">
+  <h2>Cross-Source Findings</h2>
+  <p class="h2sub">What only surfaces when the data sources are read together. Click to expand the evidence.</p>
+  <div id="findings"></div>
+</section>
+
+<section class="panel" id="p-bets">
+  <h2>Prioritized Bets</h2>
+  <p class="h2sub">Ordered by return per hour. Click a bet to expand the full strategy.</p>
+  <div id="bets"></div>
+  <div class="callout" id="bets-callout"></div>
+</section>
+
+<section class="panel" id="p-data">
+  <div id="charts"></div>
+  <h2>Live SERPs</h2><p class="h2sub" id="serp-sub"></p>
+  <div class="serps" id="serps"></div>
+  <h2>Full Query Table</h2><p class="h2sub">Every tracked query. Search to filter.</p>
+  <input class="search" id="qsearch" placeholder="Filter queries…">
+  <div class="tablewrap" style="max-height:460px;overflow-y:auto">
+    <table id="qtable"><thead><tr><th>Query</th><th style="text-align:right">Impressions</th><th style="text-align:right">Clicks</th><th style="text-align:right">Position</th></tr></thead><tbody></tbody></table>
+  </div>
+</section>
+
+<section class="panel" id="p-plan">
+  <h2>12-Week Execution Plan</h2>
+  <p class="h2sub">Every task tagged for who runs it. Click tasks to check them off — progress is saved in this browser.</p>
+  <div style="margin:6px 0 4px"><span class="t sonnet">SONNET</span> hand to a cheaper model &nbsp;·&nbsp; <span class="t manual">MANUAL</span> you do it</div>
+  <div class="progressbar"><div class="fill" id="pfill"></div></div>
+  <div class="progresslabel" id="plabel"></div>
+  <div id="checklist"></div>
+  <div class="callout" id="plan-callout"></div>
+</section>
+
+<footer><span id="ft-l"></span><span>Strategy session by Claude Fable 5 ✳</span></footer>
+</div>
+
+<script>
+/* =====================================================================
+   CLAUDE: EDIT ONLY THIS DATA OBJECT. Populate from BRIEF.md,
+   BATTLE_PLAN.md and WEEKLY_CHECKLIST.md. Keep the shapes exactly.
+   ===================================================================== */
+const DATA = {
+  clientName: "top10-heidelberg.de",
+  confChip: "top10-heidelberg.de · DataForSEO live (21.07.2026) · GSC/GA4 nicht angebunden",
+  subtitle: "Eine Fable-5-Session. Neunzig Tage Umsetzung. Der Plan, aus 32 Keywords und 14 EUR ETV ein sichtbares Top-10-Portal für Heidelberg zu machen.",
+  overviewSub: "Datenbasis: DataForSEO vom 21.07.2026 (32 Keywords, komplette Ranking-Basis). Query-Tabelle: Suchvolumen statt Impressions, ETV statt Clicks - GSC ist nicht angebunden.",
+  footerLeft: "top10-heidelberg.de · Top-10-Listen-Portal · Heidelberg",
+
+  stats: [
+    {value: 32, label: "Keywords im Ranking (gesamt)", note: "0 davon in Top 20", tone: "bad"},
+    {value: 14, label: "ETV in EUR/Monat", note: "Seit Februar flach (8-12 EUR)", tone: "bad"},
+    {value: 3, label: "Follow-Ref-Domains", note: "Kleinster Wettbewerber: 111", tone: "bad"},
+    {value: 5, label: "Keywords im Chancen-Fenster 21-50", note: "Striking Distance 4-20 ist leer", tone: "mid"},
+  ],
+
+  funnel: [
+    {label: "Keywords gesamt", value: "32", widthPct: 100},
+    {leak: "↓ <b>84% jenseits Position 50</b> - dort existiert praktisch kein Klickpotenzial"},
+    {label: "Position 21-50", value: "5", widthPct: 16},
+    {leak: "↓ <b>100% verloren</b> - kein einziges Keyword erreicht Seite 1 oder 2"},
+    {label: "Top 20", value: "0", widthPct: 6, ghost: true},
+  ],
+
+  distNote: "{p1} von {total} Keywords stehen dort, wo Klicks passieren. Beste Position der Domain: 23.",
+
+  diagnosis: [
+    "Die Domain ist nicht schlecht optimiert, sie ist <strong>unsichtbar</strong>: 32 Keywords, 0 in Top 20, ETV 13,6 EUR/Monat, sechs Monate Seitwärtsbewegung. Das ist ein <strong>Aufbaufall</strong>, kein Optimierungsfall.",
+    "Zwei Deckel halten alles unten: <strong>3 follow-Ref-Domains</strong> (der kleinste Wettbewerber hat 111) und <strong>Sammelseiten-Rankings</strong> - 9 Keywords mit ca. 2.000 SV hängen an /events/ und einer einzigen Yoga-URL statt an dedizierten Seiten. Die Gegenbeweise liefern die Peers: hotels-in-heidelberg.com holt 64 Top-20-Keywords fast nur über seine Startseite, heidelberg-aktuell.de rankt Position 8-9 mit einem PDF. Die Messlatte in dieser Nische ist niedrig.",
+  ],
+
+  findings: [
+    {
+      num: "01", title: "Die Stay22-Money-Pages ranken schon - auf Seite 5, in SERPs ohne Wettbewerb", sub: "own_ranked_keywords × SERP-Snapshots · direktester Umsatzhebel", open: true,
+      body: "/neuenheim-hotels/ rankt Position <b>43/77/82</b> für drei Varianten von \"hotel neuenheim heidelberg\" (<b>420 SV</b> kombiniert), /ziegelhausen-hotels/ auf <b>45</b>, /schlierbach-hotels/ auf <b>73</b>. In den Live-SERPs stehen ausschliesslich OTAs (booking, trivago, hrs, check24) und einzelne Hotels - <b>kein redaktionelles Stadtteil-Listicle in den Top 10</b>. Das Format fehlt in der SERP; wir haben es bereits gebaut, nur zu dünn.",
+      evidenceTitle: "Beweis - Stadtteil-Hotel-Rankings vs. SERP-Besetzung",
+      evidence: {headers: ["Keyword", "SV", "Unsere Pos", "Top 10 besteht aus"], rows: [
+        ["hotel heidelberg neuenheim (3 Var.)", "420", "43-82", "booking, bs-hotels, rafaela, trivago, hrs"],
+        ["hotel ziegelhausen", "70", "45", "neckarlux, booking, check24, agoda, hrs"],
+        ["neckartal hotel heidelberg", "110", "73", "OTAs + Einzelhotels"],
+        ["best hotels in heidelberg", "90", "55", "OTAs, Listicles grosser Portale"],
+      ]},
+      sources: ["DataForSEO ranked_keywords", "SERP-Snapshots 21.07."]
+    },
+    {
+      num: "02", title: "Ein PDF rankt Position 8 - Events sind die schwächste gegnerische Front", sub: "competitor_ranked_keywords × eigene Event-Seiten · niedrigste Messlatte", open: false,
+      body: "heidelberg-aktuell.de (nur <b>227 Ref-Domains</b>) rankt Position <b>8-9</b> für \"heidelberger herbst\" (<b>3.600 SV</b>) - über ein <b>PDF in /wp-content/</b>. Unsere Seite /events/heidelberger-herbst-2026/ existiert bereits (Pos 85). Fünf unserer Event-Keywords mit zusammen ca. <b>1.070 SV</b> (messen 390, silvester 320, mittelaltermarkt 140, weihnachtszirkus 140, weststadtfest 110) ranken nur über die /events/-Übersicht, weil Einzelseiten fehlen.",
+      evidenceTitle: "Beweis - Event-Keywords ohne eigene Seite",
+      evidence: {headers: ["Keyword", "SV", "Unsere Pos", "Rankende URL"], rows: [
+        ["messen heidelberg", "390", "81", "/events/ (Übersicht)"],
+        ["silvester heidelberg 2025", "320", "106", "/events/ (Übersicht)"],
+        ["heidelberger herbst 2026", "320", "85", "/events/heidelberger-herbst-2026/"],
+        ["heidelberg mittelaltermarkt", "140", "77", "/events/ (Übersicht)"],
+        ["heidelberger weihnachtszirkus", "140", "104", "/events/ (Übersicht)"],
+      ]},
+      sources: ["DataForSEO ranked_keywords", "competitor_ranked_keywords heidelberg-aktuell.de"]
+    },
+    {
+      num: "03", title: "Effektiv 3 follow-Ref-Domains - Autorität ist der harte Deckel", sub: "backlink_summary aller 5 Domains · Engpass Nummer 1", open: false,
+      body: "top10-heidelberg.de hat <b>15 Ref-Domains, 12 davon nofollow</b>. Der direkteste Grössen-Peer hotels-in-heidelberg.com holt mit <b>111 Ref-Domains</b> 64 Heidelberg-Keywords in die Top 20 - fast alle über die nackte Startseite. Die Ziel-Messlatte liegt nicht bei 2.000 Domains, sondern bei rund 100. Ohne Link-Sockel gewinnt keine Content-Wette nachhaltig.",
+      evidenceTitle: "Beweis - Backlink-Vergleich",
+      evidence: {headers: ["Domain", "Ref-Domains", "davon nofollow", "Heidelberg-Kw Top 20"], rows: [
+        ["top10-heidelberg.de", "15", "12", "0"],
+        ["hotels-in-heidelberg.com", "111", "31", "64"],
+        ["heidelberg-aktuell.de", "227", "86", "138"],
+        ["rhein-neckar-wiki.de", "643", "288", "37"],
+        ["heidelberg-marketing.de", "2.321", "345", "248"],
+      ]},
+      sources: ["DataForSEO backlinks/summary", "competitor_ranked_keywords"]
+    },
+    {
+      num: "04", title: "Yoga: 1.180 SV auf einer URL - und die SERP hat eine Format-Lücke", sub: "own_ranked_keywords × SERP-Snapshot yoga heidelberg · grösstes Bestands-Cluster", open: false,
+      body: "Vier Yoga-Keywords (<b>1.180 SV</b> kombiniert) ranken alle auf /yogastudios-entspannung-betaetigung/ zwischen Pos <b>23 und 87</b>. Die Top 10 für \"yoga heidelberg\" bestehen fast nur aus einzelnen Studios; das einzige Listicle (eversports.de) steht auf Pos 14 und ist ein Buchungs-Widget-Verzeichnis. Ein echtes redaktionelles Ranking hat hier Platz - und kalibriert, ob die übrigen ~40 Kategorie-Listicles denselben Ausbau lohnen.",
+      evidenceTitle: "Beweis - Yoga-Cluster",
+      evidence: {headers: ["Keyword", "SV", "Pos"], rows: [
+        ["yoga heidelberg", "720", "87"],
+        ["yoga zentrum heidelberg", "260", "42"],
+        ["yoga studio heidelberg", "110", "67"],
+        ["gesundheitsweg yoga pilates & entspannung", "90", "23"],
+      ]},
+      sources: ["DataForSEO ranked_keywords", "SERP-Snapshot yoga heidelberg"]
+    },
+    {
+      num: "05", title: "Kategorie-Listicles auf Pos 101-117: indexiert, aber austauschbar", sub: "own_ranked_keywords · Triage statt Giesskanne", open: false,
+      body: "Fünf Kategorien mit echtem Suchvolumen (zusammen ca. <b>1.560 SV</b>) ranken zwischen <b>101 und 117</b>: Autowerkstätten (560 SV), Architektur (480), Friseure (210), Galerien (170), Apotheken (140). Position 101+ heisst: Google kennt die Seiten, hält sie aber für irrelevant. Nur diese 5 ausbauen - die übrigen ~35 Listicles erst anfassen, wenn der Yoga-Pilot (Finding 04) Wirkung zeigt.",
+      evidenceTitle: "Beweis - Kategorie-Rankings",
+      evidence: {headers: ["Keyword", "SV", "Pos", "URL"], rows: [
+        ["autowerkstatt + kfz-werkstatt heidelberg", "560", "111/117", "/autowerkstaetten/"],
+        ["architektur heidelberg", "480", "105", "/architekturwunder/"],
+        ["beste friseure heidelberg", "210", "101", "/friseursalons/"],
+        ["galerien heidelberg", "170", "106", "/kunstgalerien/"],
+        ["apotheke in heidelberg", "140", "108", "/apotheken/"],
+      ]},
+      sources: ["DataForSEO ranked_keywords"]
+    },
+  ],
+
+  bets: [
+    {
+      num: "B1", title: "Stadtteil-Hotel-Silo zu Ende bauen (Stay22-Money-Pages)", sub: "Wochen 1-2 + 9 · kleinste Distanz zwischen Aufwand und Umsatz", open: true,
+      pills: [{t: "Impact: Hoch", c: "hi"}, {t: "Aufwand: Mittel", c: "eff"}, {t: "Wochen 1-2, 9", c: "lo"}],
+      cards: [
+        {h: "Warum jetzt", text: "Einzige Seiten mit direkter Stay22-Monetarisierung UND bestehenden Rankings (Pos 43-82) UND einer SERP ohne redaktionellen Wettbewerb - nur OTAs und Einzelhotels in den Top 10."},
+        {h: "Der Zug", list: ["Neuenheim (420 SV), Ziegelhausen (70), Schlierbach (110) zuerst: je 600-900 Wörter echte Stadtteil-Beratung", "5-8 konkrete Hotels mit Einordnung, FAQ + FAQPage-Schema", "Stay22-Map via /embed/gm", "/hotels/ als Hub mit interner Verlinkung aller 15 Stadtteil-Seiten"]},
+      ],
+      kpis: [{b: "3 Seiten in Top 20", s: "bis Woche 12 (von Pos 43-82)"}, {b: "420 SV Neuenheim", s: "Hauptziel-Cluster"}]
+    },
+    {
+      num: "B2", title: "Event-Einzelseiten für die 5 rankenden Sammel-Keywords", sub: "Wochen 3-4 + 11 · niedrigste Messlatte, Saisonfenster Q4", open: false,
+      pills: [{t: "Impact: Hoch", c: "hi"}, {t: "Aufwand: Niedrig-Mittel", c: "eff"}, {t: "Wochen 3-4, 11", c: "lo"}],
+      cards: [
+        {h: "Warum jetzt", text: "heidelberg-aktuell.de beweist mit einem PDF auf Pos 8-9 (3.600 SV), wie niedrig die Messlatte ist. Events = AdSense-Traffic mit jährlicher Wiederkehr. Silvester/Weihnachtsmarkt/Zirkus müssen bis Oktober stehen."},
+        {h: "Der Zug", list: ["Neue Seiten: messen (390 SV), silvester (320), mittelaltermarkt (140), weihnachtszirkus (140), weststadtfest (110)", "Bestehende Seiten (herbst, schlossbeleuchtung, weihnachtsmarkt) mit Terminen 2026/27, Event-Schema, FAQ upgraden", "Querverlinkung Event zu Stadtteil-Hotels"]},
+      ],
+      kpis: [{b: "ca. 1.900 SV", s: "Event-Cluster gesamt"}, {b: "5 neue URLs", s: "bis Woche 4 live"}]
+    },
+    {
+      num: "B3", title: "Backlink-Sockel: von 3 auf 30+ follow-Ref-Domains", sub: "Wochen 5, 6, 10 · langsam wirksam, hebt alles andere", open: false,
+      pills: [{t: "Impact: Hoch", c: "hi"}, {t: "Aufwand: Mittel", c: "eff"}, {t: "Wochen 5-10", c: "lo"}],
+      cards: [
+        {h: "Warum jetzt", text: "Mit 3 follow-Domains gewinnt keine Content-Wette nachhaltig. Ziel-Messlatte: 111 (hotels-in-heidelberg.com) in 2 Quartalen. Keine gekauften Links, kein Cold-Mail-Spam (§7 UWG)."},
+        {h: "Der Zug", list: ["Portfolio-Links, wo thematisch ehrlich passend (Heidelberg-/Rhein-Neckar-/Hotel-Portale)", "Saubere Verzeichnis-/Citation-Einträge (keine Spam-Kataloge)", "Lokale Kooperationen: gelistete Betriebe verlinken ihre Erwähnung (Badge-Snippet)"]},
+      ],
+      kpis: [{b: "30+ Ref-Domains", s: "bis Ende Q3 (Baseline: 15)"}, {b: "3-5 lokale Links", s: "aus Woche-10-Kooperationen"}]
+    },
+    {
+      num: "B4", title: "Yoga-Listicle als Unique-Content-Pilot", sub: "Woche 6 · grösstes Bestands-Cluster, kalibriert die Listicle-Strategie", open: false,
+      pills: [{t: "Impact: Mittel", c: "mid"}, {t: "Aufwand: Niedrig", c: "eff"}, {t: "Woche 6", c: "lo"}],
+      cards: [
+        {h: "Warum jetzt", text: "1.180 SV auf einer URL (Pos 23-87), SERP-Lücke bei redaktionellen Listicles. Erfolg/Misserfolg entscheidet, ob die übrigen ~40 Kategorie-Listicles denselben Ausbau lohnen."},
+        {h: "Der Zug", list: ["Echtes redaktionelles Ranking der Studios aus der SERP (in touch, Mother Earth, Ashtanga, Ganesha, YogaMundi)", "Vergleichstabelle: Stil, Preisniveau, Probestunde", "FAQ + FAQPage-Schema, Ziel: yoga heidelberg 720 SV von 87 in Top 20"]},
+      ],
+      kpis: [{b: "Top 20", s: "für yoga heidelberg (720 SV)"}]
+    },
+    {
+      num: "B5", title: "Kategorie-Listicle-Triage: nur die 5 mit Suchvolumen", sub: "Wochen 7-8 · Fokus statt Giesskanne", open: false,
+      pills: [{t: "Impact: Mittel", c: "mid"}, {t: "Aufwand: Niedrig/Seite", c: "eff"}, {t: "Wochen 7-8", c: "lo"}],
+      cards: [
+        {h: "Warum jetzt", text: "Pos 101-117 heisst: bekannt, aber irrelevant. Bei 5h/Woche wäre Streuung über 40 Seiten Selbstbetrug - nur Autowerkstätten (560 SV), Architektur (480), Friseure (210), Galerien (170), Apotheken (140) ausbauen."},
+        {h: "Der Zug", list: ["Je Seite: echte lokale Details, Auswahlkriterien, Aktualität, FAQ", "Übrige ~35 Listicles NICHT anfassen, bis B4 Wirkung zeigt"]},
+      ],
+      kpis: [{b: "5 Seiten", s: "von Pos 101-117 auf unter 50"}]
+    },
+  ],
+  betsCallout: "<b>Reihenfolge, verteidigt:</b> B1 zuerst, weil es die einzige Kombination aus Umsatz (Stay22), bestehendem Ranking und leerer SERP ist. B2 direkt danach wegen des Q4-Saisonfensters (Silvester/Weihnachtsmarkt bis Oktober). B3 läuft parallel ab Woche 5, weil Links Monate brauchen. B4/B5 sind bewusst nachgelagert: erst der Pilot, dann die Skalierung. Bewusst NICHT im Plan: \"fair und quer\" (Brand-SERP), \"top heidelberg\" (Nagelstudio-Intent), \"stadtteile karte\" (Autoritäten-SERP), EN-Sektion (rankt nicht).",
+
+  charts: [
+    {
+      h2: "Chancen-Keywords", h2sub: "Striking Distance 4-20 ist leer - ersatzweise die Top-Keywords aus dem Fenster Pos 21-117 nach Suchvolumen.",
+      title: "Top-Chancen-Keywords nach Suchvolumen",
+      caption: "Balkenlänge = Suchvolumen · Badge = aktuelle Position",
+      rows: [
+        {l: "yoga heidelberg", v: 720, pos: 87},
+        {l: "architektur heidelberg", v: 480, pos: 105},
+        {l: "hotel heidelberg neuenheim (3 Var.)", v: 420, pos: 43},
+        {l: "autowerkstatt heidelberg", v: 390, pos: 111},
+        {l: "messen heidelberg", v: 390, pos: 81},
+        {l: "heidelberger herbst 2026", v: 320, pos: 85},
+        {l: "silvester heidelberg 2025", v: 320, pos: 106},
+        {l: "yoga zentrum heidelberg", v: 260, pos: 42},
+        {l: "weihnachtsmarkt heidelberg 2026", v: 210, pos: 75},
+        {l: "beste friseure heidelberg", v: 210, pos: 101},
+        {l: "stadtteile heidelberg karte", v: 210, pos: 70},
+        {l: "neckartal hotel heidelberg", v: 110, pos: 73},
+        {l: "hotel ziegelhausen", v: 70, pos: 45},
+      ],
+      tip: r => `<div class="tq">${r.l}</div><div class="tm">${r.v.toLocaleString()} Suchvolumen · Position ${r.pos}</div>`
+    },
+    {
+      h2: "Autoritäts-Vergleich", h2sub: "Verweisende Domains aller 5 Domains (DataForSEO backlinks/summary). Blau = Wettbewerber.",
+      title: "Referring Domains im Vergleich",
+      caption: "Balkenlänge = Ref-Domains · unsere 15 enthalten 12 nofollow",
+      rows: [
+        {l: "top10-heidelberg.de", v: 15},
+        {l: "hotels-in-heidelberg.com", v: 111, blue: true},
+        {l: "heidelberg-aktuell.de", v: 227, blue: true},
+        {l: "rhein-neckar-wiki.de", v: 643, blue: true},
+        {l: "heidelberg-marketing.de", v: 2321, blue: true},
+      ],
+      tip: r => `<div class="tq">${r.l}</div><div class="tm">${r.v.toLocaleString()} verweisende Domains</div>`
+    },
+  ],
+
+  serpSub: "Wer die Top-Plätze bei den Ziel-Keywords hält (DataForSEO SERP-Snapshots, 21.07.2026).",
+  serps: [
+    {kw: "heidelberg neuenheim hotel", cap: "140 SV · nur OTAs + Einzelhotels, kein Listicle", rows: [
+      {rk: 3, d: "booking.com"}, {rk: 4, d: "bs-hotels.de"}, {rk: 5, d: "rafaela-hotel.com"}, {rk: 6, d: "trivago.de"}, {rk: 8, d: "hrs.de"}, {rk: 43, d: "top10-heidelberg.de ← wir", you: true},
+    ]},
+    {kw: "hotel ziegelhausen", cap: "70 SV · gleiche OTA-Lücke", rows: [
+      {rk: 3, d: "hotel-neckarlux.de"}, {rk: 4, d: "booking.com"}, {rk: 5, d: "check24.de"}, {rk: 7, d: "agoda.com"}, {rk: 9, d: "hrs.de"}, {rk: 45, d: "top10-heidelberg.de ← wir", you: true},
+    ]},
+    {kw: "yoga heidelberg", cap: "720 SV · fast nur Studios, Listicle-Lücke", rows: [
+      {rk: 4, d: "yogaintouch.de"}, {rk: 5, d: "motherearthyoga.de"}, {rk: 9, d: "ashtanga-yoga-heidelberg.de"}, {rk: 14, d: "eversports.de (Listicle)"}, {rk: 87, d: "top10-heidelberg.de ← wir", you: true},
+    ]},
+    {kw: "messen heidelberg", cap: "390 SV · Spezialverzeichnisse vorn", rows: [
+      {rk: 1, d: "messen.de"}, {rk: 2, d: "instaff.jobs"}, {rk: 3, d: "veranstaltungen.meinestadt.de"}, {rk: 10, d: "heidelberg.de", gov: true}, {rk: 81, d: "top10-heidelberg.de ← wir", you: true},
+    ]},
+    {kw: "stadtteile heidelberg karte", cap: "210 SV · Autoritäten-SERP, Backlog", rows: [
+      {rk: 2, d: "heidelberg.de", gov: true}, {rk: 3, d: "de.wikipedia.org"}, {rk: 6, d: "heidelberg-marketing.de"}, {rk: 7, d: "plz-heidelberg.de"}, {rk: 70, d: "top10-heidelberg.de ← wir", you: true},
+    ]},
+    {kw: "top heidelberg", cap: "260 SV · Intent = Nagelstudio, kein Invest", rows: [
+      {rk: 1, d: "topihrnagelstudio.com"}, {rk: 3, d: "instagram.com"}, {rk: 8, d: "tripadvisor.de"}, {rk: 71, d: "top10-heidelberg.de ← wir", you: true},
+    ]},
+  ],
+
+  /* [Keyword, Suchvolumen, ETV, Position] - keine GSC-Daten, daher SV/ETV statt Impressions/Klicks */
+  queries: [
+    ["gesundheitsweg yoga pilates & entspannung", 90, 0.22, 23],
+    ["fair und quer wieblingen", 210, 0.44, 40],
+    ["yoga zentrum heidelberg", 260, 0.55, 42],
+    ["heidelberg neuenheim hotel", 140, 0.29, 43],
+    ["hotel ziegelhausen", 70, 0.15, 45],
+    ["best hotels in heidelberg", 90, 0.19, 55],
+    ["yoga studio heidelberg", 110, 0.23, 67],
+    ["stadtteile heidelberg karte", 210, 0.44, 70],
+    ["top heidelberg", 260, 0.55, 71],
+    ["neckartal hotel heidelberg", 110, 0.23, 73],
+    ["weihnachtsmarkt heidelberg 2026", 210, 0.44, 75],
+    ["heidelberg mittelaltermarkt", 140, 0.29, 77],
+    ["hotel heidelberg neuenheim", 140, 0.29, 77],
+    ["unternehmen heidelberg", 210, 0.44, 79],
+    ["messen heidelberg", 390, 0.82, 81],
+    ["hotel neuenheim heidelberg", 140, 0.29, 82],
+    ["weststadtfest heidelberg 2025", 110, 0.23, 83],
+    ["heidelberger herbst 2026", 320, 0.67, 85],
+    ["unternehmen in heidelberg", 140, 0.29, 85],
+    ["yoga heidelberg", 720, 1.51, 87],
+    ["schlossbeleuchtung heidelberg 2025 termine", 110, 0.23, 87],
+    ["online marketing heidelberg", 70, 0.15, 94],
+    ["online-marketing heidelberg", 70, 0.15, 95],
+    ["beste friseure heidelberg", 210, 0.44, 101],
+    ["heidelberg herbst 2025", 140, 0.29, 103],
+    ["heidelberger weihnachtszirkus", 140, 0.29, 104],
+    ["architektur heidelberg", 480, 1.01, 105],
+    ["silvester heidelberg 2025", 320, 0.67, 106],
+    ["galerien heidelberg", 170, 0.36, 106],
+    ["apotheke in heidelberg", 140, 0.29, 108],
+    ["autowerkstatt heidelberg", 390, 0.82, 111],
+    ["kfz-werkstatt heidelberg", 170, 0.36, 117],
+  ],
+
+  plan: [
+    {phase: "Phase 1 · Fundament + Money-Pages (Wochen 1-2)", weeks: [
+      {wk: "Woche 1 – Fundament + schnellster Money-Hebel", tasks: [
+        {tag: "manual", text: "GSC-Property anlegen/prüfen, Sitemap einreichen, Service-Account dashboard-reader@stark-analytics-501812 einladen; GA4 via Provisioning-Tool."},
+        {tag: "sonnet", text: "/neuenheim-hotels/ ausbauen: 700-900 Wörter, 6-8 Hotels mit Einordnung, FAQ + FAQPage-Schema. Ziel: 420 SV, aktuell Pos 43-82."},
+        {tag: "manual", text: "Build + Deploy + RalfyIndex-Submit."},
+      ]},
+      {wk: "Woche 2 – Stadtteil-Hotels Teil 2", tasks: [
+        {tag: "sonnet", text: "/ziegelhausen-hotels/ (70 SV, Pos 45) und /schlierbach-hotels/ (110 SV, Pos 73) nach Woche-1-Muster ausbauen."},
+        {tag: "sonnet", text: "/hotels/ zum Hub machen: alle 15 Stadtteil-Seiten verlinken + 'Welcher Stadtteil passt zu wem'-Guide (Ziel: best hotels in heidelberg, Pos 55)."},
+        {tag: "manual", text: "Deploy + RalfyIndex."},
+      ]},
+    ]},
+    {phase: "Phase 2 · Events vor dem Saisonfenster (Wochen 3-4)", weeks: [
+      {wk: "Woche 3 – Event-Einzelseiten Welle 1", tasks: [
+        {tag: "sonnet", text: "Neue Seite /events/silvester-heidelberg/ (320 SV): Locations, Feuerwerk-Spots, FAQ + Event-Schema."},
+        {tag: "sonnet", text: "Neue Seite /events/messen-heidelberg/ (390 SV): Messplatz-Termine 2026/27, Quellen gegenprüfen, nichts erfinden."},
+        {tag: "manual", text: "Deploy + RalfyIndex."},
+      ]},
+      {wk: "Woche 4 – Event-Welle 2 + Bestands-Upgrade", tasks: [
+        {tag: "sonnet", text: "Neue Seiten /events/mittelaltermarkt-heidelberg/ (140 SV) und /events/weihnachtszirkus-heidelberg/ (140 SV)."},
+        {tag: "sonnet", text: "/events/heidelberger-herbst-2026/ (460 SV) und /events/schlossbeleuchtung-2026/ (110 SV) upgraden - das PDF von heidelberg-aktuell.de (Pos 8-9) inhaltlich schlagen."},
+        {tag: "manual", text: "Deploy + RalfyIndex."},
+      ]},
+    ]},
+    {phase: "Phase 3 · Autorität + Pilot (Wochen 5-6)", weeks: [
+      {wk: "Woche 5 – Backlink-Sockel Start", tasks: [
+        {tag: "manual", text: "Portfolio-Audit: thematisch ehrliche follow-Links von eigenen Heidelberg-/Rhein-Neckar-/Hotel-Portalen setzen (5-8 Links)."},
+        {tag: "sonnet", text: "Liste von 20 seriösen Verzeichnis-/Citation-Quellen mit Eintragslogik erstellen - keine Spam-Kataloge."},
+        {tag: "manual", text: "5 Einträge aus der Liste anlegen."},
+      ]},
+      {wk: "Woche 6 – Yoga-Pilot (Bet 4)", tasks: [
+        {tag: "sonnet", text: "/yogastudios-entspannung-betaetigung/ komplett neu: redaktionelles Ranking, Vergleichstabelle, FAQ-Schema. Ziel: yoga heidelberg 720 SV Pos 87 in Richtung Top 20."},
+        {tag: "manual", text: "Deploy + RalfyIndex; Baseline der 4 Yoga-Keywords notieren."},
+        {tag: "manual", text: "2 weitere Backlink-Einträge."},
+      ]},
+    ]},
+    {phase: "Phase 4 · Kategorie-Triage (Wochen 7-8)", weeks: [
+      {wk: "Woche 7 – Triage Teil 1", tasks: [
+        {tag: "sonnet", text: "/autowerkstaetten/ ausbauen (560 SV, Pos 111/117): 8-10 Werkstätten mit Spezialisierung, Preis-Orientierung, FAQ."},
+        {tag: "sonnet", text: "/architekturwunder/ ausbauen (480 SV, Pos 105): Architektur-Route Altstadt-Bahnstadt, 10 Bauwerke konkret."},
+        {tag: "manual", text: "Deploy + RalfyIndex."},
+      ]},
+      {wk: "Woche 8 – Triage Teil 2", tasks: [
+        {tag: "sonnet", text: "/friseursalons/ (210 SV, Pos 101) und /kunstgalerien/ (170 SV, Pos 106) ausbauen."},
+        {tag: "sonnet", text: "/apotheken/ (140 SV, Pos 108): Notdienst-Info-Block (Verweis auf offizielle Suche) + Stadtteil-Gliederung."},
+        {tag: "manual", text: "Deploy + RalfyIndex; GSC-Check: Indexierung der Woche-1-4-Seiten prüfen."},
+      ]},
+    ]},
+    {phase: "Phase 5 · Skalierung + Saison (Wochen 9-12)", weeks: [
+      {wk: "Woche 9 – Hotel-Silo Rest + interne Verlinkung", tasks: [
+        {tag: "sonnet", text: "4 weitere Stadtteil-Hotel-Seiten (Altstadt, Bergheim, Weststadt, Handschuhsheim) nach Muster ausbauen."},
+        {tag: "sonnet", text: "Interne-Link-Sweep: Events, Hotels, Hub und Listicles thematisch verbinden."},
+        {tag: "manual", text: "Deploy + RalfyIndex."},
+      ]},
+      {wk: "Woche 10 – Lokale Link-Kooperationen", tasks: [
+        {tag: "manual", text: "8-10 gelistete Betriebe persönlich/telefonisch kontaktieren (kein Cold-Mail-Spam, §7 UWG). Ziel: 3-5 echte lokale follow-Links."},
+        {tag: "sonnet", text: "Badge/Snippet 'Top 10 Heidelberg empfohlen' als Einbett-HTML vorbereiten."},
+      ]},
+      {wk: "Woche 11 – Saison-Vorbereitung Q4", tasks: [
+        {tag: "sonnet", text: "/events/weihnachtsmarkt-heidelberg-2026/ (210 SV, Pos 75) zur besten Seite für dieses Thema ausbauen: Termine, Plätze, Anreise, FAQ."},
+        {tag: "sonnet", text: "Hotel-Querverlinkung Weihnachtsmarkt zu Altstadt-/Bergheim-Hotels mit Stay22 prüfen."},
+        {tag: "manual", text: "Deploy + RalfyIndex."},
+      ]},
+      {wk: "Woche 12 – Review + nächstes Quartal", tasks: [
+        {tag: "manual", text: "DataForSEO-Refresh (war_room_fetch.py full) + GSC-Vergleich: je Bet entscheiden skalieren/halten/stoppen."},
+        {tag: "sonnet", text: "Kurz-Report: welche Baseline-Keywords >10 Positionen bewegt, welche neu dazugekommen."},
+        {tag: "manual", text: "Backlink-Zwischenstand: Ziel 15 auf 30+ Ref-Domains, follow-Anteil prüfen."},
+      ]},
+    ]},
+  ],
+  planCallout: "<b>Quartalsregel:</b> B1/B2 liefern die Rankings, B3 hebt den Deckel, B4 kalibriert, B5 skaliert nur bei Signal. Keine neuen Baustellen, bevor die 5 Triage-Seiten und das Hotel-Silo durch sind.",
+  storageKey: "fable5-warroom-top10-heidelberg",
+};
+/* ===================== END OF DATA — do not edit below ===================== */
+
+const $=id=>document.getElementById(id);
+const esc=s=>s;
+$('hd-name').textContent=DATA.clientName; $('hd-conf').textContent=DATA.confChip;
+$('hd-sub').textContent=DATA.subtitle; $('ov-sub').textContent=DATA.overviewSub;
+$('ft-l').textContent=DATA.footerLeft; $('serp-sub').textContent=DATA.serpSub;
+$('ov-diag').innerHTML=DATA.diagnosis.map(p=>`<p>${p}</p>`).join('');
+$('bets-callout').innerHTML=DATA.betsCallout; $('plan-callout').innerHTML=DATA.planCallout;
+
+$('ov-stats').innerHTML=DATA.stats.map(s=>`<div class="stat"><div class="v" data-count="${s.value}">0</div><div class="l">${s.label}</div><div class="d ${s.tone}">${s.note}</div></div>`).join('');
+$('ov-funnel').innerHTML=DATA.funnel.map(f=>f.leak?`<div class="leak">${f.leak}</div>`:
+  `<div class="frow"><span class="fl">${f.label}</span><div class="htrack"><div class="fbar ${f.ghost?'ghost':''}" ${f.ghost?`style="width:${f.widthPct}%"`:`data-w="${f.widthPct}"`}></div></div><span class="fv" ${f.ghost?'style="color:var(--red)"':''}>${f.value}</span></div>`).join('');
+
+$('findings').innerHTML=DATA.findings.map(f=>`
+  <div class="acc ${f.open?'open':''}"><div class="acc-h"><div class="acc-n">${f.num}</div>
+    <div class="acc-t"><h3>${f.title}</h3><div class="s">${f.sub}</div></div><span class="chev">›</span></div>
+    <div class="acc-b"><div class="acc-b-in"><p>${f.body}</p>
+      ${f.evidence?`<div class="evi">${f.evidenceTitle||'Evidence'}</div><div class="tablewrap"><table>
+        <thead><tr>${f.evidence.headers.map((h,i)=>`<th ${i>0?'style="text-align:right"':''}>${h}</th>`).join('')}</tr></thead>
+        <tbody>${f.evidence.rows.map(r=>`<tr>${r.map((c,i)=>`<td class="${i>0?'num':''}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`:''}
+      ${f.sources?`<div class="srcs">${f.sources.map(s=>`<span class="src">${s}</span>`).join('')}</div>`:''}
+    </div></div></div>`).join('');
+
+$('bets').innerHTML=DATA.bets.map(b=>`
+  <div class="acc ${b.open?'open':''}"><div class="acc-h"><div class="acc-n">${b.num}</div>
+    <div class="acc-t"><h3>${b.title}</h3><div class="s">${b.sub}</div></div><span class="chev">›</span></div>
+    <div class="acc-b"><div class="acc-b-in">
+      <div class="pills">${b.pills.map(p=>`<span class="pill ${p.c}">${p.t}</span>`).join('')}</div>
+      <div class="playgrid">${b.cards.map(c=>`<div class="play"><h4>${c.h}</h4>${c.list?`<ul>${c.list.map(li=>`<li>${li}</li>`).join('')}</ul>`:`<p>${c.text}</p>`}</div>`).join('')}</div>
+      ${b.kpis?`<div class="kpis">${b.kpis.map(k=>`<div class="kpi"><b>${k.b}</b>${k.s}</div>`).join('')}</div>`:''}
+    </div></div></div>`).join('');
+
+/* tabs */
+const tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('on'));panels.forEach(p=>p.classList.remove('on'));
+  t.classList.add('on');$(t.dataset.p).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});
+  if(t.dataset.p==='p-over')animateOverview();}));
+
+/* accordions */
+document.querySelectorAll('.acc-h').forEach(h=>h.addEventListener('click',()=>{
+  const a=h.parentElement,b=a.querySelector('.acc-b');
+  const open=a.classList.toggle('open');b.style.maxHeight=open?b.scrollHeight+40+'px':'0';}));
+document.querySelectorAll('.acc.open .acc-b').forEach(b=>{b.style.maxHeight=b.scrollHeight+40+'px'});
+
+/* count-up + funnel animation */
+function countUp(el){const target=+el.dataset.count,dur=1300,t0=performance.now();
+  (function step(t){const p=Math.min((t-t0)/dur,1),e=1-Math.pow(1-p,3);
+    el.textContent=Math.round(target*e).toLocaleString();if(p<1)requestAnimationFrame(step);})(performance.now());}
+function animateOverview(){
+  document.querySelectorAll('#p-over [data-count]').forEach(countUp);
+  document.querySelectorAll('#p-over .fbar[data-w]').forEach(b=>{b.style.width='0';setTimeout(()=>b.style.width=b.dataset.w+'%',80)});}
+animateOverview();
+
+/* distribution from queries */
+(function(){
+  const QD=DATA.queries;const b={p1:0,p2:0,p35:0,p5:0};
+  QD.forEach(r=>{const p=r[3];if(p<=10)b.p1++;else if(p<=20)b.p2++;else if(p<=50)b.p35++;else b.p5++;});
+  const cells=[['ok',b.p1,'Page 1','positions 1-10'],['warm',b.p2,'Page 2','positions 11-20 · striking distance'],
+    ['hot',b.p35,'Pages 3-5','positions 21-50'],['hot',b.p5,'Page 6+','positions 51+']];
+  $('dist').innerHTML=cells.map(c=>`<div class="dcell ${c[0]}"><div class="big">${c[1]}</div><div class="cap">${c[2]}</div><div class="sub2">${c[3]}</div></div>`).join('')
+    +`<div style="grid-column:1/-1;font-size:12px;color:var(--dim)">${DATA.distNote.replace('{p1}',b.p1).replace('{total}',QD.length)}</div>`;
+})();
+
+/* tooltip + charts */
+const tip=$('tip');
+function moveTip(e){const w=tip.offsetWidth;let x=e.clientX+16;if(x+w>innerWidth-12)x=e.clientX-w-14;tip.style.left=x+'px';tip.style.top=(e.clientY+14)+'px';}
+$('charts').innerHTML=DATA.charts.map((c,ci)=>`<h2>${c.h2}</h2><p class="h2sub">${c.h2sub}</p>
+  <div class="chart"><p class="ct">${c.title}</p><p class="cs">${c.caption}</p><div id="chart-${ci}"></div></div>`).join('');
+DATA.charts.forEach((c,ci)=>{
+  const max=Math.max(...c.rows.map(r=>r.v));const el=$('chart-'+ci);
+  el.innerHTML=c.rows.map((r,i)=>{const pct=Math.max(3,r.v/max*100);
+    const badge=r.pos!=null?`<span class="pos ${r.pos<=10?'p1':(r.pos<=20?'p2':'p3')}">${r.pos.toFixed(r.pos<10?1:0)}</span>`:'';
+    return `<div class="hrow"><span class="hl" title="${r.l}">${r.l}</span><div class="htrack"><div class="hbar ${r.blue?'blue':''}" data-i="${i}" data-w="${pct}"></div></div><span class="hv">${r.v.toLocaleString()}${badge}</span></div>`;}).join('');
+  el.querySelectorAll('.hbar').forEach(b=>{setTimeout(()=>b.style.width=b.dataset.w+'%',80);
+    const r=c.rows[+b.dataset.i];
+    b.addEventListener('mousemove',e=>{tip.innerHTML=c.tip(r);tip.style.opacity=1;moveTip(e);});
+    b.addEventListener('mouseleave',()=>tip.style.opacity=0);});
+});
+
+/* serps */
+$('serps').innerHTML=DATA.serps.map(s=>`<div class="serp"><h4>${s.kw}</h4><div class="cap">${s.cap}</div>
+  ${s.rows.map(r=>`<div class="sr ${r.you?'you':''} ${r.gov?'gov':''}"><span class="rk">${r.rk}</span>${r.d}</div>`).join('')}</div>`).join('');
+
+/* query table */
+(function(){
+  const tb=document.querySelector('#qtable tbody');
+  const rows=DATA.queries.slice().sort((a,b)=>b[1]-a[1]);
+  function render(f){tb.innerHTML=rows.filter(r=>!f||r[0].toLowerCase().includes(f)).map(r=>{
+    const cls=r[3]<=10?'p1':(r[3]<=20?'p2':'p3');
+    return `<tr><td>${r[0]}</td><td class="num">${r[1].toLocaleString()}</td><td class="num">${r[2]}</td><td class="num"><span class="pos ${cls}" style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px">${r[3].toFixed(1)}</span></td></tr>`;}).join('')
+    ||'<tr><td colspan="4" style="color:var(--dim)">No queries match.</td></tr>';}
+  render('');$('qsearch').addEventListener('input',e=>render(e.target.value.toLowerCase().trim()));
+})();
+
+/* checklist */
+(function(){
+  $('checklist').innerHTML=DATA.plan.map(ph=>`<div class="phase-h"><span class="dot"></span><h3>${ph.phase}</h3></div>
+    ${ph.weeks.map(w=>`<div class="week"><div class="wk">${w.wk}</div>
+      ${w.tasks.map((t,i)=>`<div class="task" data-id="${w.wk}-${i}"><span class="box">✓</span><span class="txt"><span class="t ${t.tag}">${t.tag.toUpperCase()}</span>${t.text}</span></div>`).join('')}</div>`).join('')}`).join('');
+  const saved=new Set(JSON.parse(localStorage.getItem(DATA.storageKey)||'[]'));
+  const tasks=document.querySelectorAll('.task');
+  function refresh(){const done=document.querySelectorAll('.task.done').length;
+    $('pfill').style.width=(done/tasks.length*100)+'%';$('plabel').textContent=`${done} of ${tasks.length} tasks done`;}
+  tasks.forEach(t=>{if(saved.has(t.dataset.id))t.classList.add('done');
+    t.addEventListener('click',()=>{t.classList.toggle('done');
+      localStorage.setItem(DATA.storageKey,JSON.stringify([...document.querySelectorAll('.task.done')].map(x=>x.dataset.id)));refresh();});});
+  refresh();
+})();
+</script>
+</body>
+</html>
