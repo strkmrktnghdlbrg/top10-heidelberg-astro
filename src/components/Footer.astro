@@ -40,6 +40,9 @@ const year = new Date().getFullYear();
         <li><a href="/datenschutz/" class="link-accent">Datenschutz</a></li>
         {features.werben.enabled && <li><a href="/werben/" class="link-accent">Werben</a></li>}
         <li><a href="/kontakt/" class="link-accent">Kontakt</a></li>
+        <li>
+          <button type="button" class="link-accent text-left" data-cookie-settings>Cookie-Einstellungen</button>
+        </li>
       </ul>
     </div>
   </div>
@@ -49,3 +52,42 @@ const year = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+{/* Ruft das Einwilligungs-Fenster der Google-CMP erneut auf. Die CMP laedt
+    asynchron, deshalb wird auf googlefc.callbackQueue gewartet statt sofort
+    ins Leere zu klicken. Kommt sie gar nicht (kein TCF-Regime), wird der
+    Button ausgeblendet - ein Klick ohne Wirkung waere irrefuehrend. */}
+<script is:inline>
+  (function () {
+    var buttons = document.querySelectorAll("[data-cookie-settings]");
+    if (!buttons.length) return;
+
+    function showMessage() {
+      window.googlefc = window.googlefc || {};
+      window.googlefc.callbackQueue = window.googlefc.callbackQueue || [];
+      window.googlefc.callbackQueue.push({
+        CONSENT_DATA_READY: function () {
+          if (typeof window.googlefc.showRevocationMessage === "function") {
+            window.googlefc.showRevocationMessage();
+          }
+        },
+      });
+    }
+
+    buttons.forEach(function (btn) {
+      btn.hidden = true;
+      btn.addEventListener("click", showMessage);
+    });
+
+    var tries = 0;
+    var timer = window.setInterval(function () {
+      var ready = typeof window.__tcfapi === "function" || typeof window.googlefc !== "undefined";
+      if (ready) {
+        window.clearInterval(timer);
+        buttons.forEach(function (btn) { btn.hidden = false; });
+      } else if (++tries > 60) {
+        window.clearInterval(timer);
+      }
+    }, 250);
+  })();
+</script>

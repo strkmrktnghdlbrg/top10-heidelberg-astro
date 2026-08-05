@@ -7,6 +7,7 @@ import HueGradient from "../../components/HueGradient.astro";
 import ImageCreditsList from "../../components/ImageCreditsList.astro";
 import { categories, getCategory } from "../../data/categories";
 import { top10sByCategory } from "../../data/top10s";
+import { getImage, getImageCredit } from "../../data/images";
 
 export const getStaticPaths = () =>
   categories.map((c) => ({ params: { cat: c.slug } }));
@@ -18,28 +19,52 @@ if (!category) {
 }
 const lists = top10sByCategory(category.slug);
 const description = `${category.short} - ${lists.length} kuratierte Top-10-Listen für Heidelberg.`;
+
+// Hero-Bild aus der ersten Liste der Kategorie, die ein Bild hat (sonst
+// HueGradient-Fallback). So bekommt jeder Themen-Hub ein Foto statt nur
+// eines Farbverlaufs.
+const heroSlug = lists.find((l) => getImage(l.slug))?.slug ?? null;
+const heroImage = heroSlug ? getImage(heroSlug) : null;
+const heroCredit = heroSlug ? getImageCredit(heroSlug) : null;
 ---
-<BaseLayout title={`Top 10 ${category.name} in Heidelberg`} description={description}>
+<BaseLayout title={`Top 10 ${category.name} in Heidelberg`} description={description} ogImage={heroImage ?? undefined}>
+  <!-- Hero mit Bild -->
   <section class="relative overflow-hidden border-b border-[var(--color-lavender-ash)]" style="background: var(--color-porcelain-mist);">
-    <HueGradient hue={category.hue} class="absolute inset-0 opacity-30 pointer-events-none" />
-    <div class="container-page relative pt-8 pb-14 sm:pt-12 sm:pb-20">
+    {heroImage ? (
+      <>
+        <img src={heroImage} alt={`Top 10 ${category.name} in Heidelberg`} loading="eager" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/78 via-black/50 to-black/25"></div>
+      </>
+    ) : (
+      <HueGradient hue={category.hue} class="absolute inset-0 opacity-30 pointer-events-none" />
+    )}
+    <div class={`container-page relative pt-8 pb-14 sm:pt-14 sm:pb-20 ${heroImage ? "text-white" : ""}`}>
       <Breadcrumbs items={[{ label: "Start", href: "/" }, { label: category.name }]} />
       <div class="mt-4">
-        <span class="pill-accent">{category.icon} {category.name}</span>
+        <span class="pill-accent">{category.icon} {lists.length} {lists.length === 1 ? "Liste" : "Listen"}</span>
       </div>
       <h1
-        class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight max-w-3xl"
-        style="font-family: var(--font-display); color: var(--color-inkwell-purple);"
+        class="mt-4 text-3xl sm:text-5xl font-bold tracking-tight max-w-3xl text-balance"
+        style={`font-family: var(--font-display); color: ${heroImage ? "#fff" : "var(--color-inkwell-purple)"};`}
       >
         Top 10 {category.name} in Heidelberg
       </h1>
-      <p class="mt-4 text-lg max-w-2xl" style="color: var(--color-shadow-graphite);">
+      <p class="mt-4 text-lg sm:text-xl max-w-2xl" style={`color: ${heroImage ? "rgba(255,255,255,0.92)" : "var(--color-shadow-graphite)"};`}>
         {category.short}
       </p>
+      {heroImage && heroCredit && (
+        <p class="absolute bottom-2 right-3 text-[10px] text-white/85">
+          Foto:&nbsp;
+          <a href={heroCredit.commonsUrl} class="underline" rel="nofollow noopener" target="_blank">{heroCredit.author}</a>
+          {heroCredit.license && (
+            <>,&nbsp;{heroCredit.licenseUrl ? (<a href={heroCredit.licenseUrl} class="underline" rel="nofollow noopener" target="_blank">{heroCredit.license}</a>) : (<span>{heroCredit.license}</span>)}</>
+          )}
+        </p>
+      )}
     </div>
   </section>
 
-  <Section eyebrow={`${lists.length} Listen`} title="Übersicht">
+  <Section eyebrow="Übersicht" title={`Alle ${category.name}-Listen`}>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {lists.map((l) => (
         <Top10Card

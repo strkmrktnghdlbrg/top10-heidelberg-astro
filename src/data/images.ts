@@ -1,9 +1,12 @@
 /**
- * Automatisches Image-Registry: scanne public/images/lists/ und
- * public/images/districts/ zur Build-Zeit und biete `getImage(slug)`
- * an. Wenn der Slug eines Top10-Lists eine passende .jpg hat, gib den
- * /images/...-Pfad zurück, sonst null (Komponente fällt dann auf
- * HueGradient zurück).
+ * Automatisches Image-Registry: scanne public/images/lists/ zur Build-Zeit
+ * und biete `getImage(slug)` an. Wenn der Slug eines Top10-Lists eine
+ * passende .jpg hat, gib den /images/...-Pfad zurück, sonst null
+ * (Komponente fällt dann auf HueGradient zurück).
+ *
+ * Hinweis: public/images/districts/ wurde entfernt — jede dortige Datei
+ * war ein 1:1-Duplikat der gleichnamigen lists/-Datei und wurde nie
+ * ausgeliefert (getImage prüfte immer zuerst lists/). Reiner Repo-Ballast.
  *
  * Attribution: imageCredits aus image-credits.ts wird verheiratet.
  */
@@ -11,7 +14,7 @@
 import { imageCredits, type ImageCreditRecord } from "./image-credits";
 
 const listMods = import.meta.glob<string>("/public/images/lists/*.jpg", { eager: true, query: "?url", import: "default" });
-const distMods = import.meta.glob<string>("/public/images/districts/*.jpg", { eager: true, query: "?url", import: "default" });
+const eventMods = import.meta.glob<string>("/public/images/events/*.jpg", { eager: true, query: "?url", import: "default" });
 
 const byBasename = (mods: Record<string, string>) => {
   const out: Record<string, string> = {};
@@ -23,10 +26,15 @@ const byBasename = (mods: Record<string, string>) => {
 };
 
 const lists = byBasename(listMods);
-const districts = byBasename(distMods);
+const events = byBasename(eventMods);
 
 export function getImage(slug: string): string | null {
-  return lists[slug] ?? districts[slug] ?? null;
+  return lists[slug] ?? null;
+}
+
+/** Hero-Bild einer Event-Page (public/images/events/<slug>.jpg). */
+export function getEventImage(slug: string): string | null {
+  return events[slug] ?? null;
 }
 
 export function getImageCredit(slug: string): ImageCreditRecord | null {
@@ -35,5 +43,4 @@ export function getImageCredit(slug: string): ImageCreditRecord | null {
 
 export const imagesAvailable = {
   lists: Object.keys(lists),
-  districts: Object.keys(districts),
 };

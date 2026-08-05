@@ -176,9 +176,12 @@ export const translatedSlugs = Object.keys(translations);
  * stehen. Fehlt eine ganze rank-Nummer, bleibt das Item unverändert.
  *
  * NICHT enthalten:
- *  - "hotels": Item-Beschreibungen liegen bereits auf Englisch vor.
  *  - alle 33 DE-only Listen (Leben/Leistungen/Firmen/Blog): keine
  *    EN-Seite, daher keine Item-Übersetzung nötig.
+ *
+ * "hotels": Die DE-Seite nutzt jetzt die deutsche Fassung aus
+ * top10s-overrides.ts. Die englischen Original-Beschreibungen leben daher
+ * hier weiter, damit /en/hotels/ englisch bleibt.
  * ══════════════════════════════════════════════════════════════════════ */
 
 export type ItemTranslation = {
@@ -189,6 +192,19 @@ export type ItemTranslation = {
 };
 
 export const itemTranslations: Partial<Record<string, Record<number, ItemTranslation>>> = {
+  "hotels": {
+    1: { description: "This historic 5-star hotel is located in the heart of Heidelberg and offers luxurious rooms with elegant decor. The hotel features a spa, fitness center, and multiple dining options." },
+    2: { description: "Situated on the banks of the Neckar River, this boutique hotel offers stunning views of Heidelberg Castle. The rooms are individually decorated and feature modern amenities." },
+    3: { description: "This charming hotel is housed in a Renaissance building in the Old Town of Heidelberg. The rooms are elegantly furnished and the hotel has a traditional German restaurant." },
+    4: { description: "This modern hotel is located near the city center and offers comfortable rooms with contemporary design. The hotel has a rooftop terrace with panoramic views of Heidelberg." },
+    5: { description: "This historic hotel is located in a 12th-century building and offers luxurious rooms with antique furniture. The hotel has a Michelin-starred restaurant and a beautiful garden." },
+    6: { description: "Situated on the Königstuhl mountain, this hotel offers breathtaking views of Heidelberg and the Neckar Valley. The rooms are spacious and the hotel has a restaurant serving regional cuisine." },
+    7: { description: "This traditional hotel is located in the heart of Heidelberg's Old Town and offers cozy rooms with wooden furniture. The hotel has a rustic restaurant serving local dishes." },
+    8: { description: "This family-run hotel is located in a quiet neighborhood near the city center. The rooms are comfortable and the hotel has a garden terrace." },
+    9: { description: "This budget-friendly hotel is located in the Old Town of Heidelberg and offers simple yet comfortable rooms. The hotel has a traditional German restaurant." },
+    10: { description: "This centrally located hotel offers modern rooms with stylish decor. The hotel has a rooftop terrace with panoramic views of Heidelberg." },
+  },
+
   "sehenswuerdigkeiten": {
     1: { name: "Heidelberg Castle", description: "Heidelberg's most famous landmark, begun in the 13th century as the residence of the Prince-Electors of the Palatinate. The half-ruined Renaissance palace towers over the Old Town, and its terraced gardens offer some of the best views over the rooftops and the Neckar." },
     2: { name: "Old Bridge (Alte Brücke)", description: "The elegant 18th-century stone bridge linking the Old Town with Neuenheim. Its twin gate towers and the bronze bridge monkey are Heidelberg icons, and the view back toward the castle is the city's classic postcard shot." },
@@ -314,6 +330,9 @@ export const itemTranslations: Partial<Record<string, Record<number, ItemTransla
     5: { name: "Castle Illumination (Schlossbeleuchtung)", description: "A spectacular fireworks display over Heidelberg Castle on several nights in summer, best watched from the banks of the Neckar." },
     6: { name: "Christmas markets", description: "In Advent, Heidelberg turns into a winter wonderland with markets across several squares, offering handcrafted gifts, treats and mulled wine." },
     7: { name: "Heidelberg Literature Days", description: "An autumn festival for book lovers, with readings, discussions and workshops featuring acclaimed authors from around the world." },
+    8: { name: "Heidelberg Castle Festival (Schlossfestspiele)", description: "An open-air summer festival in the castle courtyard (June to August) with drama, opera, musicals and concerts - southern Germany's most traditional festival of its kind." },
+    9: { name: "Metropolink Festival", description: "An urban- and street-art festival (since 2015, in summer): large-scale murals by international artists, guided tours and events across the city." },
+    10: { name: "Heidelberg Half Marathon", description: "A large spring running event with a half marathon, a 'tenth', relays and children's races on a course through the city and along the Neckar." },
   },
 
   "einkaufsmoeglichkeiten": {

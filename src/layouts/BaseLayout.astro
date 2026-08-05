@@ -30,6 +30,11 @@ const {
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, city.domain).toString();
 const fullTitle = title === city.brandName ? `${city.brandName} - Die besten Adressen am Neckar` : `${title} · ${city.brandName}`;
 const ogLocale = locale === "en" ? "en_US" : "de_DE";
+
+// Social-Preview-Bild: übergebenes ogImage (relativ oder absolut) auf eine
+// absolute URL auflösen; sonst site-weites Default-Hero. So hat JEDE Seite
+// ein og:image + twitter:image (vorher nur eine einzige Seite site-weit).
+const ogImageUrl = new URL(ogImage ?? "/images/heidelberg-hero.jpg", city.domain).toString();
 ---
 
 <!doctype html>
@@ -56,48 +61,148 @@ const ogLocale = locale === "en" ? "en_US" : "de_DE";
     <meta property="og:locale" content={ogLocale} />
     {locale === "en" && <meta property="og:locale:alternate" content="de_DE" />}
     {locale === "de" && hreflangs?.en && <meta property="og:locale:alternate" content="en_US" />}
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image" content={ogImageUrl} />
 
-    
-    {stay22Enabled && (
-      <script
-        async
-        src={`https://snippet.stay22.com/allez/script?lmaid=${affiliate.stay22.lmaId}`}
-      ></script>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+
+    {/* ── Consent ───────────────────────────────────────────────────────
+        Einwilligung holt AUSSCHLIESSLICH die Google-CMP ("Privacy &
+        messaging" / Funding Choices, IAB TCF v2.2) ein - kein zweiter,
+        eigener Banner. Diese CMP ist damit die einzige Consent-Quelle:
+          1. Consent Mode v2 setzt alle Speicher-Kategorien auf "denied",
+             bevor irgendein Google-Tag laden kann.
+          2. Die CMP wird früh geladen, damit __tcfapi zur Verfügung steht.
+          3. Stay22 + GetYourGuide laden erst nach TCF-Zustimmung
+             (Zweck 1: Speichern/Zugriff auf Informationen).
+          4. GTM + AdSense laden nach erster Interaktion (PageSpeed) und
+             respektieren Consent Mode bzw. das TCF-Signal der CMP. */}
+
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "granted",
+        security_storage: "granted",
+        wait_for_update: 2000,
+      });
+      gtag("set", "ads_data_redaction", true);
+      gtag("set", "url_passthrough", true);
+    </script>
+
+    {adsenseEnabled && (
+      <>
+      {/* Funding Choices erwartet die Publisher-ID OHNE "ca-"-Praefix. */}
+      <script async src={`https://fundingchoicesmessages.google.com/i/${adsense.publisherId.replace(/^ca-/, "")}?ers=9`}></script>
+      <script is:inline>
+        (function () {
+          function signalGooglefcPresent() {
+            if (window.frames["googlefcPresent"]) return;
+            if (!document.body) { setTimeout(signalGooglefcPresent, 0); return; }
+            var iframe = document.createElement("iframe");
+            iframe.style = "width:0;height:0;border:none;z-index:-1000;left:-1000px;top:-1000px;";
+            iframe.style.display = "none";
+            iframe.name = "googlefcPresent";
+            document.body.appendChild(iframe);
+          }
+          signalGooglefcPresent();
+        })();
+      </script>
+      </>
     )}
 
-    {gygEnabled && (
+    {(stay22Enabled || gygEnabled) && (
       <script
-        async
-        defer
-        src="https://widget.getyourguide.com/dist/pa.umd.production.min.js"
-        data-gyg-partner-id={affiliate.getYourGuide.partnerId}
-      ></script>
+        is:inline
+        define:vars={{
+          stay22Src: stay22Enabled ? `https://snippet.stay22.com/allez/script?lmaid=${affiliate.stay22.lmaId}` : "",
+          gygPartnerId: gygEnabled ? affiliate.getYourGuide.partnerId : "",
+        }}
+      >
+        (function () {
+          var injected = false;
+          function inject() {
+            if (injected) return;
+            injected = true;
+            if (stay22Src) {
+              var s = document.createElement("script");
+              s.async = true;
+              s.src = stay22Src;
+              document.head.appendChild(s);
+            }
+            if (gygPartnerId) {
+              var g = document.createElement("script");
+              g.async = true;
+              g.defer = true;
+              g.src = "https://widget.getyourguide.com/dist/pa.umd.production.min.js";
+              g.setAttribute("data-gyg-partner-id", gygPartnerId);
+              document.head.appendChild(g);
+            }
+          }
+
+          function attachTcf() {
+            if (typeof window.__tcfapi !== "function") return false;
+            window.__tcfapi("addEventListener", 2, function (data, success) {
+              if (!success || !data) return;
+              if (data.eventStatus !== "tcloaded" && data.eventStatus !== "useractioncomplete") return;
+              // Kein TCF-Regime (Besucher ausserhalb des EWR) => laden.
+              if (data.gdprApplies === false) { inject(); return; }
+              var consents = data.purpose && data.purpose.consents;
+              // Zweck 1 = Speichern von oder Zugriff auf Informationen auf einem Endgeraet.
+              if (consents && consents[1]) inject();
+            });
+            return true;
+          }
+
+          if (!attachTcf()) {
+            // CMP-Stub noch nicht da: kurz pollen. Erscheint __tcfapi nicht,
+            // greift kein TCF-Consent-Regime => Skripte duerfen laden.
+            var tries = 0;
+            var timer = window.setInterval(function () {
+              if (attachTcf()) { window.clearInterval(timer); return; }
+              if (++tries > 30) { window.clearInterval(timer); inject(); }
+            }, 100);
+          }
+        })();
+      </script>
     )}
 
-    {adsenseEnabled && !noindex && (
-      <script
-        async
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.publisherId}`}
-        crossorigin="anonymous"
-      ></script>
-    )}
-
-    {gtmEnabled && (
-      <script is:inline set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${analytics.gtmId}');`} />
+    {(gtmEnabled || (adsenseEnabled && !noindex)) && (
+      <script is:inline define:vars={{ loadGtm: gtmEnabled, gtmId: analytics.gtmId, loadAds: adsenseEnabled && !noindex, adsenseSrc: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsense.publisherId}` }}>
+        (function () {
+          var fired = false;
+          function load() {
+            if (fired) return;
+            fired = true;
+            if (loadGtm) {
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtmId);
+            }
+            if (loadAds) {
+              var a = document.createElement('script');
+              a.async = true;
+              a.src = adsenseSrc;
+              a.crossOrigin = 'anonymous';
+              document.head.appendChild(a);
+            }
+          }
+          var evs = ['scroll','pointerdown','keydown','touchstart','mousemove'];
+          var opts = { once: true, passive: true, capture: true };
+          evs.forEach(function (e) { window.addEventListener(e, load, opts); });
+          window.setTimeout(load, 5000);
+        })();
+      </script>
     )}
   </head>
   <body class="min-h-screen flex flex-col">
-    {gtmEnabled && (
-      <noscript>
-        <iframe
-          src={`https://www.googletagmanager.com/ns.html?id=${analytics.gtmId}`}
-          height="0"
-          width="0"
-          style="display:none;visibility:hidden"
-        ></iframe>
-      </noscript>
-    )}
+    {/* Kein GTM-<noscript>-iframe: ohne JS kann keine Einwilligung eingeholt
+        werden, daher darf ohne Opt-in auch kein Tag Manager geladen werden. */}
     <Header />
     <main class="flex-1" data-pagefind-body>
       <slot />
