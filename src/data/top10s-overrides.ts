@@ -244,37 +244,7 @@ export const top10Overrides: Record<string, Override> = {
     ],
   },
 
-  "rechtsanwalte": {
-    intro: "Heidelberg ist eine der Anwalts-Hochburgen in Baden-Württemberg - universitätsnah, mit starken Fachanwalts-Kanzleien für Wirtschaft, Familie, Arbeit, Erbrecht und Strafverteidigung. Die zehn Adressen unten sind etablierte Kanzleien mit klarer Spezialisierung.",
-    items: [
-      { rank: 1,  name: "Becker § Hansen Rechtsanwälte PartG mbB", description: "Kaiserstr. 67. Fachanwälte für Erbrecht, Bau- und Architektenrecht, Mietrecht, Wettbewerbsrecht, Handels- und Gesellschaftsrecht." },
-      { rank: 2,  name: "Kanzlei Dr. Schoch & Leister", description: "Bahnhofstr. 1. Fachanwaltskanzlei mit Schwerpunkten Mietrecht, Wohnungseigentumsrecht, Erbrecht und Bau- und Architektenrecht." },
-      { rank: 3,  name: "Weber & Partner Rechtsanwälte", description: "Bergheimer Str. 95. Fachanwälte für Erbrecht, Steuerrecht, Wirtschaftsrecht und Immobilienrecht." },
-      { rank: 4,  name: "§KaG – Kanzlei am Gericht", description: "Bahnhofstr. 55-57. Beratung und gerichtliche Vertretung an den Standorten Heidelberg und Ludwigshafen, breites zivilrechtliches Profil." },
-      { rank: 5,  name: "Ecovis Heidelberg Rechtsanwälte und Steuerberater", description: "Interdisziplinäre Beratung - Recht, Steuern und Wirtschaftsprüfung für Mittelstand, Familienunternehmen und Selbstständige." },
-      { rank: 6,  name: "Rechtsanwaltskanzlei Dr. Hans-Joachim Neidlinger", description: "Etablierte Heidelberger Kanzlei mit Schwerpunkten Zivilrecht, Familienrecht, Erbrecht und Mietrecht." },
-      { rank: 7,  name: "Anwaltskanzlei für Verkehrsrecht – Heidelberg", description: "Spezialisierte Adresse für Verkehrsunfälle, Bußgeld- und Führerscheinsachen - Pflichtverteidiger-Erfahrung." },
-      { rank: 8,  name: "Kanzlei für Arbeitsrecht Heidelberg", description: "Fachanwaltskanzlei mit klarem Fokus Arbeitsrecht - Kündigungsschutz, Abfindung, Compliance und Betriebsrats-Beratung." },
-      { rank: 9,  name: "Kanzlei für Familienrecht & Mediation", description: "Familien- und Erbrecht mit Mediations-Angebot - Scheidung, Sorgerecht, Unterhalt und Erbauseinandersetzungen." },
-      { rank: 10, name: "Strafverteidiger-Kanzlei Heidelberg", description: "Fachanwaltskanzlei für Strafrecht mit Schwerpunkt Wirtschaftsstrafrecht und Verteidigung in Wirtschafts- und Steuerstrafverfahren." },
-    ],
-  },
 
-  "steuerberater": {
-    intro: "Mit Universität, Forschungseinrichtungen und stark wachsendem Mittelstand hat Heidelberg eine entsprechend dichte Steuerberatungs-Landschaft. Diese zehn Kanzleien sind etabliert und decken Privat-, Selbstständigen- und Unternehmensmandate ab.",
-    items: [
-      { rank: 1,  name: "SCHROEDER JAKOB PartGmbB Steuerberatung & Wirtschaftsprüfung", description: "Renommierte Heidelberger Adresse - gründliche Steuerberatung und Wirtschaftsprüfung für Unternehmen und vermögende Privatpersonen." },
-      { rank: 2,  name: "Steuerberatung Tobias Staat", description: "Digital-orientierte Kanzlei mit Schwerpunkt Online-Geschäftsmodelle, Software-Entwicklung, Online-Coaching und Startups." },
-      { rank: 3,  name: "ANTAX Steuerberatungsgesellschaft mbH", description: "Heidelberger Standort der ETL-Gruppe, einem der größten Beratungsnetzwerke Europas. Betreuung kleiner und mittlerer Unternehmen." },
-      { rank: 4,  name: "Steuerberatung Lipponer (Heidelberg-Kirchheim)", description: "Schwarzwaldstraße 33. Familiengeführte Kanzlei, bekannt für gewissenhafte Betreuung von Mittelstand und Selbstständigen." },
-      { rank: 5,  name: "HWBS Steuerberatungsgesellschaft mbH", description: "Langjährig etabliert in Heidelberg, Schwerpunkt Mittelstandsberatung, betriebswirtschaftliche Auswertungen und Nachfolgeberatung." },
-      { rank: 6,  name: "Steuerberater Dr. Peter Schlör", description: "Inhabergeführte Kanzlei mit Profil bei Freiberuflern, Ärzten und beratenden Berufen." },
-      { rank: 7,  name: "Ecovis Heidelberg", description: "Interdisziplinäre Kanzlei (Recht + Steuern), spezialisiert auf Familienunternehmen, Heilberufe und Internationales Steuerrecht." },
-      { rank: 8,  name: "Steuerkanzlei für Ärzte & Heilberufe", description: "Heidelberger Spezialkanzlei für niedergelassene Ärzte, Zahnärzte und MVZ - Praxisgründung, Kooperationen und Honorarabrechnung." },
-      { rank: 9,  name: "Steuerberatungsgesellschaft für Startups", description: "Fokus Forschungs- und Tech-Startups aus dem Heidelberger Universitätsumfeld - Wachstumsfinanzierung, ESOP, internationale Strukturen." },
-      { rank: 10, name: "Steuerkanzlei für Privatkunden Heidelberg", description: "Spezialisiert auf Einkommensteuer, Vermietung und Erbschaftsteuer - auch für Pendler und Auslandsbeziehungen." },
-    ],
-  },
 
   "tieraerzte": {
     intro: "Heidelberg ist eine ausgesprochen tierfreundliche Stadt - die Tierarzt-Landschaft reicht von Hausarzt-Praxen in jedem Stadtteil bis zu spezialisierten Kleintierkliniken mit Diagnostik. Diese zehn Adressen sind etablierte Praxen mit guten Bewertungen.",
@@ -372,21 +342,6 @@ export const top10Overrides: Record<string, Override> = {
     ],
   },
 
-  "baeckereien": {
-    intro: "Heidelberg ist Brot-Stadt: Die Bandbreite reicht von Bio-Vollkornbäckern über klassische Handwerksbäckereien mit Sauerteig-Reifezeiten bis zu kleinen Holzofenbäckereien. Diese zehn Adressen sind die Bäckereien, die Heidelberger:innen tatsächlich nennen.",
-    items: [
-      { rank: 1,  name: "Bäckerei Wacker (Wieblingen)", description: "Mannheimer Straße 260, 69123 Heidelberg-Wieblingen. Handwerk pur - natürlicher Sauerteig, Wieblinger Neckarplotzer, Dinkel-Vollkornbrot und Apfelstrudel." },
-      { rank: 2,  name: "Bäckerei Riegler", description: "Traditionelles Bäckerhandwerk, hauseigener Natursauerteig mit 42 Stunden Reifezeit - gilt vielen Heidelbergern als Referenz für Brot." },
-      { rank: 3,  name: "Mahlzahn Bio-Vollkornbäckerei", description: "Fünf Filialen in Heidelberg. 100 % zertifizierter Bio-Anbau, eigener Backferment-Sauerteig mit 10–11 Stunden Reife. Schwerpunkt Vollkorn." },
-      { rank: 4,  name: "Heidelberger Holzofenbäckerei", description: "Backen aus Leidenschaft im echten Holzofen - kräftige Krusten, lange Teigreifen, regional und ohne Convenience-Mischungen." },
-      { rank: 5,  name: "Bäckerei Görtz – Filiale Heidelberg", description: "Regional verankerte Kette aus der Pfalz mit mehreren Heidelberger Filialen - verlässliche Standard-Qualität, breite Brot- und Brötchen-Auswahl." },
-      { rank: 6,  name: "Café Konditorei Schafheutle", description: "Hauptstr. 94, Altstadt. Seit 1832. Pâtisserie, Sahnetorten und feines Kleingebäck - eine der ältesten Konditoreien Deutschlands." },
-      { rank: 7,  name: "Bäckerei Hörner (Handschuhsheim)", description: "Familienbäckerei im Norden - klassische Backwaren, Bio-Brote, ofenfrische Brezeln und Kuchen am Wochenende." },
-      { rank: 8,  name: "Bäckerei Spörlein", description: "Lokale Adresse mit mehreren Filialen - beliebt für süße Stücke, Berliner und Saisonbackwaren." },
-      { rank: 9,  name: "Brotwerk Heidelberg", description: "Junge Manufaktur-Bäckerei mit Fokus auf Sauerteig-Brote, alte Getreidesorten und Slow Baking." },
-      { rank: 10, name: "Bäckerei Mantei (Rohrbach)", description: "Quartiers-Bäckerei in Rohrbach - gute Frühstücks-Anlaufstelle, klassische badische Backwaren." },
-    ],
-  },
 
   "cafes": {
     intro: "Heidelbergs Café-Szene reicht von der traditionsreichen Konditorei aus dem 19. Jahrhundert bis zur Spezialitätenkaffee-Bar mit Single-Origin-Bohnen. Diese zehn Adressen sind die Cafés, in denen Heidelberger:innen tatsächlich frühstücken, lesen und sich treffen.",
@@ -420,21 +375,6 @@ export const top10Overrides: Record<string, Override> = {
     ],
   },
 
-  "friseursalons": {
-    intro: "Heidelbergs Friseur-Landschaft ist erwartungsgemäß dicht - von Kettensalons in der Hauptstraße über Boutique-Salons in der Altstadt bis zu inhabergeführten Stadtteil-Adressen. Diese zehn Salons sind etabliert und decken die wesentlichen Segmente ab.",
-    items: [
-      { rank: 1,  name: "bloom's Friseur Heidelberg", description: "Plöck 2/2, Altstadt. Exklusives Styling, breite Behandlungspalette von Colorierung über Hochsteck-Frisuren bis Hair-Spa. Zentrale Adresse." },
-      { rank: 2,  name: "Florin Friseursalon", description: "Ziegelgasse 17, Altstadt. Inhabergeführter Boutique-Salon mit Fokus auf Schnitt-Architektur und Naturhaarfarben." },
-      { rank: 3,  name: "TREJA – Ihr Friseur in der Altstadt", description: "Etablierter Salon in der Heidelberger Altstadt mit Fokus auf moderne Schnitte und Hochzeits-Frisuren." },
-      { rank: 4,  name: "aproposHaare Heidelberg", description: "Bismarckplatz-nah. Schnitt, Colorierung, Hochsteck - beliebt bei Hochzeits-Klientel und für Beratung zu langen Haaren." },
-      { rank: 5,  name: "Essanelle Heidelberg", description: "Hauptstr. 24, Altstadt. Kettensalon mit verlässlicher Standard-Qualität - schnelle Termine ohne Reservierung möglich." },
-      { rank: 6,  name: "Klipp Friseure Heidelberg", description: "Mehrere Filialen - günstige Schnitte und Standard-Färbungen, gut für Walk-in-Termine in der Mittagspause." },
-      { rank: 7,  name: "Vidal Sassoon-Schule (Heidelberg-nah)", description: "Aviation-Sassoon-Stil-Schnitte aus dem Heidelberger Friseur-Pool - moderne Bob-Cuts und Edge-Schnitte." },
-      { rank: 8,  name: "Friseur Naturlocke (Neuenheim)", description: "Spezialisiert auf Locken - DevaCut, Curly-Methode und individuelle Locken-Pflege-Beratung." },
-      { rank: 9,  name: "Top Hair Heidelberg-Handschuhsheim", description: "Inhabergeführter Quartiers-Salon im Norden - Stammkundschaft, persönlicher Ton, klassische Damen- und Herren-Schnitte." },
-      { rank: 10, name: "Barbier-Stube Heidelberg", description: "Herren-Spezialist mit Bart-Schneide-Service, klassische Rasur und Heißschaum - Altstadt-Boutique mit Cinque-Stil-Ambiente." },
-    ],
-  },
 
   "buchlaeden": {
     intro: "Heidelberg ist UNESCO-Literaturstadt und hat eine außergewöhnlich dichte Buchhandlungs-Szene - eine Buchhandlung pro 7.340 Einwohner, Platz 2 unter deutschen Großstädten. Diese zehn Adressen stehen für unabhängige Sortimente, Antiquariate und Spezial-Buchhandlungen.",
@@ -449,6 +389,176 @@ export const top10Overrides: Record<string, Override> = {
       { rank: 8,  name: "Buchhandlung Schmitt & Hahn (Hauptbahnhof)", description: "Klassische Bahnhofs-Buchhandlung - Reise-, Sach- und Belletristik-Bestseller, früh geöffnet bis spät abends." },
       { rank: 9,  name: "Buchhandlung Hugendubel Heidelberg", description: "Große Sortiments-Buchhandlung in der Hauptstraße - breit aufgestellt von Belletristik bis Kinder- und Jugendbuch." },
       { rank: 10, name: "Kinderbuchhandlung Heidelberg", description: "Spezialisierte Adresse für Kinder- und Jugendbuch - Beratung für Eltern, Lehrkräfte und Pädagog:innen, Lesungen für Kita-Gruppen." },
+    ],
+  },
+
+  // ---- Neu belegt (OSM-Vollabzug Heidelberg + Branchenbuch), ersetzt Platzhalter-Listen ----
+  "friseursalons": {
+    intro: "Diese Auswahl listet 10 Friseursalons in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Apropos Haare", description: "Mönchhofstraße 3b, Heidelberg.", address: "Mönchhofstraße 3b", websiteUrl: "https://www.aproposhaare.de/heidelberg/" },
+      { rank: 2, name: "Barbershop Königstuhl", description: "Rohrbacher Straße 79, Heidelberg.", address: "Rohrbacher Straße 79", websiteUrl: "https://www.konigstuhl.de/" },
+      { rank: 3, name: "La Diva", description: "Rohrbacher Straße 77a, Heidelberg.", address: "Rohrbacher Straße 77a", websiteUrl: "https://www.friseur-la-diva.de/" },
+      { rank: 4, name: "La Biosthetique Karin Bolz", description: "Breslauer Straße 35, Heidelberg.", address: "Breslauer Straße 35", websiteUrl: "https://www.karin-bolz.de/" },
+      { rank: 5, name: "HaarStudio Ella", description: "Dossenheimer Landstraße 53, Heidelberg.", address: "Dossenheimer Landstraße 53", websiteUrl: "https://haarstudio-ella.de/" },
+      { rank: 6, name: "Roland Curth", description: "Brückenstraße 1, Heidelberg.", address: "Brückenstraße 1", websiteUrl: "https://curthhair.de/" },
+      { rank: 7, name: "Andreas Ullmer", description: "Punkerstraße 1, Heidelberg.", address: "Punkerstraße 1", websiteUrl: "https://www.friseur-ullmer.de/" },
+      { rank: 8, name: "Friseursalon Nouveau", description: "Heinrich-Fuchs-Straße 27, Heidelberg.", address: "Heinrich-Fuchs-Straße 27", websiteUrl: "https://www.nouveaufriseursalon.de" },
+      { rank: 9, name: "Viani's Friseure", description: "Langer Anger 56, Heidelberg.", address: "Langer Anger 56", websiteUrl: "https://www.vianis-friseure.de/" },
+      { rank: 10, name: "Friseurstudio Jasmin", description: "Boxbergring 14, Heidelberg.", address: "Boxbergring 14", websiteUrl: "https://www.friseurstudio-jasmin.de/" },
+    ],
+  },
+  "immobilienmakler": {
+    intro: "Diese Auswahl listet 9 Maklerbueros in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Engel & Völkers", description: "Brückenstraße 19, Heidelberg.", address: "Brückenstraße 19", websiteUrl: "https://www.engelvoelkers.com/de-de/heidelberg/" },
+      { rank: 2, name: "Schürrer & Fleischer Immobilien", description: "Friedrich-Ebert-Anlage 1, Heidelberg.", address: "Friedrich-Ebert-Anlage 1", websiteUrl: "https://www.schuerrer-fleischer.de/standorte/filialen/heidelberg/" },
+      { rank: 3, name: "Kraus Immobilien", description: "Alte Glockengießerei 9, Heidelberg.", address: "Alte Glockengießerei 9", websiteUrl: "https://www.kraus-heidelberg.de/" },
+      { rank: 4, name: "GGH Heidelberg", description: "Bergheimer Straße 109, Heidelberg.", address: "Bergheimer Straße 109", websiteUrl: "https://www.ggh-heidelberg.de" },
+      { rank: 5, name: "myhouse-immobilien", description: "Neugasse 5, Heidelberg.", address: "Neugasse 5", websiteUrl: "https://www.immobilien-makler-heidelberg.de" },
+      { rank: 6, name: "Immobilien Ruf", description: "Pfaffengrunder Terrasse 2, Heidelberg.", address: "Pfaffengrunder Terrasse 2", websiteUrl: "https://www.ruf-immobilien.de/" },
+      { rank: 7, name: "Epple", description: "Vangerowstraße 2, Heidelberg.", address: "Vangerowstraße 2", websiteUrl: "https://www.eppleimmobilien.de/" },
+      { rank: 8, name: "S-Immobilien Heidelberg GmbH", description: "Europaplatz 9, Heidelberg.", address: "Europaplatz 9", websiteUrl: "https://s-immo-hd.de" },
+      { rank: 9, name: "JP Immobilien & Investment", description: "15, Heidelberg.", address: "15", websiteUrl: "https://www.jp-immobilie.de" },
+    ],
+  },
+  "tattoo-studios": {
+    intro: "Diese Auswahl listet 4 Tattoo-Studios in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Merlin Tattoo", description: "Schillerstraße 32, Heidelberg.", address: "Schillerstraße 32", websiteUrl: "https://www.merlintattoo.com/" },
+      { rank: 2, name: "Absolut Tattoo", description: "Plöck 54, Heidelberg.", address: "Plöck 54", websiteUrl: "http://www.absolut-tattoo.de/" },
+      { rank: 3, name: "Nadelfabrik", description: "Rohrbacher Straße 81, Heidelberg.", address: "Rohrbacher Straße 81", websiteUrl: "https://www.instagram.com/nadelfabrik_heidelberg" },
+      { rank: 4, name: "Ink-Daytona", description: "Hegenichstraße 28, Heidelberg.", address: "Hegenichstraße 28", websiteUrl: "https://inkdaytona-tattoo.jimdosite.com/" },
+    ],
+  },
+  "tierarzt": {
+    intro: "Diese Auswahl listet 6 Tierarztpraxen in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Kleintierpraxis", description: "Rathausstraße 44/1, Heidelberg.", address: "Rathausstraße 44/1", websiteUrl: "https://www.kleintierpraxis-heidelberg.de/" },
+      { rank: 2, name: "Medivet", description: "Eppelheimer Straße 38-40, Heidelberg.", address: "Eppelheimer Straße 38-40", websiteUrl: "https://www.medivetgroup.com/de-de/tierarzt/heidelberg/" },
+      { rank: 3, name: "Kleintierpraxis Christina Gayer", description: "Marktstraße 51b, Heidelberg.", address: "Marktstraße 51b", websiteUrl: "https://www.kleintierpraxis-gayer.de" },
+      { rank: 4, name: "Tierarztpraxis am Steinbach", description: "Peterstaler Straße 195, Heidelberg.", address: "Peterstaler Straße 195", websiteUrl: "https://www.tierarztpraxis-am-steinbach.de/" },
+      { rank: 5, name: "Fachtierarztpraxis Dr. Veit & Rummel", description: "Im Weiher 12, Heidelberg.", address: "Im Weiher 12", websiteUrl: "https://kleintierpraxis-online.de/" },
+      { rank: 6, name: "Tierärztliches Zentrum an der Feuerwache", description: "Baumschulenweg 10, Heidelberg.", address: "Baumschulenweg 10", websiteUrl: "https://www.tierklinik-hd.de" },
+    ],
+  },
+  "it-dienstleister-computerreparatur": {
+    intro: "Diese Auswahl listet 10 IT-Betriebe in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "GFN AG", description: "Kurfürsten-Anlage 64-68, Heidelberg.", address: "Kurfürsten-Anlage 64-68", websiteUrl: "https://www.gfn.de/" },
+      { rank: 2, name: "Koinegg IT", description: "Friedrich-Ebert-Anlage 21, Heidelberg.", address: "Friedrich-Ebert-Anlage 21", websiteUrl: "https://www.koinegg-it.de/" },
+      { rank: 3, name: "Inspirationlabs GmbH", description: "Rohrbacher Straße 79, Heidelberg.", address: "Rohrbacher Straße 79", websiteUrl: "https://inspirationlabs.com" },
+      { rank: 4, name: "Innoplexia GmbH", description: "Speyerer Straße 4, Heidelberg.", address: "Speyerer Straße 4", websiteUrl: "https://www.innoplexia.com/" },
+      { rank: 5, name: "datapeutics GmbH", description: "Hans-Bunte-Straße 8-10, Heidelberg.", address: "Hans-Bunte-Straße 8-10", websiteUrl: "https://datapeutics.com/" },
+      { rank: 6, name: "Komm.ONE", description: "Maria-Probst-Straße 15, Heidelberg.", address: "Maria-Probst-Straße 15", websiteUrl: "https://www.komm.one" },
+      { rank: 7, name: "OSADL", description: "Im Neuenheimer Feld 583, Heidelberg.", address: "Im Neuenheimer Feld 583", websiteUrl: "https://www.osadl.org" },
+      { rank: 8, name: "HMS Analytical Software", description: "Grüne Meile 29, Heidelberg.", address: "Grüne Meile 29", websiteUrl: "https://www.analytical-software.de" },
+      { rank: 9, name: "pretix GmbH", description: "Berthold-Mogel-Straße 1, Heidelberg.", address: "Berthold-Mogel-Straße 1", websiteUrl: "https://pretix.eu/" },
+      { rank: 10, name: "Heidelberg iT Management GmbH & Co. KG", description: "Kurpfalzring 110, Heidelberg.", address: "Kurpfalzring 110", websiteUrl: "https://www.heidelberg-it.de" },
+    ],
+  },
+  "blumenladen": {
+    intro: "Diese Auswahl listet 5 Blumenlaeden in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "flowerstation", description: "In der Aue 2, Heidelberg.", address: "In der Aue 2", websiteUrl: "http://www.flowerstation.de" },
+      { rank: 2, name: "Blumen", description: "Schillerstraße 10, Heidelberg.", address: "Schillerstraße 10", websiteUrl: "https://www.blumen-hd.de" },
+      { rank: 3, name: "Florales Ambiente", description: "Bahnhofstraße 35, Heidelberg.", address: "Bahnhofstraße 35", websiteUrl: "https://www.florales-ambiente.de/" },
+      { rank: 4, name: "Blumenfee Florentina", description: "13, Heidelberg.", address: "13", websiteUrl: "https://blumenfee-florentina.de" },
+      { rank: 5, name: "Blumen Elfner GbR", description: "Berliner Straße 93, Heidelberg.", address: "Berliner Straße 93", websiteUrl: "https://www.blumen-elfner.de/" },
+    ],
+  },
+  "weinladen": {
+    intro: "Diese Auswahl listet 6 Weinhandlungen in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Laibach & Seeger", description: "Schwetzinger Terrasse 3, Heidelberg.", address: "Schwetzinger Terrasse 3", websiteUrl: "https://laibachundseeger.de/" },
+      { rank: 2, name: "Weinhaus Fehser", description: "Friedrich-Ebert-Anlage 26, Heidelberg.", address: "Friedrich-Ebert-Anlage 26", websiteUrl: "https://www.weinversand-fehser.de" },
+      { rank: 3, name: "Wein Refugium", description: "Fritz-Frey-Straße 15, Heidelberg.", address: "Fritz-Frey-Straße 15", websiteUrl: "https://www.weinrefugium.de" },
+      { rank: 4, name: "Vivants", description: "Langer Anger 60, Heidelberg.", address: "Langer Anger 60", websiteUrl: "https://vivantswine.de/" },
+      { rank: 5, name: "Vin Africa", description: "Römerstraße 99, Heidelberg.", address: "Römerstraße 99", websiteUrl: "https://vinafrica.metro.biz" },
+      { rank: 6, name: "Rausch", description: "Rohrbacher Straße 88, Heidelberg.", address: "Rohrbacher Straße 88", websiteUrl: "https://www.rausch22.de" },
+    ],
+  },
+  "kunstgalerien": {
+    intro: "Diese Auswahl listet 2 Galerien in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Galerie Arabeske", description: "Dossenheimer Landstraße 69, Heidelberg.", address: "Dossenheimer Landstraße 69", websiteUrl: "https://arabischekultur.de/" },
+      { rank: 2, name: "Haus am Wehrsteg", description: "Uferstraße 79, Heidelberg.", address: "Uferstraße 79", websiteUrl: "https://hausamwehrsteg.info" },
+    ],
+  },
+  "steuerberater": {
+    intro: "Diese Auswahl listet 5 Steuerkanzleien in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Dr. Peter Schlör", description: "Kleinschmidtstraße 1/2, Heidelberg.", address: "Kleinschmidtstraße 1/2", websiteUrl: "https://www.schloer-stb.de/" },
+      { rank: 2, name: "Joachim Schäuble", description: "Grüne Meile 33, Heidelberg.", address: "Grüne Meile 33", websiteUrl: "https://www.stb-schaeuble.de" },
+      { rank: 3, name: "Schilgen", description: "Marlene-Dietrich-Platz 1, Heidelberg.", address: "Marlene-Dietrich-Platz 1", websiteUrl: "https://schilgen-steuerkanzlei.de" },
+      { rank: 4, name: "Hage und Partner", description: "Rohrbacher Straße 186, Heidelberg.", address: "Rohrbacher Straße 186", websiteUrl: "https://hageundpartner.de/" },
+      { rank: 5, name: "Marion Sauerzapf & Ottmar Hohm-Scholl", description: "Bachstraße 14, Heidelberg.", address: "Bachstraße 14", websiteUrl: "https://www.shs-hd.de/" },
+    ],
+  },
+  "rechtsanwalte": {
+    intro: "Diese Auswahl listet 10 Kanzleien in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Praetorius Schroeder Elias Weik Partg mbB", description: "Römerstraße 245, Heidelberg.", address: "Römerstraße 245", websiteUrl: "https://ra-hd.de" },
+      { rank: 2, name: "Kılıç", description: "Kurfürsten-Anlage 1, Heidelberg.", address: "Kurfürsten-Anlage 1", websiteUrl: "https://www.kilic-und-kollegen.de" },
+      { rank: 3, name: "Rechtsanwälte Dr. Sedlmeier & Dr. Dihsmaier", description: "Sickingenstraße 1a, Heidelberg.", address: "Sickingenstraße 1a", websiteUrl: "https://www.sd-anwaelte.de/" },
+      { rank: 4, name: "KÖNIG & KOLLEGEN", description: "Rudolf-Diesel-Straße 5, Heidelberg.", address: "Rudolf-Diesel-Straße 5", websiteUrl: "https://www.koenig-kollegen.com/" },
+      { rank: 5, name: "Lachenauer Rechtsanwälte", description: "Vangerowstraße 2/2, Heidelberg.", address: "Vangerowstraße 2/2", websiteUrl: "https://www.lachenauer.de/" },
+      { rank: 6, name: "Obst, Schuh & Hipp", description: "Bachstraße 14-16, Heidelberg.", address: "Bachstraße 14-16", websiteUrl: "https://www.kanzlei-osh.de/" },
+      { rank: 7, name: "Rechtsanwalt Kleinknecht", description: "Kleingemünder Straße 72/10, Heidelberg.", address: "Kleingemünder Straße 72/10", websiteUrl: "https://www.ra-kleinknecht.de/index.php" },
+      { rank: 8, name: "Bühler & Alt Rechtsanwälte", description: "Kirschgartenstraße 19, Heidelberg.", address: "Kirschgartenstraße 19", websiteUrl: "https://www.kanzlei-buehler-alt.de/" },
+      { rank: 9, name: "Tiefenbacher Rechtsanwälte", description: "Im Breitspiel 9, Heidelberg.", address: "Im Breitspiel 9", websiteUrl: "https://www.tiefenbacher.de/" },
+      { rank: 10, name: "Kanzlei Bornemann-von Loeben Rechtsanwälte", description: "Oberer Gaisbergweg 21, Heidelberg.", address: "Oberer Gaisbergweg 21", websiteUrl: "http://www.kanzlei-bornemann.de" },
+    ],
+  },
+  "baeckereien": {
+    intro: "Diese Auswahl listet 10 Baeckereien in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Cafe Frisch", description: "Jahnstraße 34, Heidelberg.", address: "Jahnstraße 34", websiteUrl: "https://www.cafe-frisch.de" },
+      { rank: 2, name: "Mahlzahn Bio-Vollkorn-Bäckerei", description: "Ladenburger Straße 15, Heidelberg.", address: "Ladenburger Straße 15", websiteUrl: "https://www.mahlzahn.de" },
+      { rank: 3, name: "Der Kleine Gundel", description: "Grabengasse 6, Heidelberg.", address: "Grabengasse 6", websiteUrl: "https://www.gundel-heidelberg.de" },
+      { rank: 4, name: "Bäckerei Grimminger", description: "Rathausstraße 45, Heidelberg.", address: "Rathausstraße 45", websiteUrl: "https://www.grimminger.de/familienbaeckerei/filialen.html" },
+      { rank: 5, name: "Bäckerei Riegler", description: "Odenwaldstraße 6, Heidelberg.", address: "Odenwaldstraße 6", websiteUrl: "http://www.baeckerei-riegler.de/fachgeschaefte/standorte/odenwaldstr/" },
+      { rank: 6, name: "Heidelberger Holzofenbäckerei", description: "Kurpfalzhof 2, Heidelberg.", address: "Kurpfalzhof 2", websiteUrl: "https://www.heidelberger-holzofenbaeckerei.de" },
+      { rank: 7, name: "Riegler", description: "Sofienstraße 9, Heidelberg.", address: "Sofienstraße 9", websiteUrl: "https://baeckerei-riegler.de/fachgeschaefte/standorte/sofienstr/" },
+      { rank: 8, name: "Görtz", description: "Kurfürsten-Anlage 6, Heidelberg.", address: "Kurfürsten-Anlage 6", websiteUrl: "https://www.baeckergoertz.de" },
+      { rank: 9, name: "Breitenstein Bäckerei", description: "Wallstraße 21, Heidelberg.", address: "Wallstraße 21", websiteUrl: "https://baeckerei-breitenstein.de/" },
+      { rank: 10, name: "Wacker", description: "Mannheimer Straße 260, Heidelberg.", address: "Mannheimer Straße 260", websiteUrl: "https://www.baeckerei-wacker.com" },
+    ],
+  },
+  "umzugsunternehmen": {
+    intro: "Diese Auswahl listet 1 Umzugsunternehmen in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Fritz Fels", description: "Hardtstraße 108, Heidelberg.", address: "Hardtstraße 108", websiteUrl: "https://www.fels-heidelberg.de/" },
+    ],
+  },
+  "fahrradladen": {
+    intro: "Diese Auswahl listet 10 Fahrradlaeden in Heidelberg, die sich unabhaengig belegen lassen - jeder Eintrag mit Strassenadresse und eigener Website. Die Reihenfolge ist keine Wertung, sondern folgt der Vollstaendigkeit der oeffentlich verfuegbaren Angaben. Quellen: OpenStreetMap-Abzug des Stadtgebiets und die Betreiberseiten selbst.",
+    items: [
+      { rank: 1, name: "Heidel-bike", description: "Hans-Böckler-Straße 2, Heidelberg.", address: "Hans-Böckler-Straße 2", websiteUrl: "https://www.heidel-bike.de/" },
+      { rank: 2, name: "altavelo Fahrradladen", description: "Bergheimer Straße 101, Heidelberg.", address: "Bergheimer Straße 101", websiteUrl: "https://www.altavelo.de/" },
+      { rank: 3, name: "Wittmann", description: "Am Taubenfeld 29a, Heidelberg.", address: "Am Taubenfeld 29a", websiteUrl: "https://www.fahrrad-wittmann.de/" },
+      { rank: 4, name: "Das kleine Radhaus", description: "Bahnhofstraße 55, Heidelberg.", address: "Bahnhofstraße 55", websiteUrl: "https://kleine-radhaus.de/" },
+      { rank: 5, name: "Radhaus Gerger", description: "Kranichweg 37, Heidelberg.", address: "Kranichweg 37", websiteUrl: "https://www.radhaus-gerger.de/" },
+      { rank: 6, name: "Schaltwerk", description: "Handschuhsheimer Landstraße 45a, Heidelberg.", address: "Handschuhsheimer Landstraße 45a", websiteUrl: "http://www.das-schaltwerk.com/" },
+      { rank: 7, name: "eldoRADo", description: "Felix-Wankel-Straße 1, Heidelberg.", address: "Felix-Wankel-Straße 1", websiteUrl: "https://www.eldorado-hd.de/" },
+      { rank: 8, name: "Fahrrad Service", description: "Bahnhofstraße 1, Heidelberg.", address: "Bahnhofstraße 1", websiteUrl: "http://www.fahrradservice-hd.de" },
+      { rank: 9, name: "Madame Vélo", description: "Alte Eppelheimer Straße 31a, Heidelberg.", address: "Alte Eppelheimer Straße 31a", websiteUrl: "https://www.madame-velo.de/" },
+      { rank: 10, name: "Quadrad", description: "Kurfürsten-Anlage 62, Heidelberg.", address: "Kurfürsten-Anlage 62", websiteUrl: "https://www.quadrad.de" },
+    ],
+  },
+  "handwerker": {
+    intro: "Handwerksbetriebe in Heidelberg mit belegter Adresse beziehungsweise eigener Website. Die Auswahl deckt Elektro, Schreinerei, Holzbau und Fliesenlegerei ab; die Reihenfolge ist keine Wertung. Quelle: recherchiertes Branchenbuch der Region und OpenStreetMap.",
+    items: [
+      { rank: 1, name: "Elektro Wernz + Co. GmbH", description: "Elektrotechnik, Heidelberg.", websiteUrl: "https://www.elektro-wernz.com/" },
+      { rank: 2, name: "Schreinerei Neumeister GmbH", description: "Schreinerei, Im Bosseldorn 31.", address: "Im Bosseldorn 31", websiteUrl: "http://www.schreinerei-neumeister.de" },
+      { rank: 3, name: "Schreinerei Ralf Günauer", description: "Schreinerei, Ingrimstraße 18.", address: "Ingrimstraße 18", websiteUrl: "https://www.heidelberg-schreinerei.de/" },
+      { rank: 4, name: "Holzbau Kaltschmitt", description: "Holzbau, Brennerweg 6.", address: "Brennerweg 6", websiteUrl: "http://www.holzbau-kaltschmitt.de/" },
+      { rank: 5, name: "Harald Tränkle GmbH", description: "Fliesenleger, Hardtstraße 80, Kirchheim.", address: "Hardtstraße 80" },
+      { rank: 6, name: "HD Fliesen & Bau GmbH & Co. KG", description: "Fliesenleger, Glockenzehnten 57, Kirchheim.", address: "Glockenzehnten 57" },
+      { rank: 7, name: "Kreativ Fliesen Nue Meisterbetrieb", description: "Fliesenleger, Kurfürsten-Anlage 55, Weststadt.", address: "Kurfürsten-Anlage 55" },
+      { rank: 8, name: "Holzwarth Gebäudeelektrik", description: "Elektrotechnik, Bergheimer Straße 134.", address: "Bergheimer Straße 134", websiteUrl: "http://www.holzwarth-hd.de/kontakt.html" },
+      { rank: 9, name: "R. GEMBE Elektrotechnik GmbH", description: "Elektrotechnik, Heidelberg.", websiteUrl: "https://www.elektrotechnik-heidelberg.de/" },
+      { rank: 10, name: "Schuster Elektrotechnik", description: "Elektrotechnik, Heidelberg.", websiteUrl: "https://www.schuster-elektro.de/" },
     ],
   },
 };
